@@ -1,86 +1,142 @@
-// Supplied reference imagery is only for this explicitly labelled layout preview.
-// Replace reference crops with approved Kriyon project assets before public launch.
-const reference = '/assets/portfolio-reference.png';
-const sourceWidth = 2998;
-const shots = {
-  portrait: { x: 0, y: 240, width: 535, height: 952, label: 'Beauty / Portrait', alt: 'Reference beauty portrait of a model with a black bob haircut' },
-  jewellery: { x: 550, y: 240, width: 900, height: 952, label: 'Jewellery / Campaign', alt: 'Reference jewellery photograph of a pendant worn down a model’s back' },
-  detail: { x: 2010, y: 242, width: 965, height: 950, label: 'Jewellery / Detail', alt: 'Reference editorial close-up featuring silver jewellery and dark lipstick' },
-  lifestyle: { x: 1141, y: 1230, width: 839, height: 850, label: 'Fashion / Lifestyle', alt: 'Reference fashion photograph of an adult model in blue striped shorts' },
-  product: { x: 255, y: 1435, width: 880, height: 645, label: 'Product / Still life', alt: 'Reference product photograph of blue striped shorts' },
-  denim: { x: 2017, y: 1230, width: 956, height: 850, label: 'Fashion / Editorial', alt: 'Reference editorial photograph of an adult model wearing denim' },
-};
-const sequences = [
-  ['portrait', 'jewellery', 'detail', 'denim', 'jewellery'],
-  ['denim', 'lifestyle', 'product', 'denim', 'lifestyle'],
-  ['detail', 'portrait', 'denim', 'jewellery', 'detail'],
-];
-sequences.forEach((sequence, rowIndex) => {
-  const track = document.querySelector(`#gallery-row-${rowIndex + 1}`);
-  sequence.forEach((key, index) => {
-    const shot = shots[key];
-    const figure = document.createElement('figure');
-    figure.className = 'shot';
-    figure.style.setProperty('--ratio', shot.width / shot.height);
-    const crop = document.createElement('div');
-    crop.className = 'reference-crop';
-    const image = document.createElement('img');
-    image.src = reference;
-    image.alt = shot.alt;
-    image.width = 2998;
-    image.height = 2100;
-    image.decoding = 'async';
-    image.loading = rowIndex === 0 ? 'eager' : 'lazy';
-    image.draggable = false;
-    image.style.width = `${sourceWidth / shot.width * 100}%`;
-    image.style.left = `${-shot.x / shot.width * 100}%`;
-    image.style.top = `${-shot.y / shot.height * 100}%`;
-    crop.append(image);
-    const caption = document.createElement('figcaption');
-    const label = document.createElement('span');
-    label.textContent = shot.label;
-    caption.className = 'sr-only';
-    caption.append(label);
-    figure.append(crop, caption);
-    track.append(figure);
-  });
-});
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const rows = [...document.querySelectorAll('.gallery-viewport')].map(element => ({ element, direction: Number(element.dataset.direction), manual: false }));
-let frameRequested = false;
-function updateGallery() {
-  frameRequested = false;
-  if (reducedMotion.matches) return;
-  const viewportHeight = window.innerHeight;
-  const measurements = rows.map(row => ({ ...row, bounds: row.element.getBoundingClientRect(), overflow: row.element.scrollWidth - row.element.clientWidth }));
-  measurements.forEach(({ element, direction, manual, bounds, overflow }) => {
-    if (manual || overflow <= 0 || bounds.bottom < 0 || bounds.top > viewportHeight + 200) return;
-    const progress = Math.max(0, Math.min(1, (viewportHeight - bounds.top) / (viewportHeight + bounds.height)));
-    const travel = Math.min(overflow, window.innerWidth * 0.65);
-    element.scrollLeft = overflow / 2 + direction * (progress - 0.5) * travel;
-  });
-}
-function requestUpdate() {
-  if (!frameRequested) { frameRequested = true; window.requestAnimationFrame(updateGallery); }
-}
-rows.forEach(row => {
-  // Direct interaction hands control to the visitor for the rest of this visit.
-  row.element.addEventListener('pointerdown', () => { row.manual = true; }, { passive: true });
-  row.element.addEventListener('wheel', event => {
-    if (Math.abs(event.deltaX) > Math.abs(event.deltaY) || event.shiftKey) row.manual = true;
-  }, { passive: true });
-  row.element.addEventListener('keydown', event => {
-    if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
-      row.manual = true;
-      event.preventDefault();
-      const maximum = row.element.scrollWidth - row.element.clientWidth;
-      const next = event.key === 'Home' ? 0 : event.key === 'End' ? maximum : row.element.scrollLeft + (event.key === 'ArrowRight' ? 1 : -1) * row.element.clientWidth * 0.7;
-      row.element.scrollTo({ left: next, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+
+document.querySelectorAll('.service-trigger').forEach((trigger) => {
+  trigger.addEventListener('click', () => {
+    const item = trigger.closest('.service-item');
+    const willOpen = !item.classList.contains('is-open');
+    document.querySelectorAll('.service-item').forEach((other) => {
+      other.classList.remove('is-open');
+      const button = other.querySelector('.service-trigger');
+      button.setAttribute('aria-expanded', 'false');
+      button.querySelector('i').textContent = '+';
+    });
+    if (willOpen) {
+      item.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      trigger.querySelector('i').textContent = '−';
     }
   });
 });
-window.addEventListener('scroll', requestUpdate, { passive: true });
-window.addEventListener('resize', requestUpdate, { passive: true });
-window.addEventListener('load', requestUpdate, { once: true });
-reducedMotion.addEventListener('change', requestUpdate);
-requestUpdate();
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -7% 0px' });
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+document.querySelectorAll('.project, .service-rows article, .film-card, .social-grid > *, .about-photo, .about-copy').forEach((element, index) => {
+  element.classList.add('will-reveal');
+  element.style.transitionDelay = `${Math.min(index % 4, 3) * 55}ms`;
+  revealObserver.observe(element);
+});
+
+const rows = [...document.querySelectorAll('.gallery-viewport')].map((element, index) => {
+  const track = element.querySelector('.gallery-track');
+  const group = element.querySelector('.gallery-group');
+  const clones = [];
+  for (let count = 0; count < 2; count += 1) {
+    const clone = group.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('a').forEach((link) => { link.tabIndex = -1; });
+    clone.querySelectorAll('img').forEach((image) => { image.loading = 'lazy'; image.alt = ''; });
+    track.append(clone);
+    clones.push(clone);
+  }
+  return { element, track, group, clones, index, direction: Number(element.dataset.direction), cycle: 0, offset: 0, target: 0, pointer: null, dragging: false, suppressClickUntil: 0 };
+});
+
+let frame = 0;
+let lastTime = 0;
+let previousY = window.scrollY;
+const wrap = (value, length) => ((value % length) + length) % length;
+function draw(row) { if (row.cycle) row.track.style.transform = `translate3d(${-wrap(row.offset, row.cycle)}px,0,0)`; }
+function tick(time) {
+  const dt = Math.min(time - (lastTime || time - 16), 40);
+  lastTime = time;
+  let moving = false;
+  rows.forEach((row) => {
+    const distance = row.target - row.offset;
+    if (Math.abs(distance) > 0.1 && !reducedMotion.matches) {
+      row.offset += distance * (1 - Math.exp(-dt / 145));
+      moving = true;
+    } else row.offset = row.target;
+    draw(row);
+  });
+  if (moving) frame = requestAnimationFrame(tick);
+  else { frame = 0; lastTime = 0; }
+}
+function requestFrame() { if (!frame) frame = requestAnimationFrame(tick); }
+function measure() {
+  rows.forEach((row) => {
+    const progress = row.cycle ? wrap(row.offset, row.cycle) / row.cycle : [0.06, 0.18, 0.11][row.index];
+    row.cycle = row.group.getBoundingClientRect().width;
+    row.offset = reducedMotion.matches ? 0 : progress * row.cycle;
+    row.target = row.offset;
+    draw(row);
+  });
+}
+function applyMotionPreference() {
+  rows.forEach((row) => row.clones.forEach((clone) => { clone.hidden = reducedMotion.matches; }));
+  previousY = window.scrollY;
+  measure();
+}
+window.addEventListener('scroll', () => {
+  const nextY = window.scrollY;
+  const delta = nextY - previousY;
+  previousY = nextY;
+  if (reducedMotion.matches) return;
+  rows.forEach((row) => { if (!row.dragging) row.target += delta * row.direction * 0.26; });
+  requestFrame();
+}, { passive: true });
+window.addEventListener('resize', measure, { passive: true });
+reducedMotion.addEventListener('change', applyMotionPreference);
+rows.forEach((row) => {
+  row.element.addEventListener('pointerdown', (event) => {
+    if (reducedMotion.matches || event.button !== 0) return;
+    row.pointer = { id: event.pointerId, startX: event.clientX, startY: event.clientY, lastX: event.clientX };
+  });
+  row.element.addEventListener('pointermove', (event) => {
+    const pointer = row.pointer;
+    if (!pointer || pointer.id !== event.pointerId) return;
+    const dx = event.clientX - pointer.startX;
+    const dy = event.clientY - pointer.startY;
+    if (!row.dragging) {
+      if (Math.abs(dy) > 8 && Math.abs(dy) > Math.abs(dx)) { row.pointer = null; return; }
+      if (Math.abs(dx) < 7 || Math.abs(dx) < Math.abs(dy)) return;
+      row.dragging = true;
+      row.target = row.offset;
+      row.element.setPointerCapture(event.pointerId);
+      row.element.classList.add('is-dragging');
+    }
+    row.target -= event.clientX - pointer.lastX;
+    row.offset = row.target;
+    pointer.lastX = event.clientX;
+    draw(row);
+  });
+  const stopDrag = () => {
+    if (row.dragging) row.suppressClickUntil = performance.now() + 180;
+    row.pointer = null;
+    row.dragging = false;
+    row.element.classList.remove('is-dragging');
+  };
+  row.element.addEventListener('pointerup', stopDrag);
+  row.element.addEventListener('pointercancel', stopDrag);
+  row.element.addEventListener('lostpointercapture', stopDrag);
+  row.element.addEventListener('click', (event) => {
+    if (performance.now() < row.suppressClickUntil) { event.preventDefault(); event.stopPropagation(); }
+  }, true);
+  row.element.addEventListener('dragstart', (event) => event.preventDefault());
+  row.element.addEventListener('keydown', (event) => {
+    if (reducedMotion.matches || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    row.target += (event.key === 'ArrowRight' ? 1 : -1) * row.element.clientWidth * 0.42;
+    requestFrame();
+  });
+});
+document.querySelectorAll('video').forEach((video) => video.addEventListener('play', () => {
+  document.querySelectorAll('video').forEach((other) => { if (other !== video) other.pause(); });
+}));
+applyMotionPreference();

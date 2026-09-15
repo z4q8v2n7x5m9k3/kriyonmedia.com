@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="From the boutique piece to the finished campaign." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>From the Piece to the Picture — Kriyon Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="piece-page">
+  <main>
+    <header class="piece-brandbar piece-collab" aria-label="Project collaboration"><strong>Darzie Couture</strong><span>×</span><a href="/">Kriyon Media</a></header>
+    <div class="piece-meta" aria-label="Project details"><p>From Piece to Picture</p><p>Engineered by Pixel One</p></div>
+    <div class="piece-layout">
+      <aside class="piece-source" aria-label="Original boutique product">
+        <button class="piece-thumb" type="button" data-lightbox="/assets/boutique-pink/product-01.webp"><img src="/assets/boutique-pink/product-01.webp" alt="Original pink boutique garment displayed in store" width="1200" height="1600" /></button>
+        <button class="piece-thumb" type="button" data-lightbox="/assets/boutique-pink/product-02.webp"><img src="/assets/boutique-pink/product-02.webp" alt="Second view of the original pink boutique garment in store" width="1200" height="1600" /></button>
+      </aside>
+      <section class="piece-grid" aria-label="Finished boutique campaign">
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-01.webp"><img src="/assets/boutique-pink/campaign-01.webp" alt="Full-length editorial portrait of the pink couture look" width="1792" height="2400" /></button>
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-02.webp"><img src="/assets/boutique-pink/campaign-02.webp" alt="Editorial movement portrait of the pink couture look" width="1792" height="2400" /></button>
+        <button class="piece-wide" type="button" data-lightbox="/assets/boutique-pink/campaign-04.webp"><img src="/assets/boutique-pink/campaign-04.webp" alt="Wide campaign frame with pink couture and floral set" width="2752" height="1536" /></button>
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-03.webp"><img src="/assets/boutique-pink/campaign-03.webp" alt="Three-quarter editorial portrait of the pink couture look" width="1792" height="2400" /></button>
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-07.webp"><img src="/assets/boutique-pink/campaign-07.webp" alt="Full-length pink couture campaign portrait" width="1792" height="2400" /></button>
+        <button class="piece-wide" type="button" data-lightbox="/assets/boutique-pink/campaign-05.webp"><img src="/assets/boutique-pink/campaign-05.webp" alt="Wide editorial portrait in a pale blue interior" width="2752" height="1536" /></button>
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-11.webp"><img src="/assets/boutique-pink/campaign-11.webp" alt="Full-length campaign portrait of the pink couture look" width="1792" height="2400" /></button>
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-12.webp"><img src="/assets/boutique-pink/campaign-12.webp" alt="Back-view editorial portrait of the pink couture look" width="1792" height="2400" /></button>
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-13.webp"><img src="/assets/boutique-pink/campaign-13.webp" alt="Seated couture campaign portrait with flowing dupatta" width="1792" height="2400" /></button>
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-14.webp"><img src="/assets/boutique-pink/campaign-14.webp" alt="Close-up detail of the embroidered pink couture blouse" width="1792" height="2400" /></button>
+        <button class="piece-wide" type="button" data-lightbox="/assets/boutique-pink/campaign-06.webp"><img src="/assets/boutique-pink/campaign-06.webp" alt="Wide boutique campaign image in a floral interior" width="2752" height="1536" /></button>
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-10.webp"><img src="/assets/boutique-pink/campaign-10.webp" alt="Close editorial portrait of the pink couture look" width="1792" height="2400" /></button>
+        <button class="piece-portrait" type="button" data-lightbox="/assets/boutique-pink/campaign-15.webp"><img src="/assets/boutique-pink/campaign-15.webp" alt="Final full-length portrait of the pink couture look" width="1792" height="2400" /></button>
+        <button class="piece-wide" type="button" data-lightbox="/assets/boutique-pink/campaign-09.webp"><img src="/assets/boutique-pink/campaign-09.webp" alt="Pink couture campaign photographed in a heritage courtyard" width="2752" height="1536" /></button>
+      </section>
+    </div>
+    <footer class="piece-other"><p>View Other Projects</p><nav aria-label="Other projects"><a href="/work/jewellery/">Jewellery <span>↗</span></a><a href="/work/clothing/">Clothing &amp; Boutiques <span>↗</span></a><a href="/#work">View All <span>↗</span></a></nav></footer>
+  </main>
+  <div class="piece-view-cursor" aria-hidden="true">View</div>
+  <dialog class="piece-lightbox" aria-label="Image preview"><button class="piece-close" type="button" aria-label="Close image">×</button><img alt="" /></dialog>
+  <script>
+    const lightbox = document.querySelector('.piece-lightbox');
+    const preview = lightbox.querySelector('img');
+    const viewCursor = document.querySelector('.piece-view-cursor');
+    document.querySelectorAll('[data-lightbox]').forEach((button) => {
+      button.addEventListener('click', () => {
+        viewCursor.classList.remove('is-visible');
+        preview.src = button.dataset.lightbox;
+        preview.alt = button.querySelector('img').alt;
+        lightbox.showModal();
+      });
+      button.addEventListener('pointerenter', () => viewCursor.classList.add('is-visible'));
+      button.addEventListener('pointermove', (event) => {
+        viewCursor.style.left = `${event.clientX}px`;
+        viewCursor.style.top = `${event.clientY}px`;
+      });
+      button.addEventListener('pointerleave', () => viewCursor.classList.remove('is-visible'));
+    });
+    window.addEventListener('scroll', () => viewCursor.classList.remove('is-visible'), { passive: true });
+    document.querySelector('.piece-close').addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
+  </script>
+</body>
+</html>

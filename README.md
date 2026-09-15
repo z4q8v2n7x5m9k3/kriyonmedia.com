@@ -1,16 +1,25 @@
 # Kriyon Media
 
-Static responsive creative studio website. Serve `dist/` to preview.
+A cinematic portfolio website for Kriyon Media, a venture of Kriyon Group Private Limited.
 
-## Before public launch
+## Pages
 
-- Replace labelled reference imagery in `dist/script.js` with approved Kriyon portfolio photographs and films. The source is the visual reference supplied by the user, not Kriyon client work.
-- Add Instagram when the user supplies the profile URL. Contact email: kriyon@repixels.tech.
+- `/`: full-bleed campaign hero, selected work, studio story, services, social-ready campaign delivery, approved films and contact.
+- `/work/jewellery/`: 21-image jewellery portfolio with three jewellery films.
+- `/work/clothing/`: eight-image boutique portfolio with two fashion films.
 
-## References
+## Design
 
-OneLink main website: Manrope, white and pale blue surfaces, restrained blue buttons.
-Bragit Final Website: generous imagery and restrained motion.
-User Icarus screenshots: centered editorial hero and horizontal photograph rows. No client endorsements or product interface reproduced.
+The site combines a warm editorial palette with DM Serif Display and Manrope. The homepage uses a cinematic campaign image, restrained motion, dense square work grids and clear project paths. Portfolio pages keep every thumbnail the same size so several images remain visible in one viewport.
 
-Rows follow vertical scroll in opposite directions. Direct horizontal input or keyboard navigation takes over each row. Reduced-motion preferences disable scroll-driven movement.
+## Media
+
+All photographs and films are user-supplied. Editorial images retain their source-native dimensions in high-quality WebP files. Only the five approved films are included: three jewellery films and two boutique films.
+
+## Preview
+
+Serve the `dist/` directory with any static server.
+
+## Contact
+
+Email: `kriyon@repixels.tech`
