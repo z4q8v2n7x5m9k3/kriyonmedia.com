@@ -18,10 +18,32 @@
     <figure class="jewellery-hero"><img src="/assets/jewellery-showcase/hero.png" alt="Jewellery campaign portrait in a yellow sari with a curated jewellery display" width="2752" height="1536" /></figure>
     <section class="jewellery-categories" aria-label="Jewellery portfolio categories">
       <article><span>01</span><h2>Campaign Shoots</h2></article>
-      <article><span>02</span><h2>Jewellery Close-Ups</h2></article>
+      <article class="jewellery-closeups"><span>02</span><h2>Jewellery Close-Ups</h2>
+        <div class="jewellery-closeup-grid">
+          <button type="button" data-jewellery-image="/assets/jewellery-showcase/close-ups/necklace.png"><img src="/assets/jewellery-showcase/close-ups/necklace.png" alt="Emerald and diamond necklace on velvet display" width="2048" height="2048" /></button>
+          <button type="button" data-jewellery-image="/assets/jewellery-showcase/close-ups/ring-water.png"><img src="/assets/jewellery-showcase/close-ups/ring-water.png" alt="Purple gemstone ring on reflective water" width="4096" height="4096" /></button>
+          <button type="button" data-jewellery-image="/assets/jewellery-showcase/close-ups/ring-hand.png"><img src="/assets/jewellery-showcase/close-ups/ring-hand.png" alt="Purple gemstone ring held between fingers" width="2048" height="2048" /></button>
+          <button type="button" data-jewellery-image="/assets/jewellery-showcase/close-ups/bracelet.png"><img src="/assets/jewellery-showcase/close-ups/bracelet.png" alt="Emerald and diamond bracelet held in hand" width="2048" height="2048" /></button>
+          <button type="button" data-jewellery-image="/assets/jewellery-showcase/close-ups/pendant.png"><img src="/assets/jewellery-showcase/close-ups/pendant.png" alt="Emerald pendant on black volcanic stone" width="2048" height="2048" /></button>
+          <button type="button" data-jewellery-image="/assets/jewellery-showcase/close-ups/emerald-ring.png"><img src="/assets/jewellery-showcase/close-ups/emerald-ring.png" alt="Emerald and sapphire statement ring" width="2048" height="2048" /></button>
+          <button type="button" data-jewellery-image="/assets/jewellery-showcase/close-ups/earrings.png"><img src="/assets/jewellery-showcase/close-ups/earrings.png" alt="Emerald and diamond earrings held by hand" width="2048" height="2048" /></button>
+        </div>
+      </article>
       <article><span>03</span><h2>Product &amp; Hero Visuals</h2></article>
     </section>
     <footer class="jewellery-footer"><a href="/work/">Explore Portfolio <span>↗</span></a><a href="/work/clothing/">Boutique Showcase <span>↗</span></a></footer>
   </main>
+  <dialog class="jewellery-lightbox" aria-label="Jewellery close-up preview"><button type="button" aria-label="Close image">×</button><img alt="" /></dialog>
+  <script>
+    const jewelleryDialog = document.querySelector('.jewellery-lightbox');
+    const jewelleryPreview = jewelleryDialog.querySelector('img');
+    document.querySelectorAll('[data-jewellery-image]').forEach((item) => item.addEventListener('click', () => {
+      jewelleryPreview.src = item.dataset.jewelleryImage;
+      jewelleryPreview.alt = item.querySelector('img').alt;
+      jewelleryDialog.showModal();
+    }));
+    jewelleryDialog.querySelector('button').addEventListener('click', () => jewelleryDialog.close());
+    jewelleryDialog.addEventListener('click', (event) => { if (event.target === jewelleryDialog) jewelleryDialog.close(); });
+  </script>
 </body>
 </html>
