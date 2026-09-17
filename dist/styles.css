@@ -257,3 +257,4 @@
 
 /* Compact matched rows: no unfilled white cells. */
 .ruby-reverie-leading-row{grid-template-columns:1.34fr 1fr}.ruby-reverie-landscape-row{grid-template-columns:1fr 1fr}
+.ruby-reverie-portrait-row{grid-template-columns:1fr 1fr}
