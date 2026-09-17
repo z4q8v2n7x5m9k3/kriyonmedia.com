@@ -252,3 +252,8 @@
 
 /* Same compact two-column rhythm as the Darzie campaign. */
 .ruby-reverie-page main{max-width:none;margin:0;padding:8px 28px 4px}.ruby-reverie-grid{width:min(1720px,100%);margin:0 auto;gap:6px}.ruby-reverie-page .piece-meta{margin-bottom:6px}.ruby-reverie-page .piece-other{margin-top:70px}@media(max-width:700px){.ruby-reverie-page main{padding:4px 8px 2px}.ruby-reverie-grid{gap:4px}.ruby-reverie-page .piece-meta{margin-bottom:4px}}
+
+.ruby-reverie-row{grid-column:1/-1;display:grid;gap:6px;align-items:start}.ruby-reverie-row button{border:0;padding:0;background:#f3f3f0;overflow:hidden;cursor:zoom-in;line-height:0}.ruby-reverie-row img{display:block;width:100%;height:auto}.ruby-reverie-leading-row{grid-template-columns:1.34fr 1.79fr}.ruby-reverie-square-row{grid-template-columns:1fr 1fr}.ruby-reverie-square-row button{aspect-ratio:1/1}.ruby-reverie-square-row img{height:100%;object-fit:cover;object-position:center}@media(max-width:700px){.ruby-reverie-row{gap:4px}}
+
+/* Compact matched rows: no unfilled white cells. */
+.ruby-reverie-leading-row{grid-template-columns:1.34fr 1fr}.ruby-reverie-landscape-row{grid-template-columns:1fr 1fr}
