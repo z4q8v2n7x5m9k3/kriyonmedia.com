@@ -120,6 +120,7 @@
 .jewellery-film-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:0}
 .jewellery-film-grid button{border:0;padding:0;overflow:hidden}
 .jewellery-film-grid video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover}
+.jewellery-film-grid .jewellery-film-still{position:relative;background:#0b0f15}.jewellery-film-grid .jewellery-film-still img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;object-position:center}
 .jewellery-closeup-grid button:nth-last-child(2){grid-column:span 3}
 .jewellery-closeup-grid button:last-child{grid-column:2/span 2}
 .jewellery-closeup-grid button:nth-last-child(2) img,.jewellery-closeup-grid button:last-child img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
@@ -259,3 +260,4 @@
 .ruby-reverie-leading-row{grid-template-columns:1.34fr 1fr}.ruby-reverie-landscape-row{grid-template-columns:1fr 1fr}
 .ruby-reverie-portrait-row{grid-template-columns:1fr 1fr}
 .ruby-reverie-leading-row button:first-child{aspect-ratio:1.34/1}.ruby-reverie-leading-row button:last-child{aspect-ratio:1/1}.ruby-reverie-leading-row img{height:100%;object-fit:cover;object-position:center}
+img,video{-webkit-user-drag:none;user-select:none}
