@@ -37,9 +37,9 @@
       </article>
       <article class="jewellery-films"><span>02</span><h2>Campaign Films</h2>
         <div class="jewellery-film-grid">
-          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-01.mp4"><video muted autoplay loop playsinline preload="metadata"><source src="/assets/jewellery-showcase/campaign/film-01.mp4" type="video/mp4" /></video><span>Play Film</span></button>
-          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-02.mp4"><video muted autoplay loop playsinline preload="metadata"><source src="/assets/jewellery-showcase/campaign/film-02.mp4" type="video/mp4" /></video><span>Play Film</span></button>
-          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-03.mp4"><video muted autoplay loop playsinline preload="metadata"><source src="/assets/jewellery-showcase/campaign/film-03.mp4" type="video/mp4" /></video><span>Play Film</span></button>
+          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-01.mp4"><video muted autoplay loop playsinline preload="auto"><source src="/assets/jewellery-showcase/campaign/film-01.mp4" type="video/mp4" /></video><span>Play Film</span></button>
+          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-02-browser.mp4"><video muted autoplay loop playsinline preload="auto"><source src="/assets/jewellery-showcase/campaign/film-02-browser.mp4" type="video/mp4" /></video><span>Play Film</span></button>
+          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-03-browser.mp4"><video muted autoplay loop playsinline preload="auto"><source src="/assets/jewellery-showcase/campaign/film-03-browser.mp4" type="video/mp4" /></video><span>Play Film</span></button>
         </div>
       </article>
       <article class="jewellery-campaigns"><span>03</span><h2>Campaign &amp; Product Shoots</h2>
@@ -62,8 +62,8 @@
             <button type="button" data-jewellery-image="/assets/jewellery-showcase/campaign/product-flatlay.png"><img src="/assets/jewellery-showcase/campaign/product-flatlay.png" alt="Jewellery collection arranged in presentation boxes" /></button>
             <button type="button" data-jewellery-image="/assets/jewellery-showcase/campaign/campaign-color-gems.png"><img src="/assets/jewellery-showcase/campaign/campaign-color-gems.png" alt="Colour gemstone jewellery campaign portrait" /></button>
             <button type="button" data-jewellery-image="/assets/jewellery-showcase/campaign/campaign-new-emerald-burgundy.png"><img src="/assets/jewellery-showcase/campaign/campaign-new-emerald-burgundy.png" alt="Emerald jewellery portrait in burgundy" /></button>
-            <button type="button" data-jewellery-image="/assets/jewellery-showcase/campaign/campaign-new-diamond-gold.png"><img src="/assets/jewellery-showcase/campaign/campaign-new-diamond-gold.png" alt="Diamond jewellery portrait in warm gold styling" /></button>
-            <button type="button" data-jewellery-image="/assets/jewellery-showcase/campaign/campaign-new-ruby-white.png"><img src="/assets/jewellery-showcase/campaign/campaign-new-ruby-white.png" alt="Ruby and diamond jewellery portrait in white" /></button>
+            <button class="campaign-crop-star" type="button" data-jewellery-image="/assets/jewellery-showcase/campaign/campaign-new-diamond-gold.png"><img src="/assets/jewellery-showcase/campaign/campaign-new-diamond-gold.png" alt="Diamond jewellery portrait in warm gold styling" /></button>
+            <button class="campaign-crop-star campaign-crop-star-white" type="button" data-jewellery-image="/assets/jewellery-showcase/campaign/campaign-new-ruby-white.png"><img src="/assets/jewellery-showcase/campaign/campaign-new-ruby-white.png" alt="Ruby and diamond jewellery portrait in white" /></button>
             <button type="button" data-jewellery-image="/assets/jewellery-showcase/campaign/campaign-new-sapphire-silver.png"><img src="/assets/jewellery-showcase/campaign/campaign-new-sapphire-silver.png" alt="Sapphire and diamond jewellery portrait in silver" /></button>
           </div>
         </div>
@@ -97,7 +97,19 @@
     jewelleryDialog.addEventListener('click', (event) => { if (event.target === jewelleryDialog) jewelleryDialog.close(); });
     const videoDialog = document.querySelector('.jewellery-video-lightbox');
     const videoPreview = videoDialog.querySelector('video');
-    document.querySelectorAll('[data-jewellery-video]').forEach((item) => item.addEventListener('click', () => { videoPreview.src = item.dataset.jewelleryVideo; videoDialog.showModal(); videoPreview.play(); }));
+    const filmPreviews = [...document.querySelectorAll('.jewellery-film-card video')];
+    const playFilmPreviews = () => filmPreviews.forEach((video) => { video.muted = true; video.defaultMuted = true; video.playsInline = true; const playing = video.play(); if (playing) playing.catch(() => {}); });
+    window.addEventListener('load', playFilmPreviews);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) playFilmPreviews(); });
+    document.querySelectorAll('[data-jewellery-video]').forEach((item) => item.addEventListener('click', () => {
+      videoPreview.pause();
+      videoPreview.src = item.dataset.jewelleryVideo;
+      videoPreview.muted = false;
+      videoPreview.load();
+      videoDialog.showModal();
+      const startFilm = () => { const playing = videoPreview.play(); if (playing) playing.catch(() => {}); };
+      if (videoPreview.readyState >= 2) startFilm(); else videoPreview.addEventListener('canplay', startFilm, { once: true });
+    }));
     const closeVideo = () => { videoPreview.pause(); videoPreview.removeAttribute('src'); videoPreview.load(); videoDialog.close(); };
     videoDialog.querySelector('button').addEventListener('click', closeVideo);
     videoDialog.addEventListener('click', (event) => { if (event.target === videoDialog) closeVideo(); });
