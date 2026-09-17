@@ -37,9 +37,9 @@
       </article>
       <article class="jewellery-films"><span>02</span><h2>Campaign Films</h2>
         <div class="jewellery-film-grid">
-          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-01.mp4"><video muted autoplay loop playsinline preload="auto"><source src="/assets/jewellery-showcase/campaign/film-01.mp4" type="video/mp4" /></video><span>Play Film</span></button>
-          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-02-browser.mp4"><video muted autoplay loop playsinline preload="auto"><source src="/assets/jewellery-showcase/campaign/film-02-browser.mp4" type="video/mp4" /></video><span>Play Film</span></button>
-          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-03-browser.mp4"><video muted autoplay loop playsinline preload="auto"><source src="/assets/jewellery-showcase/campaign/film-03-browser.mp4" type="video/mp4" /></video><span>Play Film</span></button>
+          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-01.mp4"><video muted loop playsinline preload="metadata" poster="/assets/jewellery-showcase/campaign/campaign-09.png"><source src="/assets/jewellery-showcase/campaign/film-01.mp4" type="video/mp4" /></video><span>Play Film</span></button>
+          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-02-browser.mp4"><video muted loop playsinline preload="metadata" poster="/assets/jewellery-showcase/campaign/campaign-12.png"><source src="/assets/jewellery-showcase/campaign/film-02-browser.mp4" type="video/mp4" /></video><span>Play Film</span></button>
+          <button class="jewellery-film-card" type="button" data-jewellery-video="/assets/jewellery-showcase/campaign/film-03-browser.mp4"><video muted loop playsinline preload="metadata" poster="/assets/jewellery-showcase/campaign/campaign-13.png"><source src="/assets/jewellery-showcase/campaign/film-03-browser.mp4" type="video/mp4" /></video><span>Play Film</span></button>
         </div>
       </article>
       <article class="jewellery-campaigns"><span>03</span><h2>Campaign &amp; Product Shoots</h2>
@@ -70,8 +70,8 @@
       </article>
       <article class="jewellery-ready"><span>04</span><h2>Ready to Post</h2>
         <div class="jewellery-ready-grid">
-          <div><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-opulence.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-opulence.png" alt="Emerald jewellery campaign social creative" /></button><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-bracelet.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-bracelet.png" alt="Branded emerald bracelet social creative" /></button></div>
-          <div><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-earrings.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-earrings.png" alt="Bespoke emerald earrings social creative" /></button><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-festive-offer.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-festive-offer.png" alt="Festive jewellery offer social creative" /></button></div>
+          <div><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-opulence.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-opulence.png" alt="Emerald jewellery campaign social creative" loading="lazy" decoding="async" /></button><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-bracelet.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-bracelet.png" alt="Branded emerald bracelet social creative" loading="lazy" decoding="async" /></button><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-classic-captivating.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-classic-captivating.png" alt="Classic jewellery campaign social creative in emerald green" loading="lazy" decoding="async" /></button></div>
+          <div><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-earrings.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-earrings.png" alt="Bespoke emerald earrings social creative" loading="lazy" decoding="async" /></button><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-festive-offer.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-festive-offer.png" alt="Festive jewellery offer social creative" loading="lazy" decoding="async" /></button><button type="button" data-jewellery-image="/assets/jewellery-showcase/ready-to-post/ready-pure-luxury.png"><img src="/assets/jewellery-showcase/ready-to-post/ready-pure-luxury.png" alt="Pure luxury diamond jewellery campaign social creative" loading="lazy" decoding="async" /></button></div>
         </div>
       </article>
     </section>
@@ -98,9 +98,10 @@
     const videoDialog = document.querySelector('.jewellery-video-lightbox');
     const videoPreview = videoDialog.querySelector('video');
     const filmPreviews = [...document.querySelectorAll('.jewellery-film-card video')];
-    const playFilmPreviews = () => filmPreviews.forEach((video) => { video.muted = true; video.defaultMuted = true; video.playsInline = true; const playing = video.play(); if (playing) playing.catch(() => {}); });
-    window.addEventListener('load', playFilmPreviews);
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) playFilmPreviews(); });
+    const playFilm = (video) => { video.muted = true; video.defaultMuted = true; video.playsInline = true; video.preload = 'auto'; const playing = video.play(); if (playing) playing.catch(() => {}); };
+    const filmObserver = new IntersectionObserver((entries) => entries.forEach(({ target, isIntersecting }) => { if (isIntersecting) playFilm(target); else target.pause(); }), { rootMargin: '350px 0px' });
+    filmPreviews.forEach((video) => filmObserver.observe(video));
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) filmPreviews.forEach((video) => { if (!video.paused) playFilm(video); }); });
     document.querySelectorAll('[data-jewellery-video]').forEach((item) => item.addEventListener('click', () => {
       videoPreview.pause();
       videoPreview.src = item.dataset.jewelleryVideo;
