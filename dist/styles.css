@@ -938,10 +938,10 @@ img,video{-webkit-user-drag:none;user-select:none}
 .ki-clients-head h2 {
   margin: 0 !important;
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: clamp(53px, 7.1vw, 122px) !important;
-  font-weight: 500 !important;
-  line-height: 0.77 !important;
-  letter-spacing: -0.09em !important;
+  font-size: clamp(30px, 3.2vw, 48px) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.035em !important;
   text-transform: uppercase !important;
   color: #080808 !important;
 }
@@ -1008,12 +1008,15 @@ img,video{-webkit-user-drag:none;user-select:none}
 
 .ki-services h1 {
   margin: 0 !important;
-  padding-bottom: 16px !important;
+  padding-bottom: 14px !important;
   border-bottom: 1px solid var(--ki-line) !important;
-  font-size: clamp(53px, 7.1vw, 122px) !important;
-  font-weight: 500 !important;
-  line-height: 0.77 !important;
-  letter-spacing: -0.09em !important;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(30px, 3.2vw, 48px) !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.035em !important;
+  text-transform: uppercase !important;
+  color: #080808 !important;
 }
 
 .ki-services-grid {
@@ -1056,47 +1059,92 @@ img,video{-webkit-user-drag:none;user-select:none}
    ============================================================ */
 .ki-footer {
   position: relative !important;
+  display: block !important;
   min-height: auto !important;
-  padding: 70px 20px 30px !important;
+  height: auto !important;
+  padding: 80px clamp(14px, 2.5vw, 40px) 32px !important;
   background: #080808 !important;
   color: #ffffff !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 40px !important;
+  box-sizing: border-box !important;
+  margin-top: 0 !important;
+  clear: both !important;
+  z-index: 10 !important;
+}
+
+.ki-footer > div {
+  position: static !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  border-top: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  font: inherit !important;
+}
+
+.ki-footer > p {
+  position: static !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  max-width: none !important;
+}
+
+.ki-footer > small {
+  position: static !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
 }
 
 .ki-footer-top {
+  position: static !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: flex-end !important;
   flex-wrap: wrap !important;
   gap: 24px !important;
+  width: 100% !important;
+  padding-bottom: 36px !important;
 }
 
 .ki-footer-top h2 {
   margin: 0 !important;
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: clamp(54px, 7.5vw, 130px) !important;
-  font-weight: 500 !important;
-  line-height: 0.78 !important;
-  letter-spacing: -0.09em !important;
+  font-size: clamp(34px, 4.8vw, 72px) !important;
+  font-weight: 400 !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.045em !important;
+  text-transform: uppercase !important;
   color: #ffffff !important;
 }
 
 .ki-footer-top p {
   position: static !important;
-  max-width: 360px !important;
   margin: 0 !important;
+  max-width: 380px !important;
   font-family: 'Manrope', sans-serif !important;
-  font-size: clamp(13px, 1.1vw, 15px) !important;
+  font-size: clamp(12px, 1vw, 14px) !important;
   line-height: 1.45 !important;
-  color: #999995 !important;
+  color: #8a8a86 !important;
+  text-align: right !important;
 }
 
 .ki-footer-divider {
+  position: static !important;
   width: 100% !important;
   height: 1px !important;
-  background: #262624 !important;
+  background: #242422 !important;
+  margin: 0 0 28px 0 !important;
+  border: none !important;
 }
 
 .ki-footer-bottom {
@@ -1106,15 +1154,18 @@ img,video{-webkit-user-drag:none;user-select:none}
   align-items: center !important;
   flex-wrap: wrap !important;
   gap: 20px !important;
+  width: 100% !important;
   border-top: none !important;
-  padding: 0 !important;
+  padding: 0 0 24px !important;
 }
 
 .ki-footer-contact {
   display: flex !important;
-  gap: 24px !important;
+  align-items: center !important;
+  gap: 28px !important;
+  flex-wrap: wrap !important;
   font-family: 'Manrope', sans-serif !important;
-  font-size: 13px !important;
+  font-size: 12.5px !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.04em !important;
@@ -1132,9 +1183,11 @@ img,video{-webkit-user-drag:none;user-select:none}
 
 .ki-footer-nav {
   display: flex !important;
+  align-items: center !important;
   gap: 24px !important;
+  flex-wrap: wrap !important;
   font-family: 'Manrope', sans-serif !important;
-  font-size: 13px !important;
+  font-size: 12.5px !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.04em !important;
@@ -1147,7 +1200,7 @@ img,video{-webkit-user-drag:none;user-select:none}
 }
 
 .ki-footer-nav a:hover {
-  color: #888 !important;
+  color: #25d366 !important;
 }
 
 .ki-footer-wa {
@@ -1156,7 +1209,10 @@ img,video{-webkit-user-drag:none;user-select:none}
 }
 
 .ki-footer-legal {
-  padding-top: 6px !important;
+  position: static !important;
+  width: 100% !important;
+  padding-top: 4px !important;
+  border: none !important;
 }
 
 .ki-footer-legal small,
@@ -1164,7 +1220,7 @@ img,video{-webkit-user-drag:none;user-select:none}
   position: static !important;
   font-family: 'Manrope', sans-serif !important;
   font-size: 11px !important;
-  color: #666662 !important;
+  color: #555552 !important;
   display: block !important;
 }
 
@@ -1408,7 +1464,8 @@ img,video{-webkit-user-drag:none;user-select:none}
   }
   .ki-clients-head h1,
   .ki-clients-head h2 {
-    font-size: 46px !important;
+    font-size: 28px !important;
+    font-weight: 400 !important;
   }
   .ki-clients-strip {
     padding-top: 14px !important;
@@ -1429,7 +1486,8 @@ img,video{-webkit-user-drag:none;user-select:none}
     padding: 40px 14px 45px !important;
   }
   .ki-services h1 {
-    font-size: 46px !important;
+    font-size: 28px !important;
+    font-weight: 400 !important;
   }
   .ki-services-grid {
     grid-template-columns: 1fr !important;
@@ -1446,19 +1504,28 @@ img,video{-webkit-user-drag:none;user-select:none}
   }
 
   .ki-footer {
-    padding: 50px 14px 24px !important;
-    gap: 28px !important;
+    padding: 48px 14px 24px !important;
+  }
+  .ki-footer-top {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    padding-bottom: 24px !important;
   }
   .ki-footer-top h2 {
-    font-size: 48px !important;
+    font-size: 32px !important;
+    white-space: normal !important;
   }
   .ki-footer-top p {
     font-size: 13px !important;
+    text-align: left !important;
+    max-width: 100% !important;
   }
   .ki-footer-bottom {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 16px !important;
+    padding-bottom: 20px !important;
   }
   .ki-footer-contact,
   .ki-footer-nav {
