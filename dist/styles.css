@@ -1390,7 +1390,7 @@ body.is-page-exiting {
   }
 }
 
-/* Individual Square Tile in Moving Row */
+/* Individual Square Tile in Moving Row - Pure 2D Aperture Crossfade (Zero WebKit Stacking Glitches) */
 .ki-marquee-tile {
   position: relative !important;
   width: clamp(170px, 15vw, 240px) !important;
@@ -1398,69 +1398,41 @@ body.is-page-exiting {
   aspect-ratio: 1 / 1 !important;
   flex-shrink: 0 !important;
   overflow: hidden !important;
-  background: #111111 !important;
+  background: #ebebe8 !important;
   border-radius: 0 !important;
   cursor: pointer !important;
   text-decoration: none !important;
   display: block !important;
-  perspective: 800px !important;
 }
 
-/* 3D Card Flip Layer */
-.ki-marquee-card {
+.ki-m-img {
   position: absolute !important;
   inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  transform-style: preserve-3d !important;
-  -webkit-transform-style: preserve-3d !important;
-  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1) !important;
-  will-change: transform !important;
-}
-
-.ki-marquee-tile.is-flipped .ki-marquee-card {
-  transform: rotateY(180deg) !important;
-}
-
-.ki-marquee-tile.flip-v.is-flipped .ki-marquee-card {
-  transform: rotateX(180deg) !important;
-}
-
-.ki-marquee-face {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  backface-visibility: hidden !important;
-  -webkit-backface-visibility: hidden !important;
-  overflow: hidden !important;
-  background: #111111 !important;
-}
-
-.ki-m-face-front {
-  transform: rotateY(0deg) translateZ(1px) !important;
-}
-
-.ki-m-face-back {
-  transform: rotateY(180deg) translateZ(1px) !important;
-}
-
-.ki-marquee-tile.flip-v .ki-m-face-back {
-  transform: rotateX(180deg) translateZ(1px) !important;
-}
-
-.ki-marquee-face img {
-  display: block !important;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  display: block !important;
   border-radius: 0 !important;
   transform: translateZ(0);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform !important;
 }
 
-.ki-marquee-tile:hover .ki-marquee-face img {
-  transform: scale(1.05) !important;
+.ki-m-img.ki-m-active {
+  opacity: 1 !important;
+  z-index: 2 !important;
+  transform: scale(1) translateZ(0) !important;
+}
+
+.ki-m-img.ki-m-next {
+  opacity: 0 !important;
+  z-index: 1 !important;
+  transform: scale(1.04) translateZ(0) !important;
+  pointer-events: none !important;
+}
+
+.ki-marquee-tile:hover .ki-m-img.ki-m-active {
+  transform: scale(1.04) translateZ(0) !important;
 }
 
 .ki-marquee-tile::after {
@@ -2553,74 +2525,22 @@ a, button {
 }
 
 /* ============================================================
-   STAGED HOMEPAGE ENTRANCE CHOREOGRAPHY
+   PAGE CONTENT STABILITY & SECTION SPACING
    ============================================================ */
 .ki-shell {
-  opacity: 1;
-}
-
-/* Staged reveals on initial load */
-.ki-loader:not(.is-loaded) ~ .ki-shell .ki-brand-wrap {
-  opacity: 0 !important;
-  transform: translateY(-10px) !important;
-}
-
-.ki-loader:not(.is-loaded) ~ .ki-shell .ki-profile,
-.ki-loader:not(.is-loaded) ~ .ki-shell nav,
-.ki-loader:not(.is-loaded) ~ .ki-shell .ki-links,
-.ki-loader:not(.is-loaded) ~ .ki-shell .ki-header-divider {
-  opacity: 0 !important;
-}
-
-.ki-loader:not(.is-loaded) ~ .ki-shell .ki-intro,
-.ki-loader:not(.is-loaded) ~ .ki-shell .ki-work {
-  opacity: 0 !important;
-  transform: translateY(18px) !important;
-}
-
-.ki-shell.is-revealed .ki-brand-wrap {
   opacity: 1 !important;
-  transform: translateY(0) !important;
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: block !important;
 }
 
-.ki-shell.is-revealed .ki-header-divider {
+.ki-intro,
+.ki-work,
+.ki-services,
+.ki-frames-section,
+.ki-inquiry-cta,
+.ki-footer {
   opacity: 1 !important;
-  transition: opacity 0.6s ease 0.2s !important;
-}
-
-.ki-shell.is-revealed .ki-profile,
-.ki-shell.is-revealed nav,
-.ki-shell.is-revealed .ki-links {
-  opacity: 1 !important;
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.22s !important;
-}
-
-.ki-shell.is-revealed .ki-intro {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.38s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.38s !important;
-}
-
-.ki-shell.is-revealed .ki-work {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.5s !important;
-}
-
-/* ============================================================
-   SMOOTH SCROLL IN-VIEW REVEAL
-   ============================================================ */
-.ki-scroll-reveal {
-  opacity: 0 !important;
-  transform: translateY(22px) !important;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: transform, opacity !important;
-}
-
-.ki-scroll-reveal.is-in-view {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 /* Refined section spacing across homepage */
@@ -2630,6 +2550,14 @@ a, button {
 
 .ki-work {
   padding: 0 24px 85px !important;
+}
+
+.ki-services {
+  padding: 75px 24px 50px !important;
+}
+
+.ki-frames-section {
+  padding: 70px 0 80px !important;
 }
 
 .ki-inquiry-cta {
