@@ -31,14 +31,39 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <script>
+    const pageWipe = document.getElementById('page-wipe');
+    if (pageWipe) {
+      requestAnimationFrame(() => {
+        pageWipe.classList.add('is-wiping-out');
+        setTimeout(() => pageWipe.classList.remove('is-wiping-out'), 450);
+      });
+    }
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && (href.startsWith('/') || href.startsWith('index.html')) && !href.startsWith('#') && !link.hasAttribute('target') && !link.hasAttribute('download')) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (pageWipe) {
+            pageWipe.classList.add('is-wiping-in');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          } else {
+            window.location.href = href;
+          }
+        });
+      }
+    });
+
     if (sessionStorage.getItem('kriyon_intro_seen')) {
       document.documentElement.classList.add('intro-seen');
     }
   </script>
-  <link rel="stylesheet" href="/styles.css?v=77" />
+  <link rel="stylesheet" href="/styles.css?v=78" />
   <script defer src="/media-guard.js?v=2"></script>
 </head>
 <body class="contact-page" id="top">
+  <div class="ki-page-wipe" id="page-wipe" aria-hidden="true"></div>
     <div class="ki-loader" id="ki-loader" aria-hidden="true">
     <div class="ki-loader-stage">
       <!-- Left diagonal frame arrangement -->

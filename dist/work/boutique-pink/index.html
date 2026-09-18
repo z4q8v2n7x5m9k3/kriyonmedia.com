@@ -1,1 +1,27 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=/work/darzie-couture/"><link rel="canonical" href="/work/darzie-couture/"><title>Darzie Couture — Kriyon Media</title></head><body><p><a href="/work/darzie-couture/">View the Darzie Couture project</a></p></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=/work/darzie-couture/"><link rel="canonical" href="/work/darzie-couture/"><title>Darzie Couture — Kriyon Media</title></head><body>
+  <div class="ki-page-wipe" id="page-wipe" aria-hidden="true"></div><p><a href="/work/darzie-couture/">View the Darzie Couture project</a></p><script>
+    const pageWipe = document.getElementById('page-wipe');
+    if (pageWipe) {
+      requestAnimationFrame(() => {
+        pageWipe.classList.add('is-wiping-out');
+        setTimeout(() => pageWipe.classList.remove('is-wiping-out'), 450);
+      });
+    }
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && (href.startsWith('/') || href.startsWith('index.html')) && !href.startsWith('#') && !link.hasAttribute('target') && !link.hasAttribute('download')) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (pageWipe) {
+            pageWipe.classList.add('is-wiping-in');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          } else {
+            window.location.href = href;
+          }
+        });
+      }
+    });
+</script>
+</body></html>

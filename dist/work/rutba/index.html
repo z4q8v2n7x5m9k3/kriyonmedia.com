@@ -30,10 +30,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=77" />
+  <link rel="stylesheet" href="/styles.css?v=78" />
   <script defer src="/media-guard.js"></script>
 </head>
 <body class="piece-page ruby-reverie-page rutba-page" id="top">
+  <div class="ki-page-wipe" id="page-wipe" aria-hidden="true"></div>
   <main>
     <div class="piece-top-bar">
       <a class="piece-back-btn" href="/work/">
@@ -93,6 +94,30 @@
   </footer>
   <dialog class="piece-lightbox" aria-label="Image preview"><button class="piece-close" type="button" aria-label="Close image">×</button><img alt="" /></dialog>
   <script>
+    const pageWipe = document.getElementById('page-wipe');
+    if (pageWipe) {
+      requestAnimationFrame(() => {
+        pageWipe.classList.add('is-wiping-out');
+        setTimeout(() => pageWipe.classList.remove('is-wiping-out'), 450);
+      });
+    }
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && (href.startsWith('/') || href.startsWith('index.html')) && !href.startsWith('#') && !link.hasAttribute('target') && !link.hasAttribute('download')) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (pageWipe) {
+            pageWipe.classList.add('is-wiping-in');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 300);
+          } else {
+            window.location.href = href;
+          }
+        });
+      }
+    });
+
     const dialog = document.querySelector('.piece-lightbox'); const preview = dialog.querySelector('img');
     document.querySelectorAll('[data-rutba-image]').forEach((button) => button.addEventListener('click', () => { preview.src = button.dataset.rutbaImage; preview.alt = button.querySelector('img').alt; dialog.showModal(); }));
     dialog.querySelector('.piece-close').addEventListener('click', () => dialog.close()); dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
