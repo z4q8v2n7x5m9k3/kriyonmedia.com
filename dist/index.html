@@ -36,7 +36,7 @@
       document.documentElement.classList.add('intro-seen');
     }
   </script>
-  <link rel="stylesheet" href="/styles.css?v=70" />
+  <link rel="stylesheet" href="/styles.css?v=74" />
   <script defer src="/media-guard.js?v=2"></script>
 </head>
 <body class="studio-home kriyon-index" id="top">
@@ -71,8 +71,8 @@
       </div>
       <div class="ki-profile">
         <div class="ki-profile-meta">
-          <time id="local-time" aria-label="Current Jammu time"></time>
-          <span class="ki-location">Based in Jammu</span>
+          <time id="local-time" aria-label="Current India time"></time>
+          <span class="ki-location">Based in India</span>
         </div>
         <img src="/assets/kriyon-logo.png" alt="Kriyon Media studio logo" />
       </div>
@@ -228,7 +228,7 @@
       }
     }
     document.querySelector('.ki-menu-toggle')?.addEventListener('click',e=>{const h=document.querySelector('.ki-header'),b=e.currentTarget,o=h.classList.toggle('is-menu-open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close navigation':'Open navigation');b.textContent=o?'×':'+'});
-    function updateJammuTime() {
+    function updateIndiaTime() {
       const el = document.getElementById('local-time');
       if (!el) return;
       const now = new Date();
@@ -240,8 +240,8 @@
         hour12: true
       }).toLowerCase();
     }
-    updateJammuTime();
-    setInterval(updateJammuTime, 1000);
+    updateIndiaTime();
+    setInterval(updateIndiaTime, 1000);
   </script>
   <header class="studio-header">
     <a class="studio-logo" href="#top">Kriyon Media</a>
@@ -301,7 +301,7 @@
   <footer class="studio-footer">
     <div class="studio-footer-brand"><a href="#top">Kriyon Media</a><p>Creative Production Studio</p></div>
     <div><h3>Work</h3><a href="/work/">Portfolio</a><a href="#selected-work">Campaigns</a><a href="/work/clothing/">Fashion</a><a href="/work/jewellery/">Product</a></div>
-    <div><h3>Contact</h3><a href="mailto:kriyon@repixels.tech">Email</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+    <div><h3>Contact</h3><a href="mailto:kriyon@repixelx.tech">Email</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
     <p class="studio-footer-line">India · Working with brands everywhere.</p><p class="studio-copyright">© 2026 Kriyon Media</p>
   </footer>
 </body>
