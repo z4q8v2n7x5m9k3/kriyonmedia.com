@@ -31,39 +31,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <script>
-    const pageWipe = document.getElementById('page-wipe');
-    if (pageWipe) {
-      requestAnimationFrame(() => {
-        pageWipe.classList.add('is-wiping-out');
-        setTimeout(() => pageWipe.classList.remove('is-wiping-out'), 450);
-      });
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs) {
+        for (var i = 0; i < regs.length; i++) regs[i].unregister();
+      }).catch(function() {});
     }
-    document.querySelectorAll('a[href]').forEach(link => {
-      const href = link.getAttribute('href');
-      if (href && (href.startsWith('/') || href.startsWith('index.html')) && !href.startsWith('#') && !link.hasAttribute('target') && !link.hasAttribute('download')) {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          if (pageWipe) {
-            pageWipe.classList.add('is-wiping-in');
-            setTimeout(() => {
-              window.location.href = href;
-            }, 300);
-          } else {
-            window.location.href = href;
-          }
-        });
+    try {
+      if (sessionStorage.getItem('kriyon_intro_seen') || window.location.search.includes('noloader')) {
+        document.documentElement.classList.add('intro-seen');
       }
-    });
-
-    if (sessionStorage.getItem('kriyon_intro_seen')) {
-      document.documentElement.classList.add('intro-seen');
-    }
+    } catch(e) {}
   </script>
-  <link rel="stylesheet" href="/styles.css?v=79" />
-  <script defer src="/media-guard.js?v=2"></script>
+  <style>
+    @keyframes ki-loader-force-exit {
+      0%, 82% { opacity: 1; pointer-events: all; }
+      100% { opacity: 0; pointer-events: none; visibility: hidden; }
+    }
+    #ki-loader {
+      animation: ki-loader-force-exit 1.6s ease 0.8s forwards;
+    }
+    .intro-seen #ki-loader,
+    #ki-loader.is-loaded {
+      display: none !important;
+      animation: none !important;
+      pointer-events: none !important;
+    }
+  </style>
+  <link rel="stylesheet" href="/styles.css?v=81" />
+  <script defer src="/media-guard.js?v=3"></script>
 </head>
 <body class="contact-page" id="top">
-  <div class="ki-page-wipe" id="page-wipe" aria-hidden="true"></div>
     <div class="ki-loader" id="ki-loader" aria-hidden="true">
     <div class="ki-loader-stage">
       <!-- Left diagonal frame arrangement -->
@@ -198,13 +195,24 @@
   <script>
     const loader = document.getElementById('ki-loader');
     if (loader) {
-      if (sessionStorage.getItem('kriyon_intro_seen')) {
-        loader.classList.add('is-loaded');
+      let isIntroSeen = false;
+      try { isIntroSeen = !!sessionStorage.getItem('kriyon_intro_seen'); } catch(e) {}
+
+      function dismissLoader() {
+        if (!loader.classList.contains('is-loaded')) {
+          loader.classList.add('is-loaded');
+          try { sessionStorage.setItem('kriyon_intro_seen', '1'); } catch(e) {}
+          setTimeout(() => { if (loader.parentNode) loader.remove(); }, 500);
+        }
+      }
+
+      if (isIntroSeen || window.location.search.includes('noloader')) {
+        dismissLoader();
       } else {
         const counterEl = document.getElementById('loader-counter');
         const barEl = document.getElementById('loader-bar');
         const startTime = performance.now();
-        const duration = 2400;
+        const duration = 1000;
 
         function updateLoader(currentTime) {
           const elapsed = currentTime - startTime;
@@ -218,13 +226,12 @@
           } else {
             if (counterEl) counterEl.textContent = '100';
             if (barEl) barEl.style.width = '100%';
-            setTimeout(() => {
-              loader.classList.add('is-loaded');
-              sessionStorage.setItem('kriyon_intro_seen', '1');
-            }, 260);
+            setTimeout(dismissLoader, 160);
           }
         }
         requestAnimationFrame(updateLoader);
+        setTimeout(dismissLoader, 1300);
+        window.addEventListener('load', () => setTimeout(dismissLoader, 200), { once: true });
       }
     }
     

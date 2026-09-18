@@ -32,15 +32,43 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <script>
-    if (sessionStorage.getItem('kriyon_intro_seen')) {
-      document.documentElement.classList.add('intro-seen');
+    // 1. Immediately unregister any stale service workers from localhost / preview domains
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs) {
+        for (var i = 0; i < regs.length; i++) regs[i].unregister();
+      }).catch(function() {});
     }
+    // 2. Safe sessionStorage check (never crashes in private mode)
+    try {
+      if (sessionStorage.getItem('kriyon_intro_seen') || window.location.search.includes('noloader')) {
+        document.documentElement.classList.add('intro-seen');
+      }
+    } catch(e) {}
   </script>
-  <link rel="stylesheet" href="/styles.css?v=79" />
-  <script defer src="/media-guard.js?v=2"></script>
+  <style>
+    /* CSS Failsafe: Guarantees page content is ALWAYS visible, even if JS animation or RAF hangs */
+    @keyframes ki-loader-force-exit {
+      0%, 82% { opacity: 1; pointer-events: all; }
+      100% { opacity: 0; pointer-events: none; visibility: hidden; }
+    }
+    #ki-loader {
+      animation: ki-loader-force-exit 1.6s ease 0.8s forwards;
+    }
+    .intro-seen #ki-loader,
+    #ki-loader.is-loaded {
+      display: none !important;
+      animation: none !important;
+      pointer-events: none !important;
+    }
+    .ki-page-wipe {
+      display: none !important;
+      pointer-events: none !important;
+    }
+  </style>
+  <link rel="stylesheet" href="/styles.css?v=85" />
+  <script defer src="/media-guard.js?v=3"></script>
 </head>
 <body class="studio-home kriyon-index" id="top">
-  <div class="ki-page-wipe" id="page-wipe" aria-hidden="true"></div>
     <div class="ki-loader" id="ki-loader" aria-hidden="true">
     <div class="ki-loader-stage">
       <!-- Left diagonal frame arrangement -->
@@ -102,7 +130,7 @@
           <span class="ki-venture">A creative venture by Kriyon Group Pvt. Ltd.</span>
         </div>
         <div class="ki-profile-visual">
-          <img class="ki-top-visual-img" src="/assets/kriyon-top-visual.jpg" alt="Kriyon Media Creative Production Studio" />
+          <img class="ki-top-visual-img" src="/assets/kriyon-top-visual.jpg" alt="Kriyon Media Creative Production Studio" width="96" height="96" decoding="async" />
           <span class="ki-top-visual-sheen" aria-hidden="true"></span>
         </div>
       </div>
@@ -121,12 +149,12 @@
     <main>
       <section class="ki-intro" id="info"><div><p>Kriyon Media is a creative production studio building distinctive visual worlds for brands, products and campaigns.</p></div><p>Ideas, produced with intent. <span>© 2026</span></p></section>
       <section class="ki-work" aria-label="Featured work">
-        <a class="ki-work-card" href="/work/darzie-couture/"><img src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture campaign" /><p><b>DARZIE COUTURE</b> <span>Pink Couture Campaign</span></p></a>
-        <a class="ki-work-card" href="/work/rutba/"><img src="/assets/pixelone/pixelone-image-155.png" alt="Rutba campaign" /><p><b>RUTBA</b> <span>Emerald Heritage Collection</span></p></a>
-        <a class="ki-work-card" href="/work/red-jewellery/"><img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie campaign" /><p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign</span></p></a>
-        <a class="ki-work-card" href="/work/jewellery/"><img src="/assets/pixelone/pixelone-image-113.png" alt="Jewellery Portfolio" /><p><b>JEWELLERY SHOWCASE</b> <span>Jewellery Portfolio</span></p></a>
-        <a class="ki-work-card" href="/work/clothing/"><img src="/assets/pixelone/pixelone-image-014.png" alt="Mehr Couture olive campaign" /><p><b>MEHR COUTURE</b> <span>Olive Edit</span></p></a>
-        <a class="ki-work-card" href="/work/"><img src="/assets/pixelone/pixelone-image-092.png" alt="Curated archive collection" /><p><b>CURATED ARCHIVE</b> <span>View All Projects ↗</span></p></a>
+        <a class="ki-work-card" href="/work/darzie-couture/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture campaign" width="800" height="800" decoding="async" /></div><p><b>DARZIE COUTURE</b> <span>Pink Couture Campaign</span></p></a>
+        <a class="ki-work-card" href="/work/rutba/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-155.png" alt="Rutba campaign" width="800" height="800" decoding="async" /></div><p><b>RUTBA</b> <span>Emerald Heritage Collection</span></p></a>
+        <a class="ki-work-card" href="/work/red-jewellery/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie campaign" width="800" height="800" decoding="async" /></div><p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign</span></p></a>
+        <a class="ki-work-card" href="/work/jewellery/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-113.png" alt="Jewellery Portfolio" width="800" height="800" decoding="async" /></div><p><b>JEWELLERY SHOWCASE</b> <span>Jewellery Portfolio</span></p></a>
+        <a class="ki-work-card" href="/work/clothing/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-014.png" alt="Mehr Couture olive campaign" width="800" height="800" decoding="async" /></div><p><b>MEHR COUTURE</b> <span>Olive Edit</span></p></a>
+        <a class="ki-work-card ki-view-all-tile" href="/work/" aria-label="View all projects"><div class="ki-work-thumb ki-view-all-box"><div class="ki-view-all-content"><span class="ki-view-all-sub">ARCHIVE · 2026</span><h3 class="ki-view-all-title">VIEW ALL<br />PROJECTS ↗</h3></div></div><p class="ki-view-all-spacer" aria-hidden="true">&nbsp;</p></a>
       </section>
       <section class="ki-services" id="services">
         <div class="ki-services-inner">
@@ -431,179 +459,183 @@
     </footer>
   </div>
   <script>
-    const loader = document.getElementById('ki-loader');
-    const pageWipe = document.getElementById('page-wipe');
-
-    // Page Shutter Wipe on enter
-    if (pageWipe) {
-      requestAnimationFrame(() => {
-        pageWipe.classList.add('is-wiping-out');
-        setTimeout(() => pageWipe.classList.remove('is-wiping-out'), 450);
-      });
-    }
-
-    // Intercept internal navigation for smooth shutter wipe
-    document.querySelectorAll('a[href]').forEach(link => {
-      const href = link.getAttribute('href');
-      if (href && (href.startsWith('/') || href.startsWith('index.html')) && !href.startsWith('#') && !link.hasAttribute('target') && !link.hasAttribute('download')) {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          if (pageWipe) {
-            pageWipe.classList.add('is-wiping-in');
-            setTimeout(() => {
-              window.location.href = href;
-            }, 300);
-          } else {
-            window.location.href = href;
-          }
-        });
-      }
-    });
-
-    // Loading Screen
-    if (loader) {
-      if (sessionStorage.getItem('kriyon_intro_seen')) {
-        loader.classList.add('is-loaded');
-      } else {
-        const counterEl = document.getElementById('loader-counter');
-        const barEl = document.getElementById('loader-bar');
-        const startTime = performance.now();
-        const duration = 2200;
-
-        function updateLoader(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const ease = 1 - Math.pow(1 - progress, 2.5);
-          const count = Math.floor(ease * 100);
-          if (counterEl) counterEl.textContent = count;
-          if (barEl) barEl.style.width = (ease * 100).toFixed(1) + '%';
-          if (progress < 1) {
-            requestAnimationFrame(updateLoader);
-          } else {
-            if (counterEl) counterEl.textContent = '100';
-            if (barEl) barEl.style.width = '100%';
-            setTimeout(() => {
-              loader.classList.add('is-loaded');
-              sessionStorage.setItem('kriyon_intro_seen', '1');
-            }, 240);
-          }
-        }
-        requestAnimationFrame(updateLoader);
-      }
-    }
-
-    // Header toggle
-    document.querySelector('.ki-menu-toggle')?.addEventListener('click',e=>{const h=document.querySelector('.ki-header'),b=e.currentTarget,o=h.classList.toggle('is-menu-open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close navigation':'Open navigation');b.textContent=o?'×':'+'});
-
-    // India time
-    function updateIndiaTime() {
-      const el = document.getElementById('local-time');
-      if (!el) return;
-      const now = new Date();
-      el.textContent = now.toLocaleTimeString('en-US', {
-        timeZone: 'Asia/Kolkata',
-        hour: 'numeric',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true
-      }).toLowerCase();
-    }
-    updateIndiaTime();
-    setInterval(updateIndiaTime, 1000);
-
-    // Selected Frames Two-Row Moving Marquee Dynamic Image Flipper
-    (function initSelectedFramesMarquee() {
-      const wall = document.querySelector('.ki-marquee-wall');
-      if (!wall) return;
-      const tiles = Array.from(wall.querySelectorAll('.ki-marquee-tile'));
-      if (!tiles.length) return;
-
-      const state = tiles.map(tile => {
-        let pool = [];
+    (function() {
+      // 1. Rock-Solid Loading Screen Lifecycle
+      const loader = document.getElementById('ki-loader');
+      if (loader) {
+        let isIntroSeen = false;
         try {
-          pool = JSON.parse(tile.dataset.pool || '[]');
+          isIntroSeen = !!sessionStorage.getItem('kriyon_intro_seen');
         } catch(e) {}
-        const activeImg = tile.querySelector('.ki-m-img.ki-m-active');
-        const nextImg = tile.querySelector('.ki-m-img.ki-m-next');
-        return {
-          tile,
-          activeImg,
-          nextImg,
-          pool,
-          currentIndex: 0,
-          isBusy: false
-        };
-      });
 
-      function flipTile(item) {
-        if (item.isBusy || item.pool.length <= 1) return;
-        item.isBusy = true;
-        item.currentIndex = (item.currentIndex + 1) % item.pool.length;
-        const nextSrc = item.pool[item.currentIndex];
-
-        const activeImg = item.tile.querySelector('.ki-m-img.ki-m-active');
-        const nextImg = item.tile.querySelector('.ki-m-img.ki-m-next');
-        if (!activeImg || !nextImg) {
-          item.isBusy = false;
-          return;
-        }
-
-        nextImg.onload = () => {
-          nextImg.classList.remove('ki-m-next');
-          nextImg.classList.add('ki-m-active');
-          activeImg.classList.remove('ki-m-active');
-          activeImg.classList.add('ki-m-next');
-          setTimeout(() => {
-            item.isBusy = false;
-          }, 520);
-        };
-        nextImg.src = nextSrc;
-      }
-
-      // Hover interaction to flip tile
-      state.forEach(item => {
-        item.tile.addEventListener('mouseenter', () => {
-          if (Math.random() > 0.3) flipTile(item);
-        });
-      });
-
-      let timer = null;
-      let recentlyFlipped = new Set();
-
-      function triggerAutomatedFlip() {
-        const available = state.filter(s => !s.isBusy && !recentlyFlipped.has(s));
-        if (!available.length) {
-          recentlyFlipped.clear();
-          return;
-        }
-
-        // Pick 2 random tiles across moving rows
-        const count = 2;
-        for (let i = 0; i < count && available.length > 0; i++) {
-          const idx = Math.floor(Math.random() * available.length);
-          const chosen = available.splice(idx, 1)[0];
-          recentlyFlipped.add(chosen);
-          if (recentlyFlipped.size > 12) {
-            const first = recentlyFlipped.values().next().value;
-            recentlyFlipped.delete(first);
+        function dismissLoader() {
+          if (!loader.classList.contains('is-loaded')) {
+            loader.classList.add('is-loaded');
+            try { sessionStorage.setItem('kriyon_intro_seen', '1'); } catch(e) {}
+            setTimeout(() => {
+              if (loader.parentNode) loader.remove();
+            }, 500);
           }
-          setTimeout(() => flipTile(chosen), i * 140);
+        }
+
+        if (isIntroSeen || window.location.search.includes('noloader')) {
+          dismissLoader();
+        } else {
+          const counterEl = document.getElementById('loader-counter');
+          const barEl = document.getElementById('loader-bar');
+          const startTime = performance.now();
+          const duration = 1050; // Refined 1.05s curation reveal
+
+          function updateLoader(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const ease = 1 - Math.pow(1 - progress, 2.5);
+            const count = Math.floor(ease * 100);
+            if (counterEl) counterEl.textContent = count;
+            if (barEl) barEl.style.width = (ease * 100).toFixed(1) + '%';
+            if (progress < 1) {
+              requestAnimationFrame(updateLoader);
+            } else {
+              if (counterEl) counterEl.textContent = '100';
+              if (barEl) barEl.style.width = '100%';
+              setTimeout(dismissLoader, 160);
+            }
+          }
+          requestAnimationFrame(updateLoader);
+
+          // Multi-layer fail-safes guarantee content is NEVER trapped behind loader
+          setTimeout(dismissLoader, 1400);
+          window.addEventListener('load', () => setTimeout(dismissLoader, 200), { once: true });
         }
       }
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            if (!timer) timer = setInterval(triggerAutomatedFlip, 1100);
-          } else {
-            if (timer) { clearInterval(timer); timer = null; }
-          }
-        });
-      }, { threshold: 0.05 });
+      // 2. Mobile Navigation Toggle
+      document.querySelector('.ki-menu-toggle')?.addEventListener('click', e => {
+        const h = document.querySelector('.ki-header');
+        const b = e.currentTarget;
+        const o = h.classList.toggle('is-menu-open');
+        b.setAttribute('aria-expanded', o);
+        b.setAttribute('aria-label', o ? 'Close navigation' : 'Open navigation');
+        b.textContent = o ? '×' : '+';
+      });
 
-      const section = document.querySelector('.ki-frames-section');
-      if (section) observer.observe(section);
-    })();</script>
+      // 3. Indian Standard Time Clock (Singleton Interval)
+      function updateIndiaTime() {
+        const el = document.getElementById('local-time');
+        if (!el) return;
+        const now = new Date();
+        el.textContent = now.toLocaleTimeString('en-US', {
+          timeZone: 'Asia/Kolkata',
+          hour: 'numeric',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        }).toLowerCase();
+      }
+      updateIndiaTime();
+      if (window.__kriyon_time_interval) clearInterval(window.__kriyon_time_interval);
+      window.__kriyon_time_interval = setInterval(updateIndiaTime, 1000);
+
+      // 4. Selected Frames Moving Marquee Lifecycle & Cleanup
+      if (!window.__kriyon_marquee_initialized) {
+        window.__kriyon_marquee_initialized = true;
+
+        const wall = document.querySelector('.ki-marquee-wall');
+        if (wall) {
+          const tiles = Array.from(wall.querySelectorAll('.ki-marquee-tile'));
+          if (tiles.length) {
+            const state = tiles.map(tile => {
+              let pool = [];
+              try { pool = JSON.parse(tile.dataset.pool || '[]'); } catch(e) {}
+              const activeImg = tile.querySelector('.ki-m-img.ki-m-active');
+              const nextImg = tile.querySelector('.ki-m-img.ki-m-next');
+              return { tile, activeImg, nextImg, pool, currentIndex: 0, isBusy: false };
+            });
+
+            function flipTile(item) {
+              if (item.isBusy || item.pool.length <= 1) return;
+              item.isBusy = true;
+              item.currentIndex = (item.currentIndex + 1) % item.pool.length;
+              const nextSrc = item.pool[item.currentIndex];
+
+              const activeImg = item.tile.querySelector('.ki-m-img.ki-m-active');
+              const nextImg = item.tile.querySelector('.ki-m-img.ki-m-next');
+              if (!activeImg || !nextImg) {
+                item.isBusy = false;
+                return;
+              }
+
+              const preloader = new Image();
+              function showNext() {
+                nextImg.src = nextSrc;
+                requestAnimationFrame(() => {
+                  nextImg.classList.remove('ki-m-next');
+                  nextImg.classList.add('ki-m-active');
+                  activeImg.classList.remove('ki-m-active');
+                  activeImg.classList.add('ki-m-next');
+                  setTimeout(() => { item.isBusy = false; }, 650);
+                });
+              }
+
+              preloader.onload = () => {
+                if (typeof preloader.decode === 'function') {
+                  preloader.decode().then(showNext).catch(showNext);
+                } else {
+                  showNext();
+                }
+              };
+              preloader.onerror = () => { item.isBusy = false; };
+              preloader.src = nextSrc;
+            }
+
+            state.forEach(item => {
+              item.tile.addEventListener('mouseenter', () => flipTile(item));
+            });
+
+            let flipTimer = null;
+            let recentlyFlipped = new Set();
+
+            function triggerAutomatedFlip() {
+              if (document.visibilityState === 'hidden') return;
+              const available = state.filter(s => !s.isBusy && !recentlyFlipped.has(s));
+              if (!available.length) {
+                recentlyFlipped.clear();
+                return;
+              }
+              const idx = Math.floor(Math.random() * available.length);
+              const chosen = available[idx];
+              recentlyFlipped.add(chosen);
+              if (recentlyFlipped.size > 8) {
+                const first = recentlyFlipped.values().next().value;
+                recentlyFlipped.delete(first);
+              }
+              flipTile(chosen);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  if (!flipTimer) flipTimer = setInterval(triggerAutomatedFlip, 3800);
+                } else {
+                  if (flipTimer) { clearInterval(flipTimer); flipTimer = null; }
+                }
+              });
+            }, { threshold: 0.05 });
+
+            const section = document.querySelector('.ki-frames-section');
+            if (section) observer.observe(section);
+
+            document.addEventListener('visibilitychange', () => {
+              if (document.visibilityState === 'hidden' && flipTimer) {
+                clearInterval(flipTimer);
+                flipTimer = null;
+              }
+            });
+          }
+        }
+      }
+    })();
+  </script>
   <header class="studio-header">
     <a class="studio-logo" href="#top">Kriyon Media</a>
     <nav aria-label="Primary navigation"><a href="/work/">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a class="studio-book" href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20book%20a%2015-minute%20meeting." target="_blank" rel="noreferrer">Book a Meeting ↗</a></nav>
