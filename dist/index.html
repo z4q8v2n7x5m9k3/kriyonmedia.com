@@ -36,32 +36,56 @@
       document.documentElement.classList.add('intro-seen');
     }
   </script>
-  <link rel="stylesheet" href="/styles.css?v=74" />
+  <link rel="stylesheet" href="/styles.css?v=75" />
   <script defer src="/media-guard.js?v=2"></script>
 </head>
 <body class="studio-home kriyon-index" id="top">
-  <div class="ki-loader" id="ki-loader" aria-hidden="true">
-    <div class="ki-loader-curtain ki-curtain-top"></div>
-    <div class="ki-loader-curtain ki-curtain-bottom"></div>
-    <div class="ki-loader-grid">
-      <div class="ki-loader-tile" style="--d:0.8s"><img src="/assets/pixelone/pixelone-image-023.webp" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:0.15s"><img src="/assets/pixelone/pixelone-image-155.png" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:1.4s"><img src="/assets/pixelone/pixelone-image-131.png" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:0.5s"><img src="/assets/pixelone/pixelone-image-113.png" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:1.9s"><img src="/assets/pixelone/pixelone-image-014.png" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:1.2s"><img src="/assets/pixelone/ruby-couture-editorial.jpg" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:0.3s"><img src="/assets/pixelone/pixelone-image-001.png" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:0.05s"><img src="/assets/pixelone/pixelone-image-029.webp" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:1.6s"><img src="/assets/pixelone/pixelone-image-091.png" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:0.7s"><img src="/assets/pixelone/pixelone-image-040.webp" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:0.4s"><img src="/assets/pixelone/pixelone-image-054.webp" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:1.8s"><img src="/assets/pixelone/pixelone-image-082.png" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:0.2s"><img src="/assets/pixelone/pixelone-image-107.png" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:1.0s"><img src="/assets/pixelone/pixelone-image-153.png" alt="" /></div>
-      <div class="ki-loader-tile" style="--d:1.5s"><img src="/assets/pixelone/pixelone-image-034.webp" alt="" /></div>
+    <div class="ki-loader" id="ki-loader" aria-hidden="true">
+    <div class="ki-loader-stage">
+      <!-- Left diagonal frame arrangement -->
+      <div class="ki-loader-tile ki-tile-pos-1" style="--dir: -32px; --d: 0.08s;">
+        <img src="/assets/pixelone/pixelone-image-023.webp" alt="" />
+      </div>
+      <div class="ki-loader-tile ki-tile-pos-2" style="--dir: -24px; --d: 0.28s;">
+        <img src="/assets/pixelone/pixelone-image-029.webp" alt="" />
+      </div>
+      <div class="ki-loader-tile ki-tile-pos-3" style="--dir: -30px; --d: 0.16s;">
+        <img src="/assets/pixelone/pixelone-image-040.webp" alt="" />
+      </div>
+      <div class="ki-loader-tile ki-tile-pos-4" style="--dir: -22px; --d: 0.36s;">
+        <img src="/assets/pixelone/pixelone-image-054.webp" alt="" />
+      </div>
+      <div class="ki-loader-tile ki-tile-pos-5" style="--dir: -28px; --d: 0.22s;">
+        <img src="/assets/pixelone/pixelone-image-034.webp" alt="" />
+      </div>
+
+      <!-- Right diagonal frame arrangement -->
+      <div class="ki-loader-tile ki-tile-pos-6" style="--dir: 32px; --d: 0.12s;">
+        <img src="/assets/pixelone/pixelone-image-064.webp" alt="" />
+      </div>
+      <div class="ki-loader-tile ki-tile-pos-7" style="--dir: 24px; --d: 0.32s;">
+        <img src="/assets/pixelone/pixelone-image-043.webp" alt="" />
+      </div>
+      <div class="ki-loader-tile ki-tile-pos-8" style="--dir: 30px; --d: 0.20s;">
+        <img src="/assets/pixelone/pixelone-image-048.webp" alt="" />
+      </div>
+      <div class="ki-loader-tile ki-tile-pos-9" style="--dir: 22px; --d: 0.40s;">
+        <img src="/assets/pixelone/pixelone-image-026.webp" alt="" />
+      </div>
+      <div class="ki-loader-tile ki-tile-pos-10" style="--dir: 28px; --d: 0.26s;">
+        <img src="/assets/pixelone/pixelone-image-030.webp" alt="" />
+      </div>
     </div>
-    <div class="ki-loader-core">
-      <div class="ki-loader-counter" id="loader-counter">0</div>
+
+    <div class="ki-loader-center">
+      <h1 class="ki-loader-brand">KRIYON MEDIA</h1>
+      <div class="ki-loader-status">Curating visual worlds…</div>
+      <div class="ki-loader-progress-wrap">
+        <div class="ki-loader-track">
+          <div class="ki-loader-bar" id="loader-bar"></div>
+        </div>
+        <div class="ki-loader-pct"><span id="loader-counter">0</span>%</div>
+      </div>
     </div>
   </div>
   <div class="ki-shell">
@@ -104,13 +128,13 @@
             <h1>SERVICES.</h1>
           </div>
           <div class="ki-services-grid">
-            <p>From concept to final frame, we create campaign-ready visuals built to work across digital, social, e-commerce and advertising.</p>
+            <p>From concept to final delivery, we create visual campaigns built for digital, social, e-commerce and advertising.</p>
             <div class="ki-service-col">
               <h2>Creative Direction</h2>
               <ul>
                 <li>Campaign Concepts</li>
                 <li>Art Direction</li>
-                <li>Visual Identity</li>
+                <li>Visual Development</li>
               </ul>
             </div>
             <div class="ki-service-col">
@@ -126,52 +150,108 @@
               <ul>
                 <li>Social Campaigns</li>
                 <li>Motion &amp; Films</li>
-                <li>Digital &amp; E-commerce</li>
+                <li>E-commerce Assets</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-    <section class="ki-clients-section" id="our-work" aria-label="Our work and campaign glimpses">
-      <div class="ki-clients-head">
-        <h1>OUR WORK.</h1>
-      </div>
-      <div class="ki-clients-strip">
-        <div class="ki-clients-track">
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-112.png" alt="Gold and purple gemstone ring close-up" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-153.png" alt="Rutba zardozi embroidery craftsmanship detail" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-082.png" alt="Blue gemstone jewellery editorial portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-034.webp" alt="Pink couture embroidery craftsmanship detail" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-110.png" alt="Emerald necklace on velvet display" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-086.png" alt="Yellow sari campaign portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-107.png" alt="Emerald diamond jewellery editorial portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-151.png" alt="Ruby social campaign creative" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-077.png" alt="Emerald necklace editorial portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-111.png" alt="Emerald pendant on black volcanic stone" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-029.webp" alt="Darzie couture model portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-091.png" alt="Warm gold diamond jewellery portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-112.png" alt="Gold and purple gemstone ring close-up" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-153.png" alt="Rutba zardozi embroidery craftsmanship detail" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-082.png" alt="Blue gemstone jewellery editorial portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-034.webp" alt="Pink couture embroidery craftsmanship detail" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-110.png" alt="Emerald necklace on velvet display" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-086.png" alt="Yellow sari campaign portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-107.png" alt="Emerald diamond jewellery editorial portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-151.png" alt="Ruby social campaign creative" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-077.png" alt="Emerald necklace editorial portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-111.png" alt="Emerald pendant on black volcanic stone" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-029.webp" alt="Darzie couture model portrait" /></div>
-          <div class="ki-client-card"><img src="/assets/pixelone/pixelone-image-091.png" alt="Warm gold diamond jewellery portrait" /></div>
+      <section class="ki-frames-section" id="frames" aria-label="Selected frames and production wall">
+        <div class="ki-frames-inner">
+          <div class="ki-frames-head">
+            <h1>SELECTED FRAMES.</h1>
+          </div>
+          <div class="ki-frames-grid">
+            <!-- Frame 1: Tall Portrait (3/4) -->
+            <div class="ki-frame-slot ki-frame-portrait-tall" data-pool='["/assets/pixelone/pixelone-image-023.webp", "/assets/pixelone/pixelone-image-022.webp", "/assets/pixelone/pixelone-image-154.png"]'>
+              <img class="ki-frame-img ki-frame-active" src="/assets/pixelone/pixelone-image-023.webp" alt="Fashion campaign editorial portrait" loading="lazy" />
+              <img class="ki-frame-img ki-frame-next" src="" alt="" aria-hidden="true" />
+            </div>
+
+            <!-- Frame 2: Landscape Look (16/11) -->
+            <div class="ki-frame-slot ki-frame-landscape-wide" data-pool='["/assets/pixelone/pixelone-image-025.webp", "/assets/pixelone/pixelone-image-158.png", "/assets/pixelone/pixelone-image-029.webp"]'>
+              <img class="ki-frame-img ki-frame-active" src="/assets/pixelone/pixelone-image-025.webp" alt="Campaign editorial landscape" loading="lazy" />
+              <img class="ki-frame-img ki-frame-next" src="" alt="" aria-hidden="true" />
+            </div>
+
+            <!-- Frame 3: Square Detail (1/1) -->
+            <div class="ki-frame-slot ki-frame-square-a" data-pool='["/assets/pixelone/pixelone-image-112.png", "/assets/pixelone/pixelone-image-110.png", "/assets/pixelone/pixelone-image-113.png"]'>
+              <img class="ki-frame-img ki-frame-active" src="/assets/pixelone/pixelone-image-112.png" alt="Gemstone jewellery craftsmanship detail" loading="lazy" />
+              <img class="ki-frame-img ki-frame-next" src="" alt="" aria-hidden="true" />
+            </div>
+
+            <!-- Frame 4: Square Detail (1/1) -->
+            <div class="ki-frame-slot ki-frame-square-b" data-pool='["/assets/pixelone/pixelone-image-153.png", "/assets/pixelone/pixelone-image-034.webp", "/assets/pixelone/pixelone-image-108.png"]'>
+              <img class="ki-frame-img ki-frame-active" src="/assets/pixelone/pixelone-image-153.png" alt="Couture zardozi embroidery craftsmanship" loading="lazy" />
+              <img class="ki-frame-img ki-frame-next" src="" alt="" aria-hidden="true" />
+            </div>
+
+            <!-- Frame 5: Portrait Crop (3/4) -->
+            <div class="ki-frame-slot ki-frame-portrait-b" data-pool='["/assets/pixelone/pixelone-image-130.png", "/assets/pixelone/pixelone-image-159.png", "/assets/pixelone/pixelone-image-024.webp"]'>
+              <img class="ki-frame-img ki-frame-active" src="/assets/pixelone/pixelone-image-130.png" alt="Saree campaign editorial portrait" loading="lazy" />
+              <img class="ki-frame-img ki-frame-next" src="" alt="" aria-hidden="true" />
+            </div>
+
+            <!-- Frame 6: Widescreen Campaign Visual (16/9) -->
+            <div class="ki-frame-slot ki-frame-widescreen" data-pool='["/assets/pixelone/pixelone-image-161.png", "/assets/pixelone/pixelone-image-006.png", "/assets/pixelone/pixelone-image-026.webp"]'>
+              <img class="ki-frame-img ki-frame-active" src="/assets/pixelone/pixelone-image-161.png" alt="Widescreen collection campaign visual" loading="lazy" />
+              <img class="ki-frame-img ki-frame-next" src="" alt="" aria-hidden="true" />
+            </div>
+
+            <!-- Frame 7: Landscape Look (16/10) -->
+            <div class="ki-frame-slot ki-frame-landscape-b" data-pool='["/assets/pixelone/pixelone-image-126.png", "/assets/pixelone/pixelone-image-127.png", "/assets/pixelone/pixelone-image-007.png"]'>
+              <img class="ki-frame-img ki-frame-active" src="/assets/pixelone/pixelone-image-126.png" alt="Ruby diamond necklace occasion visual" loading="lazy" />
+              <img class="ki-frame-img ki-frame-next" src="" alt="" aria-hidden="true" />
+            </div>
+
+            <!-- Frame 8: Square Crop (1/1) -->
+            <div class="ki-frame-slot ki-frame-square-c" data-pool='["/assets/pixelone/pixelone-image-082.png", "/assets/pixelone/pixelone-image-107.png", "/assets/pixelone/pixelone-image-091.png"]'>
+              <img class="ki-frame-img ki-frame-active" src="/assets/pixelone/pixelone-image-082.png" alt="Sapphire jewellery campaign portrait" loading="lazy" />
+              <img class="ki-frame-img ki-frame-next" src="" alt="" aria-hidden="true" />
+            </div>
+
+            <!-- Frame 9: Minimal Editorial Text Link Tile -->
+            <a class="ki-frame-link-slot" href="/work/">
+              <div class="ki-frame-link-inner">
+                <span class="ki-frame-link-tag">CURATED ARCHIVE</span>
+                <span class="ki-frame-link-arrow">VIEW ALL PROJECTS ↗</span>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="ki-inquiry-cta" aria-labelledby="ki-cta-title">
+        <div class="ki-inquiry-inner">
+          <div class="ki-inquiry-lead">
+            <h2 id="ki-cta-title">HAVE A PROJECT IN MIND?</h2>
+            <p>Tell us what you’re building, launching or shooting.</p>
+          </div>
+          <div class="ki-inquiry-grid">
+            <a class="ki-inquiry-col" href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20discuss%20a%20new%20project." target="_blank" rel="noreferrer">
+              <span class="ki-inquiry-label">01 / DIRECT CHAT</span>
+              <span class="ki-inquiry-btn-text">WHATSAPP ↗</span>
+              <span class="ki-inquiry-desc">Fast response via WhatsApp</span>
+            </a>
+            <a class="ki-inquiry-col" href="mailto:kriyon@repixelx.tech?subject=Campaign%20Commission%20Inquiry">
+              <span class="ki-inquiry-label">02 / INQUIRIES</span>
+              <span class="ki-inquiry-btn-text">EMAIL ↗</span>
+              <span class="ki-inquiry-desc">kriyon@repixelx.tech</span>
+            </a>
+            <a class="ki-inquiry-col ki-inquiry-col-primary" href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20start%20a%20new%20project." target="_blank" rel="noreferrer">
+              <span class="ki-inquiry-label">03 / COMMISSION</span>
+              <span class="ki-inquiry-btn-text">START A PROJECT ↗</span>
+              <span class="ki-inquiry-desc">Brief, scope &amp; production</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="ki-footer" id="contact">
       <div class="ki-footer-inner">
         <div class="ki-footer-top">
           <h2>LET’S WORK TOGETHER.</h2>
           <div class="ki-footer-cta-wrap">
-            <p>Have a product, campaign or idea in mind? Let’s build it.</p>
+            <p>Have a product, collection or campaign in mind? Let’s build it.</p>
             <a class="ki-footer-cta-btn" href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20start%20a%20new%20project." target="_blank" rel="noreferrer">START A PROJECT ↗</a>
           </div>
         </div>
@@ -202,29 +282,29 @@
         loader.classList.add('is-loaded');
       } else {
         const counterEl = document.getElementById('loader-counter');
+        const barEl = document.getElementById('loader-bar');
         const startTime = performance.now();
-        const duration = 2500;
+        const duration = 2400;
 
-        function updateCount(currentTime) {
+        function updateLoader(currentTime) {
           const elapsed = currentTime - startTime;
           const progress = Math.min(elapsed / duration, 1);
-          const ease = 1 - Math.pow(1 - progress, 2.2);
+          const ease = 1 - Math.pow(1 - progress, 2.4);
           const count = Math.floor(ease * 100);
           if (counterEl) counterEl.textContent = count;
+          if (barEl) barEl.style.width = (ease * 100).toFixed(1) + '%';
           if (progress < 1) {
-            requestAnimationFrame(updateCount);
+            requestAnimationFrame(updateLoader);
           } else {
             if (counterEl) counterEl.textContent = '100';
+            if (barEl) barEl.style.width = '100%';
             setTimeout(() => {
-              loader.classList.add('is-shutter-open');
-              setTimeout(() => {
-                loader.classList.add('is-loaded');
-                sessionStorage.setItem('kriyon_intro_seen', '1');
-              }, 550);
-            }, 180);
+              loader.classList.add('is-loaded');
+              sessionStorage.setItem('kriyon_intro_seen', '1');
+            }, 260);
           }
         }
-        requestAnimationFrame(updateCount);
+        requestAnimationFrame(updateLoader);
       }
     }
     document.querySelector('.ki-menu-toggle')?.addEventListener('click',e=>{const h=document.querySelector('.ki-header'),b=e.currentTarget,o=h.classList.toggle('is-menu-open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close navigation':'Open navigation');b.textContent=o?'×':'+'});
@@ -242,6 +322,77 @@
     }
     updateIndiaTime();
     setInterval(updateIndiaTime, 1000);
+
+    (function initSelectedFrames() {
+      const slots = document.querySelectorAll('.ki-frame-slot');
+      if (!slots.length) return;
+
+      const state = Array.from(slots).map(slot => {
+        let pool = [];
+        try {
+          pool = JSON.parse(slot.dataset.pool || '[]');
+        } catch(e) {}
+        return {
+          slot,
+          activeImg: slot.querySelector('.ki-frame-active'),
+          nextImg: slot.querySelector('.ki-frame-next'),
+          pool,
+          currentIndex: 0,
+          isTransitioning: false
+        };
+      });
+
+      function swapSlot(slotState) {
+        if (slotState.isTransitioning || slotState.pool.length <= 1) return;
+        slotState.isTransitioning = true;
+        slotState.currentIndex = (slotState.currentIndex + 1) % slotState.pool.length;
+        const nextSrc = slotState.pool[slotState.currentIndex];
+
+        slotState.nextImg.onload = () => {
+          slotState.nextImg.style.opacity = '1';
+          setTimeout(() => {
+            slotState.activeImg.src = nextSrc;
+            slotState.nextImg.style.opacity = '0';
+            setTimeout(() => {
+              slotState.isTransitioning = false;
+            }, 100);
+          }, 1400);
+        };
+        slotState.nextImg.src = nextSrc;
+      }
+
+      state.forEach(s => {
+        s.slot.addEventListener('mouseenter', () => swapSlot(s));
+      });
+
+      let lastSwapped = -1;
+      let timer = null;
+
+      function cycleOne() {
+        let pick;
+        do {
+          pick = Math.floor(Math.random() * state.length);
+        } while (pick === lastSwapped && state.length > 1);
+        lastSwapped = pick;
+        swapSlot(state[pick]);
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (!timer) timer = setInterval(cycleOne, 5200);
+          } else {
+            if (timer) {
+              clearInterval(timer);
+              timer = null;
+            }
+          }
+        });
+      }, { threshold: 0.1 });
+
+      const section = document.querySelector('.ki-frames-section');
+      if (section) observer.observe(section);
+    })();
   </script>
   <header class="studio-header">
     <a class="studio-logo" href="#top">Kriyon Media</a>
