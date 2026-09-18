@@ -1036,9 +1036,10 @@ body.is-page-exiting {
 }
 
 .ki-clients-head {
-  max-width: 1400px !important;
-  margin: 0 auto !important;
-  padding: 0 clamp(20px, 3.2vw, 44px) 20px !important;
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 24px 18px !important;
   border-bottom: none !important;
   box-sizing: border-box !important;
 }
@@ -1047,7 +1048,7 @@ body.is-page-exiting {
 .ki-clients-head h2 {
   margin: 0 !important;
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: clamp(38px, 4vw, 56px) !important;
+  font-size: clamp(32px, 3.2vw, 44px) !important;
   font-weight: 500 !important;
   line-height: 1 !important;
   letter-spacing: -0.03em !important;
@@ -1112,14 +1113,17 @@ body.is-page-exiting {
    SERVICES SECTION (MATCHING REFERENCE media_1789729578707.png)
    ============================================================ */
 .ki-services {
-  padding: 75px clamp(20px, 3.2vw, 44px) 70px !important;
-  max-width: 1400px !important;
-  margin: 0 auto !important;
+  padding: 70px 24px 65px !important;
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
   box-sizing: border-box !important;
 }
 
 .ki-services-inner {
   width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
 }
 
 .ki-services-head {
@@ -1133,7 +1137,7 @@ body.is-page-exiting {
   padding-bottom: 0 !important;
   border-bottom: none !important;
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: clamp(38px, 4vw, 56px) !important;
+  font-size: clamp(32px, 3.2vw, 44px) !important;
   font-weight: 500 !important;
   line-height: 1 !important;
   letter-spacing: -0.03em !important;
