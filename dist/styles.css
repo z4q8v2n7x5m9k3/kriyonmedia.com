@@ -285,3 +285,1213 @@ img,video{-webkit-user-drag:none;user-select:none}
 
 /* Readable controls and captions at every breakpoint. */
 .ki-header{border-bottom:0}.ki-header nav{font-size:11px;font-weight:700}.ki-view-all-tile{min-height:0}.kp-header{height:78px;padding:0 24px}.kp-header>a{font-size:20px;font-weight:500}.kp-header nav{gap:48px;font-size:10px}.kp-header>div a{font-size:10px}.kp-intro{padding:128px 24px 34px}.kp-intro>div{margin-top:68px;font-size:10px}.kp-toolbar button{padding:11px 14px;font-size:9px}.kp-grid{gap:10px;padding:5px 24px 110px}.kp-grid p{margin:9px 0 23px;font-size:11px;gap:8px}.kp-grid b{font-weight:700}.kp-grid span{color:#777773}.kp-grid.is-list>a{grid-template-columns:86px 190px 1fr;min-height:142px}.kp-grid.is-list p{font-size:14px}.kp-grid.is-list p span{font-size:12px}@media(max-width:700px){.ki-header{padding:7px 10px 0;min-height:98px;grid-template-rows:60px 32px}.ki-brand{font-size:37px}.ki-profile{font-size:7px}.ki-profile img{width:42px;height:38px}.ki-header nav{gap:15px;font-size:7px}.ki-links{right:10px;top:72px;font-size:7px}.ki-work-card p{margin:7px 0 21px;font-size:10px}.ki-view-all-tile{width:100%;aspect-ratio:1.15/1;margin:0 0 22px;font-size:31px}.ki-view-all-tile b{font-size:28px}.kp-header{height:auto;min-height:88px;padding:12px 10px;display:flex;align-content:center;flex-wrap:wrap;gap:11px}.kp-header>a{width:100%;font-size:18px}.kp-header nav{gap:14px;font-size:9px;order:2}.kp-header>div{display:block!important;margin-left:auto;order:3}.kp-header>div a{font-size:9px}.kp-intro{padding:68px 10px 19px}.kp-intro h1{font-size:60px}.kp-intro>div{margin-top:36px;padding-bottom:12px;font-size:9px}.kp-toolbar{gap:13px!important}.kp-toolbar button{padding:10px 11px;font-size:8px}.kp-grid{padding:6px 10px 70px}.kp-grid p{margin:8px 0 24px;font-size:11px;line-height:1.3}.kp-grid.is-list>a{grid-template-columns:34px 100px 1fr;gap:11px;min-height:116px}.kp-grid.is-list p{font-size:10px}.kp-grid.is-list p span{font-size:9px}.kp-grid.is-list>a::before{font-size:9px}.kp-footer{padding-left:10px;padding-right:10px}.kp-footer>div{left:10px;right:10px;font-size:8px}}
+
+/* Mobile navigation follows the compact closed state and full-panel open state from the approved reference. */
+.site-menu-toggle{display:none}@media(max-width:700px){.site-menu-toggle{display:grid;place-items:center;border:0;background:transparent;color:#090909;padding:0;font:400 31px/.8 'Bricolage Grotesque',sans-serif;cursor:pointer}.ki-header{position:relative;display:grid;grid-template-columns:1fr auto;grid-template-rows:55px;border-bottom:1px solid var(--ki-line);padding:0 10px;min-height:55px;overflow:hidden;transition:min-height .28s ease}.ki-brand{align-self:center;font-size:25px;line-height:1;letter-spacing:-.09em}.ki-header .ki-profile,.ki-header nav,.ki-header .ki-links{display:none}.ki-menu-toggle{grid-column:2;grid-row:1;align-self:center}.ki-header.is-menu-open{min-height:420px;display:block;padding:0;border-bottom:1px solid var(--ki-line)}.ki-header.is-menu-open .ki-brand{position:absolute;top:17px;left:10px;font-size:25px}.ki-header.is-menu-open .ki-menu-toggle{position:absolute;top:14px;right:11px;font-size:34px}.ki-header.is-menu-open .ki-profile{display:grid;position:absolute;top:72px;left:10px;grid-template-columns:92px auto;grid-template-rows:auto auto;gap:6px 15px;font-size:13px}.ki-header.is-menu-open .ki-profile img{grid-row:1/3;grid-column:1;width:92px;height:102px;object-fit:cover}.ki-header.is-menu-open .ki-profile time{grid-column:2;align-self:end}.ki-header.is-menu-open .ki-profile span{grid-column:2;font-size:16px;line-height:1.12}.ki-header.is-menu-open .ki-profile small{display:block;margin-top:7px;font-size:7px}.ki-header.is-menu-open nav{display:flex;position:absolute;top:210px;left:10px;flex-direction:column;gap:25px;border:0;font-size:17px;line-height:1.05}.ki-header.is-menu-open .ki-links{display:block;position:absolute;left:10px;bottom:26px;right:auto;top:auto;font-size:16px}.ki-intro{min-height:145px;padding:72px 10px 18px}.ki-intro>div{font-size:13px;line-height:1.2}.ki-intro>p{font-size:8px;margin-top:14px}.ki-work{padding:0 10px;gap:0}.ki-work-card img{aspect-ratio:1.18/1;object-fit:cover}.ki-work-card p{margin:8px 0 22px;font-size:11px;line-height:1.3}.ki-view-all-tile{display:flex!important;width:100%;aspect-ratio:1.18/1;background:#090909!important;color:#fff!important;margin:0 0 32px;padding:16px;font-size:34px}.ki-services{padding:50px 10px 52px}.ki-services h1{font-size:55px;line-height:.82;padding-bottom:13px}.ki-services-grid{gap:23px;padding-top:15px}.ki-services-grid>p{font-size:12px;line-height:1.42}.ki-services-grid h2{font-size:17px;margin-bottom:7px}.ki-services-grid span{font-size:11px;line-height:1.75}.ki-work-strip{padding:12px 0}.ki-work-strip>p{margin:0 10px 9px;font-size:8px}.ki-work-strip img{width:132px;height:96px}.ki-footer{min-height:355px;padding:50px 10px 18px}.ki-footer h2{font-size:50px}.ki-footer>p{font-size:10px;line-height:1.45}.ki-footer>div{left:10px;right:10px;bottom:55px;gap:11px;font-size:8px}.ki-footer small{left:10px;bottom:19px;font-size:8px}.kp-header{position:relative;display:grid;grid-template-columns:1fr auto;grid-template-rows:54px;min-height:54px;height:54px;padding:0 10px;overflow:hidden;border-bottom:1px solid #d7d7d4;transition:height .28s ease}.kp-header>a{width:auto;font-size:24px;align-self:center}.kp-header nav,.kp-header>div{display:none!important}.kp-menu-toggle{grid-column:2;grid-row:1;align-self:center}.kp-header.is-menu-open{display:block;height:294px;padding:0 10px}.kp-header.is-menu-open>a{position:absolute;top:16px;left:10px}.kp-header.is-menu-open .kp-menu-toggle{position:absolute;top:11px;right:10px;font-size:34px}.kp-header.is-menu-open nav{display:flex!important;position:absolute;top:76px;left:10px;flex-direction:column;gap:22px;font-size:17px}.kp-header.is-menu-open>div{display:block!important;position:absolute;left:10px;bottom:24px;margin:0}.kp-header.is-menu-open>div a{font-size:15px}.kp-intro{padding:54px 10px 20px}.kp-intro h1{font-size:56px}.kp-toolbar button{padding:10px 11px;font-size:8px}.kp-grid{padding:7px 10px 65px}.kp-grid img{aspect-ratio:1.18/1;object-fit:cover}.kp-grid p{margin:8px 0 25px;font-size:11px;line-height:1.32}.kp-grid.is-list>a{grid-template-columns:34px 104px 1fr;min-height:118px}.contact-nav{position:relative;display:grid;grid-template-columns:1fr auto;height:54px;padding:0 10px;overflow:hidden;transition:height .28s ease}.contact-nav>a{font-size:22px}.contact-nav nav{display:none}.contact-menu-toggle{grid-column:2}.contact-nav.is-menu-open{display:block;height:280px;padding:0 10px}.contact-nav.is-menu-open>a{position:absolute;top:17px;left:10px}.contact-nav.is-menu-open .contact-menu-toggle{position:absolute;top:11px;right:10px;font-size:34px}.contact-nav.is-menu-open nav{display:flex;position:absolute;top:77px;left:10px;flex-direction:column;gap:22px;font-size:17px}.contact-lead{padding:75px 10px 50px}.contact-lead h1{font-size:60px}.contact-details article,.contact-details article:nth-child(even){padding:20px 10px}.contact-footer{padding:17px 10px;font-size:8px}.contact-footer a{font-size:9px}}
+
+/* ============================================================
+   EDITORIAL CAPTIONS & 2-COLUMN MOBILE RESPONSIVE GRID
+   ============================================================ */
+
+/* Reference-matched image captions and grid structure */
+.ki-work {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px 16px !important;
+  padding: 0 18px 80px !important;
+}
+
+.kp-grid:not(.is-list) {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px 16px !important;
+  padding: 8px 24px 80px !important;
+}
+
+.ki-work-card,
+.kp-grid:not(.is-list) > a {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  overflow: visible !important;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.ki-work-card img,
+.kp-grid:not(.is-list) img {
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  background: #e4e4e0 !important;
+  transition: transform 0.4s ease, filter 0.3s ease !important;
+}
+
+.ki-work-card:hover img,
+.kp-grid:not(.is-list) > a:hover img {
+  transform: scale(0.992) !important;
+  filter: saturate(1.06) !important;
+}
+
+.ki-work-card::before,
+.ki-work-card::after,
+.kp-grid > a::before,
+.kp-grid > a::after {
+  display: none !important;
+}
+
+.ki-work-card:hover p b,
+.kp-grid > a:hover p b {
+  color: #000 !important;
+}
+
+.ki-work-card p,
+.kp-grid p {
+  display: block !important;
+  margin: 10px 0 0 !important;
+  padding: 0 !important;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+  color: #111 !important;
+}
+
+.ki-work-card p b,
+.kp-grid p b {
+  display: inline !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #000 !important;
+  margin-right: 6px !important;
+}
+
+.ki-work-card p span,
+.kp-grid p span {
+  display: inline !important;
+  font-weight: 400 !important;
+  color: #666663 !important;
+  letter-spacing: 0 !important;
+}
+
+.ki-view-all-tile {
+  display: flex !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  background: #0a0a0a !important;
+  color: #fff !important;
+  margin: 0 !important;
+  padding: 24px !important;
+  font-size: clamp(22px, 2.4vw, 36px) !important;
+  font-weight: 500 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.05em !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  text-decoration: none !important;
+  transition: background 0.25s, transform 0.25s !important;
+}
+
+.ki-view-all-tile:hover {
+  background: #1a1a1a !important;
+  transform: scale(0.992) !important;
+}
+
+.ki-view-all-tile b {
+  font: 400 24px/1 'Manrope', sans-serif !important;
+}
+
+.kp-intro {
+  padding: 110px 24px 28px !important;
+}
+
+.kp-intro .kp-bio {
+  max-width: 720px !important;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: clamp(16px, 1.8vw, 24px) !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.03em !important;
+  color: #111 !important;
+  margin: 0 0 34px !important;
+}
+
+/* 2-COLUMN MOBILE RESPONSIVE GRID */
+@media (max-width: 700px) {
+  /* Homepage Featured Work */
+  .ki-work {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px 10px !important;
+    padding: 0 12px !important;
+  }
+
+  .ki-work-card {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .ki-work-card img {
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
+    object-fit: cover !important;
+  }
+
+  .ki-view-all-tile {
+    display: flex !important;
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
+    background: #090909 !important;
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 14px !important;
+    font-size: 22px !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+  }
+
+  .ki-view-all-tile b {
+    font-size: 20px !important;
+  }
+
+  /* Projects Page Grid */
+  .kp-grid:not(.is-list) {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px 10px !important;
+    padding: 8px 12px 65px !important;
+  }
+
+  .kp-grid>a {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .kp-grid img {
+    width: 100% !important;
+    aspect-ratio: 1/1 !important;
+    object-fit: cover !important;
+  }
+
+  /* Mobile Captions */
+  .ki-work-card p,
+  .kp-grid p {
+    margin: 8px 0 16px !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+
+  .ki-work-card p b,
+  .kp-grid p b {
+    font-size: 11px !important;
+    margin-right: 5px !important;
+  }
+
+  .ki-work-card p span,
+  .kp-grid p span {
+    font-size: 10.5px !important;
+  }
+}
+
+/* ============================================================
+   EDITORIAL HEADER (REFERENCE MATCHED: EIZO MORI HEADER STYLE)
+   ============================================================ */
+
+.ki-header {
+  min-height: unset !important;
+  height: auto !important;
+  display: grid !important;
+  grid-template-columns: max-content 1fr auto !important;
+  grid-template-rows: auto 1px auto !important;
+  align-items: center !important;
+  padding: 16px 20px 0 !important;
+  border-bottom: none !important;
+  background: var(--ki-paper) !important;
+  row-gap: 0 !important;
+  column-gap: 20px !important;
+  overflow: visible !important;
+}
+
+/* Row 1, Column 1: KRIYON MEDIA + Venture Subtitle */
+.ki-brand-wrap {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding-bottom: 16px !important;
+  width: max-content !important;
+}
+
+.ki-brand {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(48px, 8.4vw, 134px) !important;
+  font-weight: 550 !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.06em !important;
+  text-transform: uppercase !important;
+  color: #080808 !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  display: block !important;
+}
+
+/* Row 1, Column 3: Profile Widget (Time top-left, Based in Jammu bottom-left, Photo right) */
+.ki-profile {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+  justify-self: end !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding-bottom: 16px !important;
+  position: static !important;
+}
+
+.ki-profile-meta {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 72px !important;
+  text-align: right !important;
+}
+
+.ki-profile-meta time,
+#local-time {
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #111110 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  display: block !important;
+}
+
+.ki-profile-meta .ki-location,
+.ki-profile-meta span {
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #111110 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  display: block !important;
+}
+
+.ki-profile img {
+  width: 80px !important;
+  height: 72px !important;
+  object-fit: cover !important;
+  object-position: center 25% !important;
+  display: block !important;
+  border-radius: 0 !important;
+  background: #e4e4e0 !important;
+}
+
+/* Row 2: Crisp 1px edge-to-edge horizontal divider */
+.ki-header-divider {
+  grid-column: 1 / -1 !important;
+  grid-row: 2 !important;
+  height: 1px !important;
+  width: 100% !important;
+  background: var(--ki-line) !important;
+  margin: 0 !important;
+}
+
+/* Row 3, Column 1: Navigation spanning exactly from 'K' to 'A' */
+.ki-header nav {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  border-top: none !important;
+  padding: 13px 0 16px !important;
+  margin: 0 !important;
+}
+
+.ki-header nav a {
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #080808 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.ki-header nav a:hover {
+  color: #777773 !important;
+}
+
+/* Row 3, Column 3: Green WhatsApp link */
+.ki-links {
+  position: static !important;
+  grid-column: 3 !important;
+  grid-row: 3 !important;
+  justify-self: end !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 13px 0 16px !important;
+  margin: 0 !important;
+}
+
+.ki-whatsapp-link,
+.ki-links a {
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #25d366 !important;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.ki-whatsapp-link:hover,
+.ki-links a:hover {
+  opacity: 0.8 !important;
+}
+
+/* Portfolio Header WhatsApp */
+.kp-header > div a,
+.kp-header .ki-whatsapp-link {
+  color: #25d366 !important;
+  font-weight: 700 !important;
+}
+
+/* Intro breathing room */
+.ki-intro {
+  min-height: 220px !important;
+  padding: 90px 20px 24px !important;
+}
+
+.site-menu-toggle {
+  display: none !important;
+}
+
+/* Mobile responsive styles (max-width: 700px) */
+@media (max-width: 700px) {
+  .ki-header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 10px 14px !important;
+    min-height: 60px !important;
+    position: relative !important;
+    border-bottom: 1px solid var(--ki-line) !important;
+  }
+
+  .ki-brand-wrap {
+    grid-column: unset !important;
+    grid-row: unset !important;
+    padding-bottom: 0 !important;
+    width: auto !important;
+  }
+
+  .ki-brand {
+    font-size: 26px !important;
+    line-height: 1 !important;
+  }
+
+  .ki-venture {
+    font-size: 7.5px !important;
+    margin-top: 3px !important;
+  }
+
+  .ki-header-divider {
+    display: none !important;
+  }
+
+  .site-menu-toggle.ki-menu-toggle {
+    display: grid !important;
+    place-items: center !important;
+    font-size: 32px !important;
+    background: transparent !important;
+    border: none !important;
+    color: #080808 !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin-left: auto !important;
+  }
+
+  .ki-header:not(.is-menu-open) .ki-profile,
+  .ki-header:not(.is-menu-open) nav,
+  .ki-header:not(.is-menu-open) .ki-links {
+    display: none !important;
+  }
+
+  .ki-header.is-menu-open {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 14px !important;
+    min-height: 380px !important;
+    gap: 18px !important;
+  }
+
+  .ki-header.is-menu-open .site-menu-toggle.ki-menu-toggle {
+    position: absolute !important;
+    top: 12px !important;
+    right: 14px !important;
+  }
+
+  .ki-header.is-menu-open .ki-profile {
+    display: flex !important;
+    margin-top: 8px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .ki-header.is-menu-open .ki-profile img {
+    width: 60px !important;
+    height: 54px !important;
+  }
+
+  .ki-header.is-menu-open .ki-profile-meta {
+    height: 54px !important;
+  }
+
+  .ki-header.is-menu-open nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    width: 100% !important;
+    padding: 8px 0 !important;
+  }
+
+  .ki-header.is-menu-open nav a {
+    font-size: 16px !important;
+  }
+
+  .ki-header.is-menu-open .ki-links {
+    display: flex !important;
+    padding: 0 !important;
+  }
+
+  .ki-header.is-menu-open .ki-links a {
+    font-size: 16px !important;
+  }
+
+  .ki-intro {
+    min-height: 145px !important;
+    padding: 60px 14px 18px !important;
+  }
+}
+
+/* ============================================================
+   CLIENTS SECTION (REFERENCE MATCHED: EIZO MORI CLIENTS TICKER)
+   ============================================================ */
+
+/* ============================================================
+   CINEMATIC SHUTTER LOADING SCREEN
+   ============================================================ */
+.ki-loader {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999999 !important;
+  background: #080808 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: all !important;
+  transition: transform 0.85s cubic-bezier(0.85, 0, 0.15, 1) !important;
+  will-change: transform !important;
+}
+
+.ki-loader.is-loaded {
+  transform: translateY(-100%) !important;
+  pointer-events: none !important;
+}
+
+.ki-loader-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  animation: ki-loader-reveal 0.65s ease forwards !important;
+}
+
+.ki-loader-title {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(34px, 6vw, 76px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.06em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+}
+
+.ki-loader-sub {
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: clamp(9px, 1vw, 11px) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: #888884 !important;
+  margin-top: 14px !important;
+}
+
+@keyframes ki-loader-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   CAMERA VIEWFINDER CORNER BRACKETS ON HOVER
+   ============================================================ */
+.ki-work-card,
+.kp-grid > a {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.ki-work-card::before,
+.ki-work-card::after,
+.kp-grid > a::before,
+.kp-grid > a::after {
+  display: block !important;
+  content: "" !important;
+  position: absolute !important;
+  z-index: 10 !important;
+  width: 22px !important;
+  height: 22px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.25s ease, transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.ki-work-card::before,
+.kp-grid > a::before {
+  top: 12px !important;
+  left: 12px !important;
+  border-top: 2.5px solid #ffffff !important;
+  border-left: 2.5px solid #ffffff !important;
+  transform: translate(-5px, -5px) !important;
+}
+
+.ki-work-card::after,
+.kp-grid > a::after {
+  top: calc(100% - 44px) !important;
+  right: 12px !important;
+  border-right: 2.5px solid #ffffff !important;
+  border-bottom: 2.5px solid #ffffff !important;
+  transform: translate(5px, 5px) !important;
+}
+
+.ki-work-card:hover::before,
+.ki-work-card:hover::after,
+.kp-grid > a:hover::before,
+.kp-grid > a:hover::after {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+/* ============================================================
+   PORTFOLIO FILTERING DISPLAY FIX
+   ============================================================ */
+.kp-grid > a[hidden],
+.kp-grid > a.is-hidden {
+  display: none !important;
+}
+
+/* ============================================================
+   OUR WORK SECTION & TICKER (MATCHING SERVICES. HEADER)
+   ============================================================ */
+.ki-clients-section {
+  padding: 60px 0 80px !important;
+  background: var(--ki-paper) !important;
+  overflow: hidden !important;
+}
+
+.ki-clients-head {
+  padding: 0 20px 16px !important;
+  border-bottom: 1px solid var(--ki-line) !important;
+}
+
+.ki-clients-head h1,
+.ki-clients-head h2 {
+  margin: 0 !important;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(53px, 7.1vw, 122px) !important;
+  font-weight: 500 !important;
+  line-height: 0.77 !important;
+  letter-spacing: -0.09em !important;
+  text-transform: uppercase !important;
+  color: #080808 !important;
+}
+
+.ki-clients-strip {
+  overflow: hidden !important;
+  width: 100% !important;
+  padding: 24px 0 0 !important;
+}
+
+.ki-clients-track {
+  display: flex !important;
+  gap: 14px !important;
+  width: max-content !important;
+  animation: ki-clients-scroll 38s linear infinite !important;
+}
+
+.ki-clients-track:hover {
+  animation-play-state: paused !important;
+}
+
+.ki-client-card {
+  width: clamp(160px, 14.5vw, 215px) !important;
+  aspect-ratio: 1 / 1 !important;
+  flex-shrink: 0 !important;
+  background: #ebebe8 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0 !important;
+  transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+.ki-client-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease, filter 0.3s ease !important;
+}
+
+.ki-client-card:hover img {
+  transform: scale(1.04) !important;
+  filter: saturate(1.08) !important;
+}
+
+@keyframes ki-clients-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 7px));
+  }
+}
+
+/* ============================================================
+   SERVICES SECTION READABILITY ENHANCEMENTS
+   ============================================================ */
+.ki-services {
+  padding: 70px 20px 70px !important;
+}
+
+.ki-services h1 {
+  margin: 0 !important;
+  padding-bottom: 16px !important;
+  border-bottom: 1px solid var(--ki-line) !important;
+  font-size: clamp(53px, 7.1vw, 122px) !important;
+  font-weight: 500 !important;
+  line-height: 0.77 !important;
+  letter-spacing: -0.09em !important;
+}
+
+.ki-services-grid {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr 1fr !important;
+  gap: 36px !important;
+  padding-top: 28px !important;
+  align-items: start !important;
+}
+
+.ki-services-grid > p {
+  max-width: 460px !important;
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: clamp(16px, 1.4vw, 20px) !important;
+  line-height: 1.45 !important;
+  color: #111110 !important;
+  margin: 0 !important;
+}
+
+.ki-services-grid h2 {
+  margin: 0 0 14px !important;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(19px, 1.7vw, 24px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.035em !important;
+  color: #080808 !important;
+}
+
+.ki-services-grid span {
+  display: block !important;
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: clamp(13px, 1.1vw, 15px) !important;
+  line-height: 2 !important;
+  color: #555552 !important;
+  font-weight: 500 !important;
+}
+
+/* ============================================================
+   MODERN EDITORIAL FOOTER
+   ============================================================ */
+.ki-footer {
+  position: relative !important;
+  min-height: auto !important;
+  padding: 70px 20px 30px !important;
+  background: #080808 !important;
+  color: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 40px !important;
+}
+
+.ki-footer-top {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-end !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important;
+}
+
+.ki-footer-top h2 {
+  margin: 0 !important;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(54px, 7.5vw, 130px) !important;
+  font-weight: 500 !important;
+  line-height: 0.78 !important;
+  letter-spacing: -0.09em !important;
+  color: #ffffff !important;
+}
+
+.ki-footer-top p {
+  position: static !important;
+  max-width: 360px !important;
+  margin: 0 !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: clamp(13px, 1.1vw, 15px) !important;
+  line-height: 1.45 !important;
+  color: #999995 !important;
+}
+
+.ki-footer-divider {
+  width: 100% !important;
+  height: 1px !important;
+  background: #262624 !important;
+}
+
+.ki-footer-bottom {
+  position: static !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  border-top: none !important;
+  padding: 0 !important;
+}
+
+.ki-footer-contact {
+  display: flex !important;
+  gap: 24px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+.ki-footer-contact a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.ki-footer-contact a:hover {
+  color: #25d366 !important;
+}
+
+.ki-footer-nav {
+  display: flex !important;
+  gap: 24px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+.ki-footer-nav a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.ki-footer-nav a:hover {
+  color: #888 !important;
+}
+
+.ki-footer-wa {
+  color: #25d366 !important;
+  font-weight: 700 !important;
+}
+
+.ki-footer-legal {
+  padding-top: 6px !important;
+}
+
+.ki-footer-legal small,
+.ki-footer small {
+  position: static !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  color: #666662 !important;
+  display: block !important;
+}
+
+/* ============================================================
+   CONTACT PAGE STYLING
+   ============================================================ */
+.contact-page {
+  background: var(--ki-paper) !important;
+  color: var(--ki-ink) !important;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+}
+
+.contact-nav {
+  min-height: 72px !important;
+  height: 72px !important;
+  padding: 0 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  border-bottom: 1px solid var(--ki-line) !important;
+}
+
+.contact-logo {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(24px, 2.5vw, 32px) !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.06em !important;
+  color: #080808 !important;
+  text-decoration: none !important;
+}
+
+.contact-nav nav {
+  display: flex !important;
+  gap: 32px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.contact-nav nav a {
+  color: #080808 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.contact-nav nav a:hover {
+  color: #666 !important;
+}
+
+.contact-lead {
+  min-height: auto !important;
+  padding: clamp(70px, 9vw, 130px) 20px 60px !important;
+  max-width: 1100px !important;
+}
+
+.contact-kicker {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #767672 !important;
+  margin-bottom: 22px !important;
+}
+
+.contact-lead h1 {
+  margin: 0 0 24px !important;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(56px, 8.5vw, 148px) !important;
+  font-weight: 550 !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.09em !important;
+  text-transform: uppercase !important;
+  color: #080808 !important;
+}
+
+.contact-sub {
+  max-width: 680px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: clamp(16px, 1.5vw, 21px) !important;
+  line-height: 1.4 !important;
+  color: #444441 !important;
+  margin-bottom: 38px !important;
+}
+
+.contact-actions {
+  display: flex !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+}
+
+.contact-btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 16px 28px !important;
+  background: #25d366 !important;
+  color: #071a0c !important;
+  border-radius: 999px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, opacity 0.2s ease !important;
+}
+
+.contact-btn-primary:hover {
+  opacity: 0.9 !important;
+  transform: scale(0.99) !important;
+}
+
+.contact-btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 16px 28px !important;
+  background: transparent !important;
+  color: #080808 !important;
+  border: 1px solid #080808 !important;
+  border-radius: 999px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  text-decoration: none !important;
+  transition: background 0.2s ease, color 0.2s ease !important;
+}
+
+.contact-btn-secondary:hover {
+  background: #080808 !important;
+  color: #ffffff !important;
+}
+
+.contact-details {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  border-top: 1px solid var(--ki-line) !important;
+}
+
+.contact-details article {
+  min-height: 220px !important;
+  padding: 34px 24px !important;
+  border-right: 1px solid var(--ki-line) !important;
+  border-bottom: 1px solid var(--ki-line) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.contact-details article:nth-child(even) {
+  border-right: none !important;
+}
+
+.contact-details span {
+  display: block !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #767672 !important;
+}
+
+.contact-val {
+  display: block !important;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(24px, 3vw, 44px) !important;
+  font-weight: 550 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.05em !important;
+  color: #080808 !important;
+  text-decoration: none !important;
+  margin: 18px 0 14px !important;
+  word-break: break-all !important;
+  transition: color 0.2s ease !important;
+}
+
+.contact-val:hover {
+  color: #25d366 !important;
+}
+
+.contact-val-text {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(20px, 2.4vw, 34px) !important;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.04em !important;
+  color: #080808 !important;
+  margin: 18px 0 14px !important;
+}
+
+.contact-hint {
+  margin: 0 !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 12px !important;
+  color: #777773 !important;
+  line-height: 1.4 !important;
+}
+
+.contact-footer {
+  min-height: 90px !important;
+  padding: 24px 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background: #080808 !important;
+  color: #ffffff !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+}
+
+.contact-footer-links {
+  display: flex !important;
+  gap: 20px !important;
+}
+
+.contact-footer a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.contact-footer a:hover {
+  color: #25d366 !important;
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS (MAX-WIDTH: 700PX)
+   ============================================================ */
+@media (max-width: 700px) {
+  .ki-clients-section {
+    padding: 30px 0 45px !important;
+  }
+  .ki-clients-head {
+    padding: 0 14px 14px !important;
+  }
+  .ki-clients-head h1,
+  .ki-clients-head h2 {
+    font-size: 46px !important;
+  }
+  .ki-clients-strip {
+    padding-top: 14px !important;
+  }
+  .ki-clients-track {
+    gap: 10px !important;
+  }
+  .ki-client-card {
+    width: 120px !important;
+  }
+  @keyframes ki-clients-scroll {
+    to {
+      transform: translateX(calc(-50% - 5px));
+    }
+  }
+
+  .ki-services {
+    padding: 40px 14px 45px !important;
+  }
+  .ki-services h1 {
+    font-size: 46px !important;
+  }
+  .ki-services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .ki-services-grid > p {
+    font-size: 14px !important;
+  }
+  .ki-services-grid h2 {
+    font-size: 18px !important;
+  }
+  .ki-services-grid span {
+    font-size: 13px !important;
+  }
+
+  .ki-footer {
+    padding: 50px 14px 24px !important;
+    gap: 28px !important;
+  }
+  .ki-footer-top h2 {
+    font-size: 48px !important;
+  }
+  .ki-footer-top p {
+    font-size: 13px !important;
+  }
+  .ki-footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .ki-footer-contact,
+  .ki-footer-nav {
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+    font-size: 12px !important;
+  }
+
+  .contact-lead {
+    padding: 50px 14px 40px !important;
+  }
+  .contact-lead h1 {
+    font-size: 48px !important;
+  }
+  .contact-sub {
+    font-size: 14px !important;
+  }
+  .contact-details {
+    grid-template-columns: 1fr !important;
+  }
+  .contact-details article,
+  .contact-details article:nth-child(even) {
+    border-right: none !important;
+    padding: 24px 14px !important;
+    min-height: 160px !important;
+  }
+  .contact-footer {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+    padding: 18px 14px !important;
+  }
+}
+
+
+
