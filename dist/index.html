@@ -32,13 +32,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <script>
-    // 1. Immediately unregister any stale service workers from localhost / preview domains
+    // 1. Lock to exact top on initial load and refresh (zero auto-scroll)
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // 2. Immediately unregister any stale service workers from localhost / preview domains
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(function(regs) {
         for (var i = 0; i < regs.length; i++) regs[i].unregister();
       }).catch(function() {});
     }
-    // 2. Safe sessionStorage check (never crashes in private mode)
+    // 3. Safe sessionStorage check (never crashes in private mode)
     try {
       if (sessionStorage.getItem('kriyon_intro_seen') || window.location.search.includes('noloader')) {
         document.documentElement.classList.add('intro-seen');
@@ -46,77 +52,21 @@
     } catch(e) {}
   </script>
   <style>
-    /* CSS Failsafe: Guarantees page content is ALWAYS visible, even if JS animation or RAF hangs */
-    @keyframes ki-loader-force-exit {
-      0%, 82% { opacity: 1; pointer-events: all; }
-      100% { opacity: 0; pointer-events: none; visibility: hidden; }
+    #ki-loader.is-exiting {
+      animation: ki-loader-fallback-exit 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
     }
-    #ki-loader {
-      animation: ki-loader-force-exit 1.6s ease 0.8s forwards;
-    }
-    .intro-seen #ki-loader,
-    #ki-loader.is-loaded {
+    .intro-seen #ki-loader {
       display: none !important;
-      animation: none !important;
-      pointer-events: none !important;
-    }
-    .ki-page-wipe {
-      display: none !important;
-      pointer-events: none !important;
     }
   </style>
-  <link rel="stylesheet" href="/styles.css?v=86" />
+  <link rel="stylesheet" href="/styles.css?v=90" />
   <script defer src="/media-guard.js?v=3"></script>
 </head>
 <body class="studio-home kriyon-index" id="top">
     <div class="ki-loader" id="ki-loader" aria-hidden="true">
-    <div class="ki-loader-stage">
-      <!-- Left diagonal frame arrangement -->
-      <div class="ki-loader-tile ki-tile-pos-1" style="--dir: -32px; --d: 0.08s;">
-        <img src="/assets/pixelone/pixelone-image-023.webp" alt="" />
-      </div>
-      <div class="ki-loader-tile ki-tile-pos-2" style="--dir: -24px; --d: 0.28s;">
-        <img src="/assets/pixelone/pixelone-image-029.webp" alt="" />
-      </div>
-      <div class="ki-loader-tile ki-tile-pos-3" style="--dir: -30px; --d: 0.16s;">
-        <img src="/assets/pixelone/pixelone-image-040.webp" alt="" />
-      </div>
-      <div class="ki-loader-tile ki-tile-pos-4" style="--dir: -22px; --d: 0.36s;">
-        <img src="/assets/pixelone/pixelone-image-054.webp" alt="" />
-      </div>
-      <div class="ki-loader-tile ki-tile-pos-5" style="--dir: -28px; --d: 0.22s;">
-        <img src="/assets/pixelone/pixelone-image-034.webp" alt="" />
-      </div>
-
-      <!-- Right diagonal frame arrangement -->
-      <div class="ki-loader-tile ki-tile-pos-6" style="--dir: 32px; --d: 0.12s;">
-        <img src="/assets/pixelone/pixelone-image-064.webp" alt="" />
-      </div>
-      <div class="ki-loader-tile ki-tile-pos-7" style="--dir: 24px; --d: 0.32s;">
-        <img src="/assets/pixelone/pixelone-image-043.webp" alt="" />
-      </div>
-      <div class="ki-loader-tile ki-tile-pos-8" style="--dir: 30px; --d: 0.20s;">
-        <img src="/assets/pixelone/pixelone-image-048.webp" alt="" />
-      </div>
-      <div class="ki-loader-tile ki-tile-pos-9" style="--dir: 22px; --d: 0.40s;">
-        <img src="/assets/pixelone/pixelone-image-026.webp" alt="" />
-      </div>
-      <div class="ki-loader-tile ki-tile-pos-10" style="--dir: 28px; --d: 0.26s;">
-        <img src="/assets/pixelone/pixelone-image-030.webp" alt="" />
-      </div>
-    </div>
-
-    <div class="ki-loader-center">
       <h1 class="ki-loader-brand">KRIYON MEDIA</h1>
-      <div class="ki-loader-status">Curating visual worlds…</div>
-      <div class="ki-loader-progress-wrap">
-        <div class="ki-loader-track">
-          <div class="ki-loader-bar" id="loader-bar"></div>
-        </div>
-        <div class="ki-loader-pct"><span id="loader-counter">0</span>%</div>
-      </div>
     </div>
-  </div>
+    <div class="ki-page-wipe" id="page-wipe" aria-hidden="true"></div>
   <div class="ki-shell">
     <header class="ki-header">
       <div class="ki-brand-wrap">
@@ -143,12 +93,19 @@
         <a href="/contact/">CONTACT</a>
       </nav>
       <div class="ki-links">
-        <a class="ki-whatsapp-link" href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a class="ki-nav-social ki-nav-instagram" href="https://instagram.com/kriyonmedia" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <svg class="ki-nav-icon ki-nav-icon-ig" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="url(#ig-nav-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="ig-nav-gradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="30%" stop-color="#e6683c"/><stop offset="60%" stop-color="#dc2743"/><stop offset="85%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>INSTAGRAM</span>
+        </a>
+        <a class="ki-nav-social ki-nav-whatsapp" href="https://wa.me/919622121100" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <svg class="ki-nav-icon ki-nav-icon-wa" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>WHATSAPP</span>
+        </a>
       </div>
     </header>
     <main>
       <section class="ki-intro" id="info"><div><p>Kriyon Media is a creative production studio building distinctive visual worlds for brands, products and campaigns.</p></div><p>Ideas, produced with intent. <span>© 2026</span></p></section>
-      <section class="ki-work" aria-label="Featured work">
+      <section class="ki-work ki-reveal" aria-label="Featured work">
         <a class="ki-work-card" href="/work/darzie-couture/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture campaign" width="800" height="800" decoding="async" /></div><p><b>DARZIE COUTURE</b> <span>Pink Couture Campaign</span></p></a>
         <a class="ki-work-card" href="/work/rutba/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-155.png" alt="Rutba campaign" width="800" height="800" decoding="async" /></div><p><b>RUTBA</b> <span>Emerald Heritage Collection</span></p></a>
         <a class="ki-work-card" href="/work/red-jewellery/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie campaign" width="800" height="800" decoding="async" /></div><p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign</span></p></a>
@@ -156,7 +113,7 @@
         <a class="ki-work-card" href="/work/clothing/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-014.png" alt="Mehr Couture olive campaign" width="800" height="800" decoding="async" /></div><p><b>MEHR COUTURE</b> <span>Olive Edit</span></p></a>
         <a class="ki-work-card ki-view-all-tile" href="/work/" aria-label="View all projects"><div class="ki-work-thumb ki-view-all-box"><div class="ki-view-all-content"><span class="ki-view-all-sub">ARCHIVE · 2026</span><h3 class="ki-view-all-title">VIEW ALL<br />PROJECTS ↗</h3></div></div><p class="ki-view-all-spacer" aria-hidden="true">&nbsp;</p></a>
       </section>
-      <section class="ki-services" id="services">
+      <section class="ki-services ki-reveal" id="services">
         <div class="ki-services-inner">
           <div class="ki-services-head">
             <h1>SERVICES.</h1>
@@ -190,7 +147,7 @@
           </div>
         </div>
       </section>
-                        <section class="ki-frames-section" id="frames" aria-label="Selected frames and production wall">
+      <section class="ki-frames-section ki-reveal" id="frames" aria-label="Selected frames and production wall">
         <div class="ki-frames-inner">
           <div class="ki-frames-head">
             <h1>SELECTED FRAMES.</h1>
@@ -403,7 +360,7 @@
           </div>
         </div>
       </section>
-      <section class="ki-inquiry-cta" aria-labelledby="ki-cta-title">
+      <section class="ki-inquiry-cta ki-reveal" aria-labelledby="ki-cta-title">
         <div class="ki-inquiry-inner">
           <span class="ki-inquiry-kicker">COMMISSIONS &amp; COLLABORATIONS · 2026</span>
           <h2 id="ki-cta-title" class="ki-inquiry-heading">LET’S BUILD SOMETHING DISTINCTIVE.</h2>
@@ -422,7 +379,7 @@
         </div>
       </section>
     </main>
-    <footer class="ki-footer" id="contact">
+    <footer class="ki-footer ki-reveal" id="contact">
       <div class="ki-footer-inner">
         <div class="ki-footer-top">
           <h2>LET’S WORK TOGETHER.</h2>
@@ -453,53 +410,88 @@
   </div>
   <script>
     (function() {
-      // 1. Rock-Solid Loading Screen Lifecycle
+      // 1. Minimal Black Loading Screen & Staged Entrance Sequence
       const loader = document.getElementById('ki-loader');
-      if (loader) {
-        let isIntroSeen = false;
-        try {
-          isIntroSeen = !!sessionStorage.getItem('kriyon_intro_seen');
-        } catch(e) {}
+      let isIntroSeen = false;
+      try {
+        isIntroSeen = !!sessionStorage.getItem('kriyon_intro_seen');
+      } catch(e) {}
 
-        function dismissLoader() {
-          if (!loader.classList.contains('is-loaded')) {
-            loader.classList.add('is-loaded');
-            try { sessionStorage.setItem('kriyon_intro_seen', '1'); } catch(e) {}
-            setTimeout(() => {
-              if (loader.parentNode) loader.remove();
-            }, 500);
-          }
+      function triggerEntrance() {
+        document.body.classList.add('is-entered');
+      }
+
+      function dismissLoader() {
+        if (!loader) {
+          triggerEntrance();
+          return;
         }
+        if (!loader.classList.contains('is-loaded')) {
+          loader.classList.add('is-loaded', 'is-exiting');
+          try { sessionStorage.setItem('kriyon_intro_seen', '1'); } catch(e) {}
+          triggerEntrance();
+          setTimeout(() => {
+            if (loader.parentNode) loader.remove();
+          }, 720);
+        }
+      }
 
-        if (isIntroSeen || window.location.search.includes('noloader')) {
-          dismissLoader();
-        } else {
-          const counterEl = document.getElementById('loader-counter');
-          const barEl = document.getElementById('loader-bar');
-          const startTime = performance.now();
-          const duration = 1050; // Refined 1.05s curation reveal
+      if (isIntroSeen || window.location.search.includes('noloader')) {
+        if (loader && loader.parentNode) loader.remove();
+        triggerEntrance();
+      } else {
+        document.body.classList.add('has-entrance');
+        // Clean hold, then smooth upward slide away
+        setTimeout(dismissLoader, 950);
+        window.addEventListener('load', () => setTimeout(dismissLoader, 850), { once: true });
+      }
 
-          function updateLoader(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const ease = 1 - Math.pow(1 - progress, 2.5);
-            const count = Math.floor(ease * 100);
-            if (counterEl) counterEl.textContent = count;
-            if (barEl) barEl.style.width = (ease * 100).toFixed(1) + '%';
-            if (progress < 1) {
-              requestAnimationFrame(updateLoader);
-            } else {
-              if (counterEl) counterEl.textContent = '100';
-              if (barEl) barEl.style.width = '100%';
-              setTimeout(dismissLoader, 160);
+      // 2. White Wipe Page Transitions
+      const pageWipe = document.getElementById('page-wipe');
+      if (pageWipe) {
+        requestAnimationFrame(() => {
+          pageWipe.classList.add('is-wiping-out');
+          setTimeout(() => {
+            pageWipe.classList.remove('is-wiping-out');
+          }, 350);
+        });
+
+        document.querySelectorAll('a[href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && (href.startsWith('/') || href.startsWith('index.html')) && !href.startsWith('#') && !link.hasAttribute('target') && !link.hasAttribute('download')) {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              pageWipe.classList.add('is-wiping-in');
+              setTimeout(() => {
+                window.location.href = href;
+              }, 280);
+            });
+          }
+        });
+      }
+
+      // 3. Subtle Scroll Reveal (Normal Document Flow, No Layout Shift)
+      const revealElements = document.querySelectorAll('.ki-reveal');
+      if (revealElements.length && 'IntersectionObserver' in window) {
+        document.body.classList.add('js-reveal-active');
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              obs.unobserve(entry.target);
             }
-          }
-          requestAnimationFrame(updateLoader);
+          });
+        }, {
+          threshold: 0.05,
+          rootMargin: '0px 0px -40px 0px'
+        });
 
-          // Multi-layer fail-safes guarantee content is NEVER trapped behind loader
-          setTimeout(dismissLoader, 1400);
-          window.addEventListener('load', () => setTimeout(dismissLoader, 200), { once: true });
-        }
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Safety fallback: reveal all elements after 3.5s
+        setTimeout(() => {
+          revealElements.forEach(el => el.classList.add('is-revealed'));
+        }, 3500);
       }
 
       // 2. Mobile Navigation Toggle

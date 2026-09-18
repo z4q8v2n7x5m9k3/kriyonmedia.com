@@ -304,8 +304,9 @@ img,video{-webkit-user-drag:none;user-select:none}
 .kp-grid:not(.is-list) {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 28px 16px !important;
-  padding: 8px 24px 80px !important;
+  column-gap: 16px !important;
+  row-gap: 14px !important;
+  padding: 8px 20px clamp(85px, 7.5vw, 110px) !important;
 }
 
 .ki-work-card,
@@ -323,7 +324,7 @@ img,video{-webkit-user-drag:none;user-select:none}
 .kp-grid:not(.is-list) img {
   display: block !important;
   width: 100% !important;
-  aspect-ratio: 1 / 1 !important;
+  aspect-ratio: 4 / 3 !important;
   object-fit: cover !important;
   background: #e4e4e0 !important;
   transition: transform 0.4s ease, filter 0.3s ease !important;
@@ -350,13 +351,16 @@ img,video{-webkit-user-drag:none;user-select:none}
 .ki-work-card p,
 .kp-grid p {
   display: block !important;
-  margin: 10px 0 0 !important;
+  margin: 8px 0 0 !important;
   padding: 0 !important;
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-size: 13px !important;
-  line-height: 1.4 !important;
+  font-size: 11.5px !important;
+  line-height: 1.35 !important;
   text-align: left !important;
   color: #111 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .ki-work-card p b,
@@ -366,42 +370,28 @@ img,video{-webkit-user-drag:none;user-select:none}
   text-transform: uppercase !important;
   letter-spacing: 0.04em !important;
   color: #000 !important;
-  margin-right: 6px !important;
+  margin-right: 7px !important;
 }
 
 .ki-work-card p span,
 .kp-grid p span {
   display: inline !important;
   font-weight: 400 !important;
-  color: #666663 !important;
+  color: #72726e !important;
   letter-spacing: 0 !important;
 }
 
 .ki-view-all-tile {
   display: flex !important;
+  flex-direction: column !important;
   width: 100% !important;
-  aspect-ratio: 1 / 1 !important;
-  background: #0a0a0a !important;
-  color: #fff !important;
+  min-width: 0 !important;
+  aspect-ratio: auto !important;
+  background: transparent !important;
+  color: inherit !important;
   margin: 0 !important;
-  padding: 24px !important;
-  font-size: clamp(22px, 2.4vw, 36px) !important;
-  font-weight: 500 !important;
-  line-height: 0.95 !important;
-  letter-spacing: -0.05em !important;
-  align-items: flex-end !important;
-  justify-content: space-between !important;
+  padding: 0 !important;
   text-decoration: none !important;
-  transition: background 0.25s, transform 0.25s !important;
-}
-
-.ki-view-all-tile:hover {
-  background: #1a1a1a !important;
-  transform: scale(0.992) !important;
-}
-
-.ki-view-all-tile b {
-  font: 400 24px/1 'Manrope', sans-serif !important;
 }
 
 .kp-intro {
@@ -438,25 +428,18 @@ img,video{-webkit-user-drag:none;user-select:none}
 
   .ki-work-card img {
     width: 100% !important;
-    aspect-ratio: 1/1 !important;
+    aspect-ratio: 4 / 3 !important;
     object-fit: cover !important;
   }
 
   .ki-view-all-tile {
     display: flex !important;
+    flex-direction: column !important;
     width: 100% !important;
-    aspect-ratio: 1/1 !important;
-    background: #090909 !important;
-    color: #fff !important;
+    aspect-ratio: auto !important;
+    background: transparent !important;
     margin: 0 !important;
-    padding: 14px !important;
-    font-size: 22px !important;
-    align-items: flex-end !important;
-    justify-content: space-between !important;
-  }
-
-  .ki-view-all-tile b {
-    font-size: 20px !important;
+    padding: 0 !important;
   }
 
   /* Projects Page Grid */
@@ -532,16 +515,48 @@ img,video{-webkit-user-drag:none;user-select:none}
 }
 
 .ki-brand {
-  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, Arial, sans-serif !important;
   font-size: clamp(48px, 8.4vw, 134px) !important;
-  font-weight: 420 !important;
-  line-height: 0.82 !important;
+  font-weight: 500 !important;
+  line-height: 0.86 !important;
   letter-spacing: -0.06em !important;
   text-transform: uppercase !important;
-  color: #080808 !important;
   white-space: nowrap !important;
   text-decoration: none !important;
-  display: block !important;
+  display: inline-block !important;
+  padding: 4px 6px 0 0 !important;
+  margin: -4px 0 0 0 !important;
+  overflow: visible !important;
+
+  /* Internal whitish shine specular effect */
+  background: linear-gradient(
+    115deg,
+    #080808 0%,
+    #181818 20%,
+    #5a5a5a 38%,
+    #ffffff 50%,
+    #5a5a5a 62%,
+    #181818 80%,
+    #080808 100%
+  ) !important;
+  background-size: 220% 100% !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: #080808;
+  animation: ki-brand-internal-shine 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+}
+
+@keyframes ki-brand-internal-shine {
+  0%, 15% {
+    background-position: 110% 0;
+  }
+  50%, 65% {
+    background-position: -10% 0;
+  }
+  100% {
+    background-position: 110% 0;
+  }
 }
 
 /* Row 1, Column 3: Profile Widget (Time, Based in India, Studio, Venture + Sharp Square Visual) */
@@ -709,39 +724,94 @@ img,video{-webkit-user-drag:none;user-select:none}
 }
 
 /* Row 3, Column 3: Green WhatsApp link */
+/* Row 3, Column 3: Instagram + WhatsApp links aligned on same row */
 .ki-links {
   position: static !important;
   grid-column: 3 !important;
   grid-row: 3 !important;
   justify-self: end !important;
   display: flex !important;
+  flex-direction: row !important;
   align-items: center !important;
+  gap: 18px !important;
   padding: 13px 0 16px !important;
   margin: 0 !important;
 }
 
-.ki-whatsapp-link,
-.ki-links a {
+.ki-nav-social {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
   font-family: 'Manrope', -apple-system, sans-serif !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
-  color: #25d366 !important;
   text-decoration: none !important;
-  transition: opacity 0.2s ease !important;
+  line-height: 1 !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.ki-nav-social:hover {
+  opacity: 0.78 !important;
+}
+
+.ki-nav-icon {
+  display: inline-block !important;
+  width: 13px !important;
+  height: 13px !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+}
+
+/* Instagram brand styling (Official Instagram brand color / gradient look) */
+.ki-nav-instagram {
+  color: #e1306c !important;
+}
+
+.ki-nav-instagram span {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block !important;
+}
+
+.ki-nav-icon-ig {
+  stroke: url(#ig-nav-gradient) !important;
+}
+
+/* WhatsApp brand green (Official WhatsApp brand color) */
+.ki-nav-whatsapp,
+.ki-whatsapp-link {
+  color: #25d366 !important;
+}
+
+.ki-nav-whatsapp span {
+  color: #25d366 !important;
+}
+
+.ki-nav-icon-wa {
+  fill: #25d366 !important;
 }
 
 .ki-whatsapp-link:hover,
-.ki-links a:hover {
+.ki-nav-whatsapp:hover,
+.ki-nav-instagram:hover {
   opacity: 0.8 !important;
 }
 
-/* Portfolio Header WhatsApp */
-.kp-header > div a,
-.kp-header .ki-whatsapp-link {
-  color: #25d366 !important;
-  font-weight: 700 !important;
+/* Portfolio & Contact Header Social Links */
+.kp-header > div,
+.contact-header-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.kp-header .ki-nav-social,
+.contact-header-links .ki-nav-social {
+  font-size: 11px !important;
 }
 
 /* Intro breathing room handled in main layout section */
@@ -888,258 +958,232 @@ img,video{-webkit-user-drag:none;user-select:none}
   width: 100vw !important;
   height: 100vh !important;
   z-index: 999999 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: grid !important;
+  place-items: center !important;
   pointer-events: all !important;
   overflow: hidden !important;
-  background: var(--ki-paper, #f8f8f6) !important;
-  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.65s !important;
-}
-
-.ki-loader.is-loaded {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-/* Stage containing diagonal tiles */
-.ki-loader-stage {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  pointer-events: none !important;
-  overflow: hidden !important;
-  transition: opacity 0.5s ease, transform 0.65s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.ki-loader.is-loaded .ki-loader-stage {
-  opacity: 0 !important;
-  transform: scale(1.02) !important;
-}
-
-/* Square image tiles */
-.ki-loader-tile {
-  position: absolute !important;
-  width: clamp(100px, 9.5vw, 155px) !important;
-  aspect-ratio: 1 / 1 !important;
-  overflow: hidden !important;
-  background: #ebebe8 !important;
-  border: 1px solid rgba(0, 0, 0, 0.07) !important;
-  border-radius: 0 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
-  opacity: 0 !important;
-  transform: translateX(var(--dir, 0px)) scale(0.96) !important;
-  filter: blur(10px) !important;
-  animation: ki-tile-assemble 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
-  animation-delay: var(--d, 0.3s) !important;
-  will-change: transform, opacity, filter !important;
-}
-
-.ki-loader-tile img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 0 !important;
-  transform: translateZ(0);
-}
-
-@keyframes ki-tile-assemble {
-  0% {
-    opacity: 0;
-    transform: translateX(var(--dir, 0px)) scale(0.96);
-    filter: blur(10px);
-  }
-  100% {
-    opacity: 0.92;
-    transform: translateX(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-/* Diagonal layout coordinates */
-/* Left side: diagonal inward cascading sequence */
-.ki-tile-pos-1 {
-  top: 5% !important;
-  left: 3.5% !important;
-}
-
-.ki-tile-pos-2 {
-  top: 19% !important;
-  left: 14% !important;
-}
-
-.ki-tile-pos-3 {
-  top: 42% !important;
-  left: 5% !important;
-}
-
-.ki-tile-pos-4 {
-  top: 65% !important;
-  left: 13.5% !important;
-}
-
-.ki-tile-pos-5 {
-  top: 81% !important;
-  left: 4% !important;
-}
-
-/* Right side: diagonal inward cascading sequence */
-.ki-tile-pos-6 {
-  top: 5% !important;
-  right: 3.5% !important;
-}
-
-.ki-tile-pos-7 {
-  top: 19% !important;
-  right: 14% !important;
-}
-
-.ki-tile-pos-8 {
-  top: 42% !important;
-  right: 5% !important;
-}
-
-.ki-tile-pos-9 {
-  top: 65% !important;
-  right: 13.5% !important;
-}
-
-.ki-tile-pos-10 {
-  top: 81% !important;
-  right: 4% !important;
-}
-
-/* Center Editorial Content */
-.ki-loader-center {
-  position: relative !important;
-  z-index: 10 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding: 30px !important;
-  pointer-events: none !important;
-  box-sizing: border-box !important;
+  background: #000000 !important;
+  transform: translateY(0) !important;
+  transition: transform 0.68s cubic-bezier(0.76, 0, 0.24, 1) !important;
+  will-change: transform !important;
 }
 
 .ki-loader-brand {
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: clamp(32px, 4.4vw, 56px) !important;
-  font-weight: 500 !important;
-  line-height: 0.95 !important;
-  letter-spacing: -0.04em !important;
+  font-size: clamp(38px, 6.2vw, 78px) !important;
+  font-weight: 700 !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.05em !important;
   text-transform: uppercase !important;
-  color: #080808 !important;
+  color: #ffffff !important;
   margin: 0 !important;
-  animation: ki-center-fade 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  text-align: center !important;
+  opacity: 0;
+  transform: scale(0.97);
+  animation: ki-loader-brand-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards !important;
 }
 
-.ki-loader-status {
-  margin: 12px 0 22px 0 !important;
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.16em !important;
-  text-transform: uppercase !important;
-  color: #767672 !important;
-  opacity: 0 !important;
-  animation: ki-center-fade 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards !important;
-}
-
-.ki-loader-progress-wrap {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 8px !important;
-  opacity: 0 !important;
-  animation: ki-center-fade 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards !important;
-}
-
-.ki-loader-track {
-  width: 170px !important;
-  height: 1.5px !important;
-  background: #deded9 !important;
-  position: relative !important;
-  overflow: hidden !important;
-  border-radius: 0 !important;
-}
-
-.ki-loader-bar {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  height: 100% !important;
-  width: 0% !important;
-  background: #080808 !important;
-  transition: width 0.08s linear !important;
-}
-
-.ki-loader-pct {
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.08em !important;
-  color: #8c8c88 !important;
-  font-variant-numeric: tabular-nums !important;
-}
-
-@keyframes ki-center-fade {
-  0% {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  100% {
+@keyframes ki-loader-brand-in {
+  to {
     opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.ki-loader.is-exiting,
+.ki-loader.is-loaded {
+  transform: translateY(-100%) !important;
+  pointer-events: none !important;
+}
+
+.intro-seen .ki-loader {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* Fail-safe pure CSS loader auto-exit after 1.6s */
+@keyframes ki-loader-fallback-exit {
+  0%, 70% {
     transform: translateY(0);
   }
-}
-
-/* Mobile & Tablet Adjustments */
-@media (max-width: 900px) {
-  .ki-loader-tile {
-    width: clamp(75px, 11vw, 115px) !important;
-  }
-  .ki-tile-pos-2,
-  .ki-tile-pos-4 {
-    left: 11% !important;
-  }
-  .ki-tile-pos-7,
-  .ki-tile-pos-9 {
-    right: 11% !important;
+  100% {
+    transform: translateY(-100%);
+    pointer-events: none;
+    visibility: hidden;
   }
 }
 
-@media (max-width: 600px) {
-  .ki-loader-tile {
-    width: clamp(62px, 16vw, 84px) !important;
-  }
-  .ki-tile-pos-1 { top: 3% !important; left: 3% !important; }
-  .ki-tile-pos-2 { top: 16% !important; left: 8% !important; }
-  .ki-tile-pos-3 { top: 44% !important; left: 3% !important; }
-  .ki-tile-pos-4 { top: 68% !important; left: 8% !important; }
-  .ki-tile-pos-5 { top: 84% !important; left: 3% !important; }
+#ki-loader {
+  animation: ki-loader-fallback-exit 1.6s cubic-bezier(0.76, 0, 0.24, 1) 0.05s forwards !important;
+}
 
-  .ki-tile-pos-6 { top: 3% !important; right: 3% !important; }
-  .ki-tile-pos-7 { top: 16% !important; right: 8% !important; }
-  .ki-tile-pos-8 { top: 44% !important; right: 3% !important; }
-  .ki-tile-pos-9 { top: 68% !important; right: 8% !important; }
-  .ki-tile-pos-10 { top: 84% !important; right: 3% !important; }
+/* ============================================================
+   WEBSITE SHELL (ROCK SOLID AT TOP, ZERO SHIFT OR AUTO-SCROLL)
+   ============================================================ */
+.ki-shell,
+.kp-shell,
+.contact-shell {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
 
-  .ki-loader-brand {
-    font-size: 28px !important;
-  }
-  .ki-loader-status {
-    font-size: 9.5px !important;
-    letter-spacing: 0.14em !important;
-    margin: 8px 0 16px 0 !important;
-  }
-  .ki-loader-track {
-    width: 140px !important;
-  }
+.has-entrance:not(.is-entered) .ki-shell,
+.has-entrance:not(.is-entered) .kp-shell,
+.has-entrance:not(.is-entered) .contact-shell,
+.has-entrance.is-entered .ki-shell,
+.has-entrance.is-entered .kp-shell,
+.has-entrance.is-entered .contact-shell {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ============================================================
+   SCROLL REVEAL (SUBTLE OPACITY + TRANSLATE, NORMAL FLOW)
+   ============================================================ */
+.ki-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.js-reveal-active .ki-reveal:not(.is-revealed) {
+  opacity: 0 !important;
+  transform: translateY(22px) !important;
+}
+
+.js-reveal-active .ki-reveal {
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform !important;
+}
+
+.js-reveal-active .ki-reveal.is-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ============================================================
+   PORTFOLIO / PROJECTS PAGE HEADER & NAVIGATION REFINEMENT
+   ============================================================ */
+.kp-header {
+  height: 80px !important;
+  padding: 0 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid var(--ki-line, rgba(0, 0, 0, 0.08)) !important;
+  background: var(--ki-paper, #f8f8f6) !important;
+}
+
+.kp-header > a {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 650 !important;
+  letter-spacing: -0.05em !important;
+  text-transform: uppercase !important;
+  color: #080808 !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  display: block !important;
+}
+
+.kp-header nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: clamp(24px, 3.2vw, 44px) !important;
+}
+
+.kp-header nav a {
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #080808 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.kp-header nav a:hover {
+  color: #777773 !important;
+}
+
+.kp-header .ki-links {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Category Controls (ALL / FASHION / JEWELLERY / PRODUCT) */
+.kp-toolbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  margin-top: 36px !important;
+  padding-bottom: 14px !important;
+  border-bottom: 1px solid var(--ki-line, rgba(0, 0, 0, 0.08)) !important;
+}
+
+.kp-filters {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.kp-filters button {
+  appearance: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  background: transparent !important;
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  color: #555552 !important;
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.kp-filters button:hover {
+  color: #080808 !important;
+  border-color: #080808 !important;
+}
+
+.kp-filters button.is-active {
+  background: #080808 !important;
+  color: #ffffff !important;
+  border-color: #080808 !important;
+}
+
+.kp-views {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.kp-views button {
+  background: transparent !important;
+  border: none !important;
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #888884 !important;
+  cursor: pointer !important;
+  padding: 4px 6px !important;
+  transition: color 0.2s ease !important;
+}
+
+.kp-views button.is-active,
+.kp-views button:hover {
+  color: #080808 !important;
 }
 
 /* ============================================================
@@ -2462,12 +2506,31 @@ a, button {
 
 
 /* ============================================================
-   PAGE SHUTTER / WIPE TRANSITION
+   PAGE SHUTTER / WIPE TRANSITION (SUBTLE ELEGANT WHITE SHUTTER)
    ============================================================ */
 .ki-page-wipe {
-  display: none !important;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: #ffffff !important;
+  z-index: 99998 !important;
   pointer-events: none !important;
-  visibility: hidden !important;
+  transform: translateY(-100%) !important;
+  transition: transform 0.32s cubic-bezier(0.76, 0, 0.24, 1) !important;
+  will-change: transform !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.ki-page-wipe.is-wiping-in {
+  pointer-events: all !important;
+  transform: translateY(0) !important;
+}
+
+.ki-page-wipe.is-wiping-out {
+  pointer-events: none !important;
+  transform: translateY(100%) !important;
 }
 
 /* ============================================================
@@ -2494,7 +2557,9 @@ a, button {
   align-items: end !important;
   justify-content: space-between !important;
   gap: 24px !important;
-  padding: clamp(155px, 13vw, 195px) 20px 20px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: clamp(240px, 19vw, 320px) 20px 24px !important;
   opacity: 1 !important;
   visibility: visible !important;
   width: 100% !important;
@@ -2555,16 +2620,27 @@ a, button {
   color: inherit !important;
 }
 
-.ki-work-card img {
+.ki-work-thumb {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 4 / 3 !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+.ki-work-card img,
+.ki-work-thumb img {
   display: block !important;
   width: 100% !important;
-  aspect-ratio: 1 / 1 !important;
+  height: 100% !important;
+  aspect-ratio: 4 / 3 !important;
   object-fit: cover !important;
   background: #e4e4e0 !important;
   transition: transform 0.4s ease, filter 0.3s ease !important;
 }
 
-.ki-work-card:hover img {
+.ki-work-card:hover img,
+.ki-work-card:hover .ki-work-thumb img {
   transform: scale(0.992) !important;
   filter: saturate(1.06) !important;
 }
@@ -2610,7 +2686,7 @@ a, button {
 
 .ki-view-all-box {
   width: 100% !important;
-  aspect-ratio: 1 / 1 !important;
+  aspect-ratio: 4 / 3 !important;
   background: #080808 !important;
   display: flex !important;
   flex-direction: column !important;
@@ -2665,14 +2741,23 @@ a, button {
   pointer-events: none !important;
 }
 
-/* Mobile responsive breakpoints for intro and work grid */
+/* Responsive breakpoints: 2 columns on tablet, 1 column on mobile */
+@media (max-width: 900px) {
+  .ki-work,
+  .kp-grid:not(.is-list) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px 12px !important;
+    padding: 0 16px 70px !important;
+  }
+}
+
 @media (max-width: 700px) {
   .ki-intro {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 14px !important;
-    padding: 40px 14px 18px !important;
+    padding: 36px 14px 18px !important;
   }
   .ki-intro > div {
     max-width: 100% !important;
@@ -2682,15 +2767,11 @@ a, button {
     white-space: normal !important;
     font-size: 11px !important;
   }
-  .ki-work {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 14px 10px !important;
-    padding: 0 12px 60px !important;
-  }
 }
 
-@media (max-width: 480px) {
-  .ki-work {
+@media (max-width: 600px) {
+  .ki-work,
+  .kp-grid:not(.is-list) {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
     padding: 0 14px 60px !important;
