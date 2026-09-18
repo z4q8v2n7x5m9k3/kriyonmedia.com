@@ -9,21 +9,49 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=61" />
+  <script>
+    if (sessionStorage.getItem('kriyon_intro_seen')) {
+      document.documentElement.classList.add('intro-seen');
+    }
+  </script>
+  <link rel="stylesheet" href="/styles.css?v=62" />
   <script defer src="/media-guard.js"></script>
 </head>
 <body class="portfolio-editorial kriyon-project-index">
   <div class="ki-loader" id="ki-loader" aria-hidden="true">
-    <div class="ki-loader-content">
-      <span class="ki-loader-title">KRIYON MEDIA</span>
-      <span class="ki-loader-sub">Visual Production Studio</span>
+    <div class="ki-loader-curtain ki-curtain-top"></div>
+    <div class="ki-loader-curtain ki-curtain-bottom"></div>
+    <div class="ki-loader-core">
+      <div class="ki-loader-crosshairs">
+        <span class="ki-ch ki-ch-tl"></span>
+        <span class="ki-ch ki-ch-tr"></span>
+        <span class="ki-ch ki-ch-bl"></span>
+        <span class="ki-ch ki-ch-br"></span>
+      </div>
+      <div class="ki-loader-header">
+        <span class="ki-loader-sub-tag">CREATIVE PRODUCTION STUDIO</span>
+        <span class="ki-loader-loc-tag">32.7266° N · 74.8570° E</span>
+      </div>
+      <div class="ki-loader-center">
+        <div class="ki-loader-logo-wrap">
+          <span class="ki-loader-title">KRIYON MEDIA</span>
+        </div>
+        <div class="ki-loader-bar">
+          <div class="ki-loader-progress"></div>
+        </div>
+        <p class="ki-loader-concept">Ideas, produced with intent.</p>
+      </div>
+      <div class="ki-loader-footer">
+        <span class="ki-loader-rec"><i class="ki-rec-dot"></i> REC [4K 24FPS]</span>
+        <span class="ki-loader-ready">SYSTEM READY</span>
+      </div>
     </div>
   </div>
   <div class="kp-shell">
     <header class="kp-header"><a href="/">KRIYON MEDIA</a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/#info">Info</a><a href="/work/">Projects</a><a href="/contact/">Contact</a></nav><div><a class="ki-whatsapp-link" href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WhatsApp</a></div><button class="site-menu-toggle kp-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">+</button></header>
     <main>
       <section class="kp-intro">
-        <p class="kp-bio">Kriyon Media creates cinematic, authentic campaign imagery, couture films and visual production for fashion and jewellery brands.</p>
+        <p class="kp-bio">Kriyon Media is a creative production studio building distinctive visual worlds for brands, products and campaigns.</p>
         <div class="kp-toolbar">
           <span class="kp-filters"><button class="is-active" type="button" data-filter="all">All</button><button type="button" data-filter="fashion">Fashion</button><button type="button" data-filter="jewellery">Jewellery</button><button type="button" data-filter="social">Ready to Post</button></span>
           <span class="kp-views"><button class="is-active" type="button" data-view="grid">Grid</button><i>/</i><button type="button" data-view="list">List</button></span>
@@ -37,14 +65,23 @@
         <a data-kind="fashion" href="/work/clothing/"><img src="/assets/pixelone/pixelone-image-014.png" alt="Mehr Couture olive campaign" /><p><b>MEHR COUTURE</b> <span>Olive Edit</span></p></a>
       </section>
     </main>
-    <footer class="kp-footer"><h2>LET’S WORK TOGETHER.</h2><p>Planning a collection, launch or campaign? We respond within 24 hours.</p><div><a href="mailto:kriyon@repixelx.tech">KRIYON@REPIXELX.TECH</a><a class="kp-whatsapp" href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20book%20a%20meeting." target="_blank" rel="noreferrer">BOOK A MEETING</a><a href="/contact/">CONTACT</a></div></footer>
+    <footer class="kp-footer"><h2>LET’S WORK TOGETHER.</h2><p>Have a product, campaign or idea in mind? Let’s build it.</p><div><a href="mailto:kriyon@repixelx.tech">KRIYON@REPIXELX.TECH</a><a class="kp-whatsapp" href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20start%20a%20new%20project." target="_blank" rel="noreferrer">START A PROJECT ↗</a><a href="/contact/">CONTACT</a></div></footer>
   </div>
   <script>
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('ki-loader')?.classList.add('is-loaded');
-      }, 550);
-    });
+    const loader = document.getElementById('ki-loader');
+    if (loader) {
+      if (sessionStorage.getItem('kriyon_intro_seen')) {
+        loader.classList.add('is-loaded');
+      } else {
+        setTimeout(() => {
+          loader.classList.add('is-shutter-open');
+          setTimeout(() => {
+            loader.classList.add('is-loaded');
+            sessionStorage.setItem('kriyon_intro_seen', '1');
+          }, 800);
+        }, 1100);
+      }
+    }
     const grid = document.querySelector('.kp-grid');
     document.querySelectorAll('[data-filter]').forEach(b => b.addEventListener('click', () => {
       document.querySelectorAll('[data-filter]').forEach(x => x.classList.toggle('is-active', x === b));

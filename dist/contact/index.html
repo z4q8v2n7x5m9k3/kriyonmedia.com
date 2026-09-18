@@ -9,14 +9,42 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=61" />
+  <script>
+    if (sessionStorage.getItem('kriyon_intro_seen')) {
+      document.documentElement.classList.add('intro-seen');
+    }
+  </script>
+  <link rel="stylesheet" href="/styles.css?v=62" />
   <script defer src="/media-guard.js"></script>
 </head>
 <body class="contact-page">
   <div class="ki-loader" id="ki-loader" aria-hidden="true">
-    <div class="ki-loader-content">
-      <span class="ki-loader-title">KRIYON MEDIA</span>
-      <span class="ki-loader-sub">Visual Production Studio</span>
+    <div class="ki-loader-curtain ki-curtain-top"></div>
+    <div class="ki-loader-curtain ki-curtain-bottom"></div>
+    <div class="ki-loader-core">
+      <div class="ki-loader-crosshairs">
+        <span class="ki-ch ki-ch-tl"></span>
+        <span class="ki-ch ki-ch-tr"></span>
+        <span class="ki-ch ki-ch-bl"></span>
+        <span class="ki-ch ki-ch-br"></span>
+      </div>
+      <div class="ki-loader-header">
+        <span class="ki-loader-sub-tag">CREATIVE PRODUCTION STUDIO</span>
+        <span class="ki-loader-loc-tag">32.7266° N · 74.8570° E</span>
+      </div>
+      <div class="ki-loader-center">
+        <div class="ki-loader-logo-wrap">
+          <span class="ki-loader-title">KRIYON MEDIA</span>
+        </div>
+        <div class="ki-loader-bar">
+          <div class="ki-loader-progress"></div>
+        </div>
+        <p class="ki-loader-concept">Ideas, produced with intent.</p>
+      </div>
+      <div class="ki-loader-footer">
+        <span class="ki-loader-rec"><i class="ki-rec-dot"></i> REC [4K 24FPS]</span>
+        <span class="ki-loader-ready">SYSTEM READY</span>
+      </div>
     </div>
   </div>
   <header class="contact-nav">
@@ -79,11 +107,20 @@
     </div>
   </footer>
   <script>
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('ki-loader')?.classList.add('is-loaded');
-      }, 550);
-    });
+    const loader = document.getElementById('ki-loader');
+    if (loader) {
+      if (sessionStorage.getItem('kriyon_intro_seen')) {
+        loader.classList.add('is-loaded');
+      } else {
+        setTimeout(() => {
+          loader.classList.add('is-shutter-open');
+          setTimeout(() => {
+            loader.classList.add('is-loaded');
+            sessionStorage.setItem('kriyon_intro_seen', '1');
+          }, 800);
+        }, 1100);
+      }
+    }
     document.querySelector('.contact-menu-toggle')?.addEventListener('click', e => {
       const h = document.querySelector('.contact-nav'), b = e.currentTarget, o = h.classList.toggle('is-menu-open');
       b.setAttribute('aria-expanded', o);
