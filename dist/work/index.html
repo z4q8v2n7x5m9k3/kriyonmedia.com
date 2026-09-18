@@ -16,21 +16,19 @@
   <div class="kp-shell">
     <header class="kp-header"><a href="/">KRIYON MEDIA</a><nav aria-label="Primary navigation"><a href="/">Home</a><a href="/#info">Info</a><a href="/work/">Projects</a><a href="/#contact">Contact</a></nav><div><a href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WA</a><a href="/#contact">IG</a></div></header>
     <main>
-      <section class="kp-intro"><h1>PROJECTS.</h1><div><span>Selected visual production</span><a href="#project-grid">Grid / List</a></div></section>
+      <section class="kp-intro"><h1>PROJECTS.</h1><div class="kp-toolbar"><span class="kp-filters"><button class="is-active" type="button" data-filter="all">All</button><button type="button" data-filter="fashion">Fashion</button><button type="button" data-filter="jewellery">Jewellery</button><button type="button" data-filter="social">Ready to Post</button></span><span class="kp-views"><button class="is-active" type="button" data-view="grid">Grid</button><i>/</i><button type="button" data-view="list">List</button></span></div></section>
       <section class="kp-grid" id="project-grid" aria-label="All projects">
-        <a href="/work/darzie-couture/"><img src="/assets/pixelone/pixelone-image-029.webp" alt="Darzie Couture fashion campaign" /><p><b>DARZIE COUTURE</b><span>Fashion Campaign</span></p></a>
-        <a href="/work/rutba/"><img src="/assets/pixelone/pixelone-image-158.png" alt="Rutba collection campaign" /><p><b>RUTBA</b><span>Collection Campaign</span></p></a>
-        <a href="/work/red-jewellery/"><img src="/assets/pixelone/pixelone-image-152.png" alt="Ruby Reverie jewellery campaign" /><p><b>RUBY REVERIE</b><span>Jewellery Campaign</span></p></a>
-        <a href="/work/jewellery/"><img src="/assets/pixelone/pixelone-image-149.png" alt="Emerald jewellery product campaign" /><p><b>EMERALD STUDY</b><span>Product Visual</span></p></a>
-        <a href="/work/clothing/"><img src="/assets/pixelone/pixelone-image-003.png" alt="Crimson Palace fashion campaign" /><p><b>CRIMSON PALACE</b><span>Seasonal Fashion</span></p></a>
-        <a href="/work/boutique-pink/"><img src="/assets/pixelone/pixelone-image-034.webp" alt="Pink Study fashion campaign" /><p><b>PINK STUDY</b><span>D2C Collection</span></p></a>
-        <a href="/work/jewellery/"><img src="/assets/pixelone/pixelone-image-092.png" alt="Object and Ritual jewellery campaign" /><p><b>OBJECT &amp; RITUAL</b><span>Jewellery Production</span></p></a>
-        <a href="/work/red-jewellery/"><img src="/assets/pixelone/pixelone-image-151.png" alt="Radiant Rubies social creative" /><p><b>RADIANT RUBIES</b><span>Ready to Post</span></p></a>
-        <a href="/work/rutba/"><img src="/assets/pixelone/pixelone-image-153.png" alt="Rutba embroidery detail" /><p><b>RUTBA DETAIL</b><span>Craft &amp; Texture</span></p></a>
+        <a data-kind="fashion" href="/work/darzie-couture/"><img src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture fashion campaign" /><p><b>Darzie Couture</b><span>Pink Couture Campaign</span></p></a>
+        <a data-kind="fashion" href="/work/rutba/"><img src="/assets/pixelone/pixelone-image-155.png" alt="Rutba collection campaign" /><p><b>Rutba</b><span>Emerald Heritage Collection</span></p></a>
+        <a data-kind="jewellery social" href="/work/red-jewellery/"><img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie full campaign shoot" /><p><b>Ruby Reverie</b><span>Ruby &amp; Diamond Campaign</span></p></a>
+        <a data-kind="jewellery" href="/work/jewellery/"><img src="/assets/pixelone/pixelone-image-086.png" alt="Jewellery Showcase campaign shoot" /><p><b>Jewellery Showcase</b><span>Yellow Sari Campaign Story</span></p></a>
+        <a data-kind="jewellery" href="/work/jewellery/"><img src="/assets/pixelone/pixelone-image-082.png" alt="Blue gemstone jewellery close-up" /><p><b>Sapphire Close-Up</b><span>Blue Gemstone Editorial</span></p></a>
+        <a data-kind="fashion" href="/work/clothing/"><img src="/assets/pixelone/pixelone-image-002.png" alt="Mehr Couture campaign" /><p><b>Mehr Couture</b><span>Crimson Palace Collection</span></p></a>
       </section>
     </main>
     <footer class="kp-footer"><h2>LET’S WORK TOGETHER.</h2><p>Planning a collection, launch or campaign? We respond within 24 hours.</p><div><a href="mailto:kriyon@repixels.tech">KRIYON@REPIXELS.TECH</a><a href="https://wa.me/919622121100" target="_blank" rel="noreferrer">+91 96221 21100</a><a href="/">HOME</a></div></footer>
   </div>
+  <script>const grid=document.querySelector('.kp-grid');document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('is-active',x===b));grid.querySelectorAll('a').forEach(card=>card.hidden=b.dataset.filter!=='all'&&!card.dataset.kind.includes(b.dataset.filter))}));document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('is-active',x===b));grid.classList.toggle('is-list',b.dataset.view==='list')}));</script>
   <header class="portfolio-editorial-nav"><a href="/">Kriyon Media</a><p>Selected Work / All Work</p><a href="/">Home ↗</a></header>
   <main>
     <section class="portfolio-editorial-intro"><p>Fashion · Product · Jewellery · Motion</p><h1>Selected work.<br><em>Made to be seen.</em></h1><span>Campaign imagery and visual production for ambitious fashion and product brands.</span></section>
