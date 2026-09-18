@@ -544,7 +544,7 @@ img,video{-webkit-user-drag:none;user-select:none}
   display: block !important;
 }
 
-/* Row 1, Column 3: Profile Widget (Time top-left, Based in India bottom-left, Photo right) */
+/* Row 1, Column 3: Profile Widget (Time, Based in India, Studio, Venture + Sharp Square Visual) */
 .ki-profile {
   grid-column: 3 !important;
   grid-row: 1 !important;
@@ -552,7 +552,7 @@ img,video{-webkit-user-drag:none;user-select:none}
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-  gap: 12px !important;
+  gap: 15px !important;
   padding-bottom: 16px !important;
   position: static !important;
 }
@@ -561,7 +561,7 @@ img,video{-webkit-user-drag:none;user-select:none}
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
-  gap: 4px !important;
+  gap: 2.5px !important;
   height: auto !important;
   text-align: right !important;
 }
@@ -570,7 +570,7 @@ img,video{-webkit-user-drag:none;user-select:none}
 #local-time {
   font-family: 'Manrope', -apple-system, sans-serif !important;
   font-size: 11px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   color: #111110 !important;
   letter-spacing: -0.01em !important;
   line-height: 1.2 !important;
@@ -578,8 +578,7 @@ img,video{-webkit-user-drag:none;user-select:none}
   display: block !important;
 }
 
-.ki-profile-meta .ki-location,
-.ki-profile-meta span {
+.ki-profile-meta .ki-location {
   font-family: 'Manrope', -apple-system, sans-serif !important;
   font-size: 11px !important;
   font-weight: 500 !important;
@@ -590,15 +589,109 @@ img,video{-webkit-user-drag:none;user-select:none}
   display: block !important;
 }
 
-.ki-profile img {
-  width: 52px !important;
-  height: 52px !important;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: contain !important;
+.ki-profile-meta .ki-studio-type {
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  color: #767672 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
   display: block !important;
-  border-radius: 4px !important;
+}
+
+.ki-profile-meta .ki-venture {
+  font-family: 'Manrope', -apple-system, sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 400 !important;
+  color: #9c9c98 !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  display: block !important;
+}
+
+/* Enlarged Sharp Square Visual with Subtle Editorial Pulse/Flicker */
+.ki-profile-visual {
+  position: relative !important;
+  width: 74px !important;
+  height: 74px !important;
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
   background: #000000 !important;
-  box-sizing: border-box !important;
+  border-radius: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  flex-shrink: 0 !important;
+  cursor: pointer !important;
+}
+
+.ki-top-visual-img {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transform: translateZ(0) !important;
+  will-change: transform, filter !important;
+  animation: ki-visual-flicker 5.2s cubic-bezier(0.16, 1, 0.3, 1) infinite !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease !important;
+}
+
+.ki-profile-visual:hover .ki-top-visual-img {
+  transform: scale(1.04) translateZ(0) !important;
+  filter: brightness(1.15) contrast(1.05) !important;
+}
+
+/* Subtle Editorial Shimmer Sheen */
+.ki-top-visual-sheen {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 180% !important;
+  height: 100% !important;
+  top: 0 !important;
+  left: -180% !important;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.22) 50%, transparent 65%) !important;
+  pointer-events: none !important;
+  border-radius: 0 !important;
+  animation: ki-visual-sheen 5.2s cubic-bezier(0.25, 1, 0.5, 1) infinite !important;
+}
+
+@keyframes ki-visual-flicker {
+  0%, 86%, 100% {
+    filter: brightness(1) contrast(1);
+    transform: scale(1) translateZ(0);
+  }
+  88% {
+    filter: brightness(1.24) contrast(1.12);
+    transform: scale(1.022) translateZ(0);
+  }
+  90.5% {
+    filter: brightness(0.92) contrast(0.98);
+    transform: scale(1) translateZ(0);
+  }
+  92.5% {
+    filter: brightness(1.18) contrast(1.08);
+    transform: scale(1.015) translateZ(0);
+  }
+  95% {
+    filter: brightness(1) contrast(1);
+    transform: scale(1) translateZ(0);
+  }
+}
+
+@keyframes ki-visual-sheen {
+  0%, 86%, 100% {
+    transform: translateX(0);
+  }
+  92%, 96% {
+    transform: translateX(170%);
+  }
 }
 
 /* Row 2: Crisp 1px edge-to-edge horizontal divider */
@@ -758,13 +851,15 @@ img,video{-webkit-user-drag:none;user-select:none}
     padding-bottom: 0 !important;
   }
 
-  .ki-header.is-menu-open .ki-profile img {
-    width: 48px !important;
-    height: 48px !important;
-    aspect-ratio: 1 / 1 !important;
-    object-fit: contain !important;
-    background: #000000 !important;
-    border-radius: 4px !important;
+  .ki-header.is-menu-open .ki-profile-visual {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 0 !important;
+  }
+  .ki-header.is-menu-open .ki-profile-visual img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
   }
 
   .ki-header.is-menu-open .ki-profile-meta {
