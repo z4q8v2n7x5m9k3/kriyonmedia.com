@@ -1189,10 +1189,10 @@ body.is-page-exiting {
 }
 
 /* ============================================================
-   SELECTED FRAMES SECTION (EDITORIAL CONTACT SHEET / PRODUCTION WALL)
+   SELECTED FRAMES SECTION (DENSE SQUARE-GRID VISUAL MOSAIC)
    ============================================================ */
 .ki-frames-section {
-  padding: 80px 24px 70px !important;
+  padding: 70px 24px 75px !important;
   background: var(--ki-paper) !important;
   border-top: 1px solid var(--ki-line) !important;
   width: 100% !important;
@@ -1203,20 +1203,24 @@ body.is-page-exiting {
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .ki-frames-head {
   width: 100% !important;
-  padding: 0 0 20px 0 !important;
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  padding: 0 0 18px 0 !important;
   border-bottom: 1px solid var(--ki-line) !important;
-  margin-bottom: 24px !important;
+  margin-bottom: 22px !important;
   box-sizing: border-box !important;
 }
 
 .ki-frames-head h1 {
   margin: 0 !important;
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: clamp(32px, 3.2vw, 44px) !important;
+  font-size: clamp(30px, 3.2vw, 44px) !important;
   font-weight: 500 !important;
   line-height: 1 !important;
   letter-spacing: -0.03em !important;
@@ -1224,213 +1228,145 @@ body.is-page-exiting {
   color: #050505 !important;
 }
 
-.ki-frames-grid {
-  display: grid !important;
-  grid-template-columns: repeat(12, 1fr) !important;
-  gap: 14px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-.ki-frame-slot {
-  position: relative !important;
-  overflow: hidden !important;
-  background: #ebebe8 !important;
-  border-radius: 0 !important;
-  display: block !important;
-  width: 100% !important;
-  cursor: pointer !important;
-}
-
-/* Asymmetrical Spans & Aspect Ratios */
-/* Row 1: 4 + 5 + 3 = 12 */
-.ki-frame-portrait-tall {
-  grid-column: span 4 !important;
-  aspect-ratio: 3 / 4 !important;
-}
-
-.ki-frame-landscape-wide {
-  grid-column: span 5 !important;
-  aspect-ratio: 16 / 11 !important;
-}
-
-.ki-frame-square-a {
-  grid-column: span 3 !important;
-  aspect-ratio: 1 / 1 !important;
-}
-
-/* Row 2: 3 + 3 + 6 = 12 */
-.ki-frame-square-b {
-  grid-column: span 3 !important;
-  aspect-ratio: 1 / 1 !important;
-}
-
-.ki-frame-portrait-b {
-  grid-column: span 3 !important;
-  aspect-ratio: 3 / 4 !important;
-}
-
-.ki-frame-widescreen {
-  grid-column: span 6 !important;
-  aspect-ratio: 16 / 9 !important;
-}
-
-/* Row 3: 5 + 4 + 3 = 12 */
-.ki-frame-landscape-b {
-  grid-column: span 5 !important;
-  aspect-ratio: 16 / 10 !important;
-}
-
-.ki-frame-square-c {
-  grid-column: span 4 !important;
-  aspect-ratio: 1 / 1 !important;
-}
-
-.ki-frame-link-slot {
-  grid-column: span 3 !important;
-  aspect-ratio: 1 / 1 !important;
-  display: flex !important;
-  align-items: flex-end !important;
-  padding: 24px !important;
-  background: var(--ki-paper) !important;
-  border: 1px solid var(--ki-line) !important;
-  border-radius: 0 !important;
-  text-decoration: none !important;
-  color: #080808 !important;
-  box-sizing: border-box !important;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease !important;
-}
-
-.ki-frame-link-slot:hover {
-  background: #080808 !important;
-  color: #ffffff !important;
-  border-color: #080808 !important;
-}
-
-.ki-frame-link-inner {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 8px !important;
-}
-
-.ki-frame-link-tag {
+.ki-frames-subline {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 10px !important;
+  font-size: 11px !important;
   font-weight: 600 !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
   color: #767672 !important;
-  transition: color 0.25s ease !important;
 }
 
-.ki-frame-link-slot:hover .ki-frame-link-tag {
-  color: #a8a8a4 !important;
+/* 24-Tile Dense Square Grid */
+.ki-frames-grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 6px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.ki-frame-link-arrow {
-  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: clamp(16px, 1.5vw, 22px) !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.02em !important;
-  line-height: 1.15 !important;
-  color: inherit !important;
+/* Individual Mosaic Tile */
+.ki-mosaic-tile {
+  position: relative !important;
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+  background: #141414 !important;
+  border-radius: 0 !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  perspective: 900px !important;
 }
 
-/* Frame Image Crossfade */
-.ki-frame-img {
+/* 3D Card Container */
+.ki-mosaic-card {
   position: absolute !important;
   inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform-style: preserve-3d !important;
+  -webkit-transform-style: preserve-3d !important;
+  transition: transform 0.44s cubic-bezier(0.2, 0.9, 0.3, 1.1) !important;
+  will-change: transform !important;
+}
+
+.ki-mosaic-tile.is-flipped .ki-mosaic-card {
+  transform: rotateY(180deg) !important;
+}
+
+.ki-mosaic-tile.flip-v.is-flipped .ki-mosaic-card {
+  transform: rotateX(180deg) !important;
+}
+
+/* Two Faces */
+.ki-mosaic-face {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  overflow: hidden !important;
+  background: #141414 !important;
+}
+
+.ki-face-front {
+  transform: rotateY(0deg) translateZ(1px) !important;
+}
+
+.ki-face-back {
+  transform: rotateY(180deg) translateZ(1px) !important;
+}
+
+.ki-mosaic-tile.flip-v .ki-face-back {
+  transform: rotateX(180deg) translateZ(1px) !important;
+}
+
+.ki-mosaic-face img {
+  display: block !important;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   border-radius: 0 !important;
   transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition: opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.ki-frame-slot:hover .ki-frame-active {
-  transform: scale(1.018) !important;
+.ki-mosaic-tile:hover .ki-mosaic-face img {
+  transform: scale(1.05) !important;
 }
 
-.ki-frame-next {
-  opacity: 0 !important;
+.ki-mosaic-tile::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border: 1px solid transparent !important;
   pointer-events: none !important;
+  transition: border-color 0.2s ease !important;
+  z-index: 5 !important;
 }
 
-/* Responsive Selected Frames */
-@media (max-width: 980px) {
+.ki-mosaic-tile:hover::after {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* Responsive Grid Breakpoints */
+@media (max-width: 1100px) {
   .ki-frames-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 10px !important;
-  }
-  .ki-frame-portrait-tall,
-  .ki-frame-landscape-wide,
-  .ki-frame-square-a,
-  .ki-frame-square-b,
-  .ki-frame-portrait-b,
-  .ki-frame-widescreen,
-  .ki-frame-landscape-b,
-  .ki-frame-square-c {
-    grid-column: span 1 !important;
-    aspect-ratio: 1 / 1 !important;
-  }
-  .ki-frame-widescreen {
-    grid-column: span 2 !important;
-    aspect-ratio: 16 / 9 !important;
-  }
-  .ki-frame-link-slot {
-    grid-column: span 2 !important;
-    aspect-ratio: auto !important;
-    min-height: 110px !important;
-    padding: 20px !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 5px !important;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .ki-frames-section {
-    padding: 50px 14px 45px !important;
+    padding: 50px 16px 55px !important;
   }
   .ki-frames-head {
-    padding-bottom: 14px !important;
     margin-bottom: 16px !important;
+    padding-bottom: 14px !important;
   }
   .ki-frames-head h1 {
-    font-size: 28px !important;
+    font-size: 26px !important;
+  }
+  .ki-frames-subline {
+    font-size: 9.5px !important;
   }
   .ki-frames-grid {
-    grid-template-columns: 1fr !important;
-    gap: 8px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 4px !important;
   }
-  .ki-frame-portrait-tall,
-  .ki-frame-landscape-wide,
-  .ki-frame-square-a,
-  .ki-frame-square-b,
-  .ki-frame-portrait-b,
-  .ki-frame-widescreen,
-  .ki-frame-landscape-b,
-  .ki-frame-square-c,
-  .ki-frame-link-slot {
-    grid-column: 1 !important;
+}
+
+@media (max-width: 480px) {
+  .ki-frames-section {
+    padding: 40px 12px 45px !important;
   }
-  .ki-frame-portrait-tall,
-  .ki-frame-portrait-b {
-    aspect-ratio: 4 / 5 !important;
-  }
-  .ki-frame-landscape-wide,
-  .ki-frame-landscape-b,
-  .ki-frame-widescreen {
-    aspect-ratio: 16 / 10 !important;
-  }
-  .ki-frame-square-a,
-  .ki-frame-square-b,
-  .ki-frame-square-c {
-    aspect-ratio: 1 / 1 !important;
-  }
-  .ki-frame-link-slot {
-    min-height: 90px !important;
-    padding: 18px 14px !important;
+  .ki-frames-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 3px !important;
   }
 }
 
