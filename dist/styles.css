@@ -2794,3 +2794,37 @@ a, button {
 .ki-footer {
   padding: clamp(85px, 7.5vw, 115px) 24px 36px !important;
 }
+
+/* ============================================================
+   PROJECT GRID IMAGE CROP & BRIGHTNESS REFINEMENTS
+   ============================================================ */
+/* Darzie Couture: move model slightly up so framing is balanced with proper headroom and waist visibility */
+.ki-work-card[href*="darzie-couture"] img,
+.kp-grid > a[href*="darzie-couture"] img {
+  object-position: center 32% !important;
+}
+
+/* Ruby Reverie: position full-shot slightly lower so framing looks clean */
+.ki-work-card[href*="red-jewellery"] img,
+.kp-grid > a[href*="red-jewellery"] img {
+  object-position: center 18% !important;
+}
+
+/* Mehr Couture: green olive edit editorial framing */
+.ki-work-card[href*="clothing"] img,
+.kp-grid > a[href*="clothing"] img {
+  object-position: center 16% !important;
+  filter: brightness(1.04) contrast(1.02) !important;
+}
+
+.ki-work-card[href*="clothing"]:hover img,
+.kp-grid > a[href*="clothing"]:hover img {
+  filter: brightness(1.06) contrast(1.03) saturate(1.06) !important;
+}
+
+/* Jewellery Showcase: emerald necklace on velvet display centering */
+.ki-work-card[href*="jewellery"] img,
+.kp-grid > a[href*="jewellery"] img {
+  object-position: center center !important;
+}
+
