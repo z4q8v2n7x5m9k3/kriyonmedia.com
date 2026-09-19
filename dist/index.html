@@ -44,29 +44,40 @@
         for (var i = 0; i < regs.length; i++) regs[i].unregister();
       }).catch(function() {});
     }
-    // 3. Safe sessionStorage check (never crashes in private mode)
-    try {
-      if (sessionStorage.getItem('kriyon_intro_seen') || window.location.search.includes('noloader')) {
-        document.documentElement.classList.add('intro-seen');
-      }
-    } catch(e) {}
+    // 3. Skip loader on internal route changes, show on fresh session entry or true browser refresh
+    (function() {
+      try {
+        let isReload = false;
+        if (window.performance) {
+          const navEntries = performance.getEntriesByType('navigation');
+          if (navEntries && navEntries.length > 0) {
+            isReload = (navEntries[0].type === 'reload');
+          } else if (performance.navigation) {
+            isReload = (performance.navigation.type === 1);
+          }
+        }
+        const hasVisited = sessionStorage.getItem('kriyon_visited');
+
+        if (!isReload && hasVisited) {
+          document.documentElement.classList.add('intro-seen');
+        } else {
+          sessionStorage.setItem('kriyon_visited', '1');
+        }
+      } catch(e) {}
+    })();
   </script>
   <style>
-    #ki-loader.is-exiting {
-      animation: ki-loader-fallback-exit 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
-    }
     .intro-seen #ki-loader {
       display: none !important;
     }
   </style>
-  <link rel="stylesheet" href="/styles.css?v=90" />
+  <link rel="stylesheet" href="/styles.css?v=95" />
   <script defer src="/media-guard.js?v=3"></script>
 </head>
 <body class="studio-home kriyon-index" id="top">
     <div class="ki-loader" id="ki-loader" aria-hidden="true">
       <h1 class="ki-loader-brand">KRIYON MEDIA</h1>
     </div>
-    <div class="ki-page-wipe" id="page-wipe" aria-hidden="true"></div>
   <div class="ki-shell">
     <header class="ki-header">
       <div class="ki-brand-wrap">
@@ -90,6 +101,7 @@
         <a href="#top">HOME</a>
         <a href="#info">INFO</a>
         <a href="/work/">PROJECTS</a>
+        <a href="/pricing/">PRICING</a>
         <a href="/contact/">CONTACT</a>
       </nav>
       <div class="ki-links">
@@ -105,12 +117,12 @@
     </header>
     <main>
       <section class="ki-intro" id="info"><div><p>Kriyon Media is a creative production studio building distinctive visual worlds for brands, products and campaigns.</p></div><p>Ideas, produced with intent. <span>© 2026</span></p></section>
-      <section class="ki-work ki-reveal" aria-label="Featured work">
+      <section class="ki-work" aria-label="Featured work">
         <a class="ki-work-card" href="/work/darzie-couture/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture campaign" width="800" height="800" decoding="async" /></div><p><b>DARZIE COUTURE</b> <span>Pink Couture Campaign</span></p></a>
-        <a class="ki-work-card" href="/work/rutba/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-156.png" alt="Rutba campaign" width="800" height="800" decoding="async" /></div><p><b>RUTBA</b> <span>Emerald Heritage Collection</span></p></a>
-        <a class="ki-work-card" href="/work/red-jewellery/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-127.png" alt="Ruby Reverie campaign" width="800" height="800" decoding="async" /></div><p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign</span></p></a>
+        <a class="ki-work-card" href="/work/rutba/"><div class="ki-work-thumb"><img src="/assets/pixelone/rutba-05.png" alt="Rutba campaign" width="800" height="800" decoding="async" /></div><p><b>RUTBA</b> <span>Emerald Heritage Collection</span></p></a>
+        <a class="ki-work-card" href="/work/red-jewellery/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie campaign" width="800" height="800" decoding="async" /></div><p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign</span></p></a>
         <a class="ki-work-card" href="/work/jewellery/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Portfolio" width="800" height="800" decoding="async" /></div><p><b>JEWELLERY SHOWCASE</b> <span>Jewellery Portfolio</span></p></a>
-        <a class="ki-work-card" href="/work/clothing/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-014.png" alt="Mehr Couture olive campaign" width="800" height="800" decoding="async" /></div><p><b>MEHR COUTURE</b> <span>Olive Edit</span></p></a>
+        <a class="ki-work-card" href="/work/clothing/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-005.png" alt="Mehr Couture campaign" width="800" height="800" decoding="async" /></div><p><b>MEHR COUTURE</b> <span>Olive Edit</span></p></a>
         <a class="ki-work-card ki-view-all-tile" href="/work/" aria-label="View all projects"><div class="ki-work-thumb ki-view-all-box"><div class="ki-view-all-content"><span class="ki-view-all-sub">ARCHIVE · 2026</span><h3 class="ki-view-all-title">VIEW ALL<br />PROJECTS ↗</h3></div></div><p class="ki-view-all-spacer" aria-hidden="true">&nbsp;</p></a>
       </section>
       <section class="ki-services ki-reveal" id="services">
@@ -360,54 +372,7 @@
           </div>
         </div>
       </section>
-      <section class="ki-pricing ki-reveal" id="production-options" aria-labelledby="ki-pricing-heading">
-        <div class="ki-pricing-inner">
-          <div class="ki-pricing-head">
-            <h2 id="ki-pricing-heading">PRODUCTION OPTIONS.</h2>
-          </div>
-          <div class="ki-pricing-grid">
-            <div class="ki-pricing-col">
-              <div class="ki-pricing-top">
-                <h3 class="ki-pricing-title">STANDARD VISUAL PRODUCTION</h3>
-                <div class="ki-pricing-rate">
-                  <span class="ki-pricing-prefix">Starting</span>
-                  <span class="ki-pricing-amount">₹9,999</span>
-                  <span class="ki-pricing-tax">+ GST</span>
-                </div>
-              </div>
-              <ul class="ki-pricing-features">
-                <li>Up to 4 product / look shoots</li>
-                <li>2 final campaign visuals per product</li>
-                <li>High-resolution edited delivery</li>
-                <li>Creative direction + retouching</li>
-              </ul>
-              <div class="ki-pricing-action">
-                <a class="ki-pricing-cta" href="/contact/">GET A QUOTE ↗</a>
-              </div>
-            </div>
 
-            <div class="ki-pricing-col">
-              <div class="ki-pricing-top">
-                <h3 class="ki-pricing-title">PREMIUM CAMPAIGN PRODUCTION</h3>
-                <div class="ki-pricing-rate">
-                  <span class="ki-pricing-prefix">Starting</span>
-                  <span class="ki-pricing-amount">₹49,999</span>
-                  <span class="ki-pricing-tax">+ GST</span>
-                </div>
-              </div>
-              <ul class="ki-pricing-features">
-                <li>Custom high-end campaign concept</li>
-                <li>Premium models / locations / environments</li>
-                <li>Advanced creative direction</li>
-                <li>Custom deliverables based on scope</li>
-              </ul>
-              <div class="ki-pricing-action">
-                <a class="ki-pricing-cta" href="/contact/">GET A QUOTE ↗</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="ki-inquiry-cta ki-reveal" aria-labelledby="ki-cta-title">
         <div class="ki-inquiry-inner">
           <div class="ki-inquiry-content">
@@ -453,6 +418,7 @@
           <div class="ki-footer-nav">
             <a class="ki-footer-wa" href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WHATSAPP ↗</a>
             <a href="/work/">PORTFOLIO</a>
+            <a href="/pricing/">PRICING</a>
             <a href="/contact/">CONTACT DETAILS</a>
             <a href="#top">BACK TO TOP ↑</a>
           </div>
@@ -466,12 +432,31 @@
   </div>
   <script>
     (function() {
-      // 1. Minimal Black Loading Screen & Staged Entrance Sequence
+      // 1. 3.5s Minimal Black Loading Screen & Staged Entrance Sequence
       const loader = document.getElementById('ki-loader');
-      let isIntroSeen = false;
-      try {
-        isIntroSeen = !!sessionStorage.getItem('kriyon_intro_seen');
-      } catch(e) {}
+      const shouldSkip = document.documentElement.classList.contains('intro-seen') || window.location.search.includes('noloader');
+
+      function initScrollReveals() {
+        if (document.body.classList.contains('js-scroll-active')) return;
+        document.body.classList.add('js-scroll-active');
+
+        const revealElements = document.querySelectorAll('.ki-reveal');
+        if (revealElements.length && 'IntersectionObserver' in window) {
+          const revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+          });
+
+          revealElements.forEach(el => revealObserver.observe(el));
+        }
+      }
 
       function triggerEntrance() {
         document.body.classList.add('is-entered');
@@ -480,74 +465,37 @@
       function dismissLoader() {
         if (!loader) {
           triggerEntrance();
+          initScrollReveals();
           return;
         }
-        if (!loader.classList.contains('is-loaded')) {
-          loader.classList.add('is-loaded', 'is-exiting');
-          try { sessionStorage.setItem('kriyon_intro_seen', '1'); } catch(e) {}
+        if (!loader.classList.contains('is-exiting')) {
+          loader.classList.add('is-exiting');
           triggerEntrance();
+
+          // Loader exit transition is 0.7s
           setTimeout(() => {
+            loader.classList.add('is-loaded');
             if (loader.parentNode) loader.remove();
-          }, 720);
+            // Strictly initialize scroll reveals AFTER loader completes
+            initScrollReveals();
+          }, 700);
         }
       }
 
-      if (isIntroSeen || window.location.search.includes('noloader')) {
+      if (shouldSkip) {
         if (loader && loader.parentNode) loader.remove();
         triggerEntrance();
+        initScrollReveals();
       } else {
         document.body.classList.add('has-entrance');
-        // Clean hold, then smooth upward slide away
-        setTimeout(dismissLoader, 950);
-        window.addEventListener('load', () => setTimeout(dismissLoader, 850), { once: true });
-      }
+        // Refined loading sequence: ~2.1s total (1.4s hold + 0.7s exit)
+        setTimeout(dismissLoader, 1400);
 
-      // 2. White Wipe Page Transitions
-      const pageWipe = document.getElementById('page-wipe');
-      if (pageWipe) {
-        requestAnimationFrame(() => {
-          pageWipe.classList.add('is-wiping-out');
-          setTimeout(() => {
-            pageWipe.classList.remove('is-wiping-out');
-          }, 350);
-        });
-
-        document.querySelectorAll('a[href]').forEach(link => {
-          const href = link.getAttribute('href');
-          if (href && (href.startsWith('/') || href.startsWith('index.html')) && !href.startsWith('#') && !link.hasAttribute('target') && !link.hasAttribute('download')) {
-            link.addEventListener('click', (e) => {
-              e.preventDefault();
-              pageWipe.classList.add('is-wiping-in');
-              setTimeout(() => {
-                window.location.href = href;
-              }, 280);
-            });
-          }
-        });
-      }
-
-      // 3. Subtle Scroll Reveal (Normal Document Flow, No Layout Shift)
-      const revealElements = document.querySelectorAll('.ki-reveal');
-      if (revealElements.length && 'IntersectionObserver' in window) {
-        document.body.classList.add('js-reveal-active');
-        const revealObserver = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-revealed');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.05,
-          rootMargin: '0px 0px -40px 0px'
-        });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Safety fallback: reveal all elements after 3.5s
+        // Safe fallback timeout: guarantee homepage reveals and scroll activates
         setTimeout(() => {
-          revealElements.forEach(el => el.classList.add('is-revealed'));
-        }, 3500);
+          dismissLoader();
+          initScrollReveals();
+        }, 2800);
       }
 
       // 2. Mobile Navigation Toggle
