@@ -2828,3 +2828,8 @@ a, button {
   object-position: center center !important;
 }
 
+/* Rutba: Garden bench framing in square row */
+button[data-rutba-image*="rutba-03"] img {
+  object-position: center 12% !important;
+}
+
