@@ -3,200 +3,331 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ruby Reverie — Kriyon Media</title>
-  <meta name="title" content="Ruby Reverie — Kriyon Media" />
-  <meta name="description" content="Ruby Reverie jewellery campaign by Kriyon Media." />
-  <meta name="theme-color" content="#040404" />
+  <title>Ruby Reverie × Kriyon Media</title>
+  <meta name="title" content="Ruby Reverie × Kriyon Media" />
+  <meta name="description" content="Ruby Reverie fine jewellery campaign by Kriyon Media." />
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Kriyon Media" />
   <meta property="og:url" content="https://kriyonmedia.com/work/red-jewellery/" />
-  <meta property="og:title" content="Ruby Reverie — Kriyon Media" />
-  <meta property="og:description" content="Ruby Reverie jewellery campaign by Kriyon Media." />
+  <meta property="og:title" content="Ruby Reverie × Kriyon Media" />
+  <meta property="og:description" content="Ruby Reverie fine jewellery campaign by Kriyon Media." />
   <meta property="og:image" content="https://kriyonmedia.com/assets/og-image.jpg" />
   <meta property="og:image:secure_url" content="https://kriyonmedia.com/assets/og-image.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="1024" />
-  <meta property="og:image:alt" content="Kriyon Media — Now Live" />
+  <meta property="og:image:alt" content="Ruby Reverie × Kriyon Media" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://kriyonmedia.com/work/red-jewellery/" />
-  <meta name="twitter:title" content="Ruby Reverie — Kriyon Media" />
-  <meta name="twitter:description" content="Ruby Reverie jewellery campaign by Kriyon Media." />
+  <meta name="twitter:title" content="Ruby Reverie × Kriyon Media" />
+  <meta name="twitter:description" content="Ruby Reverie fine jewellery campaign by Kriyon Media." />
   <meta name="twitter:image" content="https://kriyonmedia.com/assets/og-image.jpg" />
-  <script>
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    // Skip loader on internal route changes, show on fresh session entry or true browser refresh
-    (function() {
-      try {
-        let isReload = false;
-        if (window.performance) {
-          const navEntries = performance.getEntriesByType('navigation');
-          if (navEntries && navEntries.length > 0) {
-            isReload = (navEntries[0].type === 'reload');
-          } else if (performance.navigation) {
-            isReload = (performance.navigation.type === 1);
-          }
-        }
-        const hasVisited = sessionStorage.getItem('kriyon_visited');
 
-        if (!isReload && hasVisited) {
-          document.documentElement.classList.add('intro-seen');
-        } else {
-          sessionStorage.setItem('kriyon_visited', '1');
-        }
-      } catch(e) {}
-    })();
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=96" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=110" />
   <script defer src="/media-guard.js"></script>
 </head>
-<body class="piece-page ruby-reverie-page" id="top">
-  <main>
-    <header class="kp-header">
-      <a href="/">KRIYON MEDIA</a>
-      <nav aria-label="Primary navigation">
-        <a href="/">HOME</a>
-        <a href="/#info">INFO</a>
-        <a class="is-active" href="/work/">PROJECTS</a>
-        <a href="/pricing/">PRICING</a>
-        <a href="/contact/">CONTACT</a>
-      </nav>
-      <div class="ki-links">
-        <a class="ki-nav-social ki-nav-instagram" href="https://instagram.com/kriyonmedia" target="_blank" rel="noreferrer" aria-label="Instagram">
-          <svg class="ki-nav-icon ki-nav-icon-ig" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="url(#ig-nav-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="ig-nav-gradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="30%" stop-color="#e6683c"/><stop offset="60%" stop-color="#dc2743"/><stop offset="85%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          <span>INSTAGRAM</span>
-        </a>
-        <a class="ki-nav-social ki-nav-whatsapp" href="https://wa.me/919622121100" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-          <svg class="ki-nav-icon ki-nav-icon-wa" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          <span>WHATSAPP</span>
-        </a>
-      </div>
-      <button class="site-menu-toggle kp-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">+</button>
-    </header>
-
-    <section class="proj-hero" aria-label="Project details">
-      <div class="proj-hero-top">
-        <a class="proj-back-link" href="/work/">
-          <span class="proj-back-arrow">←</span>
+<body class="ep-page" id="top">
+  <div class="ep-container">
+    <!-- Clean Minimal Topbar -->
+    <header class="ep-topbar">
+      <div class="ep-topbar-left">
+        <a class="ep-back-btn" href="/work/" aria-label="Back to projects">
+          <span class="ep-back-arrow">←</span>
           <span>BACK TO PROJECTS</span>
         </a>
-        <span class="proj-collab-kicker">RUBY REVERIE × KRIYON MEDIA</span>
+        <span class="ep-topbar-crumb">/</span>
+        <span class="ep-topbar-title">RUBY REVERIE</span>
       </div>
-      <div class="proj-hero-main">
-        <h1 class="proj-title">RUBY &amp; DIAMOND CAMPAIGN</h1>
-        <div class="proj-meta-grid">
-          <div class="proj-meta-item">
-            <span class="proj-meta-lbl">CLIENT</span>
-            <span class="proj-meta-val">Ruby Reverie</span>
-          </div>
-          <div class="proj-meta-item">
-            <span class="proj-meta-lbl">DISCIPLINE</span>
-            <span class="proj-meta-val">Fine Jewellery · Campaign Visuals</span>
-          </div>
-          <div class="proj-meta-item">
-            <span class="proj-meta-lbl">SCOPE</span>
-            <span class="proj-meta-val">Ready to Post · Full Shoot</span>
-          </div>
-          <div class="proj-meta-item">
-            <span class="proj-meta-lbl">YEAR</span>
-            <span class="proj-meta-val">2026</span>
-          </div>
+      <div class="ep-gesture-guide" aria-label="Navigation: Scroll down to view, Swipe to browse">
+        <div class="ep-gesture-item">
+          <svg class="ep-gesture-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v6m-2-2l2 2 2-2" />
+            <path d="M9 10.5V6a1.5 1.5 0 0 1 3 0v4.5" />
+            <path d="M12 9a1.5 1.5 0 0 1 3 0v3" />
+            <path d="M15 10.5a1.5 1.5 0 0 1 3 0v3.5c0 3.5-2.5 6-6 6s-5-2-6-4.5l-1.5-2.5a1.5 1.5 0 0 1 2.6-1.5L8.5 13" />
+          </svg>
+          <span>Scroll</span>
+        </div>
+        <span class="ep-gesture-sep"></span>
+        <div class="ep-gesture-item">
+          <svg class="ep-gesture-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 4.5l-2.5 2 2.5 2" />
+            <path d="M17 4.5l2.5 2-2.5 2" />
+            <path d="M5 6.5h14" />
+            <path d="M9 11V6.5a1.5 1.5 0 0 1 3 0V11" />
+            <path d="M12 9.5a1.5 1.5 0 0 1 3 0v3" />
+            <path d="M15 11a1.5 1.5 0 0 1 3 0v3.5c0 3.5-2.5 6-6 6s-5-2-6-4.5l-1.5-2.5a1.5 1.5 0 0 1 2.6-1.5L8.5 13" />
+          </svg>
+          <span>Swipe</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Clean Minimal Hero -->
+    <section class="ep-hero-minimal" aria-label="Project details">
+      <div class="ep-hero-minimal-head">
+        <h1 class="ep-project-title">RUBY &amp; DIAMOND CAMPAIGN</h1>
+        <p class="ep-project-sub">Radiant rubies against deep maroon occasion wear — macro jewellery precision and dramatic light.</p>
+      </div>
+      <div class="ep-meta-row">
+        <div class="ep-meta-col">
+          <span class="ep-meta-label">CLIENT</span>
+          <span class="ep-meta-val">Ruby Reverie</span>
+        </div>
+        <div class="ep-meta-col">
+          <span class="ep-meta-label">DISCIPLINE</span>
+          <span class="ep-meta-val">Fine Jewellery · Campaign Visuals</span>
+        </div>
+        <div class="ep-meta-col">
+          <span class="ep-meta-label">YEAR</span>
+          <span class="ep-meta-val">2026</span>
+        </div>
+        <div class="ep-meta-col">
+          <span class="ep-meta-label">CREDITS / SCOPE</span>
+          <span class="ep-meta-val">Ready to Post · Full Shoot</span>
         </div>
       </div>
     </section>
-    <section class="piece-grid ruby-reverie-grid" aria-label="Ruby Reverie jewellery campaign">
+
+    <!-- Editorial Photo Gallery: 6px gap, 2px sharp corners, full original quality -->
+    <section class="ep-gallery ruby-reverie-grid" aria-label="Ruby Reverie jewellery campaign">
       <div class="ruby-reverie-section-label"><p>Ready to Post</p></div>
       <div class="ruby-reverie-row ruby-reverie-portrait-row">
-        <button class="piece-portrait" type="button" data-ruby-image="/assets/pixelone/pixelone-image-151.png"><img src="/assets/pixelone/pixelone-image-151.png" alt="Radiant Rubies ready-to-post jewellery creative" loading="eager" decoding="async" /></button>
-        <button class="piece-portrait" type="button" data-ruby-image="/assets/pixelone/pixelone-image-152.png"><img src="/assets/pixelone/pixelone-image-152.png" alt="Timeless Gemstones ready-to-post jewellery creative" loading="eager" decoding="async" /></button>
+        <button class="ep-frame piece-portrait" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-151.png" aria-label="Radiant Rubies ready-to-post jewellery creative">
+          <img src="/assets/pixelone/pixelone-image-151.png" alt="Radiant Rubies ready-to-post jewellery creative" width="2048" height="2048" loading="eager" />
+        </button>
+        <button class="ep-frame piece-portrait" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-152.png" aria-label="Timeless Gemstones ready-to-post jewellery creative">
+          <img src="/assets/pixelone/pixelone-image-152.png" alt="Timeless Gemstones ready-to-post jewellery creative" width="2048" height="2048" loading="eager" />
+        </button>
       </div>
+
       <div class="ruby-reverie-section-label ruby-reverie-shoot-label"><p>Full Shoot</p></div>
       <div class="ruby-reverie-row ruby-reverie-landscape-row">
-        <button type="button" data-ruby-image="/assets/pixelone/pixelone-image-127.png"><img src="/assets/pixelone/pixelone-image-127.png" alt="Model wearing ruby jewellery in a red sari" /></button>
-        <button type="button" data-ruby-image="/assets/pixelone/pixelone-image-126.png"><img src="/assets/pixelone/pixelone-image-126.png" alt="Ruby and diamond necklace against maroon occasion wear" /></button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-127.png" aria-label="Model wearing ruby jewellery in a red sari">
+          <img src="/assets/pixelone/pixelone-image-127.png" alt="Model wearing ruby jewellery in a red sari" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-126.png" aria-label="Ruby and diamond necklace against maroon occasion wear">
+          <img src="/assets/pixelone/pixelone-image-126.png" alt="Ruby and diamond necklace against maroon occasion wear" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
       </div>
+
       <div class="ruby-reverie-row ruby-reverie-square-row">
-        <button type="button" data-ruby-image="/assets/pixelone/pixelone-image-131.png"><img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby jewellery campaign portrait" /></button>
-        <button type="button" data-ruby-image="/assets/pixelone/pixelone-image-123.png"><img src="/assets/pixelone/pixelone-image-123.png" alt="Detailed ruby diamond necklace" /></button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-131.png" aria-label="Ruby jewellery campaign portrait">
+          <img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby jewellery campaign portrait" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-123.png" aria-label="Detailed ruby diamond necklace">
+          <img src="/assets/pixelone/pixelone-image-123.png" alt="Detailed ruby diamond necklace" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
       </div>
+
       <div class="ruby-reverie-row ruby-reverie-leading-row">
-        <button type="button" data-ruby-image="/assets/pixelone/pixelone-image-122.png"><img src="/assets/pixelone/pixelone-image-122.png" alt="Ruby and diamond floral necklace close-up" /></button>
-        <button type="button" data-ruby-image="/assets/pixelone/pixelone-image-128.png"><img src="/assets/pixelone/pixelone-image-128.png" alt="Ruby jewellery campaign portrait in a maroon saree" /></button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-122.png" aria-label="Ruby and diamond floral necklace close-up">
+          <img src="/assets/pixelone/pixelone-image-122.png" alt="Ruby and diamond floral necklace close-up" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-128.png" aria-label="Ruby jewellery campaign portrait in a maroon saree">
+          <img src="/assets/pixelone/pixelone-image-128.png" alt="Ruby jewellery campaign portrait in a maroon saree" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
       </div>
+
       <div class="ruby-reverie-row ruby-reverie-square-row">
-        <button type="button" data-ruby-image="/assets/pixelone/pixelone-image-124.png"><img src="/assets/pixelone/pixelone-image-124.png" alt="Ruby necklace in dramatic shadow" /></button>
-        <button type="button" data-ruby-image="/assets/pixelone/pixelone-image-125.png"><img src="/assets/pixelone/pixelone-image-125.png" alt="Ruby and diamond jewellery campaign detail" /></button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-124.png" aria-label="Ruby necklace in dramatic shadow">
+          <img src="/assets/pixelone/pixelone-image-124.png" alt="Ruby necklace in dramatic shadow" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-125.png" aria-label="Ruby and diamond jewellery campaign detail">
+          <img src="/assets/pixelone/pixelone-image-125.png" alt="Ruby and diamond jewellery campaign detail" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
       </div>
+
       <div class="ruby-reverie-row ruby-reverie-portrait-row">
-        <button class="piece-portrait" type="button" data-ruby-image="/assets/pixelone/ruby-couture-editorial.jpg"><img src="/assets/pixelone/ruby-couture-editorial.jpg" alt="Ruby Reverie Mehr Couture saree editorial portrait" /></button>
-        <button class="piece-portrait" type="button" data-ruby-image="/assets/pixelone/pixelone-image-129.png"><img src="/assets/pixelone/pixelone-image-129.png" alt="Full-length red saree portrait" /></button>
+        <button class="ep-frame piece-portrait" type="button" data-ep-lightbox="/assets/pixelone/ruby-couture-editorial.jpg" aria-label="Ruby Reverie Mehr Couture saree editorial portrait">
+          <img src="/assets/pixelone/ruby-couture-editorial.jpg" alt="Ruby Reverie Mehr Couture saree editorial portrait" width="2400" height="1350" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame piece-portrait" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-129.png" aria-label="Full-length red saree portrait">
+          <img src="/assets/pixelone/pixelone-image-129.png" alt="Full-length red saree portrait" width="1792" height="2400" loading="lazy" decoding="async" />
+        </button>
       </div>
+
       <div class="ruby-reverie-row ruby-reverie-portrait-row">
-        <button class="piece-portrait" type="button" data-ruby-image="/assets/pixelone/pixelone-image-130.png"><img src="/assets/pixelone/pixelone-image-130.png" alt="Red saree portrait for the ruby jewellery campaign" /></button>
-        <button class="piece-portrait" type="button" data-ruby-image="/assets/pixelone/pixelone-image-128.png"><img src="/assets/pixelone/pixelone-image-128.png" alt="Ruby jewellery campaign portrait in a maroon saree" /></button>
+        <button class="ep-frame piece-portrait" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-130.png" aria-label="Red saree portrait for the ruby jewellery campaign">
+          <img src="/assets/pixelone/pixelone-image-130.png" alt="Red saree portrait for the ruby jewellery campaign" width="1792" height="2400" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame piece-portrait" type="button" data-ep-lightbox="/assets/pixelone/pixelone-image-128.png" aria-label="Ruby jewellery campaign portrait in a maroon saree">
+          <img src="/assets/pixelone/pixelone-image-128.png" alt="Ruby jewellery campaign portrait in a maroon saree" width="1792" height="2400" loading="lazy" decoding="async" />
+        </button>
       </div>
     </section>
-    <div class="piece-other"><p>View Other Projects</p><nav aria-label="Other projects"><a href="/work/jewellery/">Jewellery <span>↗</span></a><a href="/work/clothing/">Clothing &amp; Boutiques <span>↗</span></a><a href="/work/">View All <span>↗</span></a></nav></div>
-  </main>
-  <footer class="ki-footer" id="contact">
-    <div class="ki-footer-inner">
-      <div class="ki-footer-top">
-        <h2>LET’S WORK TOGETHER.</h2>
-        <div class="ki-footer-cta-wrap">
-          <p>Have a product, collection or campaign in mind? Let’s build it.</p>
-          <a class="ki-footer-cta-btn" href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20start%20a%20new%20project." target="_blank" rel="noreferrer">START A PROJECT ↗</a>
-        </div>
+
+    <!-- Editorial Narrative -->
+    <section class="ep-story-section" aria-label="Project narrative">
+      <h2 class="ep-story-title">Light, Gemstones, and Saturated Contrast.</h2>
+      <div class="ep-story-body">
+        <p>Ruby Reverie captures the timeless allure of pigeon-blood rubies paired with pavé diamonds. The creative direction centered on strong chiaroscuro lighting — carving deep shadows to allow the crimson gemstones to radiate against rich maroon silks.</p>
+        <p>Combining macro-level product photography with cinematic model portraits, the campaign translates the tactile weight and scintillation of high jewellery into scroll-stopping editorial imagery.</p>
       </div>
-      <div class="ki-footer-divider"></div>
-      <div class="ki-footer-bottom">
-        <div class="ki-footer-contact">
-          <a href="mailto:kriyon@repixelx.tech">KRIYON@REPIXELX.TECH</a>
+    </section>
+
+    <!-- Next Projects -->
+    <section class="ep-next-section" aria-label="Next projects">
+      <h3 class="ep-next-heading">Next project</h3>
+      <div class="ep-next-grid">
+        <a class="ep-next-card" href="/work/jewellery/">
+          <div class="ep-next-thumb">
+            <img src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase — Macro & Editorial" width="2048" height="2048" loading="lazy" decoding="async" />
+          </div>
+          <div class="ep-next-meta">
+            <span class="ep-next-title">Fine Jewellery</span>
+            <span class="ep-next-discipline">Macro &amp; Editorial ↗</span>
+          </div>
+        </a>
+        <a class="ep-next-card" href="/work/rutba/">
+          <div class="ep-next-thumb">
+            <img src="/assets/pixelone/rutba-01.png" alt="Rutba — Heritage Couture" width="1792" height="2400" loading="lazy" decoding="async" />
+          </div>
+          <div class="ep-next-meta">
+            <span class="ep-next-title">Rutbaa by Meet</span>
+            <span class="ep-next-discipline">Heritage Couture ↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="ep-footer" id="contact">
+    <div class="ep-footer-top">
+      <a class="ep-footer-brand" href="/">KRIYON</a>
+      <div class="ep-footer-cols">
+        <div class="ep-footer-col">
+          <span class="ep-footer-col-title">CONTACT</span>
+          <a href="mailto:kriyon@repixelx.tech">kriyon@repixelx.tech</a>
           <a href="tel:+919622121100">+91 96221 21100</a>
         </div>
-        <div class="ki-footer-nav">
-          <a class="ki-footer-wa" href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WHATSAPP ↗</a>
-          <a href="/work/">PORTFOLIO</a>
-          <a href="/pricing/">PRICING</a>
-          <a href="/contact/">CONTACT DETAILS</a>
-          <a href="#top">BACK TO TOP ↑</a>
+        <div class="ep-footer-col">
+          <span class="ep-footer-col-title">NAVIGATION</span>
+          <a href="/work/">Portfolio</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact Details</a>
+          <a href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+        </div>
+        <div class="ep-footer-col">
+          <span class="ep-footer-col-title">SOCIAL</span>
+          <a href="https://instagram.com/kriyonmedia" target="_blank" rel="noreferrer">Instagram ↗</a>
+          <a href="#top">Back to Top ↑</a>
         </div>
       </div>
-      <div class="ki-footer-legal">
-        <small>© 2026 Kriyon Media · A creative venture by Kriyon Group Pvt Ltd</small>
-        <span class="ki-footer-tagline">Ideas, produced with intent.</span>
-      </div>
+    </div>
+    <div class="ep-footer-bottom">
+      <span>© 2026 Kriyon Media · A creative venture by Kriyon Group Pvt Ltd</span>
+      <span>Ideas, produced with intent.</span>
     </div>
   </footer>
-  <dialog class="piece-lightbox" aria-label="Image preview"><button class="piece-close" type="button" aria-label="Close image">×</button><img alt="" /></dialog>
-  <script>
-    const menuToggle = document.querySelector('.kp-menu-toggle');
-    if (menuToggle) {
-      menuToggle.addEventListener('click', () => {
-        const header = document.querySelector('.kp-header');
-        const isOpen = header.classList.toggle('is-menu-open');
-        menuToggle.textContent = isOpen ? '×' : '+';
-        menuToggle.setAttribute('aria-expanded', isOpen);
-      });
-    }
 
-    const dialog = document.querySelector('.piece-lightbox');
-    const preview = dialog.querySelector('img');
-    document.querySelectorAll('[data-ruby-image]').forEach((button) => button.addEventListener('click', () => {
-      preview.src = button.dataset.rubyImage;
-      preview.alt = button.querySelector('img').alt;
-      dialog.showModal();
-    }));
-    dialog.querySelector('.piece-close').addEventListener('click', () => dialog.close());
-    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+  <!-- Lightbox Modal with Gestures & Left/Right Buttons -->
+  <dialog class="ep-lightbox" aria-label="Image preview">
+    <button class="ep-lightbox-close" type="button" aria-label="Close image">×</button>
+    <button class="ep-lightbox-nav ep-lightbox-prev" type="button" aria-label="Previous image">←</button>
+    <img class="ep-lightbox-img" alt="" />
+    <button class="ep-lightbox-nav ep-lightbox-next" type="button" aria-label="Next image">→</button>
+    <span class="ep-lightbox-counter" aria-live="polite"></span>
+  </dialog>
+
+  <script>
+    (function() {
+      const dialog = document.querySelector('.ep-lightbox');
+      if (!dialog) return;
+      const preview = dialog.querySelector('.ep-lightbox-img');
+      const counter = dialog.querySelector('.ep-lightbox-counter');
+      const closeBtn = dialog.querySelector('.ep-lightbox-close');
+      const prevBtn = dialog.querySelector('.ep-lightbox-prev');
+      const nextBtn = dialog.querySelector('.ep-lightbox-next');
+      const frames = [...document.querySelectorAll('[data-ep-lightbox]')];
+      let currentIndex = 0;
+
+      function showImage(index) {
+        currentIndex = (index + frames.length) % frames.length;
+        const item = frames[currentIndex];
+        const src = item.dataset.epLightbox;
+        const img = item.querySelector('img');
+        preview.src = src;
+        preview.alt = img ? img.alt : '';
+        if (counter) {
+          counter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(frames.length).padStart(2, '0')}`;
+        }
+      }
+
+      frames.forEach((frame, idx) => {
+        frame.addEventListener('click', () => {
+          showImage(idx);
+          dialog.showModal();
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
+      if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex + 1); });
+
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) dialog.close();
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (!dialog.open) return;
+        if (e.key === 'Escape') dialog.close();
+        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+      });
+
+      // Touch swipe gestures
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchEndX = 0;
+      let touchEndY = 0;
+
+      dialog.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      dialog.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 40) {
+          if (deltaX > 0) {
+            showImage(currentIndex - 1); // Swiped right -> prev
+          } else {
+            showImage(currentIndex + 1); // Swiped left -> next
+          }
+        }
+      }, { passive: true });
+
+      // Mouse drag support
+      let isDragging = false;
+      let mouseStartX = 0;
+
+      preview.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        mouseStartX = e.clientX;
+        e.preventDefault();
+      });
+
+      window.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const deltaX = e.clientX - mouseStartX;
+        if (deltaX > 40) showImage(currentIndex - 1);
+        else if (deltaX < -40) showImage(currentIndex + 1);
+      });
+    })();
   </script>
 </body>
 </html>
