@@ -3,106 +3,130 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — Kriyon Media</title>
-  <meta name="title" content="Portfolio — Kriyon Media" />
-  <meta name="description" content="Explore Kriyon Media's fashion, couture and jewellery portfolio." />
-  <meta name="theme-color" content="#040404" />
+  <title>Selected Work &amp; Campaigns — Kriyon Media</title>
+  <meta name="title" content="Selected Work &amp; Campaigns — Kriyon Media" />
+  <meta name="description" content="Visual productions, campaign imagery, and brand worlds engineered for luxury fashion, fine jewellery, and couture brands." />
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kriyon Media" />
   <meta property="og:url" content="https://kriyonmedia.com/work/" />
-  <meta property="og:title" content="Portfolio — Kriyon Media" />
-  <meta property="og:description" content="Explore Kriyon Media's fashion, couture and jewellery portfolio." />
+  <meta property="og:title" content="Selected Work &amp; Campaigns — Kriyon Media" />
+  <meta property="og:description" content="Visual productions, campaign imagery, and brand worlds engineered for luxury fashion, fine jewellery, and couture brands." />
   <meta property="og:image" content="https://kriyonmedia.com/assets/og-image.jpg" />
   <meta property="og:image:secure_url" content="https://kriyonmedia.com/assets/og-image.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1024" />
   <meta property="og:image:height" content="1024" />
-  <meta property="og:image:alt" content="Kriyon Media — Now Live" />
+  <meta property="og:image:alt" content="Kriyon Media — Selected Work" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://kriyonmedia.com/work/" />
-  <meta name="twitter:title" content="Portfolio — Kriyon Media" />
-  <meta name="twitter:description" content="Explore Kriyon Media's fashion, couture and jewellery portfolio." />
+  <meta name="twitter:title" content="Selected Work &amp; Campaigns — Kriyon Media" />
+  <meta name="twitter:description" content="Visual productions, campaign imagery, and brand worlds engineered for luxury fashion, fine jewellery, and couture brands." />
   <meta name="twitter:image" content="https://kriyonmedia.com/assets/og-image.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet" />
-  <script>
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(regs) {
-        for (var i = 0; i < regs.length; i++) regs[i].unregister();
-      }).catch(function() {});
-    }
-    // Skip loader on internal route changes, show on fresh session entry or true browser refresh
-    (function() {
-      try {
-        let isReload = false;
-        if (window.performance) {
-          const navEntries = performance.getEntriesByType('navigation');
-          if (navEntries && navEntries.length > 0) {
-            isReload = (navEntries[0].type === 'reload');
-          } else if (performance.navigation) {
-            isReload = (performance.navigation.type === 1);
-          }
-        }
-        const hasVisited = sessionStorage.getItem('kriyon_visited');
-
-        if (!isReload && hasVisited) {
-          document.documentElement.classList.add('intro-seen');
-        } else {
-          sessionStorage.setItem('kriyon_visited', '1');
-        }
-      } catch(e) {}
-    })();
-  </script>
-  <link rel="stylesheet" href="/styles.css?v=96" />
-  <script defer src="/media-guard.js?v=3"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=117" />
+  <script defer src="/media-guard.js"></script>
 </head>
 <body class="portfolio-editorial kriyon-project-index" id="top">
   <div class="kp-shell">
     <header class="kp-header">
       <a href="/">KRIYON MEDIA</a>
       <nav aria-label="Primary navigation">
-        <a href="/">HOME</a>
-        <a href="/#info">INFO</a>
-        <a class="is-active" href="/work/">PROJECTS</a>
-        <a href="/pricing/">PRICING</a>
-        <a href="/contact/">CONTACT</a>
+        <a href="/">Home</a>
+        <a href="/work/" class="is-active">Projects</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/ai-content-model-licensing/">Licensing</a>
+        <a href="/contact/">Contact</a>
       </nav>
-      <div class="ki-links">
-        <a class="ki-nav-social ki-nav-instagram" href="https://instagram.com/kriyonmedia" target="_blank" rel="noreferrer" aria-label="Instagram">
-          <svg class="ki-nav-icon ki-nav-icon-ig" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="url(#ig-nav-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="ig-nav-gradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="30%" stop-color="#e6683c"/><stop offset="60%" stop-color="#dc2743"/><stop offset="85%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          <span>INSTAGRAM</span>
-        </a>
-        <a class="ki-nav-social ki-nav-whatsapp" href="https://wa.me/919622121100" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-          <svg class="ki-nav-icon ki-nav-icon-wa" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-          <span>WHATSAPP</span>
-        </a>
+      <div>
+        <a class="ki-whatsapp-link" href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WhatsApp ↗</a>
       </div>
       <button class="site-menu-toggle kp-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">+</button>
     </header>
+
     <main>
       <section class="kp-intro">
         <p class="kp-bio">Kriyon Media is a creative production studio building distinctive visual worlds for brands, products and campaigns.</p>
         <div class="kp-toolbar">
-          <span class="kp-filters"><button class="is-active" type="button" data-filter="all">All</button><button type="button" data-filter="fashion">Fashion</button><button type="button" data-filter="jewellery">Jewellery</button><button type="button" data-filter="product">Product</button></span>
-          <span class="kp-views"><button class="is-active" type="button" data-view="grid">Grid</button><i>/</i><button type="button" data-view="list">List</button></span>
+          <span class="kp-filters" role="toolbar" aria-label="Filter projects by category">
+            <button class="is-active" type="button" data-filter="all">All (11)</button>
+            <button type="button" data-filter="fashion">Fashion &amp; Couture (5)</button>
+            <button type="button" data-filter="jewellery">Fine Jewellery (2)</button>
+            <button type="button" data-filter="video">Cinema &amp; Films (4)</button>
+          </span>
+          <span class="kp-views" role="group" aria-label="View switcher">
+            <button class="is-active" type="button" data-view="grid">Grid</button>
+            <i>/</i>
+            <button type="button" data-view="list">Index</button>
+          </span>
         </div>
       </section>
+
       <section class="kp-grid" id="project-grid" aria-label="All projects">
-        <a data-kind="fashion" href="/work/darzie-couture/"><img src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture fashion campaign" /><p><b>DARZIE COUTURE</b> <span>Pink Couture Campaign</span></p></a>
-        <a data-kind="fashion" href="/work/rutba/"><img src="/assets/pixelone/rutba-05.png" alt="Rutba collection campaign" /><p><b>RUTBA</b> <span>Emerald Heritage Collection</span></p></a>
-        <a data-kind="jewellery product" href="/work/red-jewellery/"><img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie full campaign shoot" /><p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign</span></p></a>
-        <a data-kind="jewellery product" href="/work/jewellery/"><img src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase portfolio" /><p><b>JEWELLERY SHOWCASE</b> <span>Jewellery Portfolio</span></p></a>
-        <a data-kind="fashion" href="/work/clothing/"><img src="/assets/pixelone/pixelone-image-005.png" alt="Mehr Couture olive campaign" /><p><b>MEHR COUTURE</b> <span>Olive Edit</span></p></a>
+        <a data-kind="fashion" href="/work/talla/" aria-label="Talla Bridal — Imperial Burgundy Zardozi">
+          <img src="/assets/talla/talla-couture-02.png" alt="Talla Bridal campaign" width="800" height="800" loading="eager" decoding="async" />
+          <p><b>TALLA BRIDAL</b> <span>Imperial Burgundy Zardozi</span></p>
+        </a>
+        <a data-kind="fashion" href="/work/darzie-couture/" aria-label="Darzie Couture — Pink Couture Campaign">
+          <img src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture campaign" width="800" height="800" loading="eager" decoding="async" />
+          <p><b>DARZIE COUTURE</b> <span>Pink Couture Campaign</span></p>
+        </a>
+        <a data-kind="fashion" href="/work/rutba/" aria-label="Rutba — Emerald Heritage Collection">
+          <img src="/assets/pixelone/rutba-01.png" alt="Rutba campaign" width="800" height="800" loading="eager" decoding="async" />
+          <p><b>RUTBA</b> <span>Emerald Heritage Collection</span></p>
+        </a>
+        <a data-kind="jewellery" href="/work/red-jewellery/" aria-label="Ruby Reverie — Ruby & Diamond Campaign">
+          <img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie campaign" width="800" height="800" loading="eager" decoding="async" />
+          <p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign</span></p>
+        </a>
+        <a data-kind="jewellery" href="/work/jewellery/" aria-label="Jewellery Showcase — Jewellery Portfolio">
+          <img src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase portfolio" width="800" height="800" loading="eager" decoding="async" />
+          <p><b>JEWELLERY SHOWCASE</b> <span>Jewellery Portfolio</span></p>
+        </a>
+        <a data-kind="fashion" href="/work/clothing/" aria-label="Mehr Couture — Olive Edit">
+          <img src="/assets/pixelone/pixelone-image-014.png" alt="Mehr Couture campaign" width="800" height="800" loading="eager" decoding="async" />
+          <p><b>MEHR COUTURE</b> <span>Olive Edit</span></p>
+        </a>
+        <a data-kind="fashion" href="/work/blue/" aria-label="Nilaya Couture — The Blue Edit">
+          <img src="/assets/blue/blue-couture-01.png" alt="Nilaya Couture campaign" width="800" height="800" loading="eager" decoding="async" />
+          <p><b>NILAYA COUTURE</b> <span>The Blue Edit</span></p>
+        </a>
+
+        <!-- Dedicated Video Category Cards (Cinema & Films) -->
+        <a data-kind="video" href="/work/talla/" aria-label="Talla Bridal — The Royal Motion Suite">
+          <div class="kp-video-wrap">
+            <video autoplay loop muted playsinline preload="auto" poster="/assets/talla/talla-reel-poster.jpg" src="/assets/talla/talla-reel-01.mp4"></video>
+          </div>
+          <p><b>TALLA BRIDAL</b> <span>The Royal Motion Suite</span></p>
+        </a>
+        <a data-kind="video" href="/work/blue/" aria-label="Nilaya Couture — 4K Champagne Gold Cinema">
+          <div class="kp-video-wrap">
+            <video autoplay loop muted playsinline preload="auto" poster="/assets/blue/blue-film-poster.jpg" src="/assets/blue/blue-film-01.mp4"></video>
+          </div>
+          <p><b>NILAYA COUTURE</b> <span>4K Champagne Gold Cinema</span></p>
+        </a>
+        <a data-kind="video" href="/work/rutba/" aria-label="Rutba — 4K Heritage Motion Suite">
+          <div class="kp-video-wrap">
+            <video autoplay loop muted playsinline preload="auto" poster="/assets/pixelone/rutba-film-poster.jpg" src="/assets/pixelone/rutba-film-01.mp4"></video>
+          </div>
+          <p><b>RUTBA</b> <span>4K Heritage Motion Suite</span></p>
+        </a>
+        <a data-kind="video" href="/work/red-jewellery/" aria-label="Ruby Reverie — 4K Fine Jewellery Commercial">
+          <div class="kp-video-wrap">
+            <video autoplay loop muted playsinline preload="auto" poster="/assets/pixelone/jewellery-film-poster.jpg" src="/assets/pixelone/jewellery-film-01.mp4"></video>
+          </div>
+          <p><b>RUBY REVERIE</b> <span>4K Fine Jewellery Commercial</span></p>
+        </a>
       </section>
     </main>
+
     <footer class="ki-footer" id="contact">
       <div class="ki-footer-inner">
         <div class="ki-footer-top">
@@ -121,7 +145,9 @@
           <div class="ki-footer-nav">
             <a class="ki-footer-wa" href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WHATSAPP ↗</a>
             <a href="/work/">PORTFOLIO</a>
+            <a href="/pricing/">PRICING</a>
             <a href="/contact/">CONTACT DETAILS</a>
+            <a href="/ai-content-model-licensing/">AI CONTENT &amp; MODEL LICENSING</a>
             <a href="#top">BACK TO TOP ↑</a>
           </div>
         </div>
@@ -132,33 +158,59 @@
       </div>
     </footer>
   </div>
-  <script>
-    // Mobile Navigation Toggle
-    document.querySelector('.kp-menu-toggle')?.addEventListener('click', e => {
-      const h = document.querySelector('.kp-header');
-      const b = e.currentTarget;
-      const o = h.classList.toggle('is-menu-open');
-      b.setAttribute('aria-expanded', o);
-      b.setAttribute('aria-label', o ? 'Close navigation' : 'Open navigation');
-      b.textContent = o ? '×' : '+';
-    });
 
-    // Portfolio Filters & Grid/List toggle
+  <script>
     const grid = document.querySelector('.kp-grid');
-    document.querySelectorAll('[data-filter]').forEach(b => b.addEventListener('click', () => {
-      document.querySelectorAll('[data-filter]').forEach(x => x.classList.toggle('is-active', x === b));
-      const filter = b.dataset.filter;
+    const filterButtons = document.querySelectorAll('[data-filter]');
+
+    function applyFilter(filterName) {
+      filterButtons.forEach(x => x.classList.toggle('is-active', x.dataset.filter === filterName));
+      grid.dataset.activeFilter = filterName;
       grid.querySelectorAll('a').forEach(card => {
         const kinds = card.dataset.kind ? card.dataset.kind.split(' ') : [];
-        const match = filter === 'all' || kinds.includes(filter);
+        const match = filterName === 'all' || kinds.includes(filterName);
         card.hidden = !match;
         card.classList.toggle('is-hidden', !match);
+        const vid = card.querySelector('video');
+        if (vid) {
+          if (match) {
+            vid.play().catch(() => {});
+          } else {
+            vid.pause();
+          }
+        }
       });
+    }
+
+    filterButtons.forEach(b => b.addEventListener('click', () => {
+      const filter = b.dataset.filter;
+      applyFilter(filter);
+      const url = new URL(window.location);
+      if (filter === 'all') {
+        url.searchParams.delete('filter');
+      } else {
+        url.searchParams.set('filter', filter);
+      }
+      window.history.replaceState({}, '', url);
     }));
+
+    // Handle deep-linked ?filter=video
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialFilter = urlParams.get('filter');
+    if (initialFilter && ['all', 'fashion', 'jewellery', 'video'].includes(initialFilter)) {
+      applyFilter(initialFilter);
+    }
+
     document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => {
       document.querySelectorAll('[data-view]').forEach(x => x.classList.toggle('is-active', x === b));
       grid.classList.toggle('is-list', b.dataset.view === 'list');
     }));
+    document.querySelector('.kp-menu-toggle')?.addEventListener('click', e => {
+      const h = document.querySelector('.kp-header'), b = e.currentTarget, o = h.classList.toggle('is-menu-open');
+      b.setAttribute('aria-expanded', o);
+      b.setAttribute('aria-label', o ? 'Close navigation' : 'Open navigation');
+      b.textContent = o ? '×' : '+';
+    });
   </script>
 </body>
 </html>
