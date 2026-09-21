@@ -3436,44 +3436,44 @@ button[data-rutba-image*="rutba-03"] img {
   padding: clamp(48px, 5.5vw, 76px) 0 clamp(64px, 7vw, 90px);
 }
 
-/* 01. Head / Hero */
+/* 01. Head / Hero (High-Visibility, Generous Editorial Sizing) */
 .p-container {
-  max-width: 980px !important;
+  max-width: 1120px !important;
   margin: 0 auto !important;
-  padding: clamp(40px, 4.5vw, 64px) 0 clamp(60px, 6vw, 84px) !important;
+  padding: clamp(48px, 5vw, 76px) 0 clamp(70px, 7vw, 96px) !important;
 }
 
 .p-head {
-  margin-bottom: 32px !important;
+  margin-bottom: 38px !important;
 }
 
 .p-eyebrow {
   display: block !important;
   font-family: 'Manrope', sans-serif !important;
-  font-size: 10.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.14em !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
-  color: #767672 !important;
-  margin-bottom: 14px !important;
+  color: #666662 !important;
+  margin-bottom: 16px !important;
 }
 
 .p-title {
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: clamp(28px, 3.4vw, 40px) !important;
-  font-weight: 600 !important;
-  line-height: 1.15 !important;
-  letter-spacing: -0.035em !important;
+  font-size: clamp(34px, 4.2vw, 50px) !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.04em !important;
   color: #080808 !important;
-  margin: 0 0 16px 0 !important;
+  margin: 0 0 18px 0 !important;
 }
 
 .p-intro {
   font-family: 'Manrope', sans-serif !important;
-  font-size: clamp(14px, 1.05vw, 15.5px) !important;
-  line-height: 1.6 !important;
-  color: #383836 !important;
-  max-width: 780px !important;
+  font-size: clamp(15.5px, 1.2vw, 17.5px) !important;
+  line-height: 1.65 !important;
+  color: #2e2e2c !important;
+  max-width: 860px !important;
   margin: 0 !important;
 }
 
@@ -3481,23 +3481,23 @@ button[data-rutba-image*="rutba-03"] img {
 .p-summary-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 20px 24px !important;
-  padding: 22px 0 26px 0 !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
-  margin-bottom: 44px !important;
+  gap: 24px 28px !important;
+  padding: 26px 0 30px 0 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  margin-bottom: 50px !important;
 }
 
 .p-summary-item {
   display: flex !important;
   flex-direction: column !important;
-  gap: 5px !important;
+  gap: 6px !important;
 }
 
 .p-summary-price {
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: 22px !important;
-  font-weight: 600 !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
   line-height: 1 !important;
   letter-spacing: -0.04em !important;
   color: #080808 !important;
@@ -3505,8 +3505,8 @@ button[data-rutba-image*="rutba-03"] img {
 
 .p-summary-title {
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
   letter-spacing: -0.02em !important;
   color: #080808 !important;
   margin: 0 !important;
@@ -3514,21 +3514,21 @@ button[data-rutba-image*="rutba-03"] img {
 
 .p-summary-desc {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 12.5px !important;
-  line-height: 1.45 !important;
-  color: #5a5a56 !important;
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+  color: #4a4a46 !important;
   margin: 0 !important;
 }
 
-/* 02 & 03. Packages Section (Modern Minimal Architecture, Best Highlighting, Full Info) */
+/* 02 & 03. Packages Section (Confident Sizing, High Visibility, Prominent Add-on) */
 .p-packages-section {
-  margin-bottom: 56px !important;
+  margin-bottom: 64px !important;
 }
 
 .p-packages-grid {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
-  gap: 24px !important;
+  gap: 28px !important;
   align-items: stretch !important;
 }
 
@@ -3537,109 +3537,109 @@ button[data-rutba-image*="rutba-03"] img {
   display: flex !important;
   flex-direction: column !important;
   box-sizing: border-box !important;
-  padding: 30px 26px 24px !important;
+  padding: 38px 32px 30px !important;
   border-radius: 0 !important;
   background: #ffffff !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
 }
 
 .p-card-essential {
-  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.14) !important;
   color: #080808 !important;
 }
 
 .p-card-essential:hover {
-  border-color: rgba(0, 0, 0, 0.28) !important;
+  border-color: rgba(0, 0, 0, 0.32) !important;
 }
 
-/* Best Highlighting for Flagship Tier (Modern, Minimal, Elevated) */
+/* Best Highlighting for Flagship Tier (Elevated, Prominent, Sharp) */
 .p-card-premium {
-  border: 1.5px solid #080808 !important;
+  border: 2px solid #080808 !important;
   color: #080808 !important;
   background: #ffffff !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08) !important;
 }
 
 .p-card-premium:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12) !important;
   transform: translateY(-2px) !important;
 }
 
 .p-card-header {
-  margin-bottom: 18px !important;
-  padding-bottom: 18px !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  margin-bottom: 22px !important;
+  padding-bottom: 22px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09) !important;
 }
 
 .p-card-meta {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
-  margin-bottom: 12px !important;
+  gap: 12px !important;
+  margin-bottom: 14px !important;
 }
 
 .p-card-num {
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
   letter-spacing: -0.02em !important;
-  color: #888884 !important;
+  color: #767672 !important;
 }
 
 .p-badge {
   display: inline-block !important;
   font-family: 'Manrope', sans-serif !important;
-  font-size: 9px !important;
-  font-weight: 700 !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
-  padding: 4px 8px !important;
+  padding: 5px 10px !important;
 }
 
 .p-badge-subtle {
-  background: #f0f0ee !important;
-  color: #555550 !important;
-  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  background: #eeeeec !important;
+  color: #484844 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 .p-badge-flagship {
   background: #080808 !important;
   color: #ffffff !important;
   border: 1px solid #080808 !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.13em !important;
 }
 
 .p-card-title {
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: 22px !important;
-  font-weight: 600 !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
   line-height: 1.15 !important;
   letter-spacing: -0.035em !important;
   text-transform: uppercase !important;
-  margin: 0 0 10px 0 !important;
+  margin: 0 0 12px 0 !important;
   color: #080808 !important;
 }
 
 .p-rate-row {
   display: flex !important;
   align-items: baseline !important;
-  gap: 6px !important;
-  margin-bottom: 12px !important;
+  gap: 7px !important;
+  margin-bottom: 14px !important;
 }
 
 .p-rate-prefix {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 11.5px !important;
-  font-weight: 600 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
   letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
-  color: #888882 !important;
+  color: #767672 !important;
 }
 
 .p-rate-num {
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: 36px !important;
-  font-weight: 600 !important;
+  font-size: 44px !important;
+  font-weight: 700 !important;
   line-height: 1 !important;
   letter-spacing: -0.04em !important;
   color: #080808 !important;
@@ -3647,25 +3647,25 @@ button[data-rutba-image*="rutba-03"] img {
 
 .p-rate-tax {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  color: #888882 !important;
+  color: #767672 !important;
 }
 
 .p-rate-unit {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 600 !important;
-  color: #888882 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #767672 !important;
 }
 
 .p-card-desc {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 13px !important;
-  line-height: 1.5 !important;
-  color: #484844 !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #383834 !important;
   margin: 0 !important;
 }
 
@@ -3674,28 +3674,28 @@ button[data-rutba-image*="rutba-03"] img {
   display: flex !important;
   flex-direction: column !important;
   gap: 0 !important;
-  margin-bottom: 18px !important;
+  margin-bottom: 22px !important;
 }
 
 .p-feature-item {
   display: flex !important;
   align-items: flex-start !important;
-  gap: 12px !important;
-  padding: 11px 0 !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+  gap: 14px !important;
+  padding: 13px 0 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07) !important;
 }
 
 .p-feature-item:last-child {
   border-bottom: none !important;
-  padding-bottom: 4px !important;
+  padding-bottom: 6px !important;
 }
 
 .p-feature-icon {
-  width: 16px !important;
-  height: 16px !important;
-  min-width: 16px !important;
+  width: 19px !important;
+  height: 19px !important;
+  min-width: 19px !important;
   stroke: #080808 !important;
-  stroke-width: 1.6 !important;
+  stroke-width: 1.7 !important;
   fill: none !important;
   stroke-linecap: round !important;
   stroke-linejoin: round !important;
@@ -3706,53 +3706,95 @@ button[data-rutba-image*="rutba-03"] img {
 .p-feature-text {
   display: flex !important;
   flex-direction: column !important;
-  gap: 2.5px !important;
+  gap: 3px !important;
 }
 
 .p-feature-text strong {
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: 13.5px !important;
-  font-weight: 600 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
   letter-spacing: -0.015em !important;
   color: #080808 !important;
-  line-height: 1.25 !important;
+  line-height: 1.28 !important;
 }
 
 .p-feature-text p {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 12px !important;
-  line-height: 1.45 !important;
-  color: #555550 !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: #4c4c48 !important;
   margin: 0 !important;
 }
 
-/* Sleek Integrated Add-on & Extension Strips */
+/* PROMINENT HIGH-VISIBILITY UPGRADE / EXTENSION MODULES (Bada & Clean) */
 .p-card-addon {
   margin-top: auto !important;
-  margin-bottom: 20px !important;
-  padding: 13px 15px !important;
-  background: #f9f9f7 !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  margin-bottom: 24px !important;
+  padding: 18px 20px !important;
+  background: #f4f4f0 !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
+  box-sizing: border-box !important;
+}
+
+.p-card-addon-motion {
+  border-left: 4px solid #080808 !important;
+  background: #f4f4f0 !important;
 }
 
 .p-card-addon-premium {
-  background: #f8f8f5 !important;
-  border-left: 2.5px solid #080808 !important;
+  border-left: 4px solid #080808 !important;
+  background: #f4f4f0 !important;
+}
+
+.p-addon-badge-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 10px !important;
+}
+
+.p-addon-badge {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #484844 !important;
+}
+
+.p-addon-badge-dark {
+  color: #080808 !important;
+}
+
+.p-addon-tag {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  background: #080808 !important;
+  color: #ffffff !important;
+  padding: 2px 7px !important;
+}
+
+.p-addon-tag-dark {
+  background: #080808 !important;
+  color: #ffffff !important;
 }
 
 .p-addon-head {
   display: flex !important;
   align-items: flex-start !important;
-  gap: 10px !important;
-  margin-bottom: 6px !important;
+  gap: 12px !important;
+  margin-bottom: 8px !important;
 }
 
 .p-addon-icon {
-  width: 16px !important;
-  height: 16px !important;
-  min-width: 16px !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
   stroke: #080808 !important;
-  stroke-width: 1.6 !important;
+  stroke-width: 1.7 !important;
   fill: none !important;
   stroke-linecap: round !important;
   stroke-linejoin: round !important;
@@ -3763,33 +3805,54 @@ button[data-rutba-image*="rutba-03"] img {
 .p-addon-title-wrap {
   display: flex !important;
   flex-direction: column !important;
-  gap: 1px !important;
-}
-
-.p-addon-label {
-  display: block !important;
-  font-family: 'Manrope', sans-serif !important;
-  font-size: 8px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  color: #72726e !important;
+  gap: 3px !important;
 }
 
 .p-addon-title {
   font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
-  font-size: 13.5px !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.015em !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: uppercase !important;
   color: #080808 !important;
-  line-height: 1.25 !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+.p-addon-price-row {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 6px !important;
+  font-family: 'Manrope', sans-serif !important;
+}
+
+.p-addon-price-label {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #666662 !important;
+}
+
+.p-addon-price-val {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  color: #080808 !important;
+  line-height: 1 !important;
+}
+
+.p-addon-price-tax {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #666662 !important;
 }
 
 .p-addon-desc {
   font-family: 'Manrope', sans-serif !important;
-  font-size: 11.5px !important;
-  line-height: 1.45 !important;
-  color: #555550 !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+  color: #40403c !important;
+  font-weight: 500 !important;
   margin: 0 !important;
 }
 
@@ -3804,11 +3867,11 @@ button[data-rutba-image*="rutba-03"] img {
   justify-content: space-between !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 13px 18px !important;
+  padding: 16px 24px !important;
   font-family: 'Manrope', sans-serif !important;
-  font-size: 10.5px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.1em !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   text-decoration: none !important;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
@@ -3817,7 +3880,7 @@ button[data-rutba-image*="rutba-03"] img {
 .p-action-outline {
   background: transparent !important;
   color: #080808 !important;
-  border: 1.5px solid #080808 !important;
+  border: 2px solid #080808 !important;
 }
 
 .p-action-outline:hover {
@@ -3829,7 +3892,7 @@ button[data-rutba-image*="rutba-03"] img {
 .p-action-solid {
   background: #080808 !important;
   color: #ffffff !important;
-  border: 1.5px solid #080808 !important;
+  border: 2px solid #080808 !important;
 }
 
 .p-action-solid:hover {
@@ -4081,19 +4144,51 @@ button[data-rutba-image*="rutba-03"] img {
 
 @media (max-width: 640px) {
   .pricing-main {
-    padding: 0 16px !important;
+    padding: 0 14px !important;
   }
   .p-container {
     padding: 36px 0 60px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .p-card {
-    padding: 22px 18px 20px !important;
+    padding: 26px 18px 22px !important;
+    overflow: hidden !important;
   }
   .p-card-title {
-    font-size: 19px !important;
+    font-size: 21px !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
   }
   .p-rate-num {
-    font-size: 32px !important;
+    font-size: 38px !important;
+  }
+  .p-card-addon {
+    padding: 15px 14px !important;
+  }
+  .p-addon-badge-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    margin-bottom: 8px !important;
+  }
+  .p-addon-title {
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+  }
+  .p-addon-price-row {
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+  }
+  .p-addon-price-val {
+    font-size: 17px !important;
+  }
+  .p-addon-desc {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
   }
   .p-strip-grid {
     grid-template-columns: 1fr !important;
@@ -6526,4 +6621,104 @@ button[data-rutba-image*="rutba-03"] img {
     border-bottom: none;
     padding-bottom: 18px;
   }
+}
+
+/* ============================================================
+   EDITORIAL PORTFOLIO SMOOTH LOADER & TRANSITIONS
+   Fixes heavy loading, blank white pause & provides silky entrance
+   ============================================================ */
+.ep-loader {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999999 !important;
+  display: grid !important;
+  place-items: center !important;
+  background: #090909 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.76, 0, 0.24, 1) !important;
+  pointer-events: all !important;
+}
+
+.ep-loader.is-loaded {
+  opacity: 0 !important;
+  transform: translateY(-100%) !important;
+  pointer-events: none !important;
+}
+
+.ep-loader-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-align: center !important;
+}
+
+.ep-loader-brand {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(24px, 3vw, 36px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+}
+
+.ep-loader-project {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #888884 !important;
+}
+
+.ep-loader-bar {
+  width: 140px !important;
+  height: 2px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin-top: 8px !important;
+}
+
+.ep-loader-progress {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: #ffffff !important;
+  transform-origin: left center !important;
+  animation: epLoaderAnim 1s ease-in-out infinite !important;
+}
+
+@keyframes epLoaderAnim {
+  0% { transform: scaleX(0); transform-origin: left center; }
+  50% { transform: scaleX(1); transform-origin: left center; }
+  50.1% { transform: scaleX(1); transform-origin: right center; }
+  100% { transform: scaleX(0); transform-origin: right center; }
+}
+
+/* Smooth Entrance for Gallery & Content */
+.ep-page .ep-container {
+  opacity: 0;
+  animation: epPageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards !important;
+}
+
+@keyframes epPageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth transition when navigating out of /work/ */
+.is-page-navigating {
+  opacity: 0.7 !important;
+  transition: opacity 0.3s ease !important;
 }

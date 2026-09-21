@@ -35,6 +35,14 @@
   <script defer src="/media-guard.js"></script>
 </head>
 <body class="ep-page" id="top">
+  <div class="ep-loader" id="ep-loader" aria-hidden="true">
+    <div class="ep-loader-content">
+      <div class="ep-loader-brand">KRIYON MEDIA</div>
+      <div class="ep-loader-project">MEHR COUTURE · OLIVE EDIT</div>
+      <div class="ep-loader-bar"><span class="ep-loader-progress"></span></div>
+    </div>
+  </div>
+
   <div class="ep-container">
     <!-- Clean Minimal Topbar -->
     <header class="ep-topbar">
@@ -343,5 +351,26 @@
       }
     })();
   </script>
+
+  <script>
+    (function() {
+      const loader = document.getElementById('ep-loader');
+      if (!loader) return;
+      function dismiss() {
+        loader.classList.add('is-loaded');
+        setTimeout(function() {
+          if (loader.parentNode) loader.parentNode.removeChild(loader);
+        }, 700);
+      }
+      if (document.readyState === 'complete') {
+        dismiss();
+      } else {
+        window.addEventListener('load', dismiss);
+        // Safety timeout so user never gets stuck
+        setTimeout(dismiss, 700);
+      }
+    })();
+  </script>
+
 </body>
 </html>

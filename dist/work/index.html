@@ -186,6 +186,16 @@
       window.history.replaceState({}, '', url);
     }));
 
+    // Smooth transition when opening portfolio project detail pages
+    grid.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (link.href && link.href.includes('/work/')) {
+          document.body.classList.add('is-page-navigating');
+        }
+      });
+    });
+
+
     // Handle deep-linked ?filter=video
     const urlParams = new URLSearchParams(window.location.search);
     const initialFilter = urlParams.get('filter');

@@ -29,6 +29,14 @@
   <script defer src="/media-guard.js"></script>
 </head>
 <body class="ep-page talla-page" id="top">
+  <div class="ep-loader" id="ep-loader" aria-hidden="true">
+    <div class="ep-loader-content">
+      <div class="ep-loader-brand">KRIYON MEDIA</div>
+      <div class="ep-loader-project">TALLA BRIDAL · ROYAL ARCHIVE</div>
+      <div class="ep-loader-bar"><span class="ep-loader-progress"></span></div>
+    </div>
+  </div>
+
   <div class="ep-container">
     <!-- Clean Minimal Topbar -->
     <header class="ep-topbar">
@@ -113,7 +121,7 @@
       <!-- Row 3: 4K Widescreen Cinema Film Mixed in Grid (Autoplay, Muted, Full 4K) -->
       <div class="ep-row-full">
         <div class="ep-frame ep-frame-video" data-video-modal="/assets/talla/talla-film-wide-01.mp4" aria-label="Talla Bridal: 4K Widescreen Cinema Film — Palace courtyard slow twirl motion">
-          <video autoplay loop muted playsinline preload="auto" poster="/assets/talla/talla-film-wide-poster.jpg" src="/assets/talla/talla-film-wide-01.mp4" width="4096" height="2284"></video>
+          <video autoplay loop muted playsinline preload="metadata" poster="/assets/talla/talla-film-wide-poster.jpg" src="/assets/talla/talla-film-wide-01.mp4" width="4096" height="2284"></video>
           <div class="ep-frame-video-controls">
             <button class="ep-frame-video-btn video-toggle-btn" type="button" aria-label="Pause film">
               <svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
@@ -130,7 +138,7 @@
       <div class="talla-combo-grid">
         <div class="talla-combo-left">
           <div class="ep-frame ep-frame-video" data-video-modal="/assets/talla/talla-reel-01.mp4" aria-label="Talla Bridal: 4K Vertical Cinema Reel — Palace doorway royal motion portrait">
-            <video autoplay loop muted playsinline preload="auto" poster="/assets/talla/talla-reel-poster.jpg" src="/assets/talla/talla-reel-01.mp4" width="2304" height="4096"></video>
+            <video autoplay loop muted playsinline preload="metadata" poster="/assets/talla/talla-reel-poster.jpg" src="/assets/talla/talla-reel-01.mp4" width="2304" height="4096"></video>
             <div class="ep-frame-video-controls">
               <button class="ep-frame-video-btn video-toggle-btn" type="button" aria-label="Pause reel">
                 <svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
@@ -419,5 +427,26 @@
       });
     })();
   </script>
+
+  <script>
+    (function() {
+      const loader = document.getElementById('ep-loader');
+      if (!loader) return;
+      function dismiss() {
+        loader.classList.add('is-loaded');
+        setTimeout(function() {
+          if (loader.parentNode) loader.parentNode.removeChild(loader);
+        }, 700);
+      }
+      if (document.readyState === 'complete') {
+        dismiss();
+      } else {
+        window.addEventListener('load', dismiss);
+        // Safety timeout so user never gets stuck
+        setTimeout(dismiss, 700);
+      }
+    })();
+  </script>
+
 </body>
 </html>

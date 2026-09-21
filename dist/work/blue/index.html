@@ -29,6 +29,14 @@
   <script defer src="/media-guard.js"></script>
 </head>
 <body class="ep-page blue-page" id="top">
+  <div class="ep-loader" id="ep-loader" aria-hidden="true">
+    <div class="ep-loader-content">
+      <div class="ep-loader-brand">KRIYON MEDIA</div>
+      <div class="ep-loader-project">NILAYA COUTURE · BLUE EDIT</div>
+      <div class="ep-loader-bar"><span class="ep-loader-progress"></span></div>
+    </div>
+  </div>
+
   <div class="ep-container">
     <!-- Clean Minimal Topbar -->
     <header class="ep-topbar">
@@ -109,7 +117,7 @@
           <img src="/assets/blue/blue-couture-02.png" alt="Nilaya Couture: Full-length champagne gold lehenga profile pose" width="1792" height="2400" loading="eager" decoding="async" />
         </button>
         <div class="ep-frame ep-frame-video" data-video-modal="/assets/blue/blue-film-01.mp4" aria-label="Nilaya Couture: 4K Vertical Cinema Reel — Champagne gold couture motion">
-          <video autoplay loop muted playsinline preload="auto" poster="/assets/blue/blue-film-poster.jpg" src="/assets/blue/blue-film-01.mp4" width="2304" height="4096"></video>
+          <video autoplay loop muted playsinline preload="metadata" poster="/assets/blue/blue-film-poster.jpg" src="/assets/blue/blue-film-01.mp4" width="2304" height="4096"></video>
           <div class="ep-frame-video-controls">
             <button class="ep-frame-video-btn video-toggle-btn" type="button" aria-label="Pause reel">
               <svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
@@ -376,5 +384,26 @@
       });
     })();
   </script>
+
+  <script>
+    (function() {
+      const loader = document.getElementById('ep-loader');
+      if (!loader) return;
+      function dismiss() {
+        loader.classList.add('is-loaded');
+        setTimeout(function() {
+          if (loader.parentNode) loader.parentNode.removeChild(loader);
+        }, 700);
+      }
+      if (document.readyState === 'complete') {
+        dismiss();
+      } else {
+        window.addEventListener('load', dismiss);
+        // Safety timeout so user never gets stuck
+        setTimeout(dismiss, 700);
+      }
+    })();
+  </script>
+
 </body>
 </html>
