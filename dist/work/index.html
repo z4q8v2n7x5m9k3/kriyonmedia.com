@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=117" />
+  <link rel="stylesheet" href="/styles.css?v=118" />
   <script defer src="/media-guard.js"></script>
 </head>
 <body class="portfolio-editorial kriyon-project-index" id="top">
@@ -53,14 +53,17 @@
 
     <main>
       <section class="kp-intro">
-        <p class="kp-bio">Kriyon Media is a creative production studio building distinctive visual worlds for brands, products and campaigns.</p>
+        <div class="kp-lead">
+          <h1 class="kp-lead-title">Visual production for fashion, jewellery and product brands.</h1>
+          <p class="kp-lead-sub">Campaign imagery, films and digital assets — built from concept to final delivery.</p>
+        </div>
         <div class="kp-toolbar">
           <span class="kp-filters" role="toolbar" aria-label="Filter projects by category">
-            <button class="is-active" type="button" data-filter="all">All (12)</button>
+            <button class="is-active" type="button" data-filter="all">All (8)</button>
             <button type="button" data-filter="fashion">Fashion &amp; Couture (5)</button>
             <button type="button" data-filter="jewellery">Fine Jewellery (2)</button>
-            <button type="button" data-filter="parfumerie">Haute Parfumerie (1)</button>
-            <button type="button" data-filter="video">Cinema &amp; Films (5)</button>
+            <button type="button" data-filter="product">Product &amp; Beauty (1)</button>
+            <button type="button" data-filter="video">Films &amp; Motion (5)</button>
           </span>
           <span class="kp-views" role="group" aria-label="View switcher">
             <button class="is-active" type="button" data-view="grid">Grid</button>
@@ -71,55 +74,100 @@
       </section>
 
       <section class="kp-grid" id="project-grid" aria-label="All projects">
-        <a data-kind="parfumerie video" href="/work/khet/" aria-label="Khet — Kala Pani Eau de Parfum">
-          <img src="/assets/khet/khet-hero-thumb.jpg" alt="Khet Kala Pani campaign" width="800" height="800" loading="eager" decoding="async" />
-          <p><b>KHET</b> <span>Kala Pani Eau de Parfum</span></p>
-        </a>
-        <a data-kind="fashion" href="/work/talla/" aria-label="Talla Bridal — Imperial Burgundy Zardozi">
-          <img src="/assets/talla/talla-thumb.jpg" alt="Talla Bridal campaign" width="800" height="800" loading="eager" decoding="async" />
-          <p><b>TALLA BRIDAL</b> <span>Imperial Burgundy Zardozi</span></p>
-        </a>
-        <a data-kind="fashion" href="/work/darzie-couture/" aria-label="Darzie Couture — Pink Couture Campaign">
-          <img src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture campaign" width="800" height="800" loading="eager" decoding="async" />
-          <p><b>DARZIE COUTURE</b> <span>Pink Couture Campaign</span></p>
-        </a>
-        <a data-kind="fashion" href="/work/rutba/" aria-label="Rutba — Emerald Heritage Collection">
-          <img src="/assets/pixelone/rutba-thumb.jpg" alt="Rutba campaign" width="800" height="800" loading="eager" decoding="async" />
-          <p><b>RUTBA</b> <span>Emerald Heritage Collection</span></p>
-        </a>
-        <a data-kind="jewellery" href="/work/red-jewellery/" aria-label="Ruby Reverie — Ruby & Diamond Campaign">
-          <img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie campaign" width="800" height="800" loading="eager" decoding="async" />
-          <p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign</span></p>
-        </a>
-        <a data-kind="jewellery" href="/work/jewellery/" aria-label="Jewellery Showcase — Jewellery Portfolio">
-          <img src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase portfolio" width="800" height="800" loading="eager" decoding="async" />
-          <p><b>JEWELLERY SHOWCASE</b> <span>Jewellery Portfolio</span></p>
-        </a>
-        <a data-kind="fashion" href="/work/clothing/" aria-label="Mehr Couture — Olive Edit">
-          <img src="/assets/pixelone/pixelone-image-014.png" alt="Mehr Couture campaign" width="800" height="800" loading="eager" decoding="async" />
-          <p><b>MEHR COUTURE</b> <span>Olive Edit</span></p>
-        </a>
-        <a data-kind="fashion" href="/work/blue/" aria-label="Nilaya Couture — The Blue Edit">
-          <img src="/assets/blue/blue-couture-01.png" alt="Nilaya Couture campaign" width="800" height="800" loading="eager" decoding="async" />
-          <p><b>NILAYA COUTURE</b> <span>The Blue Edit</span></p>
+        <!-- 1. TALLA BRIDAL (Hero project spanning full width) -->
+        <a class="kp-card kp-card-hero" data-kind="fashion video" href="/work/talla/" aria-label="Talla Bridal — Imperial Burgundy Zardozi">
+          <div class="kp-card-media">
+            <img src="/assets/talla/talla-cinema-wide-poster.jpg" alt="Talla Bridal campaign" width="1600" height="900" loading="eager" decoding="async" />
+            <span class="kp-card-action">VIEW PROJECT ↗</span>
+          </div>
+          <div class="kp-card-meta">
+            <h2 class="kp-card-title">TALLA BRIDAL</h2>
+            <p class="kp-card-sub">Imperial Burgundy Zardozi · Film + Stills</p>
+          </div>
         </a>
 
-        <!-- Dedicated Video Category Cards (Cinema & Films) — Crisp Editorial Campaign Stills, No Raw Autoplay Video -->
-        <a data-kind="video" href="/work/talla/" aria-label="Talla Bridal — The Royal Motion Suite (4K Film)">
-          <img src="/assets/talla/talla-video-thumb.jpg" alt="Talla Bridal — The Royal Motion Suite" width="800" height="600" loading="lazy" decoding="async" />
-          <p><b>TALLA BRIDAL</b> <span>The Royal Motion Suite · 4K Film</span></p>
+        <!-- 2. RUBY REVERIE -->
+        <a class="kp-card" data-kind="jewellery video" href="/work/red-jewellery/" aria-label="Ruby Reverie — Ruby & Diamond Campaign">
+          <div class="kp-card-media">
+            <img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie campaign" width="800" height="1000" loading="eager" decoding="async" />
+            <span class="kp-card-action">VIEW PROJECT ↗</span>
+          </div>
+          <div class="kp-card-meta">
+            <h2 class="kp-card-title">RUBY REVERIE</h2>
+            <p class="kp-card-sub">Ruby &amp; Diamond Campaign · Film + Stills</p>
+          </div>
         </a>
-        <a data-kind="video" href="/work/blue/" aria-label="Nilaya Couture — 4K Champagne Gold Cinema">
-          <img src="/assets/blue/blue-couture-02.png" alt="Nilaya Couture — 4K Champagne Gold Cinema" width="800" height="600" loading="lazy" decoding="async" />
-          <p><b>NILAYA COUTURE</b> <span>4K Champagne Gold Cinema</span></p>
+
+        <!-- 3. RUTBA -->
+        <a class="kp-card" data-kind="fashion video" href="/work/rutba/" aria-label="Rutba — Emerald Heritage Collection">
+          <div class="kp-card-media">
+            <img src="/assets/pixelone/rutba-thumb.jpg" alt="Rutba campaign" width="800" height="1000" loading="eager" decoding="async" />
+            <span class="kp-card-action">VIEW PROJECT ↗</span>
+          </div>
+          <div class="kp-card-meta">
+            <h2 class="kp-card-title">RUTBA</h2>
+            <p class="kp-card-sub">Emerald Heritage Collection · Film + Stills</p>
+          </div>
         </a>
-        <a data-kind="video" href="/work/rutba/" aria-label="Rutba — 4K Heritage Motion Suite">
-          <img src="/assets/pixelone/rutba-video-thumb.jpg" alt="Rutba — 4K Heritage Motion Suite" width="800" height="600" loading="lazy" decoding="async" />
-          <p><b>RUTBA</b> <span>4K Heritage Motion Suite</span></p>
+
+        <!-- 4. KHET (Occasional full-width hero plate) -->
+        <a class="kp-card kp-card-hero" data-kind="product video" href="/work/khet/" aria-label="Khet — Kala Pani Eau de Parfum">
+          <div class="kp-card-media">
+            <img src="/assets/khet/khet-hero-01.png" alt="Khet Kala Pani campaign" width="1600" height="900" loading="eager" decoding="async" />
+            <span class="kp-card-action">VIEW PROJECT ↗</span>
+          </div>
+          <div class="kp-card-meta">
+            <h2 class="kp-card-title">KHET</h2>
+            <p class="kp-card-sub">Kala Pani Eau de Parfum · Commercial Product Campaign</p>
+          </div>
         </a>
-        <a data-kind="video" href="/work/red-jewellery/" aria-label="Ruby Reverie — 4K Fine Jewellery Commercial">
-          <img src="/assets/pixelone/ruby-couture-editorial.jpg" alt="Ruby Reverie — 4K Fine Jewellery Commercial" width="800" height="600" loading="lazy" decoding="async" />
-          <p><b>RUBY REVERIE</b> <span>4K Fine Jewellery Commercial</span></p>
+
+        <!-- 5. DARZIE COUTURE -->
+        <a class="kp-card" data-kind="fashion" href="/work/darzie-couture/" aria-label="Darzie Couture — Pink Couture Campaign">
+          <div class="kp-card-media">
+            <img src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture campaign" width="800" height="1000" loading="eager" decoding="async" />
+            <span class="kp-card-action">VIEW PROJECT ↗</span>
+          </div>
+          <div class="kp-card-meta">
+            <h2 class="kp-card-title">DARZIE COUTURE</h2>
+            <p class="kp-card-sub">Pink Couture Campaign · Editorial</p>
+          </div>
+        </a>
+
+        <!-- 6. JEWELLERY SHOWCASE -->
+        <a class="kp-card" data-kind="jewellery" href="/work/jewellery/" aria-label="Jewellery Showcase — Macro Fine Jewellery">
+          <div class="kp-card-media">
+            <img src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase portfolio" width="800" height="1000" loading="eager" decoding="async" />
+            <span class="kp-card-action">VIEW PROJECT ↗</span>
+          </div>
+          <div class="kp-card-meta">
+            <h2 class="kp-card-title">JEWELLERY SHOWCASE</h2>
+            <p class="kp-card-sub">High Jewellery &amp; Craftsmanship · Macro Portfolio</p>
+          </div>
+        </a>
+
+        <!-- 7. NILAYA COUTURE -->
+        <a class="kp-card" data-kind="fashion video" href="/work/blue/" aria-label="Nilaya Couture — Royal Sapphire Velvet">
+          <div class="kp-card-media">
+            <img src="/assets/blue/blue-couture-01.png" alt="Nilaya Couture campaign" width="800" height="1000" loading="eager" decoding="async" />
+            <span class="kp-card-action">VIEW PROJECT ↗</span>
+          </div>
+          <div class="kp-card-meta">
+            <h2 class="kp-card-title">NILAYA COUTURE</h2>
+            <p class="kp-card-sub">Royal Sapphire Velvet · 4K Cinema</p>
+          </div>
+        </a>
+
+        <!-- 8. MEHR COUTURE -->
+        <a class="kp-card" data-kind="fashion" href="/work/clothing/" aria-label="Mehr Couture — Olive Luxury Catalogue">
+          <div class="kp-card-media">
+            <img src="/assets/pixelone/pixelone-image-014.png" alt="Mehr Couture campaign" width="800" height="1000" loading="eager" decoding="async" />
+            <span class="kp-card-action">VIEW PROJECT ↗</span>
+          </div>
+          <div class="kp-card-meta">
+            <h2 class="kp-card-title">MEHR COUTURE</h2>
+            <p class="kp-card-sub">Olive Luxury Catalogue · Editorial Stills</p>
+          </div>
         </a>
       </section>
     </main>
@@ -163,19 +211,11 @@
     function applyFilter(filterName) {
       filterButtons.forEach(x => x.classList.toggle('is-active', x.dataset.filter === filterName));
       grid.dataset.activeFilter = filterName;
-      grid.querySelectorAll('a').forEach(card => {
+      grid.querySelectorAll('.kp-card').forEach(card => {
         const kinds = card.dataset.kind ? card.dataset.kind.split(' ') : [];
         const match = filterName === 'all' || kinds.includes(filterName);
         card.hidden = !match;
         card.classList.toggle('is-hidden', !match);
-        const vid = card.querySelector('video');
-        if (vid) {
-          if (match) {
-            vid.play().catch(() => {});
-          } else {
-            vid.pause();
-          }
-        }
       });
     }
 
@@ -192,7 +232,7 @@
     }));
 
     // Smooth transition when opening portfolio project detail pages
-    grid.querySelectorAll('a').forEach(link => {
+    grid.querySelectorAll('.kp-card').forEach(link => {
       link.addEventListener('click', (e) => {
         if (link.href && link.href.includes('/work/')) {
           document.body.classList.add('is-page-navigating');
@@ -200,11 +240,10 @@
       });
     });
 
-
-    // Handle deep-linked ?filter=video
+    // Handle deep-linked ?filter=video, ?filter=product, etc.
     const urlParams = new URLSearchParams(window.location.search);
     const initialFilter = urlParams.get('filter');
-    if (initialFilter && ['all', 'fashion', 'jewellery', 'parfumerie', 'video'].includes(initialFilter)) {
+    if (initialFilter && ['all', 'fashion', 'jewellery', 'product', 'video'].includes(initialFilter)) {
       applyFilter(initialFilter);
     }
 
