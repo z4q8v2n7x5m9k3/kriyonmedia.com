@@ -1,4 +1,25 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=/work/darzie-couture/"><link rel="canonical" href="/work/darzie-couture/"><title>Darzie Couture — Kriyon Media</title></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=/work/darzie-couture/"><link rel="canonical" href="/work/darzie-couture/"><title>Darzie Couture — Kriyon Media</title>  <script>
+    (function() {
+      try {
+        let isReload = false;
+        if (window.performance) {
+          const navEntries = performance.getEntriesByType('navigation');
+          if (navEntries && navEntries.length > 0) {
+            isReload = (navEntries[0].type === 'reload');
+          } else if (performance.navigation) {
+            isReload = (performance.navigation.type === 1);
+          }
+        }
+        const hasVisited = sessionStorage.getItem('kriyon_visited');
+        if (!isReload && hasVisited) {
+          document.documentElement.classList.add('intro-seen');
+        } else {
+          sessionStorage.setItem('kriyon_visited', '1');
+        }
+      } catch(e) {}
+    })();
+  </script>
+</head><body>
   <div class="ep-loader" id="ep-loader" aria-hidden="true">
     <div class="ep-loader-content">
       <div class="ep-loader-brand">KRIYON MEDIA</div>
@@ -12,17 +33,17 @@
       const loader = document.getElementById('ep-loader');
       if (!loader) return;
       function dismiss() {
+        loader.style.pointerEvents = 'none';
         loader.classList.add('is-loaded');
         setTimeout(function() {
           if (loader.parentNode) loader.parentNode.removeChild(loader);
-        }, 700);
+        }, 350);
       }
       if (document.readyState === 'complete') {
         dismiss();
       } else {
         window.addEventListener('load', dismiss);
-        // Safety timeout so user never gets stuck
-        setTimeout(dismiss, 700);
+        setTimeout(dismiss, 450);
       }
     })();
   </script>

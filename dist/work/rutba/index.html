@@ -33,6 +33,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=110" />
   <script defer src="/media-guard.js"></script>
+  <script>
+    (function() {
+      try {
+        let isReload = false;
+        if (window.performance) {
+          const navEntries = performance.getEntriesByType('navigation');
+          if (navEntries && navEntries.length > 0) {
+            isReload = (navEntries[0].type === 'reload');
+          } else if (performance.navigation) {
+            isReload = (performance.navigation.type === 1);
+          }
+        }
+        const hasVisited = sessionStorage.getItem('kriyon_visited');
+        if (!isReload && hasVisited) {
+          document.documentElement.classList.add('intro-seen');
+        } else {
+          sessionStorage.setItem('kriyon_visited', '1');
+        }
+      } catch(e) {}
+    })();
+  </script>
 </head>
 <body class="ep-page" id="top">
   <div class="ep-loader" id="ep-loader" aria-hidden="true">
@@ -464,17 +485,17 @@
       const loader = document.getElementById('ep-loader');
       if (!loader) return;
       function dismiss() {
+        loader.style.pointerEvents = 'none';
         loader.classList.add('is-loaded');
         setTimeout(function() {
           if (loader.parentNode) loader.parentNode.removeChild(loader);
-        }, 700);
+        }, 350);
       }
       if (document.readyState === 'complete') {
         dismiss();
       } else {
         window.addEventListener('load', dismiss);
-        // Safety timeout so user never gets stuck
-        setTimeout(dismiss, 700);
+        setTimeout(dismiss, 450);
       }
     })();
   </script>

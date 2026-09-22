@@ -1262,10 +1262,13 @@ img,video{-webkit-user-drag:none;user-select:none}
    PREMIUM EDITORIAL 3.5s LOADER & ENTRANCE SYSTEM
    ============================================================ */
 .intro-seen #ki-loader,
-.intro-seen .ki-loader {
+.intro-seen .ki-loader,
+.intro-seen #ep-loader,
+.intro-seen .ep-loader {
   display: none !important;
   pointer-events: none !important;
   visibility: hidden !important;
+  z-index: -1 !important;
 }
 
 .ki-loader {
@@ -1281,7 +1284,7 @@ img,video{-webkit-user-drag:none;user-select:none}
   background: #000000 !important;
   transform: translateY(0) !important;
   opacity: 1 !important;
-  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.6s ease 0.1s !important;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.35s ease !important;
   will-change: transform, opacity !important;
 }
 
@@ -1297,7 +1300,7 @@ img,video{-webkit-user-drag:none;user-select:none}
   text-align: center !important;
   opacity: 0;
   transform: scale(0.96);
-  animation: ki-loader-brand-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards !important;
+  animation: ki-loader-brand-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards !important;
 }
 
 @keyframes ki-loader-brand-in {
@@ -1312,6 +1315,8 @@ img,video{-webkit-user-drag:none;user-select:none}
   transform: translateY(-100%) !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  visibility: hidden !important;
+  z-index: -1 !important;
 }
 
 html {
@@ -1375,45 +1380,45 @@ html {
   transform: translateY(22px) !important;
 }
 
-/* Once entered: reveal smoothly in strict sequential order */
-/* Step 1: KRIYON MEDIA masthead/logo (+0.1s) */
+/* Once entered: reveal smoothly in fast, crisp sequential order */
+/* Step 1: KRIYON MEDIA masthead/logo (+0.04s) */
 .has-entrance.is-entered .ki-brand-wrap {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s !important;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.04s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.04s !important;
 }
 
-/* Step 2: Navbar items appear smoothly after logo (+0.38s) */
+/* Step 2: Navbar items appear smoothly after logo (+0.08s) */
 .has-entrance.is-entered .ki-header nav {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.38s !important;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.08s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.08s !important;
 }
 .has-entrance.is-entered .ki-header-divider {
   opacity: 1 !important;
-  transition: opacity 0.7s ease 0.38s !important;
+  transition: opacity 0.35s ease 0.08s !important;
 }
 
-/* Step 3: Top-right info/actions appear (+0.75s) */
+/* Step 3: Top-right info/actions appear (+0.12s) */
 .has-entrance.is-entered .ki-profile,
 .has-entrance.is-entered .ki-links {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.75s, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.75s !important;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.12s !important;
 }
 
-/* Step 4: Editorial intro text appears (+1.05s) */
+/* Step 4: Editorial intro text appears (+0.16s) */
 .has-entrance.is-entered .ki-intro {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.05s, transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.05s !important;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.16s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.16s !important;
 }
 
-/* Step 5: First project grid appears (+1.35s) */
+/* Step 5: First project grid appears (+0.22s) */
 .has-entrance.is-entered .ki-work {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.35s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.35s !important;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.22s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.22s !important;
 }
 
 /* ============================================================
@@ -3305,32 +3310,59 @@ body {
 /* ============================================================
    PROJECT GRID IMAGE CROP & BRIGHTNESS REFINEMENTS
    ============================================================ */
-/* Darzie Couture: move model slightly up so framing is balanced with proper headroom and waist visibility */
-.ki-work-card[href*="darzie-couture"] img,
-.kp-grid > a[href*="darzie-couture"] img {
-  object-position: center 32% !important;
+/* Talla Bridal: Imperial chandelier & bridal lehenga in palace hall */
+.ki-work-card[href*="talla"] img,
+.kp-card[href*="talla"] img {
+  object-position: center 22% !important;
 }
 
-/* Ruby Reverie: position full-shot slightly lower so framing looks clean */
+/* Darzie Couture: palace courtyard with marigolds and hot pink couture */
+.ki-work-card[href*="darzie-couture"] img {
+  object-position: center center !important;
+}
+.kp-card[href*="darzie-couture"] img,
+.kp-grid > a[href*="darzie-couture"] img {
+  object-position: center 14% !important;
+}
+
+/* Rutba: emerald heritage kurti by sandstone palace pillar */
+.ki-work-card[href*="rutba"] img,
+.kp-card[href*="rutba"] img,
+.kp-grid > a[href*="rutba"] img {
+  object-position: center 16% !important;
+}
+
+/* Ruby Reverie: crimson saree & ruby necklace editorial portrait */
 .ki-work-card[href*="red-jewellery"] img,
+.kp-card[href*="red-jewellery"] img,
 .kp-grid > a[href*="red-jewellery"] img {
   object-position: center 18% !important;
 }
 
+/* Nilaya Couture: gold zardozi lehenga on royal midnight blue */
+.ki-work-card[href*="blue"] img,
+.kp-card[href*="blue"] img,
+.kp-grid > a[href*="blue"] img {
+  object-position: center center !important;
+}
+
 /* Mehr Couture: green olive edit editorial framing */
 .ki-work-card[href*="clothing"] img,
+.kp-card[href*="clothing"] img,
 .kp-grid > a[href*="clothing"] img {
-  object-position: center 16% !important;
+  object-position: center 15% !important;
   filter: brightness(1.04) contrast(1.02) !important;
 }
 
 .ki-work-card[href*="clothing"]:hover img,
+.kp-card[href*="clothing"]:hover img,
 .kp-grid > a[href*="clothing"]:hover img {
   filter: brightness(1.06) contrast(1.03) saturate(1.06) !important;
 }
 
 /* Jewellery Showcase: emerald necklace on velvet display centering */
 .ki-work-card[href*="jewellery"] img,
+.kp-card[href*="jewellery"] img,
 .kp-grid > a[href*="jewellery"] img {
   object-position: center center !important;
 }
@@ -6913,14 +6945,17 @@ button[data-rutba-image*="rutba-03"] img {
   color: #ffffff !important;
   opacity: 1 !important;
   transform: translateY(0) !important;
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.76, 0, 0.24, 1) !important;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.76, 0, 0.24, 1) !important;
   pointer-events: all !important;
 }
 
-.ep-loader.is-loaded {
+.ep-loader.is-loaded,
+.ep-loader.is-exiting {
   opacity: 0 !important;
   transform: translateY(-100%) !important;
   pointer-events: none !important;
+  visibility: hidden !important;
+  z-index: -1 !important;
 }
 
 .ep-loader-content {
@@ -6993,8 +7028,9 @@ button[data-rutba-image*="rutba-03"] img {
 
 /* Smooth transition when navigating out of /work/ */
 .is-page-navigating {
-  opacity: 0.7 !important;
-  transition: opacity 0.3s ease !important;
+  opacity: 0.88 !important;
+  transition: opacity 0.15s ease !important;
+  pointer-events: auto !important;
 }
 
 /* ==========================================================================
