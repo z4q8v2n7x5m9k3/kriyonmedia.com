@@ -135,10 +135,26 @@
         <div class="khet-combo-left">
           <div class="ep-frame ep-frame-video" data-video-modal="/assets/khet/khet-film-reel-01.mp4" aria-label="Khet Kala Pani: 4K Vertical Cinema Commercial — Hydrodynamic fluid motion and surface tension">
             <video autoplay loop muted playsinline preload="metadata" poster="/assets/khet/khet-film-poster.jpg" src="/assets/khet/khet-film-reel-01.mp4" width="2304" height="4096"></video>
+            
+            <!-- Chic Sound Badge (Click to Unmute / Mute) -->
+            <button class="khet-sound-badge" type="button" aria-label="Toggle sound">
+              <span class="khet-sound-icon">🔈</span>
+              <span class="khet-sound-bars" style="display:none;"><span></span><span></span><span></span></span>
+              <span class="khet-sound-text">TAP FOR SOUND</span>
+            </button>
+
             <div class="ep-frame-video-controls">
-              <button class="ep-frame-video-btn video-toggle-btn" type="button" aria-label="Pause commercial">
-                <svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
-                <svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:none;"><polygon points="6,4 20,12 6,20"></polygon></svg>
+              <button class="ep-frame-video-btn video-audio-btn" type="button" aria-label="Toggle Audio" title="Sound On / Off">
+                <svg class="icon-audio-mute" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
+                  <line x1="23" y1="9" x2="17" y2="15"></line>
+                  <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+                <svg class="icon-audio-on" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"></polygon>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                </svg>
               </button>
               <button class="ep-frame-video-btn video-fs-btn" type="button" aria-label="View Fullscreen 4K Cinema Film">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
@@ -336,7 +352,7 @@
   <!-- Fullscreen Video Lightbox Modal Dialog -->
   <dialog class="jewellery-video-lightbox khet-video-lightbox" id="khet-video-modal" aria-label="4K Campaign film full screen preview">
     <button class="jewellery-video-close" type="button" aria-label="Close video">×</button>
-    <video playsinline controls loop muted poster="/assets/khet/khet-film-poster.jpg">
+    <video playsinline controls loop poster="/assets/khet/khet-film-poster.jpg">
       <source src="/assets/khet/khet-film-reel-01.mp4" type="video/mp4" />
     </video>
   </dialog>
@@ -421,18 +437,45 @@
         else if (deltaX < -40) showImage(currentIndex + 1);
       });
 
-      // 2. Video In-Grid Autoplay & Fullscreen Modal Viewer
+      // 2. Video In-Grid Autoplay, Playable Audio & Fullscreen Modal Viewer
       const videoModal = document.getElementById('khet-video-modal');
       const modalVideo = videoModal?.querySelector('video');
       const modalClose = videoModal?.querySelector('.jewellery-video-close');
 
       document.querySelectorAll('.ep-frame-video').forEach((card) => {
         const vid = card.querySelector('video');
-        const playBtn = card.querySelector('.video-toggle-btn');
+        const soundBadge = card.querySelector('.khet-sound-badge');
+        const audioBtn = card.querySelector('.video-audio-btn');
         const fsBtn = card.querySelector('.video-fs-btn');
-        const iconPause = card.querySelector('.icon-pause');
-        const iconPlay = card.querySelector('.icon-play');
         const videoSrc = card.dataset.videoModal || vid?.currentSrc || vid?.src;
+
+        const updateSoundUI = (isUnmuted) => {
+          if (soundBadge) {
+            if (isUnmuted) {
+              soundBadge.classList.add('is-unmuted');
+              const icon = soundBadge.querySelector('.khet-sound-icon');
+              const bars = soundBadge.querySelector('.khet-sound-bars');
+              const text = soundBadge.querySelector('.khet-sound-text');
+              if (icon) icon.style.display = 'none';
+              if (bars) bars.style.display = 'inline-flex';
+              if (text) text.textContent = 'AUDIO ON';
+            } else {
+              soundBadge.classList.remove('is-unmuted');
+              const icon = soundBadge.querySelector('.khet-sound-icon');
+              const bars = soundBadge.querySelector('.khet-sound-bars');
+              const text = soundBadge.querySelector('.khet-sound-text');
+              if (icon) icon.style.display = 'inline-block';
+              if (bars) bars.style.display = 'none';
+              if (text) text.textContent = 'TAP FOR SOUND';
+            }
+          }
+          if (audioBtn) {
+            const iconMute = audioBtn.querySelector('.icon-audio-mute');
+            const iconOn = audioBtn.querySelector('.icon-audio-on');
+            if (iconMute) iconMute.style.display = isUnmuted ? 'none' : 'block';
+            if (iconOn) iconOn.style.display = isUnmuted ? 'block' : 'none';
+          }
+        };
 
         if (vid) {
           vid.muted = true;
@@ -440,34 +483,52 @@
           vid.playsInline = true;
           const playPromise = vid.play();
           if (playPromise) playPromise.catch(() => {});
+
+          vid.addEventListener('volumechange', () => {
+            updateSoundUI(!vid.muted && vid.volume > 0);
+          });
         }
 
-        if (playBtn && vid) {
-          playBtn.addEventListener('click', (e) => {
+        const toggleSound = (e) => {
+          if (e) {
+            e.preventDefault();
             e.stopPropagation();
-            if (vid.paused) {
-              vid.play();
-              if (iconPause) iconPause.style.display = 'block';
-              if (iconPlay) iconPlay.style.display = 'none';
-            } else {
-              vid.pause();
-              if (iconPause) iconPause.style.display = 'none';
-              if (iconPlay) iconPlay.style.display = 'block';
-            }
-          });
+          }
+          if (!vid) return;
+          if (vid.muted) {
+            vid.muted = false;
+            vid.volume = 1.0;
+            const p = vid.play();
+            if (p && typeof p.catch === 'function') p.catch(() => {});
+          } else {
+            vid.muted = true;
+          }
+          updateSoundUI(!vid.muted);
+        };
+
+        if (soundBadge) {
+          soundBadge.addEventListener('click', toggleSound);
+        }
+
+        if (audioBtn) {
+          audioBtn.addEventListener('click', toggleSound);
         }
 
         card.addEventListener('click', (e) => {
           if (e.target.closest('button')) return;
-          if (vid) {
+          if (!vid) return;
+          // If video is muted on click, unmute it so audio plays
+          if (vid.muted) {
+            vid.muted = false;
+            vid.volume = 1.0;
+            const p = vid.play();
+            if (p && typeof p.catch === 'function') p.catch(() => {});
+            updateSoundUI(true);
+          } else {
             if (vid.paused) {
-              vid.play();
-              if (iconPause) iconPause.style.display = 'block';
-              if (iconPlay) iconPlay.style.display = 'none';
+              vid.play().catch(() => {});
             } else {
               vid.pause();
-              if (iconPause) iconPause.style.display = 'none';
-              if (iconPlay) iconPlay.style.display = 'block';
             }
           }
         });
@@ -478,7 +539,8 @@
             if (modalVideo) {
               modalVideo.src = videoSrc;
               modalVideo.currentTime = vid?.currentTime || 0;
-              modalVideo.muted = true;
+              modalVideo.muted = false;
+              modalVideo.volume = 1.0;
               modalVideo.play().catch(() => {});
             }
             videoModal.showModal();
@@ -490,6 +552,7 @@
         if (modalVideo) {
           modalVideo.pause();
           modalVideo.removeAttribute('src');
+          modalVideo.load();
         }
         videoModal?.close();
       };

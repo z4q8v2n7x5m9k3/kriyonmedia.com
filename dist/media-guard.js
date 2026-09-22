@@ -243,6 +243,17 @@
         e.preventDefault();
         e.stopPropagation();
 
+        const isKhet = vid.closest('.khet-combo-left') || window.location.pathname.includes('/khet') || document.body.classList.contains('khet-page');
+        if (isKhet && vid.muted) {
+          vid.muted = false;
+          vid.volume = 1.0;
+          vid.dispatchEvent(new Event('volumechange'));
+          vid.dataset.userPaused = '';
+          const p = vid.play();
+          if (p && typeof p.catch === 'function') p.catch(() => {});
+          return;
+        }
+
         if (vid.paused) {
           vid.dataset.userPaused = '';
           const p = vid.play();
