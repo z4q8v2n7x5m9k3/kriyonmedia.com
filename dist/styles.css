@@ -295,6 +295,12 @@ img,video{-webkit-user-drag:none;user-select:none}
   padding: 0 20px 80px !important;
 }
 
+/* When ki-work wraps a kp-grid, let kp-grid control layout */
+.ki-work:has(.kp-grid) {
+  display: block !important;
+  padding: 0 0 80px !important;
+}
+
 .ki-work-card {
   display: flex !important;
   flex-direction: column !important;
@@ -423,9 +429,8 @@ img,video{-webkit-user-drag:none;user-select:none}
 /* Clean Edge Uniform Grid */
 .kp-grid:not(.is-list) {
   display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  column-gap: clamp(16px, 2.2vw, 30px) !important;
-  row-gap: clamp(24px, 3.2vw, 44px) !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 28px 16px !important;
   padding: 10px 20px clamp(80px, 7vw, 120px) !important;
   max-width: 1680px !important;
   margin: 0 auto !important;
@@ -4060,6 +4065,596 @@ button[data-rutba-image*="rutba-03"] img {
   margin: 0 0 18px 0 !important;
 }
 
+/* Giant editorial hero title for new pricing page */
+.p-title-xl {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(52px, 8vw, 110px) !important;
+  font-weight: 700 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.04em !important;
+  color: #080808 !important;
+  margin: 0 0 28px 0 !important;
+}
+
+/* Launch partner pill badge */
+.p-badge-launch {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #8a7a5a !important;
+  background: rgba(138, 122, 90, 0.1) !important;
+  border: 1px solid rgba(138, 122, 90, 0.25) !important;
+  border-radius: 2px !important;
+  padding: 3px 8px !important;
+}
+
+/* One-line horizontal pricing strip */
+.p-price-line {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px 16px !important;
+  margin: 20px 0 28px 0 !important;
+  padding: 14px 0 !important;
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+.p-price-label {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #8a8a84 !important;
+}
+
+.p-price-was {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  color: #b0b0aa !important;
+  text-decoration: line-through !important;
+}
+
+.p-price-now {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: #080808 !important;
+}
+
+.p-price-tag {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  color: #8a7a5a !important;
+  background: rgba(138, 122, 90, 0.08) !important;
+  border: 1px solid rgba(138, 122, 90, 0.2) !important;
+  border-radius: 2px !important;
+  padding: 3px 8px !important;
+}
+
+/* Clean meeting/contact box */
+.p-meet-box {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: center !important;
+  gap: 40px !important;
+  background: #0d0d0b !important;
+  border-radius: 3px !important;
+  padding: 44px 52px !important;
+  margin: 48px 0 0 0 !important;
+}
+
+.p-meet-box-kicker {
+  display: block !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #666660 !important;
+  margin-bottom: 10px !important;
+}
+
+.p-meet-box-title {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(22px, 2.6vw, 34px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+  color: #f0ede8 !important;
+  margin: 0 0 12px 0 !important;
+}
+
+.p-meet-box-sub {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+  color: #5a5a55 !important;
+  margin: 0 !important;
+}
+
+.p-meet-box-right {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.p-meet-box-btn-primary {
+  display: block !important;
+  background: #f0ede8 !important;
+  color: #0d0d0b !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  padding: 14px 22px !important;
+  border-radius: 2px !important;
+  text-align: center !important;
+  transition: background 0.2s !important;
+}
+
+.p-meet-box-btn-primary:hover {
+  background: #fff !important;
+}
+
+.p-meet-box-btn-secondary {
+  display: block !important;
+  background: transparent !important;
+  color: #5a5a55 !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  padding: 10px 22px !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 2px !important;
+  text-align: center !important;
+  transition: color 0.2s, border-color 0.2s !important;
+}
+
+.p-meet-box-btn-secondary:hover {
+  color: #f0ede8 !important;
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
+@media (max-width: 680px) {
+  .p-meet-box { grid-template-columns: 1fr !important; padding: 32px 24px !important; }
+}
+
+/* ============================================================
+   PRICING PAGE — CLEAN SINGLE BLOCK + MODAL
+   ============================================================ */
+
+.pr-main {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: calc(100vh - 80px) !important;
+  padding: 80px 24px 100px !important;
+}
+
+.pr-wrap {
+  max-width: 580px !important;
+  width: 100% !important;
+}
+
+.pr-kicker {
+  display: block !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #8a8a84 !important;
+  margin-bottom: 16px !important;
+}
+
+.pr-title {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(30px, 4vw, 48px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.05 !important;
+  color: #080808 !important;
+  margin: 0 0 10px 0 !important;
+}
+
+.pr-sub {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #6a6a65 !important;
+  margin: 0 0 28px 0 !important;
+}
+
+.pr-price-row {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px 14px !important;
+  padding: 18px 0 !important;
+  border-top: 1px solid rgba(0,0,0,0.07) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+  margin-bottom: 24px !important;
+}
+
+.pr-was {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  color: #aaa !important;
+  text-decoration: line-through !important;
+}
+
+.pr-now {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: #080808 !important;
+}
+
+.pr-badge {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #8a7a5a !important;
+  background: rgba(138,122,90,0.08) !important;
+  border: 1px solid rgba(138,122,90,0.22) !important;
+  border-radius: 2px !important;
+  padding: 3px 8px !important;
+}
+
+.pr-scope {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.7 !important;
+  color: #6a6a65 !important;
+  margin: 0 0 32px 0 !important;
+}
+
+.pr-scope span {
+  color: #3a3a37 !important;
+}
+
+.pr-cta {
+  display: inline-block !important;
+  background: #080808 !important;
+  color: #f5f4f0 !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  padding: 16px 28px !important;
+  border-radius: 2px !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+  margin-bottom: 20px !important;
+}
+
+.pr-cta:hover {
+  background: #1a1a18 !important;
+}
+
+.pr-footnote {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  color: #9a9a94 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* --- INQUIRY MODAL --- */
+.pr-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9000 !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+}
+
+.pr-modal[hidden] {
+  display: none !important;
+}
+
+.pr-modal-backdrop {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(8,8,8,0.55) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.pr-modal-panel {
+  position: relative !important;
+  z-index: 1 !important;
+  background: #faf9f7 !important;
+  width: 100% !important;
+  max-width: 620px !important;
+  max-height: 92vh !important;
+  overflow-y: auto !important;
+  border-radius: 6px 6px 0 0 !important;
+  padding: 36px 40px 48px !important;
+  margin: 0 auto !important;
+}
+
+.pr-modal-head {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  margin-bottom: 28px !important;
+}
+
+.pr-modal-kicker {
+  display: block !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: #9a9a94 !important;
+  margin-bottom: 6px !important;
+}
+
+.pr-modal-title {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(22px, 3vw, 30px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  color: #080808 !important;
+  margin: 0 !important;
+}
+
+.pr-modal-close {
+  background: none !important;
+  border: none !important;
+  font-size: 28px !important;
+  line-height: 1 !important;
+  color: #8a8a84 !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+  margin-top: 4px !important;
+  transition: color 0.15s !important;
+}
+
+.pr-modal-close:hover { color: #080808 !important; }
+
+.pr-form { display: flex !important; flex-direction: column !important; gap: 18px !important; }
+
+.pr-field-row {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+}
+
+.pr-field-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
+}
+
+.pr-label {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  color: #5a5a55 !important;
+}
+
+.pr-optional {
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  color: #9a9a94 !important;
+}
+
+.pr-select,
+.pr-textarea {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px !important;
+  color: #080808 !important;
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  border-radius: 2px !important;
+  padding: 11px 14px !important;
+  width: 100% !important;
+  outline: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  transition: border-color 0.15s !important;
+}
+
+.pr-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8a84' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  padding-right: 36px !important;
+}
+
+.pr-select:focus,
+.pr-textarea:focus {
+  border-color: #080808 !important;
+}
+
+.pr-textarea { resize: vertical !important; min-height: 72px !important; }
+
+.pr-form-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-top: 6px !important;
+  flex-wrap: wrap !important;
+}
+
+.pr-submit {
+  background: #080808 !important;
+  color: #f5f4f0 !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  padding: 14px 24px !important;
+  border-radius: 2px !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.pr-submit:hover { background: #1a1a18 !important; }
+
+.pr-form-note {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  color: #9a9a94 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .pr-modal-panel { padding: 28px 20px 40px !important; border-radius: 6px 6px 0 0 !important; }
+  .pr-field-grid { grid-template-columns: 1fr !important; }
+  .pr-main { padding: 60px 20px 80px !important; }
+}
+
+
+.p-single-grid {
+  max-width: 780px !important;
+  margin: 0 auto !important;
+}
+
+/* Horizontal meeting / contact CTA bar */
+.p-contact-bar {
+  background: #080808 !important;
+  border-radius: 4px !important;
+  margin: 60px 0 40px 0 !important;
+  overflow: hidden !important;
+}
+
+.p-contact-bar-inner {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0 !important;
+  align-items: stretch !important;
+}
+
+.p-contact-bar-text {
+  padding: 48px 48px 48px 52px !important;
+  border-right: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.p-contact-bar-title {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(26px, 3vw, 40px) !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.03em !important;
+  color: #f5f4f0 !important;
+  margin: 10px 0 14px 0 !important;
+}
+
+.p-contact-bar-title span {
+  color: #8a8a84 !important;
+}
+
+.p-contact-bar-sub {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #666660 !important;
+  margin: 0 !important;
+}
+
+.p-contact-bar-actions {
+  padding: 48px 48px 48px 52px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 14px !important;
+}
+
+.p-contact-btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: #f5f4f0 !important;
+  color: #080808 !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  padding: 14px 22px !important;
+  border-radius: 2px !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+.p-contact-btn-primary:hover {
+  background: #fff !important;
+}
+
+.p-contact-btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  color: #8a8a84 !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  padding: 10px 22px !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 2px !important;
+  transition: color 0.2s, border-color 0.2s !important;
+}
+
+.p-contact-btn-secondary:hover {
+  color: #f5f4f0 !important;
+  border-color: rgba(255,255,255,0.3) !important;
+}
+
+.p-contact-bar-meta {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  margin-top: 6px !important;
+}
+
+.p-contact-bar-meta span {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  color: #4a4a45 !important;
+  letter-spacing: 0.02em !important;
+}
+
+@media (max-width: 700px) {
+  .p-contact-bar-inner { grid-template-columns: 1fr !important; }
+  .p-contact-bar-text { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; padding: 36px 28px !important; }
+  .p-contact-bar-actions { padding: 28px !important; }
+  .p-title-xl { font-size: clamp(44px, 14vw, 80px) !important; }
+}
+
 .p-intro {
   font-family: 'Manrope', sans-serif !important;
   font-size: clamp(15.5px, 1.2vw, 17.5px) !important;
@@ -4251,6 +4846,27 @@ button[data-rutba-image*="rutba-03"] img {
   font-size: 12px !important;
   font-weight: 700 !important;
   color: #767672 !important;
+}
+
+.p-rate-strike {
+  font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+  color: #b0b0aa !important;
+  text-decoration: line-through !important;
+  text-decoration-color: #b0b0aa !important;
+  margin-right: 4px !important;
+}
+
+.p-rate-launch-note {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  color: #8a7a5a !important;
+  font-style: italic !important;
+  margin: 0 0 10px !important;
 }
 
 .p-card-desc {
@@ -7711,3 +8327,175 @@ button[data-rutba-image*="rutba-03"] img {
 
 
 
+
+/* Pricing: use the same restrained type and meeting CTA as the contact page. */
+.pricing-page .pr-main {
+  min-height: 0 !important;
+  padding: clamp(56px, 7vw, 108px) 24px clamp(72px, 8vw, 120px) !important;
+}
+.pricing-page .pr-wrap {
+  max-width: 820px !important;
+}
+.pricing-page .pr-kicker {
+  font-weight: 600 !important;
+  margin-bottom: 14px !important;
+}
+.pricing-page .pr-title {
+  font-size: clamp(38px, 5vw, 68px) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.055em !important;
+  line-height: 1.03 !important;
+  margin-bottom: 16px !important;
+}
+.pricing-page .pr-sub {
+  font-size: clamp(14px, 1.2vw, 17px) !important;
+  margin-bottom: 34px !important;
+}
+.pricing-page .pr-price-row {
+  padding: 22px 0 !important;
+  margin-bottom: 28px !important;
+}
+.pricing-page .pr-now {
+  font-size: clamp(20px, 2vw, 28px) !important;
+  font-weight: 500 !important;
+}
+.pricing-page .pr-scope {
+  font-size: 14px !important;
+  margin-bottom: 28px !important;
+}
+.pricing-page .pr-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.pricing-page .pr-actions .contact-btn-meeting,
+.pricing-page .pr-cta {
+  min-height: 44px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 11px 22px !important;
+  border-radius: 999px !important;
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  line-height: 20px !important;
+}
+.pricing-page .pr-cta {
+  color: #0a0a0a !important;
+  background: transparent !important;
+  border: 1px solid #0a0a0a !important;
+}
+.pricing-page .pr-cta:hover {
+  background: #0a0a0a !important;
+  color: #fff !important;
+}
+@media (max-width: 600px) {
+  .pricing-page .pr-main {
+    padding: 52px 18px 76px !important;
+  }
+  .pricing-page .pr-title {
+    font-size: clamp(36px, 10vw, 48px) !important;
+  }
+  .pricing-page .pr-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .pricing-page .pr-actions .contact-btn-meeting,
+  .pricing-page .pr-cta {
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* Pricing: give the headline its own full-width line on desktop. */
+@media (min-width: 1100px) {
+  .pricing-page .pr-wrap {
+    max-width: 1180px !important;
+  }
+  .pricing-page .pr-title {
+    font-size: clamp(48px, 4.2vw, 60px) !important;
+    white-space: nowrap !important;
+  }
+  .pricing-page .pr-sub,
+  .pricing-page .pr-price-row,
+  .pricing-page .pr-scope,
+  .pricing-page .pr-actions,
+  .pricing-page .pr-footnote {
+    max-width: 820px !important;
+  }
+}
+
+/* Pricing scope and campaign touchpoints. */
+.pricing-page .pr-scope strong,
+.pricing-page .pr-touchpoints strong {
+  color: #242421;
+  font-weight: 650;
+}
+.pricing-page .pr-scope {
+  margin-bottom: 27px !important;
+}
+.pricing-page .pr-touchpoints {
+  max-width: 820px;
+  margin: 0 0 31px;
+}
+.pricing-page .pr-touchpoints h2 {
+  margin: 0 0 8px;
+  font-family: 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: clamp(23px, 2.5vw, 31px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: #0a0a0a;
+}
+.pricing-page .pr-touchpoints p {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6a6a65;
+}
+.pricing-page .pr-partner-note {
+  max-width: 820px;
+  margin: 8px 0 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #8d8d87;
+}
+@media (max-width: 600px) {
+  .pricing-page .pr-touchpoints h2 {
+    font-size: 25px;
+  }
+  .pricing-page .pr-touchpoints p {
+    font-size: 13px;
+  }
+}
+
+/* Work directory: the same compact three-column landscape cards as Home. */
+.kriyon-project-index .kp-grid:not(.is-list) {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 14px 16px !important;
+}
+.kriyon-project-index .kp-card-media {
+  aspect-ratio: 4 / 3 !important;
+}
+@media (max-width: 680px) {
+  .kriyon-project-index .kp-grid:not(.is-list) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px 10px !important;
+    padding: 10px 12px 60px !important;
+  }
+  .kriyon-project-index .kp-grid p {
+    display: block !important;
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+  }
+  .kriyon-project-index .kp-grid p span {
+    display: block !important;
+    margin-top: 2px !important;
+  }
+}
