@@ -8540,3 +8540,7 @@ button[data-rutba-image*="rutba-03"] img {
 
 /* Keep the bridal portrait fully framed in the compact Projects card. */
 .kriyon-project-index .kp-card[href="/work/samaira-bridal/"] .kp-card-media img { object-position: center 8% !important; }
+
+/* Portfolio portrait framing: preserve the faces in both listings. */
+.ki-work-card[href="/work/red-jewellery/"] .ki-work-thumb img { object-position: center 2% !important; }
+.kriyon-project-index .kp-card[href="/work/red-jewellery/"] .kp-card-media img { object-position: center 4% !important; }
