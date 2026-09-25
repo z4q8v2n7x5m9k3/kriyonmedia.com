@@ -8831,3 +8831,34 @@ button[data-rutba-image*="rutba-03"] img {
   .ki-service-row p { font-size: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { .ki-service-shot { transition: none; } }
+
+/* Site-wide editorial motion: short upward slide, once, with no layout shift. */
+.site-motion-pending:not(.site-motion-in) {
+  opacity: 0 !important;
+  transform: translate3d(0, 22px, 0) !important;
+}
+.site-motion-pending.site-motion-in {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition: opacity .64s cubic-bezier(.16, 1, .3, 1) var(--site-motion-delay, 0ms), transform .64s cubic-bezier(.16, 1, .3, 1) var(--site-motion-delay, 0ms) !important;
+}
+.kriyon-project-index .kp-header,
+.contact-page .kp-header,
+.pricing-page .kp-header {
+  animation: site-header-enter .55s cubic-bezier(.16, 1, .3, 1) both;
+}
+@keyframes site-header-enter {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-motion-pending, .site-motion-pending.site-motion-in { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .kriyon-project-index .kp-header, .contact-page .kp-header, .pricing-page .kp-header { animation: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .js-scroll-active .ki-reveal:not(.is-revealed),
+  .js-scroll-active .ki-reveal.is-revealed { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .ep-page .ep-container { opacity: 1 !important; animation: none !important; }
+  .ep-loader { display: none !important; }
+}
