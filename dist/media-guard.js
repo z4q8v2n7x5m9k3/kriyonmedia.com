@@ -25,7 +25,7 @@
   // 2. Clear blocking overlays and ensure pointer interactions are never trapped
   const releaseLoaders = () => {
     const homeLoader = document.getElementById('ki-loader');
-    if (homeLoader && !homeLoader.classList.contains('is-exiting') && performance.now() < 3800) return;
+    if (homeLoader && !homeLoader.classList.contains('is-exiting') && performance.now() < 2100) return;
     document.querySelectorAll('#ki-loader, #ep-loader, .ki-loader, .ep-loader').forEach((el) => {
       el.style.pointerEvents = 'none';
       el.style.visibility = 'hidden';
@@ -42,7 +42,7 @@
   window.addEventListener('pageshow', releaseLoaders);
   window.addEventListener('DOMContentLoaded', () => { setTimeout(releaseLoaders, 1000); });
   window.addEventListener('load', () => { setTimeout(releaseLoaders, 800); });
-  setTimeout(releaseLoaders, 4200);
+  setTimeout(releaseLoaders, 2800);
 
   // 3. High-End Editorial Image Loading & Resolution System
   const initImageLoading = () => {
