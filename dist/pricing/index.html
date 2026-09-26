@@ -81,7 +81,49 @@
 .pricing-page .pr-actions>* { width:100%!important; box-sizing:border-box!important; text-align:center!important; }
 }
 </style>
-</head>
+<style>
+.pricing-page .pr-main{background:#f8f8f6!important;padding:48px 24px 60px!important}
+.offer-heading{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:28px}
+.offer-heading h1{font-family:inherit;font-size:clamp(30px,3.2vw,46px);font-weight:500;letter-spacing:-.05em;line-height:1.1;margin:0}
+.offer-heading>p{font-size:16px;line-height:1.5;color:#66665f;max-width:430px;margin:0}
+.offer-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.offer-card{position:relative;isolation:isolate;background:#fff;border:1px solid #deded7;border-radius:4px;padding:24px 20px;min-width:0}
+.offer-card:before{content:"";position:absolute;inset:-1px;z-index:-1;border:1px dotted #aaa99f;border-radius:4px;opacity:.22;pointer-events:none}
+.offer-index{display:block;font-size:11px;letter-spacing:.08em;color:#8b8b83;margin-bottom:18px}
+.offer-card h2{font-family:inherit;font-size:20px;line-height:1.25;letter-spacing:-.035em;font-weight:500;min-height:50px;margin:0}
+.offer-price{border-bottom:1px solid #e9e9e3;padding:20px 0;margin-bottom:18px}
+.offer-price>span{display:block;font-size:12px;color:#787870;margin-bottom:5px}
+.offer-price strong{font-size:clamp(25px,2.2vw,32px);font-weight:500;letter-spacing:-.045em;white-space:nowrap}
+.offer-price small{font-size:12px;font-weight:400;letter-spacing:0;color:#707068}
+.offer-card>p{font-size:14px;line-height:1.65;color:#64645e;margin:0}
+.offer-bottom{display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:26px}
+.offer-bottom>p{max-width:760px;font-size:13px;line-height:1.6;color:#76766e;margin:0}
+.offer-button{display:flex;align-items:center;justify-content:center;gap:28px;flex-shrink:0;min-height:46px;padding:12px 20px;background:#111110;border:1px solid #111110;border-radius:3px;color:#fff;font-family:inherit;font-size:13px;cursor:pointer}
+.offer-button:hover{background:#33332f}
+.offer-button:focus-visible{outline:2px solid #666;outline-offset:4px}
+@media(max-width:1050px){.offer-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.offer-card h2{min-height:0}.offer-heading>p{max-width:360px}}
+@media(max-width:600px){.pricing-page .pr-main{padding:34px 16px 44px!important}.offer-heading{display:block;margin-bottom:22px}.offer-heading>p{font-size:15px;margin-top:13px}.offer-cards{grid-template-columns:1fr;gap:12px}.offer-card{padding:21px}.offer-index{margin-bottom:12px}.offer-price{padding:15px 0}.offer-price strong{font-size:29px}.offer-bottom{display:block;margin-top:22px}.offer-button{width:100%;margin-top:20px}}
+</style><style>
+.offer-heading{align-items:center;gap:24px;margin-bottom:30px}
+.offer-heading>p{max-width:none;white-space:nowrap;font-size:clamp(13px,1.15vw,16px)}
+.offer-card{padding:25px 22px 27px;border-color:#ddddd6;border-radius:7px;background:linear-gradient(145deg,#fff,#fcfcfa);box-shadow:0 2px 8px #11111004;transition:border-color .2s,box-shadow .2s}
+.offer-card:before{border-radius:7px;opacity:.12}
+.offer-card:hover{border-color:#aaa99e;box-shadow:0 0 0 2px #1111100a}
+.offer-card:nth-child(3){border-color:#99998b;box-shadow:0 0 0 2px #1111100b;background:#fdfdf9}
+.offer-index{display:flex;justify-content:space-between;align-items:center;min-height:20px;margin-bottom:17px}
+.offer-highlight{font-size:8px;letter-spacing:.06em;color:#68685e;padding:4px 7px;border:1px solid #ddddd3;border-radius:20px}
+.offer-card h2{font-size:20px;min-height:50px;line-height:1.25}
+.offer-price{padding:17px 0 20px;margin-bottom:18px}
+.offer-price .offer-original{font-size:11px;margin-bottom:10px;color:#85857b}
+.offer-original s{text-decoration-thickness:1px}
+.offer-price strong{font-size:clamp(25px,2.25vw,33px);letter-spacing:-.04em;color:#111110}
+.offer-price small{font-size:11px}
+.offer-bottom{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:center;border-top:1px solid #deded7;padding-top:22px;margin-top:24px}
+.offer-bottom>p{grid-column:span 3;max-width:750px;padding-right:22px;box-sizing:border-box}
+.offer-button{width:100%;box-sizing:border-box;border-radius:5px;gap:14px;min-height:48px;box-shadow:0 0 0 3px #11111008}
+@media(max-width:1050px){.offer-heading{align-items:flex-start;flex-direction:column;gap:14px}.offer-heading>p{max-width:none;font-size:15px}.offer-bottom{grid-template-columns:1fr 1fr}.offer-bottom>p{grid-column:auto}.offer-price strong{font-size:31px}}
+@media(max-width:600px){.offer-heading>p{white-space:normal;line-height:1.5}.offer-card h2{min-height:0}.offer-bottom{grid-template-columns:1fr}.offer-bottom>p{padding-right:0}.offer-button{margin-top:5px}.offer-card{padding:22px}.offer-price{padding-top:16px}}
+</style><style>.offer-price .offer-original{display:flex!important;align-items:center;gap:6px;min-height:22px;margin-bottom:8px!important;color:rgb(150,150,142)!important}.offer-original em{font-style:normal;color:rgb(52,52,48);background:rgb(239,239,233);border:1px solid rgb(228,228,220);border-radius:3px;padding:2px 6px;line-height:1.25}.offer-arrow{color:rgb(176,176,168)}.offer-card:nth-child(3){border-color:rgb(34,34,31)!important;box-shadow:inset 0 3px 0 rgb(34,34,31),0 2px 12px rgba(17,17,16,.04)!important}.offer-highlight{background:rgb(17,17,16)!important;border-color:rgb(17,17,16)!important;color:white!important;padding:4px 8px!important}.offer-card>p{color:rgb(114,114,107)!important}.offer-button{background:rgb(17,17,16)!important;color:white!important;border-color:rgb(17,17,16)!important;font-weight:600!important;letter-spacing:.01em}.offer-button:hover{background:rgb(44,44,40)!important}@media(max-width:600px){.offer-price .offer-original{margin-bottom:7px!important}}</style></head>
 <body class="pricing-page" id="top">
   <div class="pricing-shell">
     <header class="kp-header">
@@ -107,44 +149,10 @@
     </header>
 
     <!-- PRICING BLOCK -->
-    <main class="pr-main">
-      <div class="pr-wrap">
-
-        <span class="pr-kicker">PRODUCTION &amp; PRICING · 2026</span>
-        <h1 class="pr-title">Premium Campaign Production.</h1>
-        <p class="pr-sub">For D2C, fashion, jewellery, food, beauty, hospitality and premium brands that need campaign-grade creative across social, ads and digital.</p>
-
-        <div class="pr-offer-layout">
-          <div class="pr-offer-card">
-            <span class="pr-panel-index">01 / THE PRODUCTION</span>
-            <div class="pr-price-row">
-              <span class="pr-was">₹39,999</span>
-              <span class="pr-now">Starting ₹29,999 + GST</span>
-              <span class="pr-badge">Launch Partner Pricing</span>
-            </div>
-            <p class="pr-scope"><strong>Custom scoped around:</strong><br>
-              <span>Cinematic Reels · Campaign Stills · Product &amp; Model Visuals · Social Creatives · Carousels · Ad Assets · Website Visuals · CGI / Custom Environments</span>
-            </p>
-            <div class="pr-actions">
-              <a class="contact-btn-meeting" href="https://cal.com/repixelx-studio/30min?layout=month_view" target="_blank" rel="noreferrer">Book a 30-Min Meeting</a>
-              <button class="pr-cta" id="pr-open-form" type="button">Build Your Custom Package</button>
-            </div>
-          </div>
-          <div class="pr-offer-context">
-            <span class="pr-panel-index">02 / THE POSSIBILITIES</span>
-            <div class="pr-touchpoints">
-              <h2>One Production.<br>Multiple Brand Touchpoints.</h2>
-              <p>Built for use across <strong>Instagram, paid ads, websites, launches, catalogues and digital campaigns.</strong></p>
-            </div>
-            <div class="pr-context-notes">
-              <p class="pr-footnote">Every production is tailored to your products, required output, creative direction and campaign goals.</p>
-              <p class="pr-partner-note">Selected campaign clients also unlock exclusive OneLink partner benefits.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </main>
+    <main class="pr-main"><div class="pr-wrap"><div class="offer-heading"><h1>PRICING</h1><p>Flexible production, built around the scope of your campaign.</p></div><div class="offer-cards"><article class="offer-card"><span class="offer-index">01</span><h2>Essential Shoot</h2><div class="offer-price"><span class="offer-original"><s>₹17,999</s><span class="offer-arrow" aria-hidden="true">→</span><em>Starting</em></span><strong>₹14,999 <small>+ GST</small></strong></div><p>One focused shoot for premium product, fashion or jewellery brands, with campaign-ready visuals for social, ads and web.</p></article>
+<article class="offer-card"><span class="offer-index">02</span><h2>Launch Campaign</h2><div class="offer-price"><span class="offer-original"><s>₹29,999</s><span class="offer-arrow" aria-hidden="true">→</span><em>Starting</em></span><strong>₹24,999 <small>+ GST</small></strong></div><p>For new products, collections and launches, with a complete set of premium visuals and short-form content.</p></article>
+<article class="offer-card"><span class="offer-index">03 <span class="offer-highlight">BEST VALUE</span></span><h2>Full Campaign Production</h2><div class="offer-price"><span class="offer-original"><s>₹49,999</s><span class="offer-arrow" aria-hidden="true">→</span><em>Starting</em></span><strong>₹39,999 <small>+ GST</small></strong></div><p>Complete campaign production across shoots, reels, ad creatives and website visuals, built around one strong creative direction.</p></article>
+<article class="offer-card"><span class="offer-index">04</span><h2>Signature Production</h2><div class="offer-price"><span class="offer-original"><s>₹89,999</s><span class="offer-arrow" aria-hidden="true">→</span><em>Starting</em></span><strong>₹74,999 <small>+ GST</small></strong></div><p>For larger campaigns, multiple products or looks, premium films, CGI, models, locations and complete launch asset systems.</p></article></div><div class="offer-bottom"><p>Every project is scoped individually. Final pricing depends on the production requirements, number of products or looks, talent, locations, sets and CGI/VFX.</p><button class="offer-button" id="pr-open-form" type="button">Discuss Your Project <span aria-hidden="true">↗</span></button></div></div></main>
 
     <!-- INQUIRY MODAL -->
     <div class="pr-modal" id="pr-modal" aria-modal="true" role="dialog" aria-label="Build Your Custom Package" hidden>
