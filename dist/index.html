@@ -72,7 +72,15 @@
     }
   </style>
   <link rel="stylesheet" href="/styles.css?v=136" />
-  <script defer src="/media-guard.js?v=5"></script>
+  <script defer src="/media-guard.js?v=6"></script>
+<style>
+#frames .ki-marquee-row { container-type:inline-size; }
+#frames .ki-marquee-track { animation:ki-unique-frames 20s linear infinite alternate!important; }
+#frames .ki-marquee-row-bottom .ki-marquee-track { animation-direction:alternate-reverse!important; }
+#frames .ki-marquee-wall:hover .ki-marquee-track { animation-play-state:paused!important; }
+@keyframes ki-unique-frames { from { transform:translateX(0); } to { transform:translateX(min(0px,calc(100cqw - 100%))); } }
+@media(prefers-reduced-motion:reduce) { #frames .ki-marquee-track { animation:none!important; } #frames .ki-marquee-row { overflow-x:auto!important; } }
+</style>
 </head>
 <body class="studio-home kriyon-index" id="top">
     <div class="ki-loader" id="ki-loader" aria-hidden="true">
@@ -127,7 +135,7 @@
         <a class="ki-work-card" href="/work/darzie-couture/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-025.webp" alt="Darzie Couture model in a pink editorial setting" width="2752" height="1536" decoding="async" /></div><p><b>DARZIE COUTURE</b> <span>Pink Couture Campaign</span></p></a>
         <a class="ki-work-card" href="/work/rutba/"><div class="ki-work-thumb"><img src="/assets/pixelone/rutba-13.png" alt="Rutba emerald heritage collection" width="800" height="800" loading="lazy" decoding="async" /></div><p><b>RUTBA</b> <span>Emerald Heritage Collection</span></p></a>
         <a class="ki-work-card" href="/work/red-jewellery/"><div class="ki-work-thumb"><img src="/assets/pixelone/pixelone-image-131.png" alt="Ruby Reverie campaign" width="800" height="800" loading="lazy" decoding="async" /></div><p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign</span></p></a>
-        <a class="ki-work-card" href="/work/no-cap/"><div class="ki-work-thumb"><img src="/assets/no-cap/no-cap-thumb.jpg" alt="No Cap Foods speculative product campaign concept" width="800" height="800" loading="lazy" decoding="async" /></div><p><b>NO CAP FOODS — CONCEPT</b> <span>Spec Campaign · Kriyon Media</span></p></a>
+        <a class="ki-work-card" href="/work/no-cap/"><div class="ki-work-thumb"><img src="/assets/no-cap/no-cap-thumb.jpg" alt="No Cap Foods speculative product campaign concept" width="800" height="800" loading="lazy" decoding="async" /></div><p><b>NO CAP FOODS</b> <span>Product Visuals · Kriyon Media</span></p></a>
         <a class="ki-work-card ki-view-all-tile" href="/work/" aria-label="View all projects">
           <div class="ki-work-thumb ki-view-all-box" id="ki-view-all-box">
             <div class="ki-va-slides" aria-hidden="true">
@@ -185,189 +193,23 @@
             <h1>SELECTED FRAMES.</h1>
             <span class="ki-frames-subline">STILLS · MOTION · CONCEPTS</span>
           </div>
-                    <div class="ki-marquee-wall">
-            <!-- Row 1: Smooth Continuous Motion Left (14 Unique Frames × 2 for Infinite Loop) -->
-            <div class="ki-marquee-row ki-marquee-row-top">
-              <div class="ki-marquee-track">
-              <a class="ki-marquee-tile" href="/work/khet/" data-pool='["/assets/khet/khet-hero-thumb.jpg", "/assets/khet/khet-still-03.png", "/assets/khet/khet-overhead-01.png"]' aria-label="Khet Kala Pani perfume concept frames">
-                <img class="ki-m-img ki-m-active" src="/assets/khet/khet-hero-thumb.jpg" alt="Khet Kala Pani perfume concept frames" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/khet/khet-still-03.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/clothing/" data-pool='["/assets/pixelone/pixelone-image-004.png", "/assets/pixelone/pixelone-image-005.png", "/assets/pixelone/pixelone-image-014.png"]' aria-label="Mehr Couture cinematic palace campaign frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-004.png" alt="Mehr Couture cinematic palace campaign frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-005.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/no-cap/" data-pool='["/assets/no-cap/no-cap-thumb.jpg", "/assets/no-cap/flatlay.png", "/assets/no-cap/product-lineup.png"]' aria-label="No Cap Foods speculative campaign concept frames">
-                <img class="ki-m-img ki-m-active" src="/assets/no-cap/no-cap-thumb.jpg" alt="No Cap Foods speculative campaign concept frames" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/no-cap/flatlay.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-086.png", "/assets/pixelone/pixelone-image-085.png", "/assets/pixelone/pixelone-image-087.png"]' aria-label="Yellow sari jewellery campaign frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-086.png" alt="Yellow sari jewellery campaign frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-085.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/darzie-couture/" data-pool='["/assets/pixelone/pixelone-image-025.webp", "/assets/pixelone/pixelone-image-029.webp", "/assets/pixelone/pixelone-image-023.webp"]' aria-label="Darzie Couture cinematic fashion frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-025.webp" alt="Darzie Couture cinematic fashion frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-029.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-040.webp", "/assets/pixelone/pixelone-image-043.webp"]' aria-label="Emerald bracelet close-up">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-040.webp" alt="Emerald bracelet close-up" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-043.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/khet/" data-pool='["/assets/khet/khet-hero-thumb.jpg", "/assets/khet/khet-still-03.png", "/assets/khet/khet-overhead-01.png"]' aria-label="Khet Kala Pani perfume concept frames">
-                <img class="ki-m-img ki-m-active" src="/assets/khet/khet-hero-thumb.jpg" alt="Khet Kala Pani perfume concept frames" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/khet/khet-still-03.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/clothing/" data-pool='["/assets/pixelone/pixelone-image-004.png", "/assets/pixelone/pixelone-image-005.png", "/assets/pixelone/pixelone-image-014.png"]' aria-label="Mehr Couture cinematic palace campaign frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-004.png" alt="Mehr Couture cinematic palace campaign frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-005.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/no-cap/" data-pool='["/assets/no-cap/no-cap-thumb.jpg", "/assets/no-cap/flatlay.png", "/assets/no-cap/product-lineup.png"]' aria-label="No Cap Foods speculative campaign concept frames">
-                <img class="ki-m-img ki-m-active" src="/assets/no-cap/no-cap-thumb.jpg" alt="No Cap Foods speculative campaign concept frames" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/no-cap/flatlay.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-086.png", "/assets/pixelone/pixelone-image-085.png", "/assets/pixelone/pixelone-image-087.png"]' aria-label="Yellow sari jewellery campaign frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-086.png" alt="Yellow sari jewellery campaign frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-085.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/darzie-couture/" data-pool='["/assets/pixelone/pixelone-image-025.webp", "/assets/pixelone/pixelone-image-029.webp", "/assets/pixelone/pixelone-image-023.webp"]' aria-label="Darzie Couture cinematic fashion frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-025.webp" alt="Darzie Couture cinematic fashion frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-029.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-040.webp", "/assets/pixelone/pixelone-image-043.webp"]' aria-label="Emerald bracelet close-up">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-040.webp" alt="Emerald bracelet close-up" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-043.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-110.png", "/assets/pixelone/pixelone-image-113.png", "/assets/pixelone/pixelone-image-101.png"]' aria-label="Jewellery Showcase macro product frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase macro product frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-113.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/clothing/" data-pool='["/assets/pixelone/pixelone-image-014.png", "/assets/pixelone/pixelone-image-010.png", "/assets/pixelone/pixelone-image-018.png"]' aria-label="Mehr Couture olive embroidery look">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-014.png" alt="Mehr Couture olive embroidery look" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-010.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              </div>
-            </div>
-
-            <!-- Row 2: Smooth Continuous Motion Right (14 Unique Frames × 2 for Infinite Loop) -->
-            <div class="ki-marquee-row ki-marquee-row-bottom">
-              <div class="ki-marquee-track">
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-082.png", "/assets/pixelone/pixelone-image-078.png", "/assets/pixelone/pixelone-image-086.png"]' aria-label="Blue gemstone jewellery portrait">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-082.png" alt="Blue gemstone jewellery portrait" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-078.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/imperial-bridal-jewels/" data-pool='["/assets/talla/talla-couture-02.png", "/assets/talla/talla-couture-04.png", "/assets/talla/talla-detail-01.png"]' aria-label="Imperial Bridal Jewels chandelier bridal hall visual">
-                <img class="ki-m-img ki-m-active" src="/assets/talla/talla-couture-07.png" alt="Imperial Bridal Jewels chandelier bridal hall visual" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/talla/talla-couture-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/rutba/" data-pool='["/assets/pixelone/rutba-03.png", "/assets/pixelone/rutba-06.png", "/assets/pixelone/rutba-02.png"]' aria-label="Rutba full-length bridal gown">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/rutba-03.png" alt="Rutba full-length bridal gown" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/rutba-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/darzie-couture/" data-pool='["/assets/pixelone/pixelone-image-023.webp", "/assets/pixelone/pixelone-image-029.webp"]' aria-label="Darzie Couture pink visual">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture pink visual" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-029.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-105.png", "/assets/pixelone/pixelone-image-113.png", "/assets/pixelone/pixelone-image-048.webp"]' aria-label="Emerald and diamond earrings held by hand">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-105.png" alt="Emerald and diamond earrings held by hand" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-113.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-110.png", "/assets/pixelone/pixelone-image-113.png", "/assets/pixelone/pixelone-image-101.png"]' aria-label="Jewellery Showcase macro product frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase macro product frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-113.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-086.png", "/assets/pixelone/pixelone-image-085.png", "/assets/pixelone/pixelone-image-087.png"]' aria-label="Yellow sari jewellery campaign frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-086.png" alt="Yellow sari jewellery campaign frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-085.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/rutba/" data-pool='["/assets/pixelone/pixelone-image-153.png", "/assets/pixelone/rutba-04.png", "/assets/pixelone/rutba-07.png"]' aria-label="Rutba emerald zardozi embroidery">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-153.png" alt="Rutba emerald zardozi embroidery" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/rutba-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/clothing/" data-pool='["/assets/pixelone/pixelone-image-001.png", "/assets/pixelone/pixelone-image-018.png", "/assets/pixelone/pixelone-image-002.png"]' aria-label="Mehr Couture festive maroon visual">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-001.png" alt="Mehr Couture festive maroon visual" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-018.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-092.png", "/assets/pixelone/pixelone-image-079.png", "/assets/pixelone/pixelone-image-094.png"]' aria-label="Emerald jewellery portrait in burgundy">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-092.png" alt="Emerald jewellery portrait in burgundy" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-079.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/imperial-bridal-jewels/" data-pool='["/assets/talla/talla-couture-04.png", "/assets/talla/talla-couture-01.png", "/assets/talla/talla-couture-05.png"]' aria-label="Imperial Bridal Jewels embroidery detail visual">
-                <img class="ki-m-img ki-m-active" src="/assets/talla/talla-couture-04.png" alt="Imperial Bridal Jewels embroidery detail visual" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/talla/talla-couture-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-086.png", "/assets/pixelone/pixelone-image-085.png", "/assets/pixelone/pixelone-image-087.png"]' aria-label="Yellow sari jewellery campaign frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-086.png" alt="Yellow sari jewellery campaign frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-085.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-110.png", "/assets/pixelone/pixelone-image-113.png", "/assets/pixelone/pixelone-image-101.png"]' aria-label="Jewellery Showcase macro product frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase macro product frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-113.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-083.png", "/assets/pixelone/pixelone-image-086.png", "/assets/pixelone/pixelone-image-091.png"]' aria-label="Multi-gem jewellery editorial portrait">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-083.png" alt="Multi-gem jewellery editorial portrait" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-086.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-082.png", "/assets/pixelone/pixelone-image-078.png", "/assets/pixelone/pixelone-image-086.png"]' aria-label="Blue gemstone jewellery portrait">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-082.png" alt="Blue gemstone jewellery portrait" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-078.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/imperial-bridal-jewels/" data-pool='["/assets/talla/talla-couture-02.png", "/assets/talla/talla-couture-04.png", "/assets/talla/talla-detail-01.png"]' aria-label="Imperial Bridal Jewels chandelier bridal hall visual">
-                <img class="ki-m-img ki-m-active" src="/assets/talla/talla-couture-07.png" alt="Imperial Bridal Jewels chandelier bridal hall visual" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/talla/talla-couture-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/rutba/" data-pool='["/assets/pixelone/rutba-03.png", "/assets/pixelone/rutba-06.png", "/assets/pixelone/rutba-02.png"]' aria-label="Rutba full-length bridal gown">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/rutba-03.png" alt="Rutba full-length bridal gown" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/rutba-06.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/darzie-couture/" data-pool='["/assets/pixelone/pixelone-image-023.webp", "/assets/pixelone/pixelone-image-029.webp"]' aria-label="Darzie Couture pink visual">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture pink visual" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-029.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-105.png", "/assets/pixelone/pixelone-image-113.png", "/assets/pixelone/pixelone-image-048.webp"]' aria-label="Emerald and diamond earrings held by hand">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-105.png" alt="Emerald and diamond earrings held by hand" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-113.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-110.png", "/assets/pixelone/pixelone-image-113.png", "/assets/pixelone/pixelone-image-101.png"]' aria-label="Jewellery Showcase macro product frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase macro product frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-113.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-086.png", "/assets/pixelone/pixelone-image-085.png", "/assets/pixelone/pixelone-image-087.png"]' aria-label="Yellow sari jewellery campaign frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-086.png" alt="Yellow sari jewellery campaign frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-085.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/rutba/" data-pool='["/assets/pixelone/pixelone-image-153.png", "/assets/pixelone/rutba-04.png", "/assets/pixelone/rutba-07.png"]' aria-label="Rutba emerald zardozi embroidery">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-153.png" alt="Rutba emerald zardozi embroidery" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/rutba-04.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/clothing/" data-pool='["/assets/pixelone/pixelone-image-001.png", "/assets/pixelone/pixelone-image-018.png", "/assets/pixelone/pixelone-image-002.png"]' aria-label="Mehr Couture festive maroon visual">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-001.png" alt="Mehr Couture festive maroon visual" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-018.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-092.png", "/assets/pixelone/pixelone-image-079.png", "/assets/pixelone/pixelone-image-094.png"]' aria-label="Emerald jewellery portrait in burgundy">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-092.png" alt="Emerald jewellery portrait in burgundy" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-079.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/imperial-bridal-jewels/" data-pool='["/assets/talla/talla-couture-04.png", "/assets/talla/talla-couture-01.png", "/assets/talla/talla-couture-05.png"]' aria-label="Imperial Bridal Jewels embroidery detail visual">
-                <img class="ki-m-img ki-m-active" src="/assets/talla/talla-couture-04.png" alt="Imperial Bridal Jewels embroidery detail visual" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/talla/talla-couture-01.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-086.png", "/assets/pixelone/pixelone-image-085.png", "/assets/pixelone/pixelone-image-087.png"]' aria-label="Yellow sari jewellery campaign frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-086.png" alt="Yellow sari jewellery campaign frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-085.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-110.png", "/assets/pixelone/pixelone-image-113.png", "/assets/pixelone/pixelone-image-101.png"]' aria-label="Jewellery Showcase macro product frames">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery Showcase macro product frame" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-113.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              <a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-083.png", "/assets/pixelone/pixelone-image-086.png", "/assets/pixelone/pixelone-image-091.png"]' aria-label="Multi-gem jewellery editorial portrait">
-                <img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-083.png" alt="Multi-gem jewellery editorial portrait" loading="lazy" decoding="async" />
-                <img class="ki-m-img ki-m-next" src="/assets/pixelone/pixelone-image-086.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-              </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                    <div class="ki-marquee-wall"><div class="ki-marquee-row ki-marquee-row-top"><div class="ki-marquee-track"><a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-101.png"]' aria-label="Jewellery selected frame"><img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-101.png" alt="Jewellery selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/khet/" data-pool='["/assets/khet/khet-bold-01.png"]' aria-label="Khet selected frame"><img class="ki-m-img ki-m-active" src="/assets/khet/khet-bold-01.png" alt="Khet selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/no-cap/" data-pool='["/assets/no-cap/flatlay.png"]' aria-label="No-Cap selected frame"><img class="ki-m-img ki-m-active" src="/assets/no-cap/flatlay.png" alt="No-Cap selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-086.png"]' aria-label="Jewellery selected frame"><img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-086.png" alt="Jewellery selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-113.png"]' aria-label="Jewellery selected frame"><img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-113.png" alt="Jewellery selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/khet/" data-pool='["/assets/khet/khet-macro-01.png"]' aria-label="Khet selected frame"><img class="ki-m-img ki-m-active" src="/assets/khet/khet-macro-01.png" alt="Khet selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/rutba/" data-pool='["/assets/pixelone/rutba-11.png"]' aria-label="Rutba selected frame"><img class="ki-m-img ki-m-active" src="/assets/pixelone/rutba-11.png" alt="Rutba selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/no-cap/" data-pool='["/assets/no-cap/campaign-04.png"]' aria-label="No-Cap selected frame"><img class="ki-m-img ki-m-active" src="/assets/no-cap/campaign-04.png" alt="No-Cap selected frame" loading="lazy" decoding="async" /></a></div></div><div class="ki-marquee-row ki-marquee-row-bottom"><div class="ki-marquee-track"><a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-110.png"]' aria-label="Jewellery selected frame"><img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-110.png" alt="Jewellery selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/no-cap/" data-pool='["/assets/no-cap/product-lineup.png"]' aria-label="No-Cap selected frame"><img class="ki-m-img ki-m-active" src="/assets/no-cap/product-lineup.png" alt="No-Cap selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/khet/" data-pool='["/assets/khet/khet-overhead-01.png"]' aria-label="Khet selected frame"><img class="ki-m-img ki-m-active" src="/assets/khet/khet-overhead-01.png" alt="Khet selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-109.png"]' aria-label="Jewellery selected frame"><img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-109.png" alt="Jewellery selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/jewellery/" data-pool='["/assets/pixelone/pixelone-image-108.png"]' aria-label="Jewellery selected frame"><img class="ki-m-img ki-m-active" src="/assets/pixelone/pixelone-image-108.png" alt="Jewellery selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/khet/" data-pool='["/assets/khet/khet-dual-01.png"]' aria-label="Khet selected frame"><img class="ki-m-img ki-m-active" src="/assets/khet/khet-dual-01.png" alt="Khet selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/no-cap/" data-pool='["/assets/no-cap/studio-trio.png"]' aria-label="No-Cap selected frame"><img class="ki-m-img ki-m-active" src="/assets/no-cap/studio-trio.png" alt="No-Cap selected frame" loading="lazy" decoding="async" /></a>
+<a class="ki-marquee-tile" href="/work/rutba/" data-pool='["/assets/pixelone/rutba-10.png"]' aria-label="Rutba selected frame"><img class="ki-m-img ki-m-active" src="/assets/pixelone/rutba-10.png" alt="Rutba selected frame" loading="lazy" decoding="async" /></a></div></div></div>
+</div>
+</section>
 
       <section class="ki-inquiry-cta ki-reveal" aria-labelledby="ki-cta-title">
         <div class="ki-inquiry-inner">
@@ -494,13 +336,13 @@
       } else {
         document.body.classList.add('has-entrance');
         // Snappy initial brand reveal: 700ms hold + 350ms exit
-        setTimeout(dismissLoader, 1500);
+        setTimeout(dismissLoader, 900);
 
         // Instant fallback watchdog: ensures nothing ever gets stuck
         setTimeout(() => {
           dismissLoader();
           initScrollReveals();
-        }, 2400);
+        }, 1800);
       }
 
       // 2. Mobile Navigation Toggle

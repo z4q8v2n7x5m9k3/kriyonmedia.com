@@ -63,6 +63,24 @@
   </script>
   <link rel="stylesheet" href="/styles.css?v=136" />
   <script defer src="/media-guard.js?v=4"></script>
+<style>
+/* Pricing: restrained type and consistent space around the offer. */
+.pricing-page .pr-title { font-size:clamp(36px,4.4vw,64px)!important; line-height:1.08!important; }
+.pricing-page .pr-sub { max-width:760px!important; color:#61615c!important; }
+.pricing-page .pr-offer-layout { gap:20px!important; margin-top:40px!important; }
+.pricing-page .pr-offer-card,.pricing-page .pr-offer-context { padding:clamp(24px,3.4vw,48px)!important; min-height:480px!important; }
+.pricing-page .pr-offer-card { background:#f5f5f2!important; border:1px solid #e4e4de!important; }
+.pricing-page .pr-panel-index { font-size:11px!important; letter-spacing:.1em!important; margin-bottom:28px!important; }
+.pricing-page .pr-now { font-size:clamp(28px,2.8vw,42px)!important; line-height:1.2!important; }
+.pricing-page .pr-touchpoints h2 { font-size:clamp(30px,3.1vw,45px)!important; line-height:1.1!important; }
+.pricing-page .pr-actions { display:flex!important; flex-wrap:wrap!important; gap:12px!important; padding-top:28px!important; }
+.pricing-page .pr-actions>* { min-height:48px!important; font-size:12px!important; }
+@media(max-width:700px) {
+.pricing-page .pr-offer-layout { margin-top:28px!important; gap:14px!important; }
+.pricing-page .pr-offer-card,.pricing-page .pr-offer-context { min-height:0!important; }
+.pricing-page .pr-actions>* { width:100%!important; box-sizing:border-box!important; text-align:center!important; }
+}
+</style>
 </head>
 <body class="pricing-page" id="top">
   <div class="pricing-shell">
