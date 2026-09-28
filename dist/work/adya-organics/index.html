@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADYA ORGANICS — Pure A2 Gir Cow Ghee | Kriyon Media</title>
+  <meta name="description" content="A speculative visual campaign direction created by Kriyon Media exploring Adya Organics A2 Gir Cow Ghee across CGI motion and tactile editorial stills." />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive" />
+
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="Kriyon Media" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://kriyonmedia.com/work/adya-organics/" />
+  <meta property="og:title" content="ADYA ORGANICS — Pure A2 Gir Cow Ghee | Kriyon Media" />
+  <meta property="og:description" content="A speculative visual campaign direction created by Kriyon Media exploring Adya Organics A2 Gir Cow Ghee across CGI motion and tactile editorial stills." />
+  <meta property="og:image" content="https://kriyonmedia.com/assets/adya/adya-cow-ground-hero.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://kriyonmedia.com/work/adya-organics/" />
+  <meta name="twitter:title" content="ADYA ORGANICS — Pure A2 Gir Cow Ghee | Kriyon Media" />
+  <meta name="twitter:description" content="A speculative visual campaign direction created by Kriyon Media exploring Adya Organics A2 Gir Cow Ghee across CGI motion and tactile editorial stills." />
+  <meta name="twitter:image" content="https://kriyonmedia.com/assets/adya/adya-cow-ground-hero.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=137" />
+  <script defer src="/media-guard.js"></script>
+  <script>
+    (function() {
+      try {
+        let isReload = false;
+        if (window.performance) {
+          const navEntries = performance.getEntriesByType('navigation');
+          if (navEntries && navEntries.length > 0) {
+            isReload = (navEntries[0].type === 'reload');
+          } else if (performance.navigation) {
+            isReload = (performance.navigation.type === 1);
+          }
+        }
+        const hasVisited = sessionStorage.getItem('kriyon_visited');
+        if (!isReload && hasVisited) {
+          document.documentElement.classList.add('intro-seen');
+        } else {
+          sessionStorage.setItem('kriyon_visited', '1');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  <style>
+    .adya-concept-label { display: inline-block; margin-bottom: 10px; color: #777; font-family: Manrope, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .12em; }
+    .adya-page .ep-gallery { gap: 6px; }
+
+    /* 1. Full-width 16:9 Hero Banner — Exact natural ratio, zero lossy crop */
+    .adya-page .adya-hero-row { width: 100%; margin: 0; padding: 0; }
+    .adya-page .adya-hero-row .ep-frame { width: 100%; aspect-ratio: 2752 / 1536 !important; height: auto !important; border: 0; padding: 0; background: #0d0d0f; }
+    .adya-page .adya-hero-row .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    /* 2. Cinema Grid — Perfectly balanced 9:16 Video + (16:9 + 4:3) Stills with ZERO gaping */
+    .adya-cinema-grid { display: grid; grid-template-columns: minmax(0, 0.4233fr) minmax(0, 0.5767fr); gap: 6px; align-items: start; }
+    .adya-cinema-grid > .ep-frame-video { width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 2px; overflow: hidden; background: #090909; }
+    .adya-cinema-grid > .ep-frame-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .adya-cinema-stills { display: flex; flex-direction: column; gap: 6px; min-height: 0; width: 100%; }
+    .adya-cinema-stills .ep-frame-16-9 { position: relative; width: 100%; aspect-ratio: 2752 / 1536 !important; height: auto !important; border: 0; padding: 0; }
+    .adya-cinema-stills .ep-frame-16-9 img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+    .adya-cinema-stills .ep-frame-4-3 { position: relative; width: 100%; aspect-ratio: 2400 / 1792 !important; height: auto !important; border: 0; padding: 0; }
+    .adya-cinema-stills .ep-frame-4-3 img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    /* 3. Exact Aspect Ratio Row Types */
+    .adya-square-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .adya-square-duo .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; border: 0; padding: 0; cursor: zoom-in; }
+    .adya-square-duo .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    .adya-square-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .adya-square-trio .ep-frame { width: 100%; aspect-ratio: 1 / 1 !important; border: 0; padding: 0; }
+    .adya-square-trio .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    .adya-portrait-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .adya-portrait-duo .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 1792 / 2400 !important; overflow: hidden; border: 0; padding: 0; cursor: zoom-in; }
+    .adya-portrait-duo .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    .adya-banner-row { width: 100%; }
+    .adya-banner-row .ep-frame { width: 100%; aspect-ratio: 2752 / 1536 !important; height: auto !important; border: 0; padding: 0; }
+    .adya-banner-row .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    .adya-widescreen-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .adya-widescreen-duo .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 2752 / 1536 !important; overflow: hidden; border: 0; padding: 0; cursor: zoom-in; }
+    .adya-widescreen-duo .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    .adya-landscape-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .adya-landscape-duo .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 2400 / 1792 !important; overflow: hidden; border: 0; padding: 0; cursor: zoom-in; }
+    .adya-landscape-duo .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    @media (max-width: 768px) {
+      .adya-cinema-grid { grid-template-columns: 1fr; }
+      .adya-cinema-grid > .ep-frame-video { height: auto; aspect-ratio: 9 / 16; }
+      .adya-square-duo { grid-template-columns: 1fr; }
+      .adya-square-trio { grid-template-columns: 1fr; }
+      .adya-portrait-duo { grid-template-columns: 1fr; }
+      .adya-landscape-duo { grid-template-columns: 1fr; }
+      .adya-widescreen-duo { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="ep-page adya-page" id="top">
+  <div class="ep-loader" id="ep-loader" aria-hidden="true">
+    <div class="ep-loader-content">
+      <div class="ep-loader-brand">KRIYON MEDIA</div>
+      <div class="ep-loader-project">ADYA ORGANICS</div>
+      <div class="ep-loader-bar"><span class="ep-loader-progress"></span></div>
+    </div>
+  </div>
+
+  <div class="ep-container">
+    <!-- Clean Minimal Topbar -->
+    <header class="ep-topbar">
+      <div class="ep-topbar-left">
+        <a class="ep-back-btn" href="/work/" aria-label="Back to projects">
+          <span class="ep-back-arrow">←</span>
+          <span>BACK TO PROJECTS</span>
+        </a>
+        <span class="ep-topbar-crumb">/</span>
+        <span class="ep-topbar-title">ADYA ORGANICS</span>
+      </div>
+      <div class="ep-gesture-guide" aria-label="Navigation: Scroll down to view, Swipe to browse">
+        <div class="ep-gesture-item">
+          <svg class="ep-gesture-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v6m-2-2l2 2 2-2" />
+            <path d="M9 10.5V6a1.5 1.5 0 0 1 3 0v4.5" />
+            <path d="M12 9a1.5 1.5 0 0 1 3 0v3" />
+            <path d="M15 10.5a1.5 1.5 0 0 1 3 0v3.5c0 3.5-2.5 6-6 6s-5-2-6-4.5l-1.5-2.5a1.5 1.5 0 0 1 2.6-1.5L8.5 13" />
+          </svg>
+          <span>Scroll</span>
+        </div>
+        <span class="ep-gesture-sep"></span>
+        <div class="ep-gesture-item">
+          <svg class="ep-gesture-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 4.5l-2.5 2 2.5 2" />
+            <path d="M17 4.5l2.5 2-2.5 2" />
+            <path d="M5 6.5h14" />
+            <path d="M9 11V6.5a1.5 1.5 0 0 1 3 0V11" />
+            <path d="M12 9.5a1.5 1.5 0 0 1 3 0v3" />
+            <path d="M15 11a1.5 1.5 0 0 1 3 0v3.5c0 3.5-2.5 6-6 6s-5-2-6-4.5l-1.5-2.5a1.5 1.5 0 0 1 2.6-1.5L8.5 13" />
+          </svg>
+          <span>Swipe</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Clean Minimal Hero -->
+    <section class="ep-hero-minimal" aria-label="Project details">
+      <div class="ep-hero-minimal-head">
+        <h1 class="ep-project-title">ADYA ORGANICS</h1>
+        <p class="ep-project-sub">A speculative visual campaign direction created by Kriyon Media exploring Adya Organics A2 Gir Cow Ghee across CGI motion and tactile editorial stills.</p>
+      </div>
+      <div class="ep-meta-row">
+        <div class="ep-meta-col"><span class="ep-meta-label">BRAND</span><span class="ep-meta-val">Adya Organics</span></div>
+        <div class="ep-meta-col"><span class="ep-meta-label">SCOPE</span><span class="ep-meta-val">CGI Product Commercial · E-Commerce Stills · Art Direction</span></div>
+        <div class="ep-meta-col"><span class="ep-meta-label">CREATIVE DIRECTION</span><span class="ep-meta-val">Farm to Jar · Golden Purity</span></div>
+        <div class="ep-meta-col"><span class="ep-meta-label">YEAR</span><span class="ep-meta-val">2026</span></div>
+      </div>
+    </section>
+
+    <!-- Editorial Campaign Gallery: Full Natural Aspect Ratios with Zero Lossy Crop -->
+    <section class="ep-gallery" aria-label="Adya Organics speculative concept stills and film">
+      
+      <!-- ============================================== -->
+      <!-- UPPER SECTION: Main Adya Assets & 1st Cow Hero -->
+      <!-- ============================================== -->
+
+      <!-- Row 1: 1st Image — Exact 16:9 Cow Ground Hero Banner (Zero Crop, Zero Gap) -->
+      <div class="adya-hero-row">
+        <button aria-label="View Adya Organics A2 Gir Cow pasture brand-story hero banner" class="ep-frame" data-ep-lightbox="/assets/adya/adya-cow-ground-hero.png" type="button">
+          <img alt="Adya Organics A2 Gir Cow pasture brand-story hero banner" decoding="async" height="1536" loading="eager" src="/assets/adya/adya-cow-ground-hero.png" width="2752" />
+        </button>
+      </div>
+
+      <!-- Row 2: Cinema Grid (Vertical CGI Commercial + 2 Stacked Stills from Main Folder) -->
+      <div class="adya-cinema-grid">
+        <div aria-label="Adya Organics vertical CGI product commercial" class="ep-frame ep-frame-video" data-video-modal="/assets/adya/adya-commercial.mp4">
+          <video autoplay="" height="4096" loop="" muted="" playsinline="" poster="/assets/adya/adya-video-poster.jpg" preload="metadata" src="/assets/adya/adya-commercial.mp4" width="2304"></video>
+          <div class="ep-frame-video-controls">
+            <button aria-label="Pause film" class="ep-frame-video-btn video-toggle-btn" type="button">
+              <svg class="icon-pause" fill="currentColor" height="14" viewBox="0 0 24 24" width="14"><rect height="16" rx="1" width="4" x="6" y="4"></rect><rect height="16" rx="1" width="4" x="14" y="4"></rect></svg>
+              <svg class="icon-play" fill="currentColor" height="14" style="display:none;" viewBox="0 0 24 24" width="14"><polygon points="6,4 20,12 6,20"></polygon></svg>
+            </button>
+            <button aria-label="Watch full film with sound" class="ep-frame-video-btn video-fs-btn" type="button">
+              <svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+            </button>
+          </div>
+        </div>
+        <div class="adya-cinema-stills">
+          <button aria-label="View Adya Organics luxury lifestyle product banner" class="ep-frame ep-frame-16-9" data-ep-lightbox="/assets/adya/adya-hero-banner.png" type="button">
+            <img alt="Adya Organics luxury lifestyle product banner" decoding="async" height="1536" loading="lazy" src="/assets/adya/adya-hero-banner.png" width="2752" />
+          </button>
+          <button aria-label="View Warm dynamic kitchen lifestyle with ghee pour" class="ep-frame ep-frame-4-3" data-ep-lightbox="/assets/adya/adya-warm-lifestyle.png" type="button">
+            <img alt="Warm dynamic kitchen lifestyle with ghee pour" decoding="async" height="1792" loading="lazy" src="/assets/adya/adya-warm-lifestyle.png" width="2400" />
+          </button>
+        </div>
+      </div>
+
+      <!-- Row 3: Pure 1:1 Square Duo — Flat-lay Plate + Appetite Spoon In-Use (Clean Flush Grid, Zero Side Gaps) -->
+      <div class="adya-square-duo">
+        <button aria-label="View Adya Organics top-down editorial flat-lay" class="ep-frame" data-ep-lightbox="/assets/adya/adya-flatlay.png" type="button">
+          <img alt="Adya Organics top-down editorial flat-lay" decoding="async" height="2048" loading="lazy" src="/assets/adya/adya-flatlay.png" width="2048" />
+        </button>
+        <button aria-label="View Adya Organics appetite-driving product-in-use detail" class="ep-frame" data-ep-lightbox="/assets/adya/adya-appetite-use.png" type="button">
+          <img alt="Adya Organics appetite-driving product-in-use detail" decoding="async" height="2048" loading="lazy" src="/assets/adya/adya-appetite-use.png" width="2048" />
+        </button>
+      </div>
+
+      <!-- Row 4: Pure 1:1 Square Duo — Studio Hero + Extreme Macro Food Detail -->
+      <div class="adya-square-duo">
+        <button aria-label="View Adya Organics premium studio product photography hero shot" class="ep-frame" data-ep-lightbox="/assets/adya/adya-studio-hero.png" type="button">
+          <img alt="Adya Organics premium studio product photography hero shot" decoding="async" height="2048" loading="lazy" src="/assets/adya/adya-studio-hero.png" width="2048" />
+        </button>
+        <button aria-label="View Adya Organics extreme close-up macro food detail" class="ep-frame" data-ep-lightbox="/assets/adya/adya-macro-detail.png" type="button">
+          <img alt="Adya Organics extreme close-up macro food detail" decoding="async" height="2048" loading="lazy" src="/assets/adya/adya-macro-detail.png" width="2048" />
+        </button>
+      </div>
+
+      <!-- Row 5: Vertical Portrait Duo from Main Folder (Traditional Bilona Process & Farm-to-Jar Capture — 3:4) -->
+      <div class="adya-portrait-duo">
+        <button aria-label="View Traditional Bilona ghee-making process editorial photograph" class="ep-frame" data-ep-lightbox="/assets/adya/adya-bilona-process.png" type="button">
+          <img alt="Traditional Bilona ghee-making process editorial photograph" decoding="async" height="2400" loading="lazy" src="/assets/adya/adya-bilona-process.png" width="1792" />
+        </button>
+        <button aria-label="View Natural photorealistic farm-to-jar product photograph" class="ep-frame" data-ep-lightbox="/assets/adya/adya-farm-to-jar.png" type="button">
+          <img alt="Natural photorealistic farm-to-jar product photograph" decoding="async" height="2400" loading="lazy" src="/assets/adya/adya-farm-to-jar.png" width="1792" />
+        </button>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- LOWER SECTION: All Photos from the Mix Folder  -->
+      <!-- ============================================== -->
+
+      <!-- Row 6: E-Commerce Homepage Banner from Mix Folder (Exact 16:9 Full-Width) -->
+      <div class="adya-banner-row">
+        <button aria-label="View Adya Organics premium e-commerce homepage banner" class="ep-frame" data-ep-lightbox="/assets/adya/adya-ecommerce-banner.png" type="button">
+          <img alt="Adya Organics premium e-commerce homepage banner" decoding="async" height="1536" loading="lazy" src="/assets/adya/adya-ecommerce-banner.png" width="2752" />
+        </button>
+      </div>
+
+      <!-- Row 7: Category Storytelling Duo from Mix Folder (Exact 16:9 Duo) -->
+      <div class="adya-widescreen-duo">
+        <button aria-label="View Adya Organics category storytelling banner" class="ep-frame" data-ep-lightbox="/assets/adya/adya-storytelling-banner.png" type="button">
+          <img alt="Adya Organics category storytelling banner" decoding="async" height="1536" loading="lazy" src="/assets/adya/adya-storytelling-banner.png" width="2752" />
+        </button>
+        <button aria-label="View Adya Organics category storytelling panorama" class="ep-frame" data-ep-lightbox="/assets/adya/adya-storytelling-image.png" type="button">
+          <img alt="Adya Organics category storytelling panorama" decoding="async" height="1536" loading="lazy" src="/assets/adya/adya-storytelling-image.png" width="2752" />
+        </button>
+      </div>
+
+      <!-- Row 8: Product & Texture Trio from Mix Folder (1:1 Squares) -->
+      <div class="adya-square-trio">
+        <button aria-label="View Adya Organics clean premium product-page hero" class="ep-frame" data-ep-lightbox="/assets/adya/adya-clean-product.png" type="button">
+          <img alt="Adya Organics clean premium product-page hero" decoding="async" height="2048" loading="lazy" src="/assets/adya/adya-clean-product.png" width="2048" />
+        </button>
+        <button aria-label="View Granular golden ghee texture detail" class="ep-frame" data-ep-lightbox="/assets/adya/adya-texture-detail.png" type="button">
+          <img alt="Granular golden ghee texture detail" decoding="async" height="2048" loading="lazy" src="/assets/adya/adya-texture-detail.png" width="2048" />
+        </button>
+        <button aria-label="View Adya Organics signature jar composition" class="ep-frame" data-ep-lightbox="/assets/adya/adya-signature-product.png" type="button">
+          <img alt="Adya Organics signature jar composition" decoding="async" height="2048" loading="lazy" src="/assets/adya/adya-signature-product.png" width="2048" />
+        </button>
+      </div>
+
+      <!-- Row 9: Premium Lifestyle Duo from Mix Folder (4:3 Duo) -->
+      <div class="adya-landscape-duo">
+        <button aria-label="View Premium Instagram product lifestyle photograph" class="ep-frame" data-ep-lightbox="/assets/adya/adya-lifestyle-43.png" type="button">
+          <img alt="Premium Instagram product lifestyle photograph" decoding="async" height="1792" loading="lazy" src="/assets/adya/adya-lifestyle-43.png" width="2400" />
+        </button>
+        <button aria-label="View Morning kitchen breakfast lifestyle with warm roti and ghee" class="ep-frame" data-ep-lightbox="/assets/adya/adya-lifestyle-45.png" type="button">
+          <img alt="Morning kitchen breakfast lifestyle with warm roti and ghee" decoding="async" height="1792" loading="lazy" src="/assets/adya/adya-lifestyle-45.png" width="2400" />
+        </button>
+      </div>
+
+      <!-- Row 10: Curated Combo & Tabletop Usage Duo from Mix Folder (1:1 Duo) -->
+      <div class="adya-square-duo">
+        <button aria-label="View Curated Adya Organics combo product showcase" class="ep-frame" data-ep-lightbox="/assets/adya/adya-curated-combo.png" type="button">
+          <img alt="Curated Adya Organics combo product showcase" decoding="async" height="2048" loading="lazy" src="/assets/adya/adya-curated-combo.png" width="2048" />
+        </button>
+        <button aria-label="View Authentic tabletop usage detail" class="ep-frame" data-ep-lightbox="/assets/adya/adya-realistic-usage.png" type="button">
+          <img alt="Authentic tabletop usage detail" decoding="async" height="2048" loading="lazy" src="/assets/adya/adya-realistic-usage.png" width="2048" />
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Editorial Narrative -->
+    <section class="ep-story-section" aria-label="Project narrative">
+      <h2 class="ep-story-title">Golden purity from soil to spoon.</h2>
+      <div class="ep-story-body">
+        <p>Created by Kriyon Media as an editorial pitch and visual brand direction for Adya Organics, this campaign explores how traditional Vedic Bilona A2 Gir Cow Ghee can be celebrated with contemporary cinematic grandeur. This is speculative work, not an official brand commission.</p>
+        <p>Combining an 11-second CGI product commercial with tactile food-macro stills, farm-to-jar storytelling, and conversion-focused e-commerce plates, the visual suite illustrates how premium nutrition brands can build uncompromising desire across paid media, digital storefronts, and brand touchpoints.</p>
+      </div>
+    </section>
+
+    <!-- Next Projects -->
+    <section class="ep-next-section" aria-label="Next projects">
+      <h3 class="ep-next-heading">Next projects</h3>
+      <div class="ep-next-grid">
+        <a class="ep-next-card" href="/work/no-cap/">
+          <div class="ep-next-thumb">
+            <img src="/assets/no-cap/studio-trio.png" alt="No Cap Foods snack campaign" width="800" height="800" loading="lazy" decoding="async" />
+          </div>
+          <div class="ep-next-info">
+            <span class="ep-next-client">NO CAP FOODS</span>
+            <span class="ep-next-discipline">Product Visuals &amp; Film ↗</span>
+          </div>
+        </a>
+        <a class="ep-next-card" href="/work/imperial-bridal-jewels/">
+          <div class="ep-next-thumb">
+            <img src="/assets/talla/talla-thumb.jpg" alt="Imperial Bridal Jewels campaign" width="800" height="800" loading="lazy" decoding="async" />
+          </div>
+          <div class="ep-next-info">
+            <span class="ep-next-client">IMPERIAL BRIDAL JEWELS</span>
+            <span class="ep-next-discipline">Heritage Gold &amp; Kundan ↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Studio Footer -->
+    <footer class="ki-footer" id="contact">
+      <div class="ki-footer-inner">
+        <div class="ki-footer-lead">
+          <p>Brand stories, campaigns,<br />and everything visual in between.</p>
+          <a href="mailto:kriyon@repixelx.tech">kriyon@repixelx.tech <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="ki-footer-directory">
+          <nav class="ki-footer-sitemap" aria-label="Footer sitemap">
+            <span>SITEMAP</span>
+            <a href="/">Home <sup>01</sup></a>
+            <a href="/work/">Projects <sup>02</sup></a>
+            <a href="/#services">Services <sup>03</sup></a>
+            <a href="/pricing/">Pricing <sup>04</sup></a>
+            <a href="/ai-content-model-licensing/">Licensing <sup>05</sup></a>
+            <a href="/contact/">Contact <sup>06</sup></a>
+          </nav>
+          <div class="ki-footer-socials">
+            <span>CONNECT</span>
+            <a href="https://instagram.com/kriyonmedia" target="_blank" rel="noreferrer">Instagram ↗</a>
+            <a href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+            <a href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20book%20a%20meeting." target="_blank" rel="noreferrer">Book a meeting ↗</a>
+            <a href="tel:+919622121100">+91 96221 21100</a>
+          </div>
+          <div class="ki-footer-studio">
+            <span>THE STUDIO</span>
+            <p>Creative production for brands with a point of view.</p>
+            <small>Based in India · Available globally<br />A creative venture by Kriyon Group Pvt. Ltd.</small>
+          </div>
+        </div>
+        <div class="ki-footer-brandline">
+          <a class="ki-footer-wordmark" href="/" aria-label="Kriyon Media home">KRIYON MEDIA<span>®</span></a>
+          <div class="ki-footer-meta">
+            <small>© 2026 Kriyon Media</small>
+            <a href="#top">BACK TO TOP ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Fullscreen Lightbox Modal Dialog -->
+  <dialog class="ep-lightbox" id="ep-lightbox" aria-label="Image preview">
+    <div class="ep-lightbox-ui">
+      <div class="ep-lightbox-counter" id="ep-counter" aria-live="polite">01 / 19</div>
+      <button class="ep-lightbox-close" type="button" aria-label="Close preview">×</button>
+    </div>
+    <div class="ep-lightbox-stage">
+      <button class="ep-lightbox-nav ep-lightbox-prev" type="button" aria-label="Previous image">‹</button>
+      <img id="ep-lightbox-img" src="" alt="" />
+      <button class="ep-lightbox-nav ep-lightbox-next" type="button" aria-label="Next image">›</button>
+    </div>
+  </dialog>
+
+  <!-- Fullscreen Video Lightbox Modal Dialog with Unmuted Audio -->
+  <dialog class="jewellery-video-lightbox adya-video-lightbox" id="adya-video-modal" aria-label="Campaign film full screen preview">
+    <button class="jewellery-video-close" type="button" aria-label="Close video">×</button>
+    <video playsinline controls loop poster="/assets/adya/adya-video-poster.jpg">
+      <source src="/assets/adya/adya-commercial.mp4" type="video/mp4" />
+    </video>
+  </dialog>
+
+  <script>
+    (function () {
+      // 1. Image Lightbox
+      const dialog = document.getElementById('ep-lightbox');
+      const preview = document.getElementById('ep-lightbox-img');
+      const counter = document.getElementById('ep-counter');
+      const closeBtn = dialog?.querySelector('.ep-lightbox-close');
+      const prevBtn = dialog?.querySelector('.ep-lightbox-prev');
+      const nextBtn = dialog?.querySelector('.ep-lightbox-next');
+      const frames = [...document.querySelectorAll('[data-ep-lightbox]')];
+      let currentIndex = 0;
+
+      function showImage(index) {
+        if (!dialog || !preview) return;
+        currentIndex = (index + frames.length) % frames.length;
+        const item = frames[currentIndex];
+        const src = item.dataset.epLightbox;
+        const img = item.querySelector('img');
+        preview.src = src;
+        preview.alt = img ? img.alt : '';
+        if (counter) {
+          counter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(frames.length).padStart(2, '0')}`;
+        }
+      }
+
+      frames.forEach((frame, idx) => {
+        frame.addEventListener('click', () => {
+          showImage(idx);
+          dialog.showModal();
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
+      if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex + 1); });
+
+      dialog?.addEventListener('click', (e) => {
+        if (e.target === dialog) dialog.close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (dialog?.open) {
+          if (e.key === 'Escape') dialog.close();
+          if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+          if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+        }
+      });
+
+      // Swipe gestures for image lightbox
+      let touchStartX = 0, touchStartY = 0;
+      dialog?.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      dialog?.addEventListener('touchend', (e) => {
+        const deltaX = e.changedTouches[0].screenX - touchStartX;
+        const deltaY = e.changedTouches[0].screenY - touchStartY;
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 40) {
+          if (deltaX > 0) showImage(currentIndex - 1);
+          else showImage(currentIndex + 1);
+        }
+      }, { passive: true });
+
+      // Mouse drag support
+      let isDragging = false, mouseStartX = 0;
+      preview?.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        mouseStartX = e.clientX;
+        e.preventDefault();
+      });
+      window.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const deltaX = e.clientX - mouseStartX;
+        if (deltaX > 40) showImage(currentIndex - 1);
+        else if (deltaX < -40) showImage(currentIndex + 1);
+      });
+
+      // 2. Video Card Autoplay & Fullscreen Modal Viewer
+      const videoCard = document.querySelector('.ep-frame-video');
+      const videoModal = document.getElementById('adya-video-modal');
+      const modalVideo = videoModal?.querySelector('video');
+      const modalClose = videoModal?.querySelector('.jewellery-video-close');
+      const vid = videoCard?.querySelector('video');
+      const playBtn = videoCard?.querySelector('.video-toggle-btn');
+      const fsBtn = videoCard?.querySelector('.video-fs-btn');
+      const iconPause = videoCard?.querySelector('.icon-pause');
+      const iconPlay = videoCard?.querySelector('.icon-play');
+      const videoSrc = videoCard?.dataset.videoModal;
+
+      if (vid) {
+        vid.muted = true;
+        vid.defaultMuted = true;
+        vid.playsInline = true;
+        const playPromise = vid.play();
+        if (playPromise) playPromise.catch(() => {});
+      }
+
+      if (playBtn && vid) {
+        playBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (vid.paused) {
+            vid.play();
+            if (iconPause) iconPause.style.display = 'block';
+            if (iconPlay) iconPlay.style.display = 'none';
+          } else {
+            vid.pause();
+            if (iconPause) iconPause.style.display = 'none';
+            if (iconPlay) iconPlay.style.display = 'block';
+          }
+        });
+      }
+
+      if (videoCard && vid) {
+        videoCard.addEventListener('click', (e) => {
+          if (e.target.closest('button')) return;
+          if (vid.paused) {
+            vid.play();
+            if (iconPause) iconPause.style.display = 'block';
+            if (iconPlay) iconPlay.style.display = 'none';
+          } else {
+            vid.pause();
+            if (iconPause) iconPause.style.display = 'none';
+          }
+        });
+      }
+
+      if (fsBtn && videoModal && modalVideo) {
+        fsBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          modalVideo.src = videoSrc;
+          modalVideo.currentTime = vid ? vid.currentTime : 0;
+          modalVideo.muted = false;
+          videoModal.showModal();
+          modalVideo.play().catch(() => {});
+        });
+      }
+
+      const closeModal = () => {
+        if (modalVideo) {
+          modalVideo.pause();
+          modalVideo.removeAttribute('src');
+        }
+        videoModal?.close();
+      };
+
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+      videoModal?.addEventListener('click', (e) => {
+        if (e.target === videoModal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (videoModal?.open && e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+
+  <script>
+    (function() {
+      const loader = document.getElementById('ep-loader');
+      if (!loader) return;
+      function dismiss() {
+        loader.style.pointerEvents = 'none';
+        loader.classList.add('is-loaded');
+        setTimeout(function() {
+          if (loader.parentNode) loader.parentNode.removeChild(loader);
+        }, 350);
+      }
+      if (document.readyState === 'complete') {
+        dismiss();
+      } else {
+        window.addEventListener('load', dismiss);
+        setTimeout(dismiss, 450);
+      }
+    })();
+  </script>
+
+  <script defer src="/site-motion.js?v=1"></script>
+</body>
+</html>

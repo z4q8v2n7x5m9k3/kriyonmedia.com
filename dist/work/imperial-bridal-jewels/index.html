@@ -48,6 +48,25 @@
       } catch(e) {}
     })();
   </script>
+  <style>
+    .talla-page .ep-row-full .ep-frame { aspect-ratio: auto !important; height: auto !important; width: 100%; }
+    .talla-page .ep-row-full .ep-frame img { display: block; width: 100%; height: auto !important; object-fit: contain !important; }
+    .talla-page .ep-gallery { gap: 6px; }
+    .talla-combo-grid { display: grid; grid-template-columns: minmax(0, 0.3575fr) minmax(0, 0.6425fr); gap: 6px; align-items: start; }
+    .talla-combo-left .ep-frame-video { width: 100%; height: auto; aspect-ratio: 9 / 16; }
+    .talla-combo-left .ep-frame-video video { width: 100%; height: 100%; object-fit: cover; }
+    .talla-combo-right { display: flex; flex-direction: column; gap: 6px; min-height: 0; }
+    .talla-combo-right .ep-frame { position: relative; width: 100%; height: auto !important; aspect-ratio: auto !important; }
+    .talla-combo-right .ep-frame img { display: block; width: 100%; height: auto !important; object-fit: contain !important; }
+    .ep-row-craftsmanship { display: grid; grid-template-columns: 1fr 1.792fr; gap: 6px; align-items: stretch; }
+    .ep-row-craftsmanship .ep-frame { height: 100%; }
+    .ep-row-craftsmanship .ep-frame img { width: 100%; height: 100%; object-fit: cover; }
+    @media (max-width: 768px) {
+      .talla-combo-grid { grid-template-columns: 1fr !important; }
+      .talla-combo-left .ep-frame-video { aspect-ratio: 9 / 16; }
+      .ep-row-craftsmanship { grid-template-columns: 1fr !important; }
+    }
+  </style>
 </head>
 <body class="ep-page talla-page" id="top">
   <div class="ep-loader" id="ep-loader" aria-hidden="true">
@@ -210,24 +229,24 @@
 
     <!-- Next Projects -->
     <section class="ep-next-section" aria-label="Next projects">
-      <h3 class="ep-next-heading">Next project</h3>
+      <h3 class="ep-next-heading">Next projects</h3>
       <div class="ep-next-grid">
-        <a class="ep-next-card" href="/work/blue/">
+        <a class="ep-next-card" href="/work/adya-organics/">
           <div class="ep-next-thumb">
-            <img src="/assets/blue/blue-couture-01.png" alt="Nilaya Couture — The Blue Edit" width="1792" height="2400" loading="lazy" decoding="async" />
+            <img src="/assets/adya/adya-hero-thumb.jpg" alt="Adya Organics A2 Gir Cow Ghee campaign" width="800" height="800" loading="lazy" decoding="async" />
           </div>
           <div class="ep-next-info">
-            <span class="ep-next-client">Nilaya Couture</span>
-            <span class="ep-next-discipline">The Blue Edit ↗</span>
+            <span class="ep-next-client">ADYA ORGANICS</span>
+            <span class="ep-next-discipline">Organic Nutrition &amp; CGI ↗</span>
           </div>
         </a>
-        <a class="ep-next-card" href="/work/rutba/">
+        <a class="ep-next-card" href="/work/no-cap/">
           <div class="ep-next-thumb">
-            <img src="/assets/pixelone/rutba-05.png" alt="Rutba — Emerald Heritage Collection" width="1792" height="2400" loading="lazy" decoding="async" />
+            <img src="/assets/no-cap/studio-trio.png" alt="No Cap Foods snack campaign" width="800" height="800" loading="lazy" decoding="async" />
           </div>
           <div class="ep-next-info">
-            <span class="ep-next-client">Rutbaa by Meet</span>
-            <span class="ep-next-discipline">Emerald Heritage ↗</span>
+            <span class="ep-next-client">NO CAP FOODS</span>
+            <span class="ep-next-discipline">Product Visuals &amp; Film ↗</span>
           </div>
         </a>
       </div>
@@ -287,10 +306,10 @@
     </div>
   </dialog>
 
-  <!-- Fullscreen Video Lightbox Modal Dialog -->
+  <!-- Fullscreen Video Lightbox Modal Dialog with Unmuted Audio -->
   <dialog class="jewellery-video-lightbox talla-video-lightbox" id="talla-video-modal" aria-label="4K Campaign film full screen preview">
     <button class="jewellery-video-close" type="button" aria-label="Close video">×</button>
-    <video playsinline controls loop muted poster="/assets/talla/talla-film-poster.jpg">
+    <video playsinline controls loop poster="/assets/talla/talla-film-poster.jpg">
       <source src="/assets/talla/talla-film-01.mp4" type="video/mp4" />
     </video>
   </dialog>
@@ -431,7 +450,7 @@
             if (modalVideo) {
               modalVideo.src = videoSrc;
               modalVideo.currentTime = vid?.currentTime || 0;
-              modalVideo.muted = true;
+              modalVideo.muted = false;
               modalVideo.play().catch(() => {});
             }
             videoModal.showModal();
