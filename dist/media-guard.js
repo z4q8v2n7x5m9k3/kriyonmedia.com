@@ -44,6 +44,72 @@
   window.addEventListener('load', () => { setTimeout(releaseLoaders, 800); });
   setTimeout(releaseLoaders, 2000);
 
+  // Keep the reader at the selected frame when a showcase dialog takes focus.
+  // The project pages each own their lightbox controls; this only preserves scroll.
+  const setupShowcaseScroll = () => {
+    const dialog = document.querySelector('.ep-lightbox:not(.jewellery-video-lightbox):not(.boutique-video-dialog)');
+    if (!dialog) return;
+    let savedScrollY = null;
+    let bodyStyles = null;
+    let scrollBehavior = null;
+    const restoreScroll = () => {
+      if (savedScrollY === null) return;
+      window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
+    };
+
+    document.addEventListener('click', (event) => {
+      if (!(event.target instanceof Element) || !event.target.closest('[data-ep-lightbox]')) return;
+      if (dialog.open || bodyStyles) return;
+      savedScrollY = window.scrollY;
+      const root = document.documentElement;
+      scrollBehavior = {
+        value: root.style.getPropertyValue('scroll-behavior'),
+        priority: root.style.getPropertyPriority('scroll-behavior')
+      };
+      root.style.setProperty('scroll-behavior', 'auto', 'important');
+      const body = document.body;
+      bodyStyles = {
+        position: body.style.position,
+        top: body.style.top,
+        left: body.style.left,
+        right: body.style.right,
+        width: body.style.width
+      };
+      body.style.position = 'fixed';
+      body.style.top = `-${savedScrollY}px`;
+      body.style.left = '0';
+      body.style.right = '0';
+      body.style.width = '100%';
+      requestAnimationFrame(() => dialog.querySelector('.ep-lightbox-close')?.focus({ preventScroll: true }));
+    }, { capture: true });
+
+    dialog.addEventListener('close', () => {
+      if (bodyStyles) {
+        const body = document.body;
+        Object.assign(body.style, bodyStyles);
+        bodyStyles = null;
+      }
+      restoreScroll();
+      requestAnimationFrame(() => {
+        restoreScroll();
+        savedScrollY = null;
+        if (scrollBehavior) {
+          if (scrollBehavior.value) {
+            document.documentElement.style.setProperty('scroll-behavior', scrollBehavior.value, scrollBehavior.priority);
+          } else {
+            document.documentElement.style.removeProperty('scroll-behavior');
+          }
+          scrollBehavior = null;
+        }
+      });
+    });
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupShowcaseScroll, { once: true });
+  } else {
+    setupShowcaseScroll();
+  }
+
   // 3. High-End Editorial Image Loading & Resolution System
   const initImageLoading = () => {
     const images = document.querySelectorAll('img');
