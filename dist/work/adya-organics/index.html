@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css?v=138" />
-  <script defer src="/media-guard.js?v=4"></script>
+  <script defer src="/media-guard.js?v=7"></script>
   <script>
     (function() {
       try {
@@ -92,6 +92,14 @@
     .adya-landscape-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; width: 100%; }
     .adya-landscape-duo .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 2400 / 1792 !important; overflow: hidden; border: 0; padding: 0; cursor: zoom-in; }
     .adya-landscape-duo .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+
+    /* New campaign films — original 4K files, poster-first loading. */
+    .adya-new-reels { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; width:100%; }
+    .adya-new-reels .ep-frame-video { width:100%; aspect-ratio:9/16; height:auto!important; overflow:hidden; background:#0b0b0b; }
+    .adya-new-reels .ep-frame-video video { display:block; width:100%; height:100%; object-fit:cover; }
+    .adya-new-reels .ep-frame-video-controls { z-index:8; }
+    @media(max-width:560px) { .adya-new-reels { gap:4px; } }
 
     @media (max-width: 768px) {
       .adya-cinema-grid { grid-template-columns: 1fr; }
@@ -170,6 +178,24 @@
       <!-- UPPER SECTION: Main Adya Assets & 1st Cow Hero -->
       <!-- ============================================== -->
 
+      <!-- New 4K Campaign Films: Product Story + Food Macro -->
+      <div class="adya-new-reels" aria-label="New Adya Organics campaign films">
+        <div class="ep-frame ep-frame-video" data-video-modal="/assets/adya/adya-ghee-film-02.mp4" aria-label="Adya Organics A2 Gir Cow Ghee product film">
+          <video autoplay loop muted playsinline preload="none" poster="/assets/adya/adya-ghee-film-02-poster.jpg" src="/assets/adya/adya-ghee-film-02.mp4" width="2304" height="4096"></video>
+          <div class="ep-frame-video-controls">
+            <button class="ep-frame-video-btn video-toggle-btn" type="button" aria-label="Pause ghee film"><svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg><svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:none"><polygon points="6,4 20,12 6,20"></polygon></svg></button>
+            <button class="ep-frame-video-btn video-fs-btn" type="button" aria-label="Watch ghee film fullscreen"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></button>
+          </div>
+        </div>
+        <div class="ep-frame ep-frame-video" data-video-modal="/assets/adya/adya-food-film-01.mp4" aria-label="Adya Organics warm food macro film">
+          <video autoplay loop muted playsinline preload="none" poster="/assets/adya/adya-food-film-01-poster.jpg" src="/assets/adya/adya-food-film-01.mp4" width="2304" height="4096"></video>
+          <div class="ep-frame-video-controls">
+            <button class="ep-frame-video-btn video-toggle-btn" type="button" aria-label="Pause food film"><svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg><svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:none"><polygon points="6,4 20,12 6,20"></polygon></svg></button>
+            <button class="ep-frame-video-btn video-fs-btn" type="button" aria-label="Watch food film fullscreen"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></button>
+          </div>
+        </div>
+      </div>
+
       <!-- Row 1: 1st Image — Exact 16:9 Cow Ground Hero Banner (Zero Crop, Zero Gap) -->
       <div class="adya-hero-row">
         <button aria-label="View Adya Organics A2 Gir Cow pasture brand-story hero banner" class="ep-frame" data-ep-lightbox="/assets/adya/adya-cow-ground-hero.png" type="button">
@@ -179,7 +205,7 @@
 
       <!-- Row 2: Cinema Grid (Vertical CGI Commercial + 2 Stacked Stills from Main Folder) -->
       <div class="adya-cinema-grid">
-        <div aria-label="Adya Organics vertical CGI product commercial" class="ep-frame ep-frame-video" data-video-modal="/assets/adya/adya-commercial.mp4">
+        <div aria-label="Adya Organics vertical CGI product commercial" class="ep-frame ep-frame-video adya-primary-film" data-video-modal="/assets/adya/adya-commercial.mp4">
           <video autoplay="" height="4096" loop="" muted="" playsinline="" poster="/assets/adya/adya-video-poster.jpg" preload="metadata" src="/assets/adya/adya-commercial.mp4" width="2304"></video>
           <div class="ep-frame-video-controls">
             <button aria-label="Pause film" class="ep-frame-video-btn video-toggle-btn" type="button">
@@ -200,6 +226,7 @@
           </button>
         </div>
       </div>
+
 
       <!-- Row 3: Pure 1:1 Square Duo — Flat-lay Plate + Appetite Spoon In-Use (Clean Flush Grid, Zero Side Gaps) -->
       <div class="adya-square-duo">
@@ -463,7 +490,7 @@
       });
 
       // 2. Video Card Autoplay & Fullscreen Modal Viewer
-      const videoCard = document.querySelector('.ep-frame-video');
+      const videoCard = document.querySelector('.adya-primary-film');
       const videoModal = document.getElementById('adya-video-modal');
       const modalVideo = videoModal?.querySelector('video');
       const modalClose = videoModal?.querySelector('.jewellery-video-close');
@@ -536,6 +563,24 @@
       });
       document.addEventListener('keydown', (e) => {
         if (videoModal?.open && e.key === 'Escape') closeModal();
+      });
+    })();
+  </script>
+
+
+  <script>
+    (function(){
+      const cards=[...document.querySelectorAll('.adya-new-reels .ep-frame-video')];
+      const modal=document.getElementById('adya-video-modal');
+      const modalVideo=modal?.querySelector('video');
+      cards.forEach(card=>{
+        const video=card.querySelector('video');
+        const toggle=card.querySelector('.video-toggle-btn');
+        const open=card.querySelector('.video-fs-btn');
+        const pauseIcon=toggle?.querySelector('.icon-pause');
+        const playIcon=toggle?.querySelector('.icon-play');
+        toggle?.addEventListener('click',e=>{e.stopPropagation();if(video.paused){video.play().catch(()=>{});pauseIcon.style.display='block';playIcon.style.display='none';}else{video.pause();pauseIcon.style.display='none';playIcon.style.display='block';}});
+        open?.addEventListener('click',e=>{e.stopPropagation();if(!modal||!modalVideo)return;modalVideo.src=card.dataset.videoModal;modalVideo.poster=video.poster;modalVideo.currentTime=video.currentTime||0;modalVideo.muted=false;modal.showModal();modalVideo.play().catch(()=>{});});
       });
     })();
   </script>
