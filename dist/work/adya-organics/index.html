@@ -95,11 +95,17 @@
 
 
     /* New campaign films — original 4K files, poster-first loading. */
-    .adya-new-reels { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; width:100%; }
+    .adya-new-reels { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; width:100%; }
     .adya-new-reels .ep-frame-video { width:100%; aspect-ratio:9/16; height:auto!important; overflow:hidden; background:#0b0b0b; }
     .adya-new-reels .ep-frame-video video { display:block; width:100%; height:100%; object-fit:cover; }
     .adya-new-reels .ep-frame-video-controls { z-index:8; }
-    @media(max-width:768px) { .adya-new-reels { grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; } }
+    .adya-cinema-grid.is-stills-only { display:block; }
+    .adya-cinema-grid.is-stills-only .adya-cinema-stills { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; }
+    .adya-cinema-grid.is-stills-only .ep-frame { height:100%!important; }
+    @media(max-width:768px) {
+      .adya-new-reels { grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; }
+      .adya-cinema-grid.is-stills-only .adya-cinema-stills { grid-template-columns:1fr; gap:4px; }
+    }
 
     @media (max-width: 768px) {
       .adya-cinema-grid { grid-template-columns: 1fr; }
@@ -201,6 +207,13 @@
             <button class="ep-frame-video-btn video-fs-btn" type="button" aria-label="Watch farm-to-jar film fullscreen"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></button>
           </div>
         </div>
+        <div class="ep-frame ep-frame-video" data-video-modal="/assets/adya/adya-commercial.mp4" aria-label="Adya Organics vertical CGI product commercial">
+          <video autoplay loop muted playsinline preload="none" poster="/assets/adya/adya-video-poster.jpg" src="/assets/adya/adya-commercial.mp4" width="2304" height="4096"></video>
+          <div class="ep-frame-video-controls">
+            <button class="ep-frame-video-btn video-toggle-btn" type="button" aria-label="Pause CGI product film"><svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg><svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:none"><polygon points="6,4 20,12 6,20"></polygon></svg></button>
+            <button class="ep-frame-video-btn video-fs-btn" type="button" aria-label="Watch CGI product film fullscreen"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></button>
+          </div>
+        </div>
       </div>
 
       <!-- Row 1: 1st Image — Exact 16:9 Cow Ground Hero Banner (Zero Crop, Zero Gap) -->
@@ -210,20 +223,8 @@
         </button>
       </div>
 
-      <!-- Row 2: Cinema Grid (Vertical CGI Commercial + 2 Stacked Stills from Main Folder) -->
-      <div class="adya-cinema-grid">
-        <div aria-label="Adya Organics vertical CGI product commercial" class="ep-frame ep-frame-video adya-primary-film" data-video-modal="/assets/adya/adya-commercial.mp4">
-          <video autoplay="" height="4096" loop="" muted="" playsinline="" poster="/assets/adya/adya-video-poster.jpg" preload="metadata" src="/assets/adya/adya-commercial.mp4" width="2304"></video>
-          <div class="ep-frame-video-controls">
-            <button aria-label="Pause film" class="ep-frame-video-btn video-toggle-btn" type="button">
-              <svg class="icon-pause" fill="currentColor" height="14" viewBox="0 0 24 24" width="14"><rect height="16" rx="1" width="4" x="6" y="4"></rect><rect height="16" rx="1" width="4" x="14" y="4"></rect></svg>
-              <svg class="icon-play" fill="currentColor" height="14" style="display:none;" viewBox="0 0 24 24" width="14"><polygon points="6,4 20,12 6,20"></polygon></svg>
-            </button>
-            <button aria-label="Watch full film with sound" class="ep-frame-video-btn video-fs-btn" type="button">
-              <svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
-            </button>
-          </div>
-        </div>
+      <!-- Row 2: Balanced campaign stills -->
+      <div class="adya-cinema-grid is-stills-only">
         <div class="adya-cinema-stills">
           <button aria-label="View Adya Organics luxury lifestyle product banner" class="ep-frame ep-frame-16-9" data-ep-lightbox="/assets/adya/adya-hero-banner.png" type="button">
             <img alt="Adya Organics luxury lifestyle product banner" decoding="async" height="1536" loading="lazy" src="/assets/adya/adya-hero-banner.png" width="2752" />
