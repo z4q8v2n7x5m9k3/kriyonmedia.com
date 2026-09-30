@@ -9118,3 +9118,27 @@ button[data-rutba-image*="rutba-03"] img {
   .ki-inquiry-heading { font-size:clamp(30px,8vw,42px)!important; white-space:normal; }
   .ruby-reverie-grid .ruby-reverie-portrait-row > .piece-portrait { grid-column:auto!important; }
 }
+
+/* Mobile portfolio and Darzie gallery: one clear frame per row. */
+@media (max-width: 680px) {
+  .kriyon-project-index .kp-grid:not(.is-list) {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 10px 10px 64px !important;
+  }
+  .kriyon-project-index .kp-card-media {
+    aspect-ratio: 4 / 3 !important;
+  }
+  .kriyon-project-index .kp-grid p {
+    margin: 9px 0 6px !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+}
+@media (max-width: 540px) {
+  .darzie-source-col,
+  .darzie-campaign-col,
+  .darzie-campaign-col .ep-row-duo {
+    grid-template-columns: 1fr !important;
+  }
+}
