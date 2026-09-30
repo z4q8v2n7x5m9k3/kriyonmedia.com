@@ -95,11 +95,11 @@
 
 
     /* New campaign films — original 4K files, poster-first loading. */
-    .adya-new-reels { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; width:100%; }
+    .adya-new-reels { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; width:100%; }
     .adya-new-reels .ep-frame-video { width:100%; aspect-ratio:9/16; height:auto!important; overflow:hidden; background:#0b0b0b; }
     .adya-new-reels .ep-frame-video video { display:block; width:100%; height:100%; object-fit:cover; }
     .adya-new-reels .ep-frame-video-controls { z-index:8; }
-    @media(max-width:560px) { .adya-new-reels { gap:4px; } }
+    @media(max-width:768px) { .adya-new-reels { grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; } }
 
     @media (max-width: 768px) {
       .adya-cinema-grid { grid-template-columns: 1fr; }
@@ -192,6 +192,13 @@
           <div class="ep-frame-video-controls">
             <button class="ep-frame-video-btn video-toggle-btn" type="button" aria-label="Pause food film"><svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg><svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:none"><polygon points="6,4 20,12 6,20"></polygon></svg></button>
             <button class="ep-frame-video-btn video-fs-btn" type="button" aria-label="Watch food film fullscreen"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></button>
+          </div>
+        </div>
+        <div class="ep-frame ep-frame-video" data-video-modal="/assets/adya/adya-ghee-film-03.mp4" aria-label="Adya Organics farm-to-jar A2 Gir Cow Ghee film">
+          <video autoplay loop muted playsinline preload="none" poster="/assets/adya/adya-ghee-film-03-poster.jpg" src="/assets/adya/adya-ghee-film-03.mp4" width="2304" height="4096"></video>
+          <div class="ep-frame-video-controls">
+            <button class="ep-frame-video-btn video-toggle-btn" type="button" aria-label="Pause farm-to-jar film"><svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg><svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:none"><polygon points="6,4 20,12 6,20"></polygon></svg></button>
+            <button class="ep-frame-video-btn video-fs-btn" type="button" aria-label="Watch farm-to-jar film fullscreen"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></button>
           </div>
         </div>
       </div>
