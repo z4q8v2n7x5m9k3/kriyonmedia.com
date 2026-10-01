@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blue Nectar — Cinematic Product CGI | Kriyon Media</title>
-  <meta name="description" content="A cinematic CGI commercial series for Blue Nectar, created as three tactile product films." />
+  <title>Blue Nectar — Contemporary Ayurved | Kriyon Media</title>
+  <meta name="description" content="A luxury Ayurvedic visual campaign series for Blue Nectar, featuring cinematic CGI product films and tactile ingredient-led editorial stills." />
   <meta name="theme-color" content="#111110" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Kriyon Media" />
   <meta property="og:url" content="https://kriyonmedia.com/work/blue-nectar/" />
-  <meta property="og:title" content="Blue Nectar — Cinematic Product CGI | Kriyon Media" />
-  <meta property="og:description" content="A cinematic CGI commercial series for Blue Nectar by Kriyon Media." />
-  <meta property="og:image" content="https://kriyonmedia.com/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-poster.jpg" />
+  <meta property="og:title" content="Blue Nectar — Contemporary Ayurved | Kriyon Media" />
+  <meta property="og:description" content="A luxury Ayurvedic visual campaign series for Blue Nectar by Kriyon Media." />
+  <meta property="og:image" content="https://kriyonmedia.com/assets/blue-nectar/blue-nectar-attar-mist-cinematic-banner.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blue Nectar — Cinematic Product CGI | Kriyon Media" />
-  <meta name="twitter:description" content="A cinematic CGI commercial series for Blue Nectar by Kriyon Media." />
-  <meta name="twitter:image" content="https://kriyonmedia.com/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-poster.jpg" />
+  <meta name="twitter:title" content="Blue Nectar — Contemporary Ayurved | Kriyon Media" />
+  <meta name="twitter:description" content="A luxury Ayurvedic visual campaign series for Blue Nectar by Kriyon Media." />
+  <meta name="twitter:image" content="https://kriyonmedia.com/assets/blue-nectar/blue-nectar-attar-mist-cinematic-banner.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
@@ -24,57 +24,475 @@
   <script defer src="/site-performance.js?v=1"></script>
   <script>try{sessionStorage.setItem('kriyon_visited','1')}catch(e){}</script>
   <style>
-    .fashion-reels-page .ep-project-sub{max-width:740px}
-    .fashion-reels-page .ep-gallery{display:block;padding-top:6px}
-    .fashion-reel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;width:100%}
-    .fashion-reel-card{position:relative;min-width:0;background:#0b0b0b;overflow:hidden}
-    .fashion-reel-card .ep-frame-video{width:100%;height:auto!important;aspect-ratio:9/16;overflow:hidden;background:#0b0b0b}
-    .fashion-reel-card video{display:block;width:100%;height:100%;object-fit:cover}
-    .fashion-reel-meta{display:flex;justify-content:space-between;gap:12px;padding:11px 2px 22px;color:#181816;font:600 10px/1.35 Manrope,Arial,sans-serif;letter-spacing:.025em;text-transform:uppercase}
-    .fashion-reel-meta span:last-child{color:#858581;text-align:right}
-    .fashion-reel-open{position:absolute;z-index:12;right:12px;top:12px;border:1px solid rgba(255,255,255,.55);background:rgba(10,10,10,.45);backdrop-filter:blur(8px);color:#fff;padding:9px 11px;font:700 9px/1 Manrope,Arial,sans-serif;letter-spacing:.07em;cursor:pointer}
-    .fashion-reel-open:hover{background:#fff;color:#111}
-    .fashion-reels-note{display:flex;justify-content:space-between;gap:28px;margin:56px 0 0;padding:24px 0 12px;border-top:1px solid #d1d1cd;color:#62625e;font:500 12px/1.55 Manrope,Arial,sans-serif}
-    .fashion-reels-note strong{color:#111;font:500 clamp(24px,3vw,44px)/1.02 'Bricolage Grotesque',Arial,sans-serif;letter-spacing:-.045em;max-width:650px}
-    .fashion-reels-note p{max-width:470px;margin:0}
-    @media(max-width:900px){.fashion-reel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:560px){.fashion-reel-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.fashion-reel-meta{display:block;padding:8px 1px 16px;font-size:8px}.fashion-reel-meta span{display:block}.fashion-reel-meta span:last-child{margin-top:3px;text-align:left}.fashion-reel-open{top:8px;right:8px;padding:8px;font-size:8px}.fashion-reels-note{display:block;margin-top:38px}.fashion-reels-note p{margin-top:18px}}
+    .bn-page .ep-project-sub { max-width: 780px; }
+    .bn-page .ep-gallery { display: flex; flex-direction: column; gap: 6px; padding-top: 6px; width: 100%; }
+
+    /* 1. Full-Width 16:9 Hero Row */
+    .bn-hero-row { width: 100%; margin: 0; padding: 0; }
+    .bn-hero-row .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 2752 / 1536 !important; height: auto !important; border: 0; padding: 0; background: #0b0b0b; overflow: hidden; cursor: zoom-in; }
+    .bn-hero-row .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    /* 2. 3 Vertical Commercial Films Grid */
+    .bn-film-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .bn-film-card { position: relative; min-width: 0; background: #0b0b0b; overflow: hidden; cursor: pointer; border-radius: 2px; }
+    .bn-film-card .ep-frame-video { position: relative; width: 100%; height: auto !important; aspect-ratio: 9/16; overflow: hidden; background: #0b0b0b; }
+    .bn-film-card video { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .bn-film-controls { position: absolute; z-index: 8; right: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; }
+    .bn-film-btn { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(10, 10, 10, 0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #fff; cursor: pointer; transition: transform 0.2s, background 0.2s; }
+    .bn-film-btn:hover { transform: scale(1.08); background: rgba(10, 10, 10, 0.9); }
+
+    /* 3. Pure Stills Grids - Exact Natural Ratios, Zero Text */
+    .bn-portrait-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .bn-portrait-duo .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 1792 / 2400 !important; overflow: hidden; border: 0; padding: 0; background: #0b0b0b; cursor: zoom-in; }
+    .bn-portrait-duo .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    .bn-square-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .bn-square-duo .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 1 / 1 !important; overflow: hidden; border: 0; padding: 0; background: #0b0b0b; cursor: zoom-in; }
+    .bn-square-duo .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    .bn-widescreen-duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .bn-widescreen-duo .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 2752 / 1536 !important; overflow: hidden; border: 0; padding: 0; background: #0b0b0b; cursor: zoom-in; }
+    .bn-widescreen-duo .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    .bn-portrait-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .bn-portrait-trio .ep-frame { position: relative; display: block; width: 100%; aspect-ratio: 1792 / 2400 !important; overflow: hidden; border: 0; padding: 0; background: #0b0b0b; cursor: zoom-in; }
+    .bn-portrait-trio .ep-frame img { display: block; width: 100%; height: 100%; object-fit: cover !important; }
+
+    /* Lightbox enhancements for video modal */
+    .bn-video-lightbox { width: 100vw; height: 100vh; max-width: none; max-height: none; border: 0; padding: 0; background: rgba(7, 8, 8, 0.96); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .bn-video-lightbox::backdrop { background: rgba(0, 0, 0, 0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .bn-video-lightbox video { max-width: 90vw; max-height: 88vh; width: auto; height: auto; aspect-ratio: 9 / 16; object-fit: contain; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+    .bn-video-close { position: fixed; z-index: 100; top: 22px; right: 24px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.4); background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: #fff; font-size: 26px; line-height: 1; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+    .bn-video-close:hover { background: rgba(255, 255, 255, 0.25); transform: scale(1.06); }
+
+    @media (max-width: 900px) {
+      .bn-film-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .bn-portrait-trio { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px) {
+      .bn-film-grid { grid-template-columns: 1fr; gap: 4px; }
+      .bn-portrait-duo { grid-template-columns: 1fr; gap: 4px; }
+      .bn-square-duo { grid-template-columns: 1fr; gap: 4px; }
+      .bn-widescreen-duo { grid-template-columns: 1fr; gap: 4px; }
+      .bn-portrait-trio { grid-template-columns: 1fr; gap: 4px; }
+      .bn-video-close { top: 14px; right: 14px; width: 38px; height: 38px; font-size: 20px; }
+    }
   </style>
 </head>
-<body class="ep-page fashion-reels-page" id="top">
-  <div class="ep-loader" id="ep-loader" aria-hidden="true"><div class="ep-loader-content"><div class="ep-loader-brand">KRIYON MEDIA</div><div class="ep-loader-project">BLUE NECTAR</div><div class="ep-loader-bar"><span class="ep-loader-progress"></span></div></div></div>
+<body class="ep-page bn-page" id="top">
+  <div class="ep-loader" id="ep-loader" aria-hidden="true">
+    <div class="ep-loader-content">
+      <div class="ep-loader-brand">KRIYON MEDIA</div>
+      <div class="ep-loader-project">BLUE NECTAR</div>
+      <div class="ep-loader-bar"><span class="ep-loader-progress"></span></div>
+    </div>
+  </div>
+
   <div class="ep-container">
+    <!-- Clean Minimal Topbar -->
     <header class="ep-topbar">
-      <div class="ep-topbar-left"><a class="ep-back-btn" href="/work/" aria-label="Back to projects"><span class="ep-back-arrow">←</span><span>BACK TO PROJECTS</span></a><span class="ep-topbar-crumb">/</span><span class="ep-topbar-title">BLUE NECTAR</span></div>
-      <div class="ep-gesture-guide" aria-label="Scroll to view"><div class="ep-gesture-item"><span>Scroll to view films</span></div></div>
+      <div class="ep-topbar-left">
+        <a class="ep-back-btn" href="/work/" aria-label="Back to projects">
+          <span class="ep-back-arrow">←</span>
+          <span>BACK TO PROJECTS</span>
+        </a>
+        <span class="ep-topbar-crumb">/</span>
+        <span class="ep-topbar-title">BLUE NECTAR</span>
+      </div>
+      <div class="ep-gesture-guide" aria-label="Navigation: Scroll down to view, Swipe to browse">
+        <div class="ep-gesture-item"><span>Scroll to view collection</span></div>
+      </div>
     </header>
+
+    <!-- Clean Minimal Hero -->
     <section class="ep-hero-minimal" aria-label="Project details">
-      <div class="ep-hero-minimal-head"><h1 class="ep-project-title">BLUE NECTAR</h1><p class="ep-project-sub">Three atmospheric CGI films built around ritual, ingredients and sensorial product storytelling.</p></div>
+      <div class="ep-hero-minimal-head">
+        <h1 class="ep-project-title">BLUE NECTAR</h1>
+        <p class="ep-project-sub">A contemporary Ayurvedic visual universe crafted by Kriyon Media—three atmospheric CGI product films paired with tactile ingredient-led campaign stills and formulation studies.</p>
+      </div>
       <div class="ep-meta-row">
         <div class="ep-meta-col"><span class="ep-meta-label">BRAND</span><span class="ep-meta-val">Blue Nectar</span></div>
-        <div class="ep-meta-col"><span class="ep-meta-label">DISCIPLINE</span><span class="ep-meta-val">Product CGI · Commercial Film</span></div>
-        <div class="ep-meta-col"><span class="ep-meta-label">SCOPE</span><span class="ep-meta-val">Creative Direction · CGI · Post</span></div>
+        <div class="ep-meta-col"><span class="ep-meta-label">DISCIPLINE</span><span class="ep-meta-val">Product CGI · Campaign Stills</span></div>
+        <div class="ep-meta-col"><span class="ep-meta-label">SCOPE</span><span class="ep-meta-val">Creative Direction · CGI Motion · Stills</span></div>
         <div class="ep-meta-col"><span class="ep-meta-label">YEAR</span><span class="ep-meta-val">2026</span></div>
       </div>
     </section>
-    <main class="ep-gallery" aria-label="BLUE NECTAR film collection">
-      <div class="fashion-reel-grid">
-        <article class="fashion-reel-card"><div class="ep-frame ep-frame-video"><video autoplay loop muted playsinline preload="none" poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-poster.jpg" data-src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-4k.mp4" width="2304" height="4096"></video><button class="fashion-reel-open" type="button" data-video="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-4k.mp4" data-poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-poster.jpg">VIEW ↗</button></div><div class="fashion-reel-meta"><span>Rose Corridor</span><span>Cinematic CGI · 01</span></div></article>
-        <article class="fashion-reel-card"><div class="ep-frame ep-frame-video"><video autoplay loop muted playsinline preload="none" poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-forest-infusion-poster.jpg" data-src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-forest-infusion-4k.mp4" width="2304" height="4096"></video><button class="fashion-reel-open" type="button" data-video="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-forest-infusion-4k.mp4" data-poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-forest-infusion-poster.jpg">VIEW ↗</button></div><div class="fashion-reel-meta"><span>Forest Infusion</span><span>Product Film · 02</span></div></article>
-        <article class="fashion-reel-card"><div class="ep-frame ep-frame-video"><video autoplay loop muted playsinline preload="none" poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-poster.jpg" data-src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-4k.mp4" width="2304" height="4096"></video><button class="fashion-reel-open" type="button" data-video="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-4k.mp4" data-poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-poster.jpg">VIEW ↗</button></div><div class="fashion-reel-meta"><span>Ritual Stone</span><span>Product CGI · 03</span></div></article>
+
+    <!-- Main Editorial Campaign Gallery & Film Collection -->
+    <main class="ep-gallery" aria-label="BLUE NECTAR campaign collection">
+      
+      <!-- ============================================== -->
+      <!-- 1. 16:9 HERO BANNER (FIRST IMAGE AT THE TOP)   -->
+      <!-- ============================================== -->
+      <div class="bn-hero-row">
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-attar-mist-cinematic-banner.png" aria-label="View Blue Nectar Niraa Sultan-e Sandalwood Attar Mist architectural palace still">
+          <img src="/assets/blue-nectar/blue-nectar-attar-mist-cinematic-banner.png" alt="Blue Nectar Niraa Sultan-e Sandalwood Attar Mist architectural palace still with sandalwood, jasmine and cinnamon" width="2752" height="1536" loading="eager" decoding="async" />
+        </button>
       </div>
-      <section class="fashion-reels-note" aria-label="Collection note"><strong>Ritual, texture and product—composed as cinematic CGI.</strong><p>Each film is preserved in its original vertical 4K composition. Open any frame for fullscreen playback with sound.</p></section>
+
+      <!-- ============================================== -->
+      <!-- 2. THREE VERTICAL COMMERCIAL CGI FILMS         -->
+      <!-- ============================================== -->
+      <div class="bn-film-grid" aria-label="CGI Commercial Films">
+        <!-- Film 01 -->
+        <article class="bn-film-card" data-video-modal="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-4k.mp4" data-poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-poster.jpg" aria-label="Play Rose Corridor CGI film">
+          <div class="ep-frame ep-frame-video">
+            <video autoplay loop muted playsinline preload="none" poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-poster.jpg" data-src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-4k.mp4" width="2304" height="4096"></video>
+            <div class="bn-film-controls">
+              <button class="bn-film-btn video-toggle-btn" type="button" aria-label="Play or pause Rose Corridor film">
+                <svg class="icon-pause" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+                <svg class="icon-play" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="display:none"><polygon points="6,4 20,12 6,20"></polygon></svg>
+              </button>
+              <button class="bn-film-btn video-fs-btn" type="button" aria-label="Watch Rose Corridor film fullscreen">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Film 02 -->
+        <article class="bn-film-card" data-video-modal="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-forest-infusion-4k.mp4" data-poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-forest-infusion-poster.jpg" aria-label="Play Forest Infusion CGI film">
+          <div class="ep-frame ep-frame-video">
+            <video autoplay loop muted playsinline preload="none" poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-forest-infusion-poster.jpg" data-src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-forest-infusion-4k.mp4" width="2304" height="4096"></video>
+            <div class="bn-film-controls">
+              <button class="bn-film-btn video-toggle-btn" type="button" aria-label="Play or pause Forest Infusion film">
+                <svg class="icon-pause" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+                <svg class="icon-play" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="display:none"><polygon points="6,4 20,12 6,20"></polygon></svg>
+              </button>
+              <button class="bn-film-btn video-fs-btn" type="button" aria-label="Watch Forest Infusion film fullscreen">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Film 03 -->
+        <article class="bn-film-card" data-video-modal="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-4k.mp4" data-poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-poster.jpg" aria-label="Play Ritual Stone CGI film">
+          <div class="ep-frame ep-frame-video">
+            <video autoplay loop muted playsinline preload="none" poster="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-poster.jpg" data-src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-ritual-stone-4k.mp4" width="2304" height="4096"></video>
+            <div class="bn-film-controls">
+              <button class="bn-film-btn video-toggle-btn" type="button" aria-label="Play or pause Ritual Stone film">
+                <svg class="icon-pause" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+                <svg class="icon-play" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="display:none"><polygon points="6,4 20,12 6,20"></polygon></svg>
+              </button>
+              <button class="bn-film-btn video-fs-btn" type="button" aria-label="Watch Ritual Stone film fullscreen">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- 3. FLAGSHIP HERO PRODUCT DUO (3:4 PORTRAIT)    -->
+      <!-- Pure visual grid, zero text                    -->
+      <!-- ============================================== -->
+      <div class="bn-portrait-duo" aria-label="Flagship Hero Duo">
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-attar-mist-haveli-spray.png" aria-label="View Niraa Sultan-e Sandalwood Attar Mist active spray still">
+          <img src="/assets/blue-nectar/blue-nectar-attar-mist-haveli-spray.png" alt="Niraa Sultan-e Sandalwood Attar Mist bottle in carved palace courtyard with active mist, sandalwood logs, and fresh jasmine" width="1792" height="2400" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-kumkumadi-ingredients-still.png" aria-label="View Shubhr Kumkumadi Gel Face Scrub ingredient still">
+          <img src="/assets/blue-nectar/blue-nectar-kumkumadi-ingredients-still.png" alt="Shubhr Kumkumadi Gel Face Scrub jar on warm marble with raw saffron threads, walnuts, almonds, and cinnamon" width="1792" height="2400" loading="lazy" decoding="async" />
+        </button>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- 4. EDITORIAL SQUARE PLINTH DUO (1:1)           -->
+      <!-- Pure visual grid, zero text                    -->
+      <!-- ============================================== -->
+      <div class="bn-square-duo" aria-label="Marble Plinth Editorial Duo">
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-attar-mist-square-plinth.png" aria-label="View Niraa Sandalwood Attar Mist on marble plinth">
+          <img src="/assets/blue-nectar/blue-nectar-attar-mist-square-plinth.png" alt="Niraa Sandalwood Attar Mist on polished marble plinth with scattered rose petals and sandalwood cuts" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-kumkumadi-square-plinth.png" aria-label="View Shubhr Kumkumadi Scrub on circular plinth">
+          <img src="/assets/blue-nectar/blue-nectar-kumkumadi-square-plinth.png" alt="Shubhr Kumkumadi Gel Face Scrub on circular marble plinth with water droplets and warm morning sunlight" width="2048" height="2048" loading="lazy" decoding="async" />
+        </button>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- 5. WIDESCREEN TEXTURE & MINIMAL DUO (16:9)     -->
+      <!-- Pure visual grid, zero text                    -->
+      <!-- ============================================== -->
+      <div class="bn-widescreen-duo" aria-label="Widescreen Texture & Minimal Duo">
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-kumkumadi-macro-banner.png" aria-label="View Kumkumadi Gel Face Scrub tactile texture spoon detail">
+          <img src="/assets/blue-nectar/blue-nectar-kumkumadi-macro-banner.png" alt="Shubhr Kumkumadi Gel Face Scrub open jar with metal spoon lifting shimmering exfoliating scrub gel" width="2752" height="1536" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-kumkumadi-minimal-water.png" aria-label="View Kumkumadi Scrub minimal water reflection still">
+          <img src="/assets/blue-nectar/blue-nectar-kumkumadi-minimal-water.png" alt="Shubhr Kumkumadi Gel Face Scrub on clean glass and water surface with soft ripples and beige gradient" width="2752" height="1536" loading="lazy" decoding="async" />
+        </button>
+      </div>
+
+      <!-- ============================================== -->
+      <!-- 6. TACTILE, ATOMIZATION & PACKSHOT TRIO (3:4)  -->
+      <!-- Pure visual grid, zero text                    -->
+      <!-- ============================================== -->
+      <div class="bn-portrait-trio" aria-label="Texture, Motion & E-Commerce Trio">
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-kumkumadi-texture-spatula.png" aria-label="View Kumkumadi Scrub spatula texture close-up">
+          <img src="/assets/blue-nectar/blue-nectar-kumkumadi-texture-spatula.png" alt="Close-up macro of Shubhr Kumkumadi Gel Face Scrub with clear cosmetic spatula lifting glowing scrub gel" width="1792" height="2400" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-attar-mist-active-spray.png" aria-label="View Attar Mist aerosol atomization commercial shot">
+          <img src="/assets/blue-nectar/blue-nectar-attar-mist-active-spray.png" alt="Commercial close-up of Blue Nectar Attar Mist bottle actively spraying ultra-fine fragrant mist in the air" width="1792" height="2400" loading="lazy" decoding="async" />
+        </button>
+        <button class="ep-frame" type="button" data-ep-lightbox="/assets/blue-nectar/blue-nectar-attar-mist-ecommerce.png" aria-label="View Attar Mist studio e-commerce plate">
+          <img src="/assets/blue-nectar/blue-nectar-attar-mist-ecommerce.png" alt="Clean studio e-commerce still of Blue Nectar Niraa Sandalwood Attar Mist on warm neutral backdrop" width="1792" height="2400" loading="lazy" decoding="async" />
+        </button>
+      </div>
+
     </main>
-    <section class="ep-next-section" aria-label="Next projects"><h3 class="ep-next-heading">Explore motion work</h3><div class="ep-next-grid"><a class="ep-next-card" href="/work/cinematic-cgi/"><div class="ep-next-thumb"><img src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-poster.jpg" alt="Cinematic CGI films" width="1152" height="2048" loading="lazy" decoding="async"></div><div class="ep-next-info"><span class="ep-next-client">CINEMATIC CGI</span><span class="ep-next-discipline">Motion Collection ↗</span></div></a><a class="ep-next-card" href="/work/adya-organics/"><div class="ep-next-thumb"><img src="/assets/adya/kriyon-media-adya-organics-cgi-commercial-poster.jpg" alt="Adya Organics" width="1152" height="2048" loading="lazy" decoding="async"></div><div class="ep-next-info"><span class="ep-next-client">ADYA ORGANICS</span><span class="ep-next-discipline">CGI Product Campaign ↗</span></div></a></div></section>
+
+    <!-- Next Projects Navigation -->
+    <section class="ep-next-section" aria-label="Next projects">
+      <h3 class="ep-next-heading">Explore more work</h3>
+      <div class="ep-next-grid">
+        <a class="ep-next-card" href="/work/khet/">
+          <div class="ep-next-thumb">
+            <img src="/assets/khet/khet-hero-thumb.jpg" alt="Khet Kala Pani" width="800" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="ep-next-info">
+            <span class="ep-next-client">KHET</span>
+            <span class="ep-next-discipline">Fragrance Concept ↗</span>
+          </div>
+        </a>
+        <a class="ep-next-card" href="/work/adya-organics/">
+          <div class="ep-next-thumb">
+            <img src="/assets/adya/adya-cow-ground-hero.png" alt="Adya Organics A2 Gir Cow Ghee" width="2752" height="1536" loading="lazy" decoding="async">
+          </div>
+          <div class="ep-next-info">
+            <span class="ep-next-client">ADYA ORGANICS</span>
+            <span class="ep-next-discipline">CGI Motion + Stills ↗</span>
+          </div>
+        </a>
+        <a class="ep-next-card" href="/work/no-cap/">
+          <div class="ep-next-thumb">
+            <img src="/assets/no-cap/studio-trio.png" alt="No Cap Foods" width="2752" height="1536" loading="lazy" decoding="async">
+          </div>
+          <div class="ep-next-info">
+            <span class="ep-next-client">NO CAP FOODS</span>
+            <span class="ep-next-discipline">Product Visuals · Campaign ↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
   </div>
-  <footer class="ep-footer" id="contact"><div class="ep-footer-top"><a class="ep-footer-brand" href="/">KRIYON</a><div class="ep-footer-cols"><div class="ep-footer-col"><span class="ep-footer-col-title">CONTACT</span><a href="mailto:kriyon@repixelx.tech">kriyon@repixelx.tech</a><a href="tel:+919622121100">+91 96221 21100</a></div><div class="ep-footer-col"><span class="ep-footer-col-title">NAVIGATION</span><a href="/work/">Portfolio</a><a href="/pricing/">Pricing</a><a href="/contact/">Contact Details</a></div><div class="ep-footer-col"><span class="ep-footer-col-title">SOCIAL</span><a href="https://instagram.com/kriyonmedia" target="_blank" rel="noreferrer">Instagram ↗</a><a href="#top">Back to Top ↑</a></div></div></div><div class="ep-footer-bottom"><span>© 2026 Kriyon Media · A creative venture by Kriyon Group Pvt Ltd</span><span>Ideas, produced with intent.</span></div></footer>
-  <dialog class="jewellery-video-lightbox" id="fashion-reel-modal" aria-label="Fashion reel full screen preview"><button class="jewellery-video-close" type="button" aria-label="Close video">×</button><video playsinline controls loop></video></dialog>
+
+  <!-- Footer -->
+  <footer class="ep-footer" id="contact">
+    <div class="ep-footer-top">
+      <a class="ep-footer-brand" href="/">KRIYON</a>
+      <div class="ep-footer-cols">
+        <div class="ep-footer-col">
+          <span class="ep-footer-col-title">CONTACT</span>
+          <a href="mailto:kriyon@repixelx.tech">kriyon@repixelx.tech</a>
+          <a href="tel:+919622121100">+91 96221 21100</a>
+        </div>
+        <div class="ep-footer-col">
+          <span class="ep-footer-col-title">NAVIGATION</span>
+          <a href="/work/">Portfolio</a>
+          <a href="/pricing/">Pricing</a>
+          <a href="/contact/">Contact Details</a>
+        </div>
+        <div class="ep-footer-col">
+          <span class="ep-footer-col-title">SOCIAL</span>
+          <a href="https://instagram.com/kriyonmedia" target="_blank" rel="noreferrer">Instagram ↗</a>
+          <a href="#top">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+    <div class="ep-footer-bottom">
+      <span>© 2026 Kriyon Media · A creative venture by Kriyon Group Pvt Ltd</span>
+      <span>Ideas, produced with intent.</span>
+    </div>
+  </footer>
+
+  <!-- Fullscreen Image Lightbox Modal Dialog -->
+  <dialog class="ep-lightbox" id="ep-lightbox" aria-label="Image preview">
+    <div class="ep-lightbox-ui">
+      <div class="ep-lightbox-counter" id="ep-counter" aria-live="polite">01 / 10</div>
+      <button class="ep-lightbox-close" type="button" aria-label="Close preview">×</button>
+    </div>
+    <div class="ep-lightbox-stage">
+      <button class="ep-lightbox-nav ep-lightbox-prev" type="button" aria-label="Previous image">‹</button>
+      <img id="ep-lightbox-img" src="" alt="" />
+      <button class="ep-lightbox-nav ep-lightbox-next" type="button" aria-label="Next image">›</button>
+    </div>
+  </dialog>
+
+  <!-- Fullscreen Video Lightbox Modal Dialog with Unmuted Audio -->
+  <dialog class="bn-video-lightbox" id="fashion-reel-modal" aria-label="CGI commercial film fullscreen preview">
+    <button class="bn-video-close" type="button" aria-label="Close video">×</button>
+    <video playsinline controls loop></video>
+  </dialog>
+
+  <!-- Video Intersection Observer Script -->
   <script>
-    (()=>{const videos=[...document.querySelectorAll('.fashion-reel-card video[data-src]')];const activate=video=>{if(!video.src){video.src=video.dataset.src;video.load()}video.play().catch(()=>{})};if(!('IntersectionObserver' in window)){videos.forEach(activate);return}const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)activate(entry.target);else entry.target.pause()}),{rootMargin:'180px 0px',threshold:.01});videos.forEach(video=>observer.observe(video))})();
+    (()=>{
+      const videos = [...document.querySelectorAll('.bn-film-card video[data-src]')];
+      const activate = video => {
+        if (!video.src) {
+          video.src = video.dataset.src;
+          video.load();
+        }
+        video.play().catch(()=>{});
+      };
+      if (!('IntersectionObserver' in window)) {
+        videos.forEach(activate);
+        return;
+      }
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) activate(entry.target);
+          else entry.target.pause();
+        });
+      }, { rootMargin: '180px 0px', threshold: .01 });
+      videos.forEach(video => observer.observe(video));
+    })();
   </script>
+
+  <!-- Video Controls & Lightbox Script -->
   <script>
-    (()=>{const modal=document.getElementById('fashion-reel-modal'),player=modal.querySelector('video'),close=modal.querySelector('.jewellery-video-close');document.querySelectorAll('.fashion-reel-open').forEach(button=>button.addEventListener('click',event=>{event.stopPropagation();player.src=button.dataset.video;player.poster=button.dataset.poster||'';player.muted=false;modal.showModal();player.play().catch(()=>{});}));function shut(){player.pause();player.removeAttribute('src');player.load();modal.close()}close.addEventListener('click',shut);modal.addEventListener('click',event=>{if(event.target===modal)shut()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal.open)shut()});})();
-    (()=>{const loader=document.getElementById('ep-loader');function dismiss(){if(!loader)return;loader.style.pointerEvents='none';loader.classList.add('is-loaded');setTimeout(()=>loader.remove(),350)}if(document.readyState==='complete')dismiss();else window.addEventListener('load',dismiss,{once:true});setTimeout(dismiss,700)})();
+    (()=>{
+      const cards = [...document.querySelectorAll('.bn-film-card')];
+      const modal = document.getElementById('fashion-reel-modal');
+      const player = modal.querySelector('video');
+      const close = modal.querySelector('.bn-video-close');
+
+      cards.forEach(card => {
+        const video = card.querySelector('video');
+        const toggleBtn = card.querySelector('.video-toggle-btn');
+        const fsBtn = card.querySelector('.video-fs-btn');
+        const pauseIcon = toggleBtn?.querySelector('.icon-pause');
+        const playIcon = toggleBtn?.querySelector('.icon-play');
+
+        // Toggle inline playback
+        toggleBtn?.addEventListener('click', e => {
+          e.stopPropagation();
+          if (video.paused) {
+            video.play().catch(()=>{});
+            if (pauseIcon) pauseIcon.style.display = 'block';
+            if (playIcon) playIcon.style.display = 'none';
+          } else {
+            video.pause();
+            if (pauseIcon) pauseIcon.style.display = 'none';
+            if (playIcon) playIcon.style.display = 'block';
+          }
+        });
+
+        // Open in fullscreen modal with audio
+        const openModal = e => {
+          if (e) e.stopPropagation();
+          player.src = card.dataset.videoModal;
+          player.poster = card.dataset.poster || video.poster || '';
+          player.currentTime = video.currentTime || 0;
+          player.muted = false;
+          player.volume = 1;
+          modal.showModal();
+          player.play().catch(()=>{});
+        };
+
+        fsBtn?.addEventListener('click', openModal);
+        card.addEventListener('click', e => {
+          if (e.target.closest('button')) return;
+          openModal();
+        });
+      });
+
+      function shut() {
+        player.pause();
+        player.removeAttribute('src');
+        player.load();
+        modal.close();
+      }
+
+      close.addEventListener('click', shut);
+      modal.addEventListener('click', e => {
+        if (e.target === modal) shut();
+      });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.open) shut();
+      });
+    })();
+  </script>
+
+  <!-- Image Lightbox Script -->
+  <script>
+    (()=>{
+      const dialog = document.getElementById('ep-lightbox');
+      const preview = document.getElementById('ep-lightbox-img');
+      const counter = document.getElementById('ep-counter');
+      const closeBtn = dialog?.querySelector('.ep-lightbox-close');
+      const prevBtn = dialog?.querySelector('.ep-lightbox-prev');
+      const nextBtn = dialog?.querySelector('.ep-lightbox-next');
+      const frames = [...document.querySelectorAll('[data-ep-lightbox]')];
+      let currentIndex = 0;
+
+      function showImage(index) {
+        if (!dialog || !preview) return;
+        currentIndex = (index + frames.length) % frames.length;
+        const item = frames[currentIndex];
+        const src = item.dataset.epLightbox;
+        const img = item.querySelector('img');
+        preview.src = src;
+        preview.alt = img ? img.alt : '';
+        if (counter) {
+          counter.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(frames.length).padStart(2, '0')}`;
+        }
+      }
+
+      frames.forEach((frame, idx) => {
+        frame.addEventListener('click', () => {
+          showImage(idx);
+          dialog.showModal();
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
+      if (prevBtn) prevBtn.addEventListener('click', e => { e.stopPropagation(); showImage(currentIndex - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', e => { e.stopPropagation(); showImage(currentIndex + 1); });
+
+      dialog?.addEventListener('click', e => {
+        if (e.target === dialog) dialog.close();
+      });
+
+      document.addEventListener('keydown', e => {
+        if (dialog?.open) {
+          if (e.key === 'Escape') dialog.close();
+          if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+          if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+        }
+      });
+
+      // Touch swipe support
+      let touchStartX = 0, touchStartY = 0;
+      dialog?.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      dialog?.addEventListener('touchend', e => {
+        const deltaX = e.changedTouches[0].screenX - touchStartX;
+        const deltaY = e.changedTouches[0].screenY - touchStartY;
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 40) {
+          if (deltaX > 0) showImage(currentIndex - 1);
+          else showImage(currentIndex + 1);
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+  <!-- Page Loader Dismissal -->
+  <script>
+    (()=>{
+      const loader = document.getElementById('ep-loader');
+      function dismiss() {
+        if (!loader) return;
+        loader.style.pointerEvents = 'none';
+        loader.classList.add('is-loaded');
+        setTimeout(() => loader.remove(), 350);
+      }
+      if (document.readyState === 'complete') dismiss();
+      else window.addEventListener('load', dismiss, { once: true });
+      setTimeout(dismiss, 700);
+    })();
   </script>
   <script defer src="/site-motion.js?v=1"></script>
 </body>
