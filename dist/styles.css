@@ -3704,8 +3704,16 @@ body {
    ============================================================ */
 /* Talla Bridal: Imperial chandelier & bridal lehenga in palace hall */
 .ki-work-card[href*="talla"] img,
-.kp-card[href*="talla"] img {
+.ki-work-card[href*="imperial-bridal-jewels"] img,
+.kp-card[href*="talla"] img,
+.kp-card[href*="imperial-bridal-jewels"] img {
   object-position: center 22% !important;
+}
+
+/* Samaira Bridal: Heritage emerald jewellery portrait */
+.ki-work-card[href*="samaira-bridal"] img,
+.kp-card[href*="samaira-bridal"] img {
+  object-position: center 18% !important;
 }
 
 /* Darzie Couture: palace courtyard with marigolds and hot pink couture */
@@ -3756,6 +3764,24 @@ body {
 .ki-work-card[href*="jewellery"] img,
 .kp-card[href*="jewellery"] img,
 .kp-grid > a[href*="jewellery"] img {
+  object-position: center center !important;
+}
+
+/* Adya Organics: Pure A2 Gir Cow Ghee */
+.ki-work-card[href*="adya-organics"] img,
+.kp-card[href*="adya-organics"] img {
+  object-position: center center !important;
+}
+
+/* Cinematic CGI: Rose corridor / luxury cosmetic motion */
+.ki-work-card[href*="cinematic-cgi"] img,
+.kp-card[href*="cinematic-cgi"] img {
+  object-position: center 25% !important;
+}
+
+/* Blue Nectar: Contemporary Ayurved */
+.ki-work-card[href*="blue-nectar"] img,
+.kp-card[href*="blue-nectar"] img {
   object-position: center center !important;
 }
 
