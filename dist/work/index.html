@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Selected Work &amp; Campaigns — Kriyon Media</title>
   <meta name="title" content="Selected Work &amp; Campaigns — Kriyon Media" />
-  <meta name="description" content="Visual productions, campaign imagery, and brand worlds engineered for luxury fashion, fine jewellery, and couture brands." />
+  <meta name="description" content="Visual stories for brands, products and campaigns — crafted with a cinematic eye and a purpose by Kriyon Media." />
   <meta name="theme-color" content="#ffffff" />
 
   <!-- Open Graph / Facebook / WhatsApp -->
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Kriyon Media" />
   <meta property="og:url" content="https://kriyonmedia.com/work/" />
   <meta property="og:title" content="Selected Work &amp; Campaigns — Kriyon Media" />
-  <meta property="og:description" content="Visual productions, campaign imagery, and brand worlds engineered for luxury fashion, fine jewellery, and couture brands." />
+  <meta property="og:description" content="Visual stories for brands, products and campaigns — crafted with a cinematic eye and a purpose by Kriyon Media." />
   <meta property="og:image" content="https://kriyonmedia.com/assets/og-image.jpg" />
   <meta property="og:image:secure_url" content="https://kriyonmedia.com/assets/og-image.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -25,18 +25,635 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://kriyonmedia.com/work/" />
   <meta name="twitter:title" content="Selected Work &amp; Campaigns — Kriyon Media" />
-  <meta name="twitter:description" content="Visual productions, campaign imagery, and brand worlds engineered for luxury fashion, fine jewellery, and couture brands." />
+  <meta name="twitter:description" content="Visual stories for brands, products and campaigns — crafted with a cinematic eye and a purpose by Kriyon Media." />
   <meta name="twitter:image" content="https://kriyonmedia.com/assets/og-image.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=137" />
+  <link rel="stylesheet" href="/styles.css?v=142" />
   <script defer src="/media-guard.js?v=7"></script>
   <script>
     try { sessionStorage.setItem('kriyon_visited', '1'); } catch(e) {}
   </script>
   <script defer src="/site-performance.js?v=1"></script>
+
+  <style>
+    /* ============================================================
+       KRIYON MEDIA — EDITORIAL PORTFOLIO REDESIGN (APPLE GLASS UI)
+       Clean Grotesque Typography · Apple Frosted Badges · Asymmetric Rhythm
+       ============================================================ */
+
+    /* Introduction Section — Tight Upper Spacing & Reduced Side Margins */
+    .portfolio-editorial .kp-header {
+      padding: 0 clamp(14px, 1.8vw, 30px) !important;
+    }
+
+    .portfolio-editorial .kp-intro {
+      padding: clamp(14px, 1.6vw, 22px) clamp(14px, 1.8vw, 30px) 8px !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+    }
+
+    .portfolio-editorial .kp-intro-top {
+      display: flex !important;
+      align-items: flex-end !important;
+      justify-content: space-between !important;
+      gap: clamp(20px, 3.5vw, 48px) !important;
+      border: none !important;
+    }
+
+    .portfolio-editorial .kp-intro-left {
+      max-width: 780px;
+    }
+
+    .portfolio-editorial .kp-eyebrow {
+      display: none !important;
+    }
+
+    .portfolio-editorial .kp-title {
+      font-family: 'Bricolage Grotesque', Arial, sans-serif !important;
+      font-size: clamp(34px, 4.2vw, 60px) !important;
+      font-weight: 480 !important;
+      letter-spacing: -0.04em !important;
+      line-height: 0.94 !important;
+      color: #080808 !important;
+      margin: 0 0 clamp(8px, 1vw, 12px) !important;
+      text-transform: uppercase !important;
+    }
+
+    .portfolio-editorial .kp-lead {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: clamp(13.5px, 1.1vw, 15px) !important;
+      font-weight: 500 !important;
+      line-height: 1.45 !important;
+      color: #555552 !important;
+      margin: 0 !important;
+      max-width: 620px !important;
+    }
+
+    .portfolio-editorial .kp-intro-right {
+      display: block;
+      flex-shrink: 0;
+      max-width: 260px;
+    }
+
+    .portfolio-editorial .kp-curation-note {
+      font-family: 'Manrope', sans-serif !important;
+      font-size: 11.5px !important;
+      font-weight: 400 !important;
+      line-height: 1.5 !important;
+      color: #8c8c88 !important;
+      margin: 0 !important;
+      text-align: right !important;
+    }
+
+    /* Refined Minimalist Toolbar — No Redundant Dividing Lines */
+    .portfolio-editorial .kp-toolbar {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 16px !important;
+      margin-top: clamp(14px, 1.8vw, 22px) !important;
+      padding-top: 0 !important;
+      padding-bottom: 12px !important;
+      border: none !important;
+      border-top: none !important;
+      border-bottom: none !important;
+      width: 100% !important;
+    }
+
+    .portfolio-editorial .kp-filters {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      overflow-x: auto !important;
+      white-space: nowrap !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none !important;
+      padding: 4px 0 !important;
+    }
+    .portfolio-editorial .kp-filters::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    /* Apple Frosted Glass Category Filter Badges */
+    .portfolio-editorial .kp-filters button {
+      position: relative !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      padding: 7px 16px !important;
+      border-radius: 9999px !important;
+      background: rgba(0, 0, 0, 0.04) !important;
+      backdrop-filter: blur(14px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+      color: #3e3e3a !important;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 10.5px !important;
+      font-weight: 600 !important;
+      letter-spacing: 0.04em !important;
+      text-transform: uppercase !important;
+      cursor: pointer !important;
+      transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .portfolio-editorial .kp-filters button:hover {
+      background: rgba(0, 0, 0, 0.075) !important;
+      border-color: rgba(0, 0, 0, 0.15) !important;
+      color: #050505 !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .portfolio-editorial .kp-filters button.is-active {
+      background: rgba(12, 12, 14, 0.94) !important;
+      backdrop-filter: blur(16px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+      border: 1px solid rgba(0, 0, 0, 0.9) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16), inset 0 1px 0.5px rgba(255, 255, 255, 0.28) !important;
+      transform: translateY(0) !important;
+    }
+
+    /* Apple Segmented View Switcher (Grid / Index) */
+    .portfolio-editorial .kp-views {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 2px !important;
+      padding: 3px 4px !important;
+      border-radius: 9999px !important;
+      background: rgba(0, 0, 0, 0.04) !important;
+      backdrop-filter: blur(12px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+      border: 1px solid rgba(0, 0, 0, 0.07) !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+    }
+    .portfolio-editorial .kp-views button {
+      border: none !important;
+      background: transparent !important;
+      padding: 4px 10px !important;
+      border-radius: 9999px !important;
+      font-family: 'Manrope', -apple-system, sans-serif !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      color: #7c7c78 !important;
+      cursor: pointer !important;
+      letter-spacing: 0.06em !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .portfolio-editorial .kp-views button.is-active {
+      background: #ffffff !important;
+      color: #0a0a0a !important;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12), 0 0.5px 1px rgba(0, 0, 0, 0.08) !important;
+    }
+    .portfolio-editorial .kp-views button:hover:not(.is-active) {
+      color: #0a0a0a !important;
+    }
+    .portfolio-editorial .kp-views i {
+      display: none !important;
+    }
+
+    /* Asymmetric 12-Column Editorial Grid Layout — Expansive Edge-to-Edge Margins */
+    .portfolio-editorial .kp-grid:not(.is-list) {
+      display: grid !important;
+      grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+      gap: 12px !important;
+      padding: 6px clamp(14px, 1.8vw, 30px) clamp(60px, 6vw, 110px) !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      width: 100% !important;
+      align-items: stretch !important;
+    }
+
+    /* Asymmetric composition matching reference mockup when in "all" view */
+    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-6,
+    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-6 {
+      grid-column: span 6 !important;
+    }
+    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-4,
+    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-4 {
+      grid-column: span 4 !important;
+    }
+    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-3,
+    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-3 {
+      grid-column: span 3 !important;
+    }
+    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-12,
+    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-12 {
+      grid-column: span 12 !important;
+    }
+
+    /* Reset to balanced 3-column flow when filtered by category */
+    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter]:not([data-active-filter="all"]) .kp-card {
+      grid-column: span 4 !important;
+    }
+
+    /* Completely eliminate old viewfinder corner brackets / weird hover arrows */
+    .portfolio-editorial .kp-grid > a::before,
+    .portfolio-editorial .kp-grid > a::after,
+    .portfolio-editorial .kp-card::before,
+    .portfolio-editorial .kp-card::after {
+      display: none !important;
+      content: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    /* Card Construction — Sharp Architectural Corners */
+    .portfolio-editorial .kp-card {
+      position: relative !important;
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      text-decoration: none !important;
+      color: #ffffff !important;
+      overflow: hidden !important;
+      border-radius: 0px !important;
+      background: #0d0d0f !important;
+      cursor: pointer !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06) !important;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+    }
+
+    .portfolio-editorial .kp-card:hover {
+      box-shadow: 0 12px 36px rgba(0,0,0,0.18) !important;
+    }
+
+    .portfolio-editorial .kp-card.is-hidden {
+      display: none !important;
+    }
+
+    /* Card Media & Aspect Ratios — Generous Editorial Height & Sharp Edges */
+    .portfolio-editorial .kp-card-media {
+      position: relative !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      aspect-ratio: 1 / 1.08 !important;
+      background: #0d0d0f !important;
+      overflow: hidden !important;
+      border-radius: 0px !important;
+    }
+
+    /* Wide card aspect ratio when spanning 6 columns */
+    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-6 .kp-card-media,
+    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-6 .kp-card-media {
+      aspect-ratio: 16 / 10.2 !important;
+    }
+
+    /* 4-column balanced cards (Ruby Reverie, Blue Nectar) */
+    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-4 .kp-card-media,
+    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-4 .kp-card-media {
+      aspect-ratio: 1 / 1.04 !important;
+    }
+
+    /* Uneven Editorial Accent: Rutba tall magazine portrait proportion */
+    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card[href*="rutba"] .kp-card-media,
+    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card[href*="rutba"] .kp-card-media {
+      aspect-ratio: 1 / 1.34 !important;
+    }
+
+    /* When filtered to uniform 3-columns */
+    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter]:not([data-active-filter="all"]) .kp-card .kp-card-media {
+      aspect-ratio: 1 / 1.05 !important;
+    }
+
+    /* High quality image rendering & subtle zoom */
+    .portfolio-editorial .kp-card-media img {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      image-rendering: -webkit-optimize-contrast !important;
+      transform: scale(1) !important;
+      filter: blur(0px) !important;
+      opacity: 1 !important;
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease !important;
+      will-change: transform !important;
+    }
+
+    .portfolio-editorial .kp-card:hover .kp-card-media img {
+      transform: scale(1.035) !important;
+      filter: brightness(1.02) !important;
+    }
+
+    /* Integrated Bottom Gradient Scrim */
+    .portfolio-editorial .kp-card-overlay {
+      position: absolute !important;
+      inset: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-end !important;
+      padding: clamp(14px, 1.8vw, 22px) !important;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.42) 34%,
+        rgba(0, 0, 0, 0.08) 64%,
+        transparent 100%
+      ) !important;
+      z-index: 3 !important;
+      pointer-events: none !important;
+      transition: background 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .portfolio-editorial .kp-card:hover .kp-card-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.86) 0%,
+        rgba(0, 0, 0, 0.48) 38%,
+        rgba(0, 0, 0, 0.12) 68%,
+        transparent 100%
+      ) !important;
+    }
+
+    .portfolio-editorial .kp-card-bottom {
+      display: flex !important;
+      align-items: flex-end !important;
+      justify-content: space-between !important;
+      gap: 12px !important;
+      width: 100% !important;
+    }
+
+    .portfolio-editorial .kp-card-text {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      min-width: 0 !important;
+    }
+
+    /* Apple Glass Effect Badge */
+    .portfolio-editorial .kp-card-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      padding: 4px 10px !important;
+      border-radius: 999px !important;
+      background: rgba(255, 255, 255, 0.15) !important;
+      backdrop-filter: blur(14px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.24) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.24) !important;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 8.5px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+      color: rgba(255, 255, 255, 0.94) !important;
+      margin-bottom: 7px !important;
+      width: fit-content !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .portfolio-editorial .kp-card:hover .kp-card-badge {
+      background: rgba(255, 255, 255, 0.25) !important;
+      border-color: rgba(255, 255, 255, 0.4) !important;
+      color: #ffffff !important;
+      transform: translateY(-1px) !important;
+    }
+
+    /* Refined, Clean Project Title */
+    .portfolio-editorial .kp-card-title {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: clamp(14px, 1.15vw, 17px) !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.02em !important;
+      color: #ffffff !important;
+      text-transform: uppercase !important;
+      line-height: 1.15 !important;
+      margin: 0 !important;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .portfolio-editorial .kp-card:hover .kp-card-title {
+      transform: translateX(2px) !important;
+    }
+
+    /* Refined Circular Apple Glass Action Button */
+    .portfolio-editorial .kp-card-action {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 50% !important;
+      background: rgba(255, 255, 255, 0.16) !important;
+      backdrop-filter: blur(14px) saturate(180%) !important;
+      -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.28) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+      color: #ffffff !important;
+      flex-shrink: 0 !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .portfolio-editorial .kp-card:hover .kp-card-action {
+      background: rgba(255, 255, 255, 0.28) !important;
+      border-color: rgba(255, 255, 255, 0.5) !important;
+      color: #ffffff !important;
+      transform: scale(1.05) !important;
+    }
+
+    .portfolio-editorial .kp-card-action svg {
+      transform: translate(0, 0) !important;
+      transition: transform 0.25s ease !important;
+    }
+
+    .portfolio-editorial .kp-card:hover .kp-card-action svg {
+      transform: translate(1.5px, -1.5px) !important;
+    }
+
+    /* Focal Point Tuning */
+    .kp-card[href*="samaira-bridal"] .kp-card-media img { object-position: center 15% !important; }
+    .kp-card[href*="jewellery"] .kp-card-media img { object-position: center center !important; }
+    .kp-card[href*="khet"] .kp-card-media img { object-position: center 30% !important; }
+    .kp-card[href*="darzie-couture"] .kp-card-media img { object-position: center 14% !important; }
+    .kp-card[href*="cinematic-cgi"] .kp-card-media img { object-position: center 40% !important; }
+    .kp-card[href*="adya-organics"] .kp-card-media img { object-position: center center !important; }
+    .kp-card[href*="imperial-bridal-jewels"] .kp-card-media img { object-position: center 20% !important; }
+    .kp-card[href*="rutba"] .kp-card-media img { object-position: center 14% !important; }
+    .kp-card[href*="red-jewellery"] .kp-card-media img { object-position: center 15% !important; }
+    .kp-card[href*="no-cap"] .kp-card-media img { object-position: center center !important; }
+    .kp-card[href*="blue-nectar"] .kp-card-media img { object-position: center center !important; }
+    .kp-card[href*="clothing"] .kp-card-media img { object-position: center 14% !important; }
+    .kp-card[href*="blue/"] .kp-card-media img { object-position: center 16% !important; }
+    .kp-card[href*="fashion-reels"] .kp-card-media img { object-position: center 25% !important; }
+
+    /* Index / List View Support */
+    .portfolio-editorial .kp-grid.is-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0 !important;
+      padding: 10px clamp(16px, 3.5vw, 40px) 100px !important;
+      max-width: 1680px !important;
+      margin: 0 auto !important;
+    }
+    .portfolio-editorial .kp-grid.is-list .kp-card {
+      display: grid !important;
+      grid-template-columns: 80px 180px 1fr auto !important;
+      align-items: center !important;
+      gap: 20px !important;
+      padding: 16px 0 !important;
+      border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      color: #0a0a0a !important;
+    }
+    .portfolio-editorial .kp-grid.is-list .kp-card:hover {
+      background: rgba(0,0,0,0.02) !important;
+      padding-left: 8px !important;
+      padding-right: 8px !important;
+    }
+    .portfolio-editorial .kp-grid.is-list .kp-card-media {
+      width: 180px !important;
+      aspect-ratio: 16 / 10 !important;
+      border-radius: 2px !important;
+    }
+    .portfolio-editorial .kp-grid.is-list .kp-card-overlay {
+      display: none !important;
+    }
+    .portfolio-editorial .kp-grid.is-list .kp-card-list-info {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 4px !important;
+    }
+    .portfolio-editorial .kp-grid.is-list .kp-card-list-title {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      color: #0a0a0a !important;
+      letter-spacing: 0.02em !important;
+    }
+    .portfolio-editorial .kp-grid.is-list .kp-card-list-cat {
+      font-family: 'Manrope', sans-serif !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      color: #72726e !important;
+    }
+    .portfolio-editorial .kp-grid.is-list .kp-card-list-num {
+      font-family: 'Manrope', sans-serif !important;
+      font-size: 12px !important;
+      font-weight: 700 !important;
+      color: #a0a09c !important;
+    }
+    .portfolio-editorial .kp-grid.is-list .kp-card-list-arrow {
+      font-size: 16px !important;
+      color: #0a0a0a !important;
+      padding-right: 12px !important;
+    }
+    .portfolio-editorial .kp-grid:not(.is-list) .kp-card-list-info,
+    .portfolio-editorial .kp-grid:not(.is-list) .kp-card-list-num,
+    .portfolio-editorial .kp-grid:not(.is-list) .kp-card-list-arrow {
+      display: none !important;
+    }
+
+    /* ============================================================
+       MOBILE EXPERIENCE (APPLE REFERENCE QUALITY)
+       Single-Column Editorial · Large Visual Cards · No Horizontal Overflow
+       ============================================================ */
+    @media (max-width: 768px) {
+      .portfolio-editorial .kp-intro {
+        padding: 20px 14px 10px !important;
+      }
+      .portfolio-editorial .kp-intro-right {
+        display: none !important;
+      }
+      .portfolio-editorial .kp-eyebrow {
+        font-size: 10px !important;
+        margin-bottom: 6px !important;
+      }
+      .portfolio-editorial .kp-title {
+        font-size: 34px !important;
+        margin-bottom: 8px !important;
+      }
+      .portfolio-editorial .kp-lead {
+        font-size: 13.5px !important;
+      }
+      .portfolio-editorial .kp-toolbar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        margin-top: 14px !important;
+        padding-bottom: 8px !important;
+      }
+      .portfolio-editorial .kp-filters {
+        width: 100% !important;
+        padding-bottom: 4px !important;
+        gap: 6px !important;
+      }
+      .portfolio-editorial .kp-filters button {
+        padding: 6.5px 12px !important;
+        font-size: 9.5px !important;
+      }
+      .portfolio-editorial .kp-views {
+        display: none !important;
+      }
+
+      /* Single Column Editorial on Mobile */
+      .portfolio-editorial .kp-grid:not(.is-list) {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        padding: 8px 12px 64px !important;
+      }
+
+      .portfolio-editorial .kp-grid:not(.is-list) .kp-card {
+        grid-column: span 1 !important;
+      }
+
+      .portfolio-editorial .kp-card-media {
+        aspect-ratio: 4 / 3.2 !important;
+      }
+      .portfolio-editorial .kp-grid:not(.is-list) .kp-card.col-span-6 .kp-card-media {
+        aspect-ratio: 16 / 11 !important;
+      }
+      .portfolio-editorial .kp-grid:not(.is-list) .kp-card.col-span-12 .kp-card-media {
+        aspect-ratio: 16 / 10 !important;
+      }
+
+      .portfolio-editorial .kp-card-overlay {
+        padding: 16px 14px !important;
+      }
+      .portfolio-editorial .kp-card-badge {
+        font-size: 8px !important;
+        padding: 3.5px 8.5px !important;
+        margin-bottom: 5px !important;
+      }
+      .portfolio-editorial .kp-card-title {
+        font-size: 15px !important;
+      }
+      .portfolio-editorial .kp-card-action {
+        width: 32px !important;
+        height: 32px !important;
+      }
+      .portfolio-editorial .kp-card-action svg {
+        width: 13px !important;
+        height: 13px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .portfolio-editorial .kp-title {
+        font-size: 32px !important;
+      }
+      .portfolio-editorial .kp-card-media {
+        aspect-ratio: 1.15 / 1 !important;
+      }
+      .portfolio-editorial .kp-card.col-span-6 .kp-card-media {
+        aspect-ratio: 4 / 3 !important;
+      }
+      .portfolio-editorial .kp-card-title {
+        font-size: 14.5px !important;
+      }
+    }
+  </style>
 </head>
 <body class="portfolio-editorial kriyon-project-index" id="top">
   <div class="kp-shell">
@@ -44,7 +661,7 @@
       <a href="/">KRIYON MEDIA</a>
       <nav aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/work/" class="is-active">Projects</a>
+        <a href="/projects/" class="is-active">Projects</a>
         <a href="/pricing/">Pricing</a>
         <a href="/ai-content-model-licensing/">Licensing</a>
         <a href="/contact/">Contact</a>
@@ -56,208 +673,404 @@
     </header>
 
     <main>
+      <!-- Editorial Page Introduction (Mockup Matched) -->
       <section class="kp-intro">
-        <p class="kp-bio">Kriyon Media is a creative production studio building distinctive visual worlds for brands, products and campaigns.</p>
+        <div class="kp-intro-top">
+          <div class="kp-intro-left">
+            <h1 class="kp-title">SELECTED WORK</h1>
+            <p class="kp-lead">Visual stories for brands, products and campaigns — crafted with a cinematic eye and a purpose.</p>
+          </div>
+          <div class="kp-intro-right">
+            <p class="kp-curation-note">A curated selection of our recent projects across fashion, jewellery, products, and films.</p>
+          </div>
+        </div>
         <div class="kp-toolbar">
           <span class="kp-filters" role="toolbar" aria-label="Filter projects by category">
-            <button class="is-active" type="button" data-filter="all">All (14)</button>
-            <button type="button" data-filter="fashion">Fashion &amp; Couture (6)</button>
-            <button type="button" data-filter="jewellery">Fine Jewellery (5)</button>
-            <button type="button" data-filter="product">Product &amp; Food (5)</button>
-            <button type="button" data-filter="video">Films &amp; Motion (11)</button>
+            <button class="is-active" type="button" data-filter="all">ALL (14)</button>
+            <button type="button" data-filter="fashion">FASHION &amp; COUTURE (6)</button>
+            <button type="button" data-filter="jewellery">FINE JEWELLERY (5)</button>
+            <button type="button" data-filter="product">PRODUCT &amp; FOOD (5)</button>
+            <button type="button" data-filter="video">FILMS &amp; MOTION (11)</button>
           </span>
           <span class="kp-views" role="group" aria-label="View switcher">
-            <button class="is-active" type="button" data-view="grid">Grid</button>
+            <button class="is-active" type="button" data-view="grid">GRID</button>
             <i>/</i>
-            <button type="button" data-view="list">Index</button>
+            <button type="button" data-view="list">INDEX</button>
           </span>
         </div>
       </section>
 
-      <section class="kp-grid" id="project-grid" aria-label="All projects">
-        <!-- 01 -->
-        <a class="kp-card" data-kind="product video" href="/work/khet/" aria-label="Khet — Kala Pani fragrance concept">
+      <!-- Asymmetric Editorial Image Grid (Reference Matched Composition) -->
+      <section class="kp-grid" id="project-grid" data-active-filter="all" aria-label="All projects">
+        
+        <!-- ROW 1: 01. SAMAIRA BRIDAL (Wide 6-col) + 02. KHET (3-col) + 03. JEWELLERY SHOWCASE (3-col) -->
+        <a class="kp-card col-span-6" data-kind="jewellery fashion video" href="/projects/samaira-bridal/" aria-label="Samaira Bridal — Heritage Emerald & Polki Suite">
+          <span class="kp-card-list-num">01</span>
+          <div class="kp-card-media">
+            <img fetchpriority="high" src="/assets/samaira-bridal/samaira-hero-thumb.jpg" alt="Samaira Bridal heritage emerald & polki campaign" width="800" height="1000" loading="eager" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
+                  <h3 class="kp-card-title">SAMAIRA BRIDAL</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">SAMAIRA BRIDAL</span>
+            <span class="kp-card-list-cat">Heritage Emerald &amp; Polki Suite · Film + Stills</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <a class="kp-card col-span-3" data-kind="product video" href="/projects/khet/" aria-label="Khet — Kala Pani fragrance concept">
+          <span class="kp-card-list-num">02</span>
           <div class="kp-card-media">
             <img fetchpriority="high" src="/assets/khet/khet-still-01.png" alt="Khet Kala Pani fragrance concept" width="2752" height="1536" loading="eager" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">PRODUCT &amp; FOOD</span>
+                  <h3 class="kp-card-title">KHET</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p><b>KHET</b> <span>Kala Pani · Fragrance Concept</span></p>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">KHET</span>
+            <span class="kp-card-list-cat">Kala Pani · Fragrance Concept</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
         </a>
-        <!-- 02 -->
-        <a class="kp-card" data-kind="jewellery" href="/work/jewellery/" aria-label="Jewellery Showcase — Fine Jewellery Details">
+
+        <a class="kp-card col-span-3" data-kind="jewellery" href="/projects/jewellery/" aria-label="Jewellery Showcase — Fine Jewellery Details">
+          <span class="kp-card-list-num">03</span>
           <div class="kp-card-media">
             <img fetchpriority="high" src="/assets/previews/pixelone/pixelone-image-110.webp" alt="Fine jewellery showcase emerald and diamond necklace on velvet display" width="1024" height="764" loading="eager" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true"><span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span><div class="ki-media-wait-line"></div></div>
-          </div>
-          <p><b>JEWELLERY SHOWCASE</b> <span>Fine Jewellery · Product Stills</span></p>
-        </a>
-        <!-- 03 -->
-        <a class="kp-card" data-kind="product video" href="/work/cinematic-cgi/" aria-label="Cinematic CGI — Product Motion Collection">
-          <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-poster.jpg" alt="Cinematic CGI product motion collection" width="1152" height="2048" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true"><span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span><div class="ki-media-wait-line"></div></div>
-          </div>
-          <p><b>CINEMATIC CGI</b> <span>Product Motion Collection · 4K Films</span></p>
-        </a>
-        <!-- 04 -->
-        <a class="kp-card" data-kind="product video" href="/work/adya-organics/" aria-label="Adya Organics — Pure A2 Gir Cow Ghee">
-          <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/previews/adya/adya-cow-ground-hero.webp" alt="Adya Organics A2 Gir Cow Ghee campaign" width="2752" height="1536" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FINE JEWELLERY</span>
+                  <h3 class="kp-card-title">JEWELLERY SHOWCASE</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p><b>ADYA ORGANICS</b> <span>Pure A2 Gir Cow Ghee · CGI Motion + Stills</span></p>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">JEWELLERY SHOWCASE</span>
+            <span class="kp-card-list-cat">Fine Jewellery · Product Stills</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
         </a>
-        <!-- 05 -->
-        <a class="kp-card" data-kind="jewellery video" href="/work/imperial-bridal-jewels/" aria-label="Bridal Shoot — Demo shoot for Talla Jewellers">
+
+        <!-- ROW 2: 04. BRIDAL SHOOT (3-col) + 05. NO CAP FOODS (Wide 6-col) + 06. CINEMATIC CGI (3-col) -->
+        <a class="kp-card col-span-3" data-kind="jewellery video" href="/projects/imperial-bridal-jewels/" aria-label="Bridal Shoot — Demo shoot for Talla Jewellers">
+          <span class="kp-card-list-num">04</span>
           <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/previews/talla/talla-couture-04.webp" alt="Talla Jewellers bridal portrait on a palace chaise" width="2752" height="1536" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
+            <img fetchpriority="low" src="/assets/previews/talla/talla-couture-01.webp" alt="Bridal Shoot demo shoot for Talla Jewellers" width="1600" height="894" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
+                  <h3 class="kp-card-title">BRIDAL SHOOT</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p><b>BRIDAL SHOOT</b> <span>Demo Shoot for Talla Jewellers · Film + Stills</span></p>
-        </a>
-        <!-- 06 -->
-        <a class="kp-card" data-kind="jewellery fashion video" href="/work/samaira-bridal/" aria-label="Samaira Bridal — Heritage Emerald & Polki Suite">
-          <div class="kp-card-media">
-            <img fetchpriority="high" src="/assets/samaira-bridal/samaira-hero-thumb.jpg" alt="Samaira Bridal campaign" width="800" height="1000" loading="eager" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
-            </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">BRIDAL SHOOT</span>
+            <span class="kp-card-list-cat">Demo Shoot for Talla Jewellers · Film + Stills</span>
           </div>
-          <p><b>SAMAIRA BRIDAL</b> <span>Heritage Emerald &amp; Polki Suite · Film + Stills</span></p>
+          <span class="kp-card-list-arrow">↗</span>
         </a>
-        <!-- 07 -->
-        <a class="kp-card" data-kind="fashion" href="/work/darzie-couture/" aria-label="Darzie Couture — Pink Couture Campaign">
-          <div class="kp-card-media">
-            <img fetchpriority="high" src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture model in a pink editorial setting" width="1792" height="2400" loading="eager" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
-            </div>
-          </div>
-          <p><b>DARZIE COUTURE</b> <span>Pink Couture Campaign · Editorial</span></p>
-        </a>
-        <!-- 08 -->
-        <a class="kp-card" data-kind="fashion video" href="/work/rutba/" aria-label="Rutba — Emerald Heritage Collection">
-          <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/previews/pixelone/rutba-13.webp" alt="Rutba campaign" width="800" height="1000" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
-            </div>
-          </div>
-          <p><b>RUTBA</b> <span>Emerald Heritage Collection · Film + Stills</span></p>
-        </a>
-        <!-- 09 -->
-        <a class="kp-card" data-kind="jewellery video" href="/work/red-jewellery/" aria-label="Ruby Reverie — Ruby & Diamond Campaign">
-          <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/previews/pixelone/pixelone-image-131.webp" alt="Ruby Reverie campaign" width="800" height="1000" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
-            </div>
-          </div>
-          <p><b>RUBY REVERIE</b> <span>Ruby &amp; Diamond Campaign · Film + Stills</span></p>
-        </a>
-        <!-- 10 -->
-        <a class="kp-card" data-kind="product video" href="/work/no-cap/" aria-label="No Cap Foods — Dynamic Snack Campaign">
+
+        <a class="kp-card col-span-6" data-kind="product video" href="/projects/no-cap/" aria-label="No Cap Foods — Dynamic Snack Campaign">
+          <span class="kp-card-list-num">05</span>
           <div class="kp-card-media">
             <img fetchpriority="low" src="/assets/previews/no-cap/studio-trio.webp" alt="No Cap Foods snack campaign" width="2752" height="1536" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">PRODUCT &amp; FOOD</span>
+                  <h3 class="kp-card-title">NO CAP FOODS</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p><b>NO CAP FOODS</b> <span>Dynamic Snack Campaign · CGI Motion + Stills</span></p>
-        </a>
-        <!-- 11 -->
-        <a class="kp-card" data-kind="product video" href="/work/blue-nectar/" aria-label="Blue Nectar — Contemporary Ayurved">
-          <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/blue-nectar/blue-nectar-attar-mist-cinematic-banner.png" alt="Blue Nectar Contemporary Ayurved" width="2752" height="1536" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true"><span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span><div class="ki-media-wait-line"></div></div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">NO CAP FOODS</span>
+            <span class="kp-card-list-cat">Dynamic Snack Campaign · CGI Motion + Stills</span>
           </div>
-          <p><b>BLUE NECTAR</b> <span>Contemporary Ayurved · CGI Films + Stills</span></p>
+          <span class="kp-card-list-arrow">↗</span>
         </a>
-        <!-- 12 -->
-        <a class="kp-card" data-kind="fashion" href="/work/clothing/" aria-label="Mehr Couture — Olive Luxury Catalogue">
+
+        <a class="kp-card col-span-3" data-kind="product video" href="/projects/cinematic-cgi/" aria-label="Cinematic CGI — Product Motion Collection">
+          <span class="kp-card-list-num">06</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-poster.jpg" alt="Cinematic CGI product motion collection" width="1152" height="2048" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FILMS &amp; MOTION</span>
+                  <h3 class="kp-card-title">CINEMATIC CGI</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">CINEMATIC CGI</span>
+            <span class="kp-card-list-cat">Product Motion Collection · 4K Films</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <!-- ROW 3: 07. RUBY REVERIE (4-col) + 08. RUTBA (4-col) + 09. DARZIE COUTURE (4-col) — LUXURY COUTURE TRIO -->
+        <a class="kp-card col-span-4" data-kind="jewellery video" href="/projects/red-jewellery/" aria-label="Ruby Reverie — Ruby & Diamond Campaign">
+          <span class="kp-card-list-num">07</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/previews/pixelone/pixelone-image-131.webp" alt="Ruby Reverie campaign" width="800" height="1000" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FINE JEWELLERY</span>
+                  <h3 class="kp-card-title">RUBY REVERIE</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">RUBY REVERIE</span>
+            <span class="kp-card-list-cat">Ruby &amp; Diamond Campaign · Film + Stills</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <a class="kp-card col-span-4" data-kind="fashion video" href="/projects/rutba/" aria-label="Rutba — Emerald Heritage Collection">
+          <span class="kp-card-list-num">08</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/previews/pixelone/rutba-13.webp" alt="Rutba campaign" width="800" height="1000" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
+                  <h3 class="kp-card-title">RUTBA</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">RUTBA</span>
+            <span class="kp-card-list-cat">Emerald Heritage Collection · Film + Stills</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <a class="kp-card col-span-4" data-kind="fashion" href="/projects/darzie-couture/" aria-label="Darzie Couture — Pink Couture Campaign">
+          <span class="kp-card-list-num">09</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/pixelone/pixelone-image-025.webp" alt="Darzie Couture pink couture campaign floral set" width="2752" height="1536" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
+                  <h3 class="kp-card-title">DARZIE COUTURE</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">DARZIE COUTURE</span>
+            <span class="kp-card-list-cat">Pink Couture Campaign · Editorial</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <!-- ROW 4: 10. ADYA ORGANICS (Wide 6-col) + 11. MEHR COUTURE (3-col) + 12. NILAYA COUTURE (3-col) -->
+        <a class="kp-card col-span-6" data-kind="product video" href="/projects/adya-organics/" aria-label="Adya Organics — Pure A2 Gir Cow Ghee">
+          <span class="kp-card-list-num">10</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/previews/adya/adya-cow-ground-hero.webp" alt="Adya Organics A2 Gir Cow Ghee campaign" width="2752" height="1536" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">PRODUCT &amp; FOOD</span>
+                  <h3 class="kp-card-title">ADYA ORGANICS</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">ADYA ORGANICS</span>
+            <span class="kp-card-list-cat">Pure A2 Gir Cow Ghee · CGI Motion + Stills</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <a class="kp-card col-span-3" data-kind="fashion" href="/projects/clothing/" aria-label="Mehr Couture — Olive Luxury Catalogue">
+          <span class="kp-card-list-num">11</span>
           <div class="kp-card-media">
             <img fetchpriority="low" src="/assets/previews/pixelone/pixelone-image-014.webp" alt="Mehr Couture campaign" width="800" height="1000" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
+                  <h3 class="kp-card-title">MEHR COUTURE</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p><b>MEHR COUTURE</b> <span>Olive Luxury Catalogue · Editorial Stills</span></p>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">MEHR COUTURE</span>
+            <span class="kp-card-list-cat">Olive Luxury Catalogue · Editorial Stills</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
         </a>
-        <!-- 13 -->
-        <a class="kp-card" data-kind="fashion video" href="/work/blue/" aria-label="Nilaya Couture — Royal Sapphire Velvet">
+
+        <a class="kp-card col-span-3" data-kind="fashion video" href="/projects/blue/" aria-label="Nilaya Couture — Royal Sapphire Velvet">
+          <span class="kp-card-list-num">12</span>
           <div class="kp-card-media">
             <img fetchpriority="low" src="/assets/previews/blue/blue-couture-05.webp" alt="Nilaya Couture editorial portrait" width="2400" height="1792" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true">
-              <span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span>
-              <div class="ki-media-wait-line"></div>
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
+                  <h3 class="kp-card-title">NILAYA COUTURE</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
             </div>
           </div>
-          <p><b>NILAYA COUTURE</b> <span>Royal Sapphire Velvet · 4K Cinema</span></p>
-        </a>
-        <!-- 14 -->
-        <a class="kp-card" data-kind="fashion jewellery video" href="/work/fashion-reels/" aria-label="Fashion Reels — Couture and Jewellery Motion">
-          <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/fashion-reels/jewellery-fashion-reel-01-poster.jpg" alt="Fashion Reels couture and jewellery motion collection" width="1080" height="1920" loading="lazy" decoding="async" />
-            <div class="ki-media-wait-notice" aria-hidden="true"><span class="ki-media-wait-text">GOOD THINGS TAKE TIME.</span><div class="ki-media-wait-line"></div></div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">NILAYA COUTURE</span>
+            <span class="kp-card-list-cat">Royal Sapphire Velvet · 4K Cinema</span>
           </div>
-          <p><b>FASHION REELS</b> <span>Couture &amp; Jewellery Motion · 4K Films</span></p>
+          <span class="kp-card-list-arrow">↗</span>
         </a>
+
+        <!-- ROW 5: 13. BLUE NECTAR (6-col) + 14. FASHION REELS (6-col) — BALANCED CINEMATIC FINAL ROW -->
+        <a class="kp-card col-span-6" data-kind="product video" href="/projects/blue-nectar/" aria-label="Blue Nectar — Contemporary Ayurved">
+          <span class="kp-card-list-num">13</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/blue-nectar/blue-nectar-attar-mist-cinematic-banner.png" alt="Blue Nectar Contemporary Ayurved" width="2752" height="1536" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">PRODUCT &amp; FOOD</span>
+                  <h3 class="kp-card-title">BLUE NECTAR</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">BLUE NECTAR</span>
+            <span class="kp-card-list-cat">Contemporary Ayurved · CGI Films + Stills</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <a class="kp-card col-span-6" data-kind="fashion jewellery video" href="/projects/fashion-reels/" aria-label="Fashion Reels — Couture and Jewellery Motion">
+          <span class="kp-card-list-num">14</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/talla/talla-film-wide-poster.jpg" alt="Fashion Reels couture and jewellery motion collection" width="4096" height="2284" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FILMS &amp; MOTION</span>
+                  <h3 class="kp-card-title">FASHION REELS</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">FASHION REELS</span>
+            <span class="kp-card-list-cat">Couture &amp; Jewellery Motion · 4K Films</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
       </section>
     </main>
 
     <footer class="ki-footer" id="contact">
-  <div class="ki-footer-inner">
-    <div class="ki-footer-lead">
-      <p>Brand stories, campaigns,<br />and everything visual in between.</p>
-      <a href="mailto:kriyon@repixelx.tech">kriyon@repixelx.tech <span aria-hidden="true">↗</span></a>
-    </div>
-    <div class="ki-footer-directory">
-      <nav class="ki-footer-sitemap" aria-label="Footer sitemap">
-        <span>SITEMAP</span>
-        <a href="/">Home <sup>01</sup></a>
-        <a href="/work/">Projects <sup>02</sup></a>
-        <a href="/#services">Services <sup>03</sup></a>
-        <a href="/pricing/">Pricing <sup>04</sup></a>
-        <a href="/ai-content-model-licensing/">Licensing <sup>05</sup></a>
-        <a href="/contact/">Contact <sup>06</sup></a>
-      </nav>
-      <div class="ki-footer-socials">
-        <span>CONNECT</span>
-        <a href="https://instagram.com/kriyonmedia" target="_blank" rel="noreferrer">Instagram ↗</a>
-        <a href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WhatsApp ↗</a>
-        <a href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20book%20a%20meeting." target="_blank" rel="noreferrer">Book a meeting ↗</a>
-        <a href="tel:+919622121100">+91 96221 21100</a>
+      <div class="ki-footer-inner">
+        <div class="ki-footer-lead">
+          <p>Brand stories, campaigns,<br />and everything visual in between.</p>
+          <a href="mailto:kriyon@repixelx.tech">kriyon@repixelx.tech <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="ki-footer-directory">
+          <nav class="ki-footer-sitemap" aria-label="Footer sitemap">
+            <span>SITEMAP</span>
+            <a href="/">Home <sup>01</sup></a>
+            <a href="/projects/">Projects <sup>02</sup></a>
+            <a href="/#services">Services <sup>03</sup></a>
+            <a href="/pricing/">Pricing <sup>04</sup></a>
+            <a href="/ai-content-model-licensing/">Licensing <sup>05</sup></a>
+            <a href="/contact/">Contact <sup>06</sup></a>
+          </nav>
+          <div class="ki-footer-socials">
+            <span>CONNECT</span>
+            <a href="https://instagram.com/kriyonmedia" target="_blank" rel="noreferrer">Instagram ↗</a>
+            <a href="https://wa.me/919622121100" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+            <a href="https://wa.me/919622121100?text=Hi%20Kriyon%20Media%2C%20I%27d%20like%20to%20book%20a%20meeting." target="_blank" rel="noreferrer">Book a meeting ↗</a>
+            <a href="tel:+919622121100">+91 96221 21100</a>
+          </div>
+          <div class="ki-footer-studio">
+            <span>THE STUDIO</span>
+            <p>Creative production for brands with a point of view.</p>
+            <small>Based in India · Available globally<br />A creative venture by Kriyon Group Pvt. Ltd.</small>
+          </div>
+        </div>
+        <div class="ki-footer-brandline">
+          <a class="ki-footer-wordmark" href="/" aria-label="Kriyon Media home">KRIYON MEDIA<span>®</span></a>
+          <div class="ki-footer-meta">
+            <small>© 2026 Kriyon Media</small>
+            <a href="#top">BACK TO TOP ↑</a>
+          </div>
+        </div>
       </div>
-      <div class="ki-footer-studio">
-        <span>THE STUDIO</span>
-        <p>Creative production for brands with a point of view.</p>
-        <small>Based in India · Available globally<br />A creative venture by Kriyon Group Pvt. Ltd.</small>
-      </div>
-    </div>
-    <div class="ki-footer-brandline">
-      <a class="ki-footer-wordmark" href="/" aria-label="Kriyon Media home">KRIYON MEDIA<span>®</span></a>
-      <div class="ki-footer-meta">
-        <small>© 2026 Kriyon Media</small>
-        <a href="#top">BACK TO TOP ↑</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
   </div>
 
   <script>
@@ -303,13 +1116,13 @@
       applyFilter(initialFilter);
     }
 
+    // View toggle: Grid vs Index (List)
     document.querySelectorAll('[data-view]').forEach(b => b.addEventListener('click', () => {
       document.querySelectorAll('[data-view]').forEach(x => x.classList.toggle('is-active', x === b));
       grid.classList.toggle('is-list', b.dataset.view === 'list');
     }));
 
-
-
+    // Mobile navigation menu toggle
     document.querySelector('.kp-menu-toggle')?.addEventListener('click', e => {
       const h = document.querySelector('.kp-header'), b = e.currentTarget, o = h.classList.toggle('is-menu-open');
       b.setAttribute('aria-expanded', o);
