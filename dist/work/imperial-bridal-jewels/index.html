@@ -51,19 +51,25 @@
   <style>
     .talla-page .ep-row-full .ep-frame { aspect-ratio: auto !important; height: auto !important; width: 100%; }
     .talla-page .ep-row-full .ep-frame img { display: block; width: 100%; height: auto !important; object-fit: contain !important; }
+    .talla-page .ep-row-full .ep-frame-video { aspect-ratio: 4096 / 2284 !important; width: 100%; }
+    .talla-page .ep-row-full .ep-frame-video video { width: 100%; height: 100%; object-fit: cover; }
     .talla-page .ep-gallery { gap: 6px; }
-    .talla-combo-grid { display: grid; grid-template-columns: minmax(0, 0.3575fr) minmax(0, 0.6425fr); gap: 6px; align-items: start; }
-    .talla-combo-left .ep-frame-video { width: 100%; height: auto; aspect-ratio: 9 / 16; }
+    .talla-combo-grid { display: grid; grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr); gap: 6px; align-items: stretch !important; width: 100%; }
+    .talla-combo-left { display: flex; flex-direction: column; width: 100%; height: 100%; }
+    .talla-combo-left .ep-frame-video { position: relative; width: 100%; height: 100% !important; aspect-ratio: 9 / 16; overflow: hidden; background: #090909; border-radius: 2px; }
     .talla-combo-left .ep-frame-video video { width: 100%; height: 100%; object-fit: cover; }
-    .talla-combo-right { display: flex; flex-direction: column; gap: 6px; min-height: 0; }
-    .talla-combo-right .ep-frame { position: relative; width: 100%; height: auto !important; aspect-ratio: auto !important; }
-    .talla-combo-right .ep-frame img { display: block; width: 100%; height: auto !important; object-fit: contain !important; }
+    .talla-combo-right { display: grid !important; grid-template-rows: 1fr 1fr !important; gap: 6px !important; width: 100%; height: 100% !important; min-height: 0; justify-content: stretch !important; }
+    .talla-combo-right .ep-frame { position: relative; width: 100%; height: 100% !important; aspect-ratio: auto !important; overflow: hidden; background: #0d0d0f; border-radius: 2px; }
+    .talla-combo-right .ep-frame img { display: block; width: 100%; height: 100% !important; object-fit: cover !important; }
     .ep-row-craftsmanship { display: grid; grid-template-columns: 1fr 1.792fr; gap: 6px; align-items: stretch; }
     .ep-row-craftsmanship .ep-frame { height: 100%; }
     .ep-row-craftsmanship .ep-frame img { width: 100%; height: 100%; object-fit: cover; }
     @media (max-width: 768px) {
-      .talla-combo-grid { grid-template-columns: 1fr !important; }
-      .talla-combo-left .ep-frame-video { aspect-ratio: 9 / 16; }
+      .talla-combo-grid { grid-template-columns: 1fr !important; gap: 6px !important; }
+      .talla-combo-left .ep-frame-video { aspect-ratio: 9 / 16 !important; height: auto !important; }
+      .talla-combo-right { display: flex !important; flex-direction: column !important; gap: 6px !important; height: auto !important; }
+      .talla-combo-right .ep-frame { aspect-ratio: 16 / 9 !important; height: auto !important; }
+      .talla-combo-right .ep-frame img { height: auto !important; object-fit: cover !important; }
       .ep-row-craftsmanship { grid-template-columns: 1fr !important; }
     }
   </style>
@@ -81,7 +87,7 @@
     <!-- Clean Minimal Topbar -->
     <header class="ep-topbar">
       <div class="ep-topbar-left">
-        <a class="ep-back-btn" href="/work/" aria-label="Back to projects">
+        <a class="ep-back-btn" href="/projects/" aria-label="Back to projects">
           <span class="ep-back-arrow">←</span>
           <span>BACK TO PROJECTS</span>
         </a>
@@ -263,7 +269,7 @@
       <nav class="ki-footer-sitemap" aria-label="Footer sitemap">
         <span>SITEMAP</span>
         <a href="/">Home <sup>01</sup></a>
-        <a href="/work/">Projects <sup>02</sup></a>
+        <a href="/projects/">Projects <sup>02</sup></a>
         <a href="/#services">Services <sup>03</sup></a>
         <a href="/pricing/">Pricing <sup>04</sup></a>
         <a href="/ai-content-model-licensing/">Licensing <sup>05</sup></a>

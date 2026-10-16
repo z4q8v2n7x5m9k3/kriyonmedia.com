@@ -7344,19 +7344,18 @@ button[data-rutba-image*="rutba-03"] img {
 }
 
 .talla-combo-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   gap: 6px;
   width: 100%;
   height: 100%;
+  justify-content: stretch;
 }
 
 .talla-combo-right .ep-frame {
   position: relative;
   width: 100%;
-  flex: 1;
-  aspect-ratio: 2752 / 1536;
+  height: 100%;
   border-radius: 2px;
   overflow: hidden;
   background: #0d0d0f;
@@ -8197,19 +8196,18 @@ button[data-rutba-image*="rutba-03"] img {
 }
 
 .khet-combo-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   gap: 6px;
   width: 100%;
   height: 100%;
+  justify-content: stretch;
 }
 
 .khet-combo-right .ep-frame {
   position: relative;
   width: 100%;
-  flex: 1;
-  aspect-ratio: 2752 / 1536;
+  height: 100%;
   border-radius: 2px;
   overflow: hidden;
   background: #0d0d0f;
