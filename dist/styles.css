@@ -9250,3 +9250,40 @@ button[data-rutba-image*="rutba-03"] img {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ============================================================
+   UNIVERSAL ANTI-EMOJI SAFEGUARD & VECTOR ARROW ALIGNMENT
+   Guarantees iOS Safari / WebKit never renders Unicode arrows as Apple Color Emoji
+   ============================================================ */
+html, body, button, a, span, p, h1, h2, h3, h4, i, small {
+  font-variant-emoji: text;
+}
+
+.ki-btn-arrow,
+.ki-footer-arrow,
+.ki-va-arrow,
+.ki-card-arrow,
+.offer-arrow svg,
+.kp-card-list-arrow svg {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+  pointer-events: none !important;
+}
+
+.ki-inquiry-btn svg.ki-btn-arrow {
+  margin-left: 2px !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.ki-inquiry-btn:hover svg.ki-btn-arrow {
+  transform: translate(1.5px, -1.5px) !important;
+}
+
+.ki-footer a svg.ki-footer-arrow {
+  transition: transform 0.2s ease !important;
+}
+
+.ki-footer a:hover svg.ki-footer-arrow {
+  transform: translate(1px, -1px) !important;
+}
