@@ -209,39 +209,41 @@
       display: none !important;
     }
 
-    /* Asymmetric 12-Column Editorial Grid Layout — Expansive Edge-to-Edge Margins */
-    .portfolio-editorial .kp-grid:not(.is-list) {
-      display: grid !important;
-      grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
-      gap: clamp(14px, 1.4vw, 22px) !important;
-      padding: clamp(12px, 1.4vw, 20px) clamp(16px, 2.5vw, 40px) clamp(80px, 8vw, 120px) !important;
-      max-width: 100% !important;
-      margin: 0 auto !important;
-      width: 100% !important;
-      align-items: stretch !important;
-    }
+    /* Asymmetric 12-Column Editorial Grid Layout (Desktop & Tablets Only) */
+    @media (min-width: 769px) {
+      .portfolio-editorial .kp-grid:not(.is-list) {
+        display: grid !important;
+        grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+        gap: clamp(14px, 1.4vw, 22px) !important;
+        padding: clamp(12px, 1.4vw, 20px) clamp(16px, 2.5vw, 40px) clamp(80px, 8vw, 120px) !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        align-items: stretch !important;
+      }
 
-    /* Asymmetric composition matching reference mockup when in "all" view */
-    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-6,
-    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-6 {
-      grid-column: span 6 !important;
-    }
-    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-4,
-    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-4 {
-      grid-column: span 4 !important;
-    }
-    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-3,
-    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-3 {
-      grid-column: span 3 !important;
-    }
-    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-12,
-    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-12 {
-      grid-column: span 12 !important;
-    }
+      /* Asymmetric composition matching reference mockup when in "all" view */
+      .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-6,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-6 {
+        grid-column: span 6 !important;
+      }
+      .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-4,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-4 {
+        grid-column: span 4 !important;
+      }
+      .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-3,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-3 {
+        grid-column: span 3 !important;
+      }
+      .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-12,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-12 {
+        grid-column: span 12 !important;
+      }
 
-    /* Reset to balanced 3-column flow when filtered by category */
-    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter]:not([data-active-filter="all"]) .kp-card {
-      grid-column: span 4 !important;
+      /* Reset to balanced 3-column flow when filtered by category */
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter]:not([data-active-filter="all"]) .kp-card {
+        grid-column: span 4 !important;
+      }
     }
 
     /* Completely eliminate old viewfinder corner brackets / weird hover arrows */
@@ -295,27 +297,30 @@
       border-radius: 0px !important;
     }
 
-    /* Wide card aspect ratio when spanning 6 columns */
-    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-6 .kp-card-media,
-    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-6 .kp-card-media {
-      aspect-ratio: 16 / 10.2 !important;
-    }
+    /* Desktop-only aspect ratios */
+    @media (min-width: 769px) {
+      /* Wide card aspect ratio when spanning 6 columns */
+      .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-6 .kp-card-media,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-6 .kp-card-media {
+        aspect-ratio: 16 / 10.2 !important;
+      }
 
-    /* 4-column balanced cards (Ruby Reverie, Blue Nectar) */
-    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-4 .kp-card-media,
-    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-4 .kp-card-media {
-      aspect-ratio: 1 / 1.04 !important;
-    }
+      /* 4-column balanced cards (Ruby Reverie, Blue Nectar) */
+      .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card.col-span-4 .kp-card-media,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-4 .kp-card-media {
+        aspect-ratio: 1 / 1.04 !important;
+      }
 
-    /* Uneven Editorial Accent: Rutba tall magazine portrait proportion */
-    .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card[href*="rutba"] .kp-card-media,
-    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card[href*="rutba"] .kp-card-media {
-      aspect-ratio: 1 / 1.34 !important;
-    }
+      /* Uneven Editorial Accent: Rutba tall magazine portrait proportion */
+      .portfolio-editorial .kp-grid:not(.is-list):not([data-active-filter]) .kp-card[href*="rutba"] .kp-card-media,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card[href*="rutba"] .kp-card-media {
+        aspect-ratio: 1 / 1.34 !important;
+      }
 
-    /* When filtered to uniform 3-columns */
-    .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter]:not([data-active-filter="all"]) .kp-card .kp-card-media {
-      aspect-ratio: 1 / 1.05 !important;
+      /* When filtered to uniform 3-columns */
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter]:not([data-active-filter="all"]) .kp-card .kp-card-media {
+        aspect-ratio: 1 / 1.05 !important;
+      }
     }
 
     /* High quality image rendering & subtle zoom */
@@ -592,25 +597,56 @@
         display: none !important;
       }
 
-      /* Single Column Editorial on Mobile */
+      /* Single Column Editorial on Mobile (Strictly 1 Card Per Row) */
       .portfolio-editorial .kp-grid:not(.is-list) {
+        display: flex !important;
+        flex-direction: column !important;
         grid-template-columns: 1fr !important;
-        gap: 12px !important;
-        padding: 8px 12px 64px !important;
+        gap: 14px !important;
+        padding: 6px 12px 64px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
-      .portfolio-editorial .kp-grid:not(.is-list) .kp-card {
-        grid-column: span 1 !important;
+      .portfolio-editorial .kp-grid:not(.is-list) .kp-card,
+      .portfolio-editorial .kp-grid .kp-card,
+      .portfolio-editorial .kp-card.col-span-6,
+      .portfolio-editorial .kp-card.col-span-4,
+      .portfolio-editorial .kp-card.col-span-3,
+      .portfolio-editorial .kp-card.col-span-12,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-6,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-4,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-3,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card.col-span-12 {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
       }
 
-      .portfolio-editorial .kp-card-media {
-        aspect-ratio: 4 / 3.2 !important;
+      .portfolio-editorial .kp-card-media,
+      .portfolio-editorial .kp-card .kp-card-media,
+      .portfolio-editorial .kp-card.col-span-6 .kp-card-media,
+      .portfolio-editorial .kp-card.col-span-4 .kp-card-media,
+      .portfolio-editorial .kp-card.col-span-3 .kp-card-media,
+      .portfolio-editorial .kp-card.col-span-12 .kp-card-media,
+      .portfolio-editorial a.kp-card .kp-card-media,
+      .portfolio-editorial .kp-card[href*="rutba"] .kp-card-media,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card[href*="rutba"] .kp-card-media {
+        width: 100% !important;
+        aspect-ratio: 16 / 10.5 !important;
+        height: auto !important;
       }
-      .portfolio-editorial .kp-grid:not(.is-list) .kp-card.col-span-6 .kp-card-media {
-        aspect-ratio: 16 / 11 !important;
-      }
-      .portfolio-editorial .kp-grid:not(.is-list) .kp-card.col-span-12 .kp-card-media {
-        aspect-ratio: 16 / 10 !important;
+
+      .portfolio-editorial .kp-card-media img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
       }
 
       .portfolio-editorial .kp-card-overlay {
@@ -638,11 +674,17 @@
       .portfolio-editorial .kp-title {
         font-size: 32px !important;
       }
-      .portfolio-editorial .kp-card-media {
-        aspect-ratio: 1.15 / 1 !important;
-      }
-      .portfolio-editorial .kp-card.col-span-6 .kp-card-media {
-        aspect-ratio: 4 / 3 !important;
+      .portfolio-editorial .kp-card-media,
+      .portfolio-editorial .kp-card .kp-card-media,
+      .portfolio-editorial .kp-card.col-span-6 .kp-card-media,
+      .portfolio-editorial .kp-card.col-span-4 .kp-card-media,
+      .portfolio-editorial .kp-card.col-span-3 .kp-card-media,
+      .portfolio-editorial .kp-card.col-span-12 .kp-card-media,
+      .portfolio-editorial a.kp-card .kp-card-media,
+      .portfolio-editorial .kp-card[href*="rutba"] .kp-card-media,
+      .portfolio-editorial .kp-grid:not(.is-list)[data-active-filter="all"] .kp-card[href*="rutba"] .kp-card-media {
+        aspect-ratio: 16 / 10.5 !important;
+        height: auto !important;
       }
       .portfolio-editorial .kp-card-title {
         font-size: 14.5px !important;
@@ -765,32 +807,9 @@
           <span class="kp-card-list-arrow">↗</span>
         </a>
 
-        <!-- ROW 2: 04. DARZIE COUTURE (Wide 6-col) + 05. SAMAIRA BRIDAL (3-col) + 06. RUTBA (3-col) — HIGH FASHION EDITORIAL -->
-        <a class="kp-card col-span-6" data-kind="fashion" href="/projects/darzie-couture/" aria-label="Darzie Couture — Pink Couture Campaign">
-          <span class="kp-card-list-num">04</span>
-          <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture pink couture campaign editorial portrait" width="1792" height="2400" loading="lazy" decoding="async" />
-            <div class="kp-card-overlay">
-              <div class="kp-card-bottom">
-                <div class="kp-card-text">
-                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
-                  <h3 class="kp-card-title">DARZIE COUTURE</h3>
-                </div>
-                <div class="kp-card-action" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="kp-card-list-info">
-            <span class="kp-card-list-title">DARZIE COUTURE</span>
-            <span class="kp-card-list-cat">Pink Couture Campaign · Editorial</span>
-          </div>
-          <span class="kp-card-list-arrow">↗</span>
-        </a>
-
+        <!-- ROW 2: 04. SAMAIRA BRIDAL (3-col) + 05. RUTBA (3-col) + 06. DARZIE COUTURE (Wide 6-col) — INVERTED HIGH FASHION EDITORIAL -->
         <a class="kp-card col-span-3" data-kind="jewellery fashion video" href="/projects/samaira-bridal/" aria-label="Samaira Bridal — Heritage Emerald & Polki Suite">
-          <span class="kp-card-list-num">05</span>
+          <span class="kp-card-list-num">04</span>
           <div class="kp-card-media">
             <img fetchpriority="low" src="/assets/samaira-bridal/samaira-hero-thumb.jpg" alt="Samaira Bridal heritage emerald & polki campaign" width="800" height="1000" loading="lazy" decoding="async" />
             <div class="kp-card-overlay">
@@ -813,7 +832,7 @@
         </a>
 
         <a class="kp-card col-span-3" data-kind="fashion video" href="/projects/rutba/" aria-label="Rutba — Emerald Heritage Collection">
-          <span class="kp-card-list-num">06</span>
+          <span class="kp-card-list-num">05</span>
           <div class="kp-card-media">
             <img fetchpriority="low" src="/assets/previews/pixelone/rutba-13.webp" alt="Rutba campaign" width="800" height="1000" loading="lazy" decoding="async" />
             <div class="kp-card-overlay">
@@ -831,6 +850,29 @@
           <div class="kp-card-list-info">
             <span class="kp-card-list-title">RUTBA</span>
             <span class="kp-card-list-cat">Emerald Heritage Collection · Film + Stills</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <a class="kp-card col-span-6" data-kind="fashion" href="/projects/darzie-couture/" aria-label="Darzie Couture — Pink Couture Campaign">
+          <span class="kp-card-list-num">06</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture pink couture campaign editorial portrait" width="1792" height="2400" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
+                  <h3 class="kp-card-title">DARZIE COUTURE</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">DARZIE COUTURE</span>
+            <span class="kp-card-list-cat">Pink Couture Campaign · Editorial</span>
           </div>
           <span class="kp-card-list-arrow">↗</span>
         </a>
@@ -906,32 +948,9 @@
           <span class="kp-card-list-arrow">↗</span>
         </a>
 
-        <!-- ROW 4: 10. NO CAP FOODS (Wide 6-col) + 11. KHET (3-col) + 12. CINEMATIC CGI (3-col) — PRODUCT, FOOD & CGI -->
-        <a class="kp-card col-span-6" data-kind="product video" href="/projects/no-cap/" aria-label="No Cap Foods — Dynamic Snack Campaign">
-          <span class="kp-card-list-num">10</span>
-          <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/previews/no-cap/studio-trio.webp" alt="No Cap Foods snack campaign" width="2752" height="1536" loading="lazy" decoding="async" />
-            <div class="kp-card-overlay">
-              <div class="kp-card-bottom">
-                <div class="kp-card-text">
-                  <span class="kp-card-badge">PRODUCT &amp; FOOD</span>
-                  <h3 class="kp-card-title">NO CAP FOODS</h3>
-                </div>
-                <div class="kp-card-action" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="kp-card-list-info">
-            <span class="kp-card-list-title">NO CAP FOODS</span>
-            <span class="kp-card-list-cat">Dynamic Snack Campaign · CGI Motion + Stills</span>
-          </div>
-          <span class="kp-card-list-arrow">↗</span>
-        </a>
-
+        <!-- ROW 4: 10. KHET (3-col) + 11. CINEMATIC CGI (3-col) + 12. NO CAP FOODS (Wide 6-col) — INVERTED PRODUCT, FOOD & CGI -->
         <a class="kp-card col-span-3" data-kind="product video" href="/projects/khet/" aria-label="Khet — Kala Pani fragrance concept">
-          <span class="kp-card-list-num">11</span>
+          <span class="kp-card-list-num">10</span>
           <div class="kp-card-media">
             <img fetchpriority="high" src="/assets/khet/khet-still-01.png" alt="Khet Kala Pani fragrance concept" width="2752" height="1536" loading="eager" decoding="async" />
             <div class="kp-card-overlay">
@@ -954,7 +973,7 @@
         </a>
 
         <a class="kp-card col-span-3" data-kind="product video" href="/projects/cinematic-cgi/" aria-label="Cinematic CGI — Product Motion Collection">
-          <span class="kp-card-list-num">12</span>
+          <span class="kp-card-list-num">11</span>
           <div class="kp-card-media">
             <img fetchpriority="low" src="/assets/blue-nectar/kriyon-media-blue-nectar-cgi-rose-corridor-poster.jpg" alt="Cinematic CGI product motion collection" width="1152" height="2048" loading="lazy" decoding="async" />
             <div class="kp-card-overlay">
@@ -972,6 +991,29 @@
           <div class="kp-card-list-info">
             <span class="kp-card-list-title">CINEMATIC CGI</span>
             <span class="kp-card-list-cat">Product Motion Collection · 4K Films</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <a class="kp-card col-span-6" data-kind="product video" href="/projects/no-cap/" aria-label="No Cap Foods — Dynamic Snack Campaign">
+          <span class="kp-card-list-num">12</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/previews/no-cap/studio-trio.webp" alt="No Cap Foods snack campaign" width="2752" height="1536" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">PRODUCT &amp; FOOD</span>
+                  <h3 class="kp-card-title">NO CAP FOODS</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">NO CAP FOODS</span>
+            <span class="kp-card-list-cat">Dynamic Snack Campaign · CGI Motion + Stills</span>
           </div>
           <span class="kp-card-list-arrow">↗</span>
         </a>
