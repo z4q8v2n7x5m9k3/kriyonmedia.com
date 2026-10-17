@@ -3719,13 +3719,13 @@ body {
   object-position: center 18% !important;
 }
 
-/* Darzie Couture: palace courtyard with marigolds and hot pink couture */
+/* Darzie Couture: editorial movement portrait */
 .ki-work-card[href*="darzie-couture"] img {
-  object-position: center center !important;
+  object-position: center 20% !important;
 }
 .kp-card[href*="darzie-couture"] img,
 .kp-grid > a[href*="darzie-couture"] img {
-  object-position: center 14% !important;
+  object-position: center 20% !important;
 }
 
 /* Rutba: emerald heritage kurti by sandstone palace pillar */

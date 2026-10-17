@@ -50,7 +50,7 @@
     }
 
     .portfolio-editorial .kp-intro {
-      padding: clamp(20px, 2.2vw, 36px) clamp(16px, 2.5vw, 40px) clamp(10px, 1.2vw, 16px) !important;
+      padding: clamp(10px, 1.2vw, 18px) clamp(16px, 2.5vw, 40px) clamp(6px, 0.8vw, 10px) !important;
       max-width: 100% !important;
       margin: 0 auto !important;
     }
@@ -76,7 +76,7 @@
       letter-spacing: -0.04em !important;
       line-height: 0.92 !important;
       color: #080808 !important;
-      margin: 0 0 clamp(8px, 1vw, 12px) !important;
+      margin: 0 0 clamp(6px, 0.8vw, 10px) !important;
       text-transform: uppercase !important;
     }
 
@@ -111,7 +111,7 @@
       align-items: center !important;
       justify-content: space-between !important;
       gap: 12px !important;
-      margin-top: clamp(16px, 1.8vw, 24px) !important;
+      margin-top: clamp(10px, 1.2vw, 16px) !important;
       padding-top: 0 !important;
       padding-bottom: clamp(10px, 1.2vw, 16px) !important;
       border: none !important;
@@ -123,7 +123,7 @@
     .portfolio-editorial .kp-filters {
       display: inline-flex !important;
       align-items: center !important;
-      gap: 6px !important;
+      gap: 7px !important;
       overflow-x: auto !important;
       white-space: nowrap !important;
       -webkit-overflow-scrolling: touch !important;
@@ -134,44 +134,40 @@
       display: none !important;
     }
 
-    /* Apple Frosted Glass Category Filter Badges */
+    /* Elevated Modern Luxury Category Filter Tags */
     .portfolio-editorial .kp-filters button {
       position: relative !important;
       display: inline-flex !important;
       align-items: center !important;
-      gap: 5px !important;
-      padding: 5.5px 13px !important;
+      gap: 6px !important;
+      padding: 6.5px 15px !important;
       border-radius: 9999px !important;
-      background: rgba(0, 0, 0, 0.035) !important;
-      backdrop-filter: blur(14px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
-      border: 1px solid rgba(0, 0, 0, 0.075) !important;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
-      color: #3e3e3a !important;
+      background: #f4f4f2 !important;
+      border: 1px solid rgba(0, 0, 0, 0.08) !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+      color: #2e2e2a !important;
       font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
       font-size: 10px !important;
       font-weight: 600 !important;
-      letter-spacing: 0.04em !important;
+      letter-spacing: 0.05em !important;
       text-transform: uppercase !important;
       cursor: pointer !important;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
     .portfolio-editorial .kp-filters button:hover {
-      background: rgba(0, 0, 0, 0.065) !important;
-      border-color: rgba(0, 0, 0, 0.15) !important;
+      background: #e8e8e4 !important;
+      border-color: rgba(0, 0, 0, 0.16) !important;
       color: #050505 !important;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
       transform: translateY(-1px) !important;
     }
 
     .portfolio-editorial .kp-filters button.is-active {
       background: #09090b !important;
-      backdrop-filter: blur(16px) saturate(180%) !important;
-      -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
       border: 1px solid #09090b !important;
       color: #ffffff !important;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), inset 0 1px 0.5px rgba(255, 255, 255, 0.28) !important;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18) !important;
       transform: translateY(0) !important;
     }
 
@@ -560,7 +556,7 @@
        ============================================================ */
     @media (max-width: 768px) {
       .portfolio-editorial .kp-intro {
-        padding: 20px 14px 10px !important;
+        padding: 14px 12px 6px !important;
       }
       .portfolio-editorial .kp-intro-right {
         display: none !important;
@@ -699,16 +695,16 @@
       <!-- Asymmetric Editorial Image Grid (Reference Matched Composition) -->
       <section class="kp-grid" id="project-grid" data-active-filter="all" aria-label="All projects">
         
-        <!-- ROW 1: 01. SAMAIRA BRIDAL (Wide 6-col) + 02. JEWELLERY SHOWCASE (3-col) + 03. RUBY REVERIE (3-col) — FINE JEWELLERY & BRIDAL -->
-        <a class="kp-card col-span-6" data-kind="jewellery fashion video" href="/projects/samaira-bridal/" aria-label="Samaira Bridal — Heritage Emerald & Polki Suite">
+        <!-- ROW 1: 01. BRIDAL SHOOT (Wide 6-col) + 02. JEWELLERY SHOWCASE (3-col) + 03. RUBY REVERIE (3-col) — HIGH BRIDAL & FINE JEWELLERY -->
+        <a class="kp-card col-span-6" data-kind="jewellery video" href="/projects/imperial-bridal-jewels/" aria-label="Bridal Shoot — Demo shoot for Talla Jewellers">
           <span class="kp-card-list-num">01</span>
           <div class="kp-card-media">
-            <img fetchpriority="high" src="/assets/samaira-bridal/samaira-hero-thumb.jpg" alt="Samaira Bridal heritage emerald & polki campaign" width="800" height="1000" loading="eager" decoding="async" />
+            <img fetchpriority="high" src="/assets/previews/talla/talla-couture-04.webp" alt="Bridal Shoot demo shoot for Talla Jewellers" width="1600" height="894" loading="eager" decoding="async" />
             <div class="kp-card-overlay">
               <div class="kp-card-bottom">
                 <div class="kp-card-text">
                   <span class="kp-card-badge">FASHION &amp; COUTURE</span>
-                  <h3 class="kp-card-title">SAMAIRA BRIDAL</h3>
+                  <h3 class="kp-card-title">BRIDAL SHOOT</h3>
                 </div>
                 <div class="kp-card-action" aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -717,8 +713,8 @@
             </div>
           </div>
           <div class="kp-card-list-info">
-            <span class="kp-card-list-title">SAMAIRA BRIDAL</span>
-            <span class="kp-card-list-cat">Heritage Emerald &amp; Polki Suite · Film + Stills</span>
+            <span class="kp-card-list-title">BRIDAL SHOOT</span>
+            <span class="kp-card-list-cat">Demo Shoot for Talla Jewellers · Film + Stills</span>
           </div>
           <span class="kp-card-list-arrow">↗</span>
         </a>
@@ -769,34 +765,11 @@
           <span class="kp-card-list-arrow">↗</span>
         </a>
 
-        <!-- ROW 2: 04. BRIDAL SHOOT (3-col) + 05. DARZIE COUTURE (Wide 6-col) + 06. RUTBA (3-col) — HIGH FASHION EDITORIAL -->
-        <a class="kp-card col-span-3" data-kind="jewellery video" href="/projects/imperial-bridal-jewels/" aria-label="Bridal Shoot — Demo shoot for Talla Jewellers">
+        <!-- ROW 2: 04. DARZIE COUTURE (Wide 6-col) + 05. SAMAIRA BRIDAL (3-col) + 06. RUTBA (3-col) — HIGH FASHION EDITORIAL -->
+        <a class="kp-card col-span-6" data-kind="fashion" href="/projects/darzie-couture/" aria-label="Darzie Couture — Pink Couture Campaign">
           <span class="kp-card-list-num">04</span>
           <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/previews/talla/talla-couture-04.webp" alt="Bridal Shoot demo shoot for Talla Jewellers" width="1600" height="894" loading="lazy" decoding="async" />
-            <div class="kp-card-overlay">
-              <div class="kp-card-bottom">
-                <div class="kp-card-text">
-                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
-                  <h3 class="kp-card-title">BRIDAL SHOOT</h3>
-                </div>
-                <div class="kp-card-action" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="kp-card-list-info">
-            <span class="kp-card-list-title">BRIDAL SHOOT</span>
-            <span class="kp-card-list-cat">Demo Shoot for Talla Jewellers · Film + Stills</span>
-          </div>
-          <span class="kp-card-list-arrow">↗</span>
-        </a>
-
-        <a class="kp-card col-span-6" data-kind="fashion" href="/projects/darzie-couture/" aria-label="Darzie Couture — Pink Couture Campaign">
-          <span class="kp-card-list-num">05</span>
-          <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/pixelone/pixelone-image-025.webp" alt="Darzie Couture pink couture campaign floral set" width="2752" height="1536" loading="lazy" decoding="async" />
+            <img fetchpriority="low" src="/assets/pixelone/pixelone-image-023.webp" alt="Darzie Couture pink couture campaign editorial portrait" width="1792" height="2400" loading="lazy" decoding="async" />
             <div class="kp-card-overlay">
               <div class="kp-card-bottom">
                 <div class="kp-card-text">
@@ -812,6 +785,29 @@
           <div class="kp-card-list-info">
             <span class="kp-card-list-title">DARZIE COUTURE</span>
             <span class="kp-card-list-cat">Pink Couture Campaign · Editorial</span>
+          </div>
+          <span class="kp-card-list-arrow">↗</span>
+        </a>
+
+        <a class="kp-card col-span-3" data-kind="jewellery fashion video" href="/projects/samaira-bridal/" aria-label="Samaira Bridal — Heritage Emerald & Polki Suite">
+          <span class="kp-card-list-num">05</span>
+          <div class="kp-card-media">
+            <img fetchpriority="low" src="/assets/samaira-bridal/samaira-hero-thumb.jpg" alt="Samaira Bridal heritage emerald & polki campaign" width="800" height="1000" loading="lazy" decoding="async" />
+            <div class="kp-card-overlay">
+              <div class="kp-card-bottom">
+                <div class="kp-card-text">
+                  <span class="kp-card-badge">FASHION &amp; COUTURE</span>
+                  <h3 class="kp-card-title">SAMAIRA BRIDAL</h3>
+                </div>
+                <div class="kp-card-action" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kp-card-list-info">
+            <span class="kp-card-list-title">SAMAIRA BRIDAL</span>
+            <span class="kp-card-list-cat">Heritage Emerald &amp; Polki Suite · Film + Stills</span>
           </div>
           <span class="kp-card-list-arrow">↗</span>
         </a>
@@ -843,7 +839,7 @@
         <a class="kp-card col-span-6" data-kind="fashion jewellery video" href="/projects/fashion-reels/" aria-label="Fashion Reels — Couture and Jewellery Motion">
           <span class="kp-card-list-num">07</span>
           <div class="kp-card-media">
-            <img fetchpriority="low" src="/assets/previews/pixelone/pixelone-image-004.webp" alt="Fashion Reels couture and jewellery motion collection" width="1600" height="900" loading="lazy" decoding="async" />
+            <img fetchpriority="low" src="/assets/talla/talla-reel-poster.jpg" alt="Fashion Reels couture and jewellery motion collection" width="2304" height="4096" loading="lazy" decoding="async" />
             <div class="kp-card-overlay">
               <div class="kp-card-bottom">
                 <div class="kp-card-text">
@@ -862,6 +858,7 @@
           </div>
           <span class="kp-card-list-arrow">↗</span>
         </a>
+
 
         <a class="kp-card col-span-3" data-kind="fashion" href="/projects/clothing/" aria-label="Mehr Couture — Olive Luxury Catalogue">
           <span class="kp-card-list-num">08</span>
