@@ -22,4 +22,4 @@ Serve the `dist/` directory with any static server.
 
 ## Contact
 
-Email: `kriyon@repixels.tech`
+Email: `media@kriyongroup.com`
